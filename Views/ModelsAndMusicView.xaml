@@ -1,0 +1,416 @@
+﻿<UserControl x:Class="UR_pnach_editor.Views.ModelsAndMusicView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UR_pnach_editor.Views" xmlns:viewmodels="clr-namespace:UR_pnach_editor.ViewModels"
+             mc:Ignorable="d"
+             d:DesignHeight="1080" d:DesignWidth="1920">
+
+    
+    
+    <Grid Height="1080" Width="1920">
+
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/background.png"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="356*"/>
+            <ColumnDefinition Width="146*"/>
+            <ColumnDefinition Width="281*"/>
+            <ColumnDefinition Width="284*"/>
+            <ColumnDefinition Width="284*"/>
+            <ColumnDefinition Width="284*"/>
+            <ColumnDefinition Width="284*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="gifImage"
+               Width="1920"
+               Height="1080"
+               Grid.ColumnSpan="100"
+               Grid.RowSpan="100"/>
+
+        <MediaElement x:Name="customSound" LoadedBehavior="Play" Grid.ColumnSpan="2" Margin="0,0,145,0"/>
+
+
+        <!--FilePath-->
+        <TextBox x:Name="FilePath"
+                 Grid.Column="0"
+                 Grid.Row="0"
+                 FontSize="22"
+                 Text="{Binding GameFolderPath, UpdateSourceTrigger=PropertyChanged}"
+                 MaxLength="200"
+                 Margin="15,20,5,40"/>
+        <!--versionText-->
+        <TextBlock Grid.Row="0"
+                   Grid.Column="0"
+                   Foreground="Red" 
+                   FontFamily="Palatino Linotype"
+                   FontSize="30"
+                   FontWeight="Bold"
+                   Text="Game Folder Path"
+                   Margin="60,65,145,0" Grid.ColumnSpan="2"/>
+        <!--Save Path-->
+        <Button Grid.Row="1"
+                Grid.Column="0"
+                x:Name="GamePath"
+                Background="#AAAAAA"
+                FontFamily="Times New Roman"
+                FontSize="36"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="40,10,40,40"
+                Click="SavePath_Click">
+            Save Path
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--KG Tall Model-->
+        <Border Grid.Row="2"
+                Grid.Column="0"
+                Name="check1"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="-250,20,145,20" Grid.ColumnSpan="2">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding KG_Tall_Model}"
+                          Width="20"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="2"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3"
+                   FontSize="32"
+                   FontFamily="Palatino Linotype"
+                   Name="model1"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Tall KG Model [1.98cm]"
+                   Margin="100,30,280,20"/>
+
+        <!--Real Dwarf Model-->
+        <Border Grid.Row="3"
+                Grid.Column="0"
+                Name="check2"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="-250,20,145,20" Grid.ColumnSpan="2">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding Real_Dwarf_Model}"
+                          Width="20"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="3"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3"
+                   FontSize="32"
+                   FontFamily="Palatino Linotype"
+                   Name="model2"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Real Dwarf Model [1.35cm]"
+                   Margin="100,30,280,20"/>
+
+        <!--Giant Golem Model-->
+        <Border Grid.Row="4"
+                Grid.Column="0"
+                Name="check3"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="-250,20,145,20" Grid.ColumnSpan="2">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding Golem_Giant_Model}"
+                          Width="20"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="4"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3"
+                   FontSize="32"
+                   FontFamily="Palatino Linotype"
+                   Name="model3"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Giant Golem Model [2.22cm]"
+                   Margin="100,30,270,20"/>
+
+        <!--Gnome Napalm-->
+        <Border Grid.Row="5"
+                Grid.Column="0"
+                Name="check4"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="-250,20,145,20" Grid.ColumnSpan="2">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding Gnome_Napalm_Model}"
+                          Width="20"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="5"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3"
+                   FontSize="32"
+                   FontFamily="Palatino Linotype"
+                   Name="model4"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Gnome Napalm Model [1.22cm]"
+                   Margin="100,30,220,20"/>
+
+        <!--Amazon Ying-->
+        <Border Grid.Row="6"
+                Grid.Column="0"
+                Name="check5"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="-250,20,145,20" Grid.ColumnSpan="2">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding Amazon_Shun_Ying}"
+                          Width="20"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="6"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3"
+                   FontSize="32"
+                   FontFamily="Palatino Linotype"
+                   Name="model5"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Amazon Shun Ying [1.96cm]"
+                   Margin="100,30,220,20"/>
+
+        <!--Swap Models-->
+        <Button Grid.Row="7"
+                Grid.RowSpan="2"
+                Grid.Column="0"
+                x:Name="SwapModels"
+                Background="#123456"
+                Foreground="#BBBBBB"
+                FontFamily="Garamond"
+                FontSize="40"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="30,0,10,20"
+                Click="SwapModels_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Swap Models Size" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+
+
+
+
+        <!--Version-->
+        <TextBlock Grid.Row="8"
+                   Grid.Column="6"
+                   Name="rel1"
+                   FontFamily="Palatino Linotype"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="{Binding EditorVersion, UpdateSourceTrigger=PropertyChanged}"
+                   TextAlignment="Center"/>
+        <TextBlock Grid.Row="9"
+                   Grid.Column="6"
+                   FontFamily="Palatino Linotype"
+                   Name="rel2"
+                   FontSize="25"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="{Binding EditorReleaseDate, UpdateSourceTrigger=PropertyChanged}"
+                   TextAlignment="Center"/>
+
+
+        <!--Music-->
+
+        <ComboBox x:Name="MusicPatch"
+                  Grid.Column="4"
+                  Grid.Row="3"
+                  FontSize="26"
+                  Margin="0,0,0,50"/>
+        <TextBlock Grid.Row="3"
+                   Grid.Column="4"
+                   FontFamily="Palatino Linotype"
+                   Name="patchingStatus"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Gold"
+                   Text="{Binding PatchingStatus, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="0,60,-0,0"/>
+        <Button Grid.Row="4"
+                Grid.Column="4"
+                x:Name="SwapMusic"
+                Background="#008890"
+                Foreground="#FFFFFF"
+                FontFamily="Garamond"
+                FontSize="42"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="SwapMusic_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Swap Music" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBlock Grid.Row="5"
+                   Grid.Column="4"
+                   Name="warning"
+                   FontSize="36"
+                   FontFamily="Palatino Linotype"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="#FF4444"
+                   Text="Read the instructions carefully!"
+                   Margin="-110,0,-110,60"/>
+        <TextBlock Grid.Row="6"
+                   Grid.Column="4"
+                   Grid.ColumnSpan="2"
+                   Name="info"
+                   FontSize="36"
+                   FontFamily="Palatino Linotype"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="#44FFFF"
+                   Text="Music Changed in Multiplayer, Practice and Challenge Modes!"
+                   Margin="-360,0,-110,60"/>
+        <TextBlock Grid.Row="8"
+                   Grid.Column="4"
+                   Grid.ColumnSpan="2"
+                   Name="extraInfo"
+                   FontSize="36"
+                   FontFamily="Palatino Linotype"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="#AACCCC"
+                   Text="Address for Multiplayer mode music is 20A5E3E0"
+                   Margin="-300,0,-110,0"/>
+
+
+
+        <!--Switch to Main Page-->
+        <Button Grid.Row="11"
+                Grid.Column="6"
+                x:Name="GetBackToMainPage"
+                Background="#251446"
+                Foreground="#BBBBBB"
+                FontFamily="Times New Roman"
+                FontSize="28"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="GoToMainPage_Click">
+            Back to Main Menu
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Swap Models Info-->
+        <Button Grid.Row="7"
+                Grid.RowSpan="2"
+                Grid.Column="1"
+                x:Name="SwapModelsInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="10,30,255,40"
+                Click="SwapModels_Info" Grid.ColumnSpan="2">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Information" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Swap Music Info-->
+        <Button Grid.Row="5"
+                Grid.Column="4"
+                x:Name="SwapMusicInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="40,60,40,10"
+                Click="SwapMusic_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Information" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Border Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Grid.Row="0"
+                Grid.RowSpan="9"
+                BorderThickness="6"
+                Margin="0,0,-100,0"
+                BorderBrush="Orange">
+        </Border>
+        <Border Grid.Column="3"
+                Grid.ColumnSpan="3"
+                Grid.Row="3"
+                Grid.RowSpan="6"
+                BorderThickness="6"
+                Margin="-100,-20,-100,-20"
+                BorderBrush="Green">
+        </Border>
+
+    </Grid>
+
+
+</UserControl>

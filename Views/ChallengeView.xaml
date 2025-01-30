@@ -1,0 +1,995 @@
+﻿<UserControl x:Class="UR_pnach_editor.Views.ChallengeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UR_pnach_editor.Views" xmlns:viewmodels="clr-namespace:UR_pnach_editor.ViewModels"
+             mc:Ignorable="d"
+             d:DesignHeight="1080" d:DesignWidth="1920">
+
+    <Grid Height="1080" Width="1920">
+
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/background.png"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="960*"/>
+            <RowDefinition Height="960*"/>
+            <RowDefinition Height="960*"/>
+            <RowDefinition Height="960*"/>
+            <RowDefinition Height="960*"/>
+            <RowDefinition Height="960*"/>
+            <RowDefinition Height="960*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="540*"/>
+            <ColumnDefinition Width="540*"/>
+            <ColumnDefinition Width="540*"/>
+            <ColumnDefinition Width="540*"/>
+            <ColumnDefinition Width="540*"/>
+            <ColumnDefinition Width="540*"/>
+            <ColumnDefinition Width="540*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="gifImage"
+               Width="1920"
+               Height="1080"
+               Grid.ColumnSpan="100"
+               Grid.RowSpan="100"/>
+
+        <MediaElement x:Name="customSound" LoadedBehavior="Play"/>
+
+
+        <!--Boss Danger and Sorin-->
+        <Button Grid.Row="0"
+                Grid.Column="1"
+                x:Name="BossDanSorin"
+                Background="#FF4422"
+                FontFamily="Century Gothic"
+                FontSize="38"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="BossDanSorinCodes_Click"
+                MouseEnter="BossDanSorinCodes_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Boss Dan and Sorin" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Boss Fabio and Nash-->
+        <Button Grid.Row="0"
+                Grid.Column="0"
+                x:Name="BossFabioNash"
+                Background="#FF4422"
+                FontFamily="Century Gothic"
+                FontSize="37"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="BossFabioNashCodes_Click"
+                MouseEnter="BossFabioNashCodes_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Boss Fabio and Nash" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Boss Ultra Instinct Team-->
+        <Button Grid.Row="1"
+                Grid.Column="2"
+                x:Name="BossUltraInstinctTeam"
+                Background="#000088"
+                Foreground="#882222"
+                FontFamily="Century Gothic"
+                FontSize="30"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="BossUltraInstinctTeamCodes_Click"
+                MouseEnter="BossUltraInstinctTeamCodes_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Boss Ultra Instinct Team" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Boss The Monsters-->
+        <Button Grid.Row="1"
+                Grid.Column="1"
+                x:Name="BossTheMonsters"
+                Background="#660000"
+                Foreground="#FF0000"
+                FontFamily="Century Gothic"
+                FontSize="39"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="BossTheMonstersCodes_Click"
+                MouseEnter="BossTheMonstersCodes_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Boss The Monsters" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Boss Weapon Masters-->
+        <Button Grid.Row="1"
+                Grid.Column="0"
+                x:Name="BossWeaponMasters"
+                Background="#442200"
+                Foreground="#FF8888"
+                FontFamily="Century Gothic"
+                FontSize="31"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="BossWeaponMastersCodes_Click"
+                MouseEnter="BossWeaponMastersCodes_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Boss Weapon Masters" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Boss Shinkai Katana and Golem Nirvana-->
+        <Button Grid.Row="2"
+                Grid.Column="2"
+                x:Name="BossTheBest"
+                Background="#000000"
+                Foreground="#006600"
+                FontFamily="Century Gothic"
+                FontSize="32"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="BossTheBestCodes_Click"
+                MouseEnter="BossTheBestCodes_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Boss Shinkai Katana and Golem Nirvana" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Kadonashi Boss-->
+        <Button Grid.Row="0"
+                Grid.Column="0"
+                x:Name="KadonashiBoss"
+                Background="#937402"
+                Foreground="#000000"
+                FontFamily="Century Gothic"
+                FontSize="34"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="KadonashiBoss_Click"
+                MouseEnter="KadonashiBoss_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Kadonashi Boss" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Zombie KG-->
+        <Button Grid.Row="2"
+                Grid.Column="0"
+                x:Name="KG_Undead"
+                Background="#004400"
+                Foreground="#001100"
+                FontFamily="Century Gothic"
+                FontSize="34"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="UndeadKG_Codes_Click"
+                MouseEnter="UndeadKG_Codes_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Zombie KG" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Napalm Shaman-->
+        <Button Grid.Row="0"
+                Grid.Column="1"
+                x:Name="Napalm_Shaman"
+                Background="#123456"
+                Foreground="#001100"
+                FontFamily="Century Gothic"
+                FontSize="34"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="NapalmShaman_Codes_Click"
+                MouseEnter="NapalmShaman_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Napalm Shaman" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Bojun Team-->
+        <Button Grid.Row="0"
+                Grid.Column="2"
+                x:Name="BojunTeam"
+                Background="#234567"
+                Foreground="#231102"
+                FontFamily="Century Gothic"
+                FontSize="32"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="BojunTeamCodes_Click"
+                MouseEnter="BojunTeamCodes_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Bojun Enemy Team" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Boss Brad Shark-->
+        <Button Grid.Row="1"
+                Grid.Column="0"
+                x:Name="BossBrad"
+                Background="#964B00"
+                FontFamily="Century Gothic"
+                FontSize="32"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="BossBradHawk_Click"
+                MouseEnter="BossBradHawk_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Boss Brad Shark" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Weak KG and Bordin-->
+        <Button Grid.Row="3"
+                Grid.Column="2"
+                x:Name="KGandBordin"
+                Background="#E0115F"
+                FontFamily="Century Gothic"
+                FontSize="30"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="KGandBordin_Click"
+                MouseEnter="KGandBordin_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Weak KG and Bordin" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--ExtremeEnemyTeam-->
+        <Button Grid.Row="5"
+                Grid.Column="2"
+                x:Name="ExtremeEnemyTeamCode"
+                Background="#882288"
+                FontFamily="Century Gothic"
+                FontSize="31"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="ExtremeEnemyTeam_Click"
+                MouseEnter="ExtremeEnemyTeam_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Extreme Enemy Team" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--StrongPlayerTeam-->
+        <Button Grid.Row="2"
+                Grid.Column="2"
+                x:Name="StrongPlayerTeamCode"
+                Background="#22EEEE"
+                FontFamily="Century Gothic"
+                FontSize="33"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="StrongPlayerTeam_Click"
+                MouseEnter="StrongPlayerTeam_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Strong Player Team" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--HandicapPlayerTeam-->
+        <Button Grid.Row="3"
+                Grid.Column="2"
+                x:Name="HandicapPlayerTeamCode"
+                Background="#AAAAAA"
+                Foreground="#446622"
+                FontFamily="Century Gothic"
+                FontSize="34"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="HandicapPlayerTeam_Click"
+                MouseEnter="HandicapPlayerTeam_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Handicap Player Team" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <!--Gun Master Player 3-->
+        <Button Grid.Row="4"
+                Grid.Column="0"
+                x:Name="GunMasterPlayer"
+                Background="#632402"
+                Foreground="#000000"
+                FontFamily="Century Gothic"
+                FontSize="42"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="GunMasterPlayer3_Click"
+                MouseEnter="GunMasterPlayer3_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Gun Master Player 3" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Tekken Force-->
+        <Button Grid.Row="2"
+                Grid.Column="0"
+                x:Name="TekkenForce"
+                Background="#2255A8"
+                Foreground="#441122"
+                FontFamily="Century Gothic"
+                FontSize="34"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="TekkenForceCodes_Click"
+                MouseEnter="TekkenForceCodes_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Tekken Force" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Girls Power-->
+        <Button Grid.Row="2"
+                Grid.Column="1"
+                x:Name="GirlsPower"
+                Foreground="#0882d8"
+                FontFamily="Century Gothic"
+                FontWeight="Bold"
+                FontSize="40"
+                Margin="20,20,20,20"
+                Click="GirlsPowerCodes_Click"
+                MouseEnter="GirlsPowerCodes_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Girls Power" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Mckenzie and Napalm-->
+        <Button Grid.Row="3"
+                Grid.Column="1"
+                x:Name="SuperVillains"
+                Background="#251446"
+                Foreground="#AA0000"
+                FontFamily="Century Gothic"
+                FontWeight="Bold"
+                FontSize="44"
+                Margin="20,20,20,20"
+                Click="SuperVillainsCodes_Click"
+                MouseEnter="SuperVillainsCodes_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Super Villains" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Kick Champions-->
+        <Button Grid.Row="4"
+                Grid.Column="1"
+                x:Name="KickChampions"
+                Background="#FF0000"
+                Foreground="#003333"
+                FontFamily="Century Gothic"
+                FontWeight="Bold"
+                FontSize="36"
+                Margin="20,20,20,20"
+                Click="KickChampionsCodes_Click"
+                MouseEnter="KickChampionsCodes_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Kick Champions" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Brad and Park-->
+        <Button Grid.Row="3"
+                Grid.Column="0"
+                x:Name="ProtagonistTeam"
+                Background="#513664"
+                Foreground="#111111"
+                FontFamily="Century Gothic"
+                FontWeight="Bold"
+                FontSize="38"
+                Margin="20,20,20,20"
+                Click="ProtagonistTeamCodes_Click"
+                MouseEnter="ProtagonistTeamCodes_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Supreme Masters" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--BossShinkaiP3Code-->
+        <Button Grid.Row="5"
+                Grid.Column="0"
+                x:Name="BossShinkaiP3Code"
+                Background="#338888"
+                Foreground="DarkRed"
+                FontFamily="Century Gothic"
+                FontWeight="Bold"
+                FontSize="35"
+                Margin="20,20,20,20"
+                Click="BossShinkaiP3_Click"
+                MouseEnter="BossShinkaiP3_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Boss Katana Master" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Gun Backup Mission-->
+        <Button Grid.Row="5"
+                Grid.Column="0"
+                x:Name="GunBackupMission"
+                Background="#213422"
+                FontFamily="Century Gothic"
+                FontSize="32"
+                Foreground="Red"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="GunBackupMission_Click"
+                MouseEnter="GunBackupMission_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Gun Backup Mission" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Regional Challenge-->
+        <Button Grid.Row="6"
+                Grid.Column="0"
+                x:Name="RegionalChallenge"
+                Background="#221133"
+                FontFamily="Century Gothic"
+                FontSize="32"
+                Foreground="Yellow"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="RegionalChallenge_Click"
+                MouseEnter="RegionalChallenge_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Regional Challenge" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--DoubleTghEneTeamButton-->
+        <Button Grid.Row="5"
+                Grid.Column="1"
+                x:Name="btnDoubleTghEneTeam"
+                Background="#802929"
+                FontFamily="Century Gothic"
+                FontSize="36"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="DoubleTghEneTeam_Click"
+                MouseEnter="DoubleTghEneTeam_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Titan Enemy Team" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--WeakPlayerTeam-->
+        <Button Grid.Row="4"
+                Grid.Column="2"
+                x:Name="WeakPlayerTeamCode"
+                Background="#D9B949"
+                FontFamily="Century Gothic"
+                FontSize="33"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="WeakPlayerTeam_Click"
+                MouseEnter="WeakPlayerTeam_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Weak P1 + P2" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--WeakPlayerTeam-->
+        <Button Grid.Row="4"
+                Grid.Column="2"
+                x:Name="TheTrueFinalBoss"
+                FontFamily="Century Gothic"
+                FontSize="38"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="TheTrueFinalBoss_Click"
+                MouseEnter="TheTrueFinalBoss_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="The True Final Boss" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#101020" Offset="0" />
+                    <GradientStop Color="#303060" Offset="0.25" />
+                    <GradientStop Color="#5050A0" Offset="0.5" />
+                    <GradientStop Color="#303060" Offset="0.75" />
+                    <GradientStop Color="#101020" Offset="1" />
+
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Enemy Team Instant SPA-->
+        <Button Grid.Row="6"
+                Grid.Column="1"
+                x:Name="EnemyTeamInstantSPA"
+                Background="#6C244C"
+                Foreground="#000022"
+                FontFamily="Century Gothic"
+                FontSize="30"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="EnemyTeamInstantSPA_Click"
+                MouseEnter="EnemyTeamInstantSPA_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Enemy Team Instant SPA" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--One Hit Boss-->
+        <Button Grid.Row="4"
+                Grid.Column="0"
+                x:Name="OneHitBoss"
+                Background="#593750"
+                Foreground="#000000"
+                FontFamily="Century Gothic"
+                FontSize="38"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="OneHitBoss_Click"
+                MouseEnter="OneHitBoss_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="One Hit Boss" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--BossP3-->
+        <Button Grid.Row="6"
+                Grid.Column="0"
+                x:Name="btnBossP3"
+                Background="#494949"
+                FontFamily="Century Gothic"
+                FontSize="36"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="BossP3_Click"
+                MouseEnter="BossP3_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Boss P3 And P4 Null" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+
+        <!--Grandmaster Challenge-->
+        <Button Grid.Row="3"
+                Grid.Column="1"
+                x:Name="GrandmasterChallenge"
+                Background="#601020"
+                Foreground="#000000"
+                FontFamily="Century Gothic"
+                FontSize="34"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="GrandmasterChallenge_Click"
+                MouseEnter="GrandmasterChallenge_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Grandmaster Challenge" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--Supreme Outlaw-->
+        <Button Grid.Row="6"
+                Grid.Column="2"
+                x:Name="SupremeOutlaw"
+                Background="#870345"
+                Foreground="#000000"
+                FontFamily="Century Gothic"
+                FontSize="38"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="SupremeOutlaw_Click"
+                MouseEnter="SupremeOutlaw_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Supreme Outlaw" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--Boss and Underboss-->
+        <Button Grid.Row="0"
+                Grid.Column="3"
+                x:Name="BossAndUnderboss"
+                Background="#3983AD"
+                Foreground="#2E384A"
+                FontFamily="Century Gothic"
+                FontSize="34"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="BossAndUnderboss_Click"
+                MouseEnter="BossAndUnderboss_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Boss And Underboss" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--Brainwash Boss-->
+        <Button Grid.Row="6"
+                Grid.Column="1"
+                x:Name="BrainwashBoss"
+                Background="SandyBrown"
+                Foreground="#000000"
+                FontFamily="Century Gothic"
+                FontSize="38"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="BrainwashBoss_Click"
+                MouseEnter="BrainwashBoss_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Brainwash Boss" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--Ultimate 7 vs 1-->
+        <Button Grid.Row="1"
+                Grid.Column="3"
+                x:Name="Ultimate7vs1"
+                Background="#860111"
+                Foreground="#1E283A"
+                FontFamily="Century Gothic"
+                FontSize="45"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="Ultimate7vs1_Click"
+                MouseEnter="Ultimate7vs1_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Ultimate 7 vs 1" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        
+
+        <!--Active Code-->
+        <TextBlock Grid.Row="6"
+                   Grid.Column="3"
+                   Foreground="Red" 
+                   FontSize="36"
+                   FontFamily="Palatino Linotype"
+                   FontWeight="Bold"
+                   Text="Active Code"
+                   Margin="35,10,0,0"/>
+        <TextBlock Grid.Row="6"
+                   Grid.Column="3"
+                   x:Name="CodeText"
+                   Foreground="#FFFFFF" 
+                   FontSize="30"
+                   FontWeight="Bold"
+                   TextWrapping="WrapWithOverflow"
+                   Text="{Binding CodeString, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="0,60,0,0"
+                   TextAlignment="Center"/>
+
+        <!--Clear Codes-->
+        <Button Grid.Row="5"
+                Grid.Column="3"
+                x:Name="ClearCodes"
+                Background="#FFFFFF"
+                FontFamily="Times New Roman"
+                FontSize="42"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="Clear_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Clear Codes" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--Switch to Main Page-->
+        <Button Grid.Row="11"
+                Grid.Column="7"
+                x:Name="GetBackToMainPage"
+                Background="#251446"
+                Foreground="#BBBBBB"
+                FontFamily="Times New Roman"
+                FontSize="37"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="GoToMainPage_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Back to Main Menu" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--<Image Source="/Resources/Nightmare.png"
+               Grid.Row="5"
+               Grid.RowSpan="5"
+               Grid.Column="2"
+               Width="280"
+               Height="280"
+               Margin="20,0,80,-30"/>-->
+
+
+        <!--Go to Challenge Mode Page-->
+        <Button Grid.Row="6"
+                Grid.Column="5"
+                x:Name="GoToChallengeModePage"
+                Background="#345678"
+                Foreground="#BBBBBB"
+                FontFamily="Times New Roman"
+                FontSize="34"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,20,10,20"
+                Click="GoChallengeModePage_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Go to Challenge Mode" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        
+        <!--Switch Group-->
+        <Button Grid.Row="3"
+                Grid.Column="3"
+                x:Name="SwitchGroup"
+                Foreground="#222222"
+                FontFamily="Verdana"
+                FontSize="35"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="SwitchGroup_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Switch Group" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#700000" Offset="0" />
+                    <GradientStop Color="#900000" Offset="0.25" />
+                    <GradientStop Color="#B00000" Offset="0.5" />
+                    <GradientStop Color="#D00000" Offset="0.75" />
+                    <GradientStop Color="#F00000" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Information-->
+        <TextBlock Grid.Row="0"
+                   Grid.RowSpan="6"
+                   Grid.Column="4"
+                   Grid.ColumnSpan="3"
+                   Name="info"
+                   FontSize="36"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="{Binding ModeInformation, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="0,20,0,0"/>
+
+        <Border Grid.Column="4"
+                Grid.ColumnSpan="3"
+                Grid.Row="0"
+                Grid.RowSpan="6"
+                BorderThickness="6"
+                Margin="-10,10,0,-10"
+                BorderBrush="Yellow">
+        </Border>
+
+    </Grid>
+
+
+</UserControl>

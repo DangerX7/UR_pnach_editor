@@ -1,0 +1,1683 @@
+﻿<UserControl x:Class="UR_pnach_editor.Views.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Text="clr-namespace:System.Windows.Documents;assembly=PresentationFramework"
+             xmlns:viewmodels="clr-namespace:UR_pnach_editor.ViewModels"
+             xmlns:local="clr-namespace:UR_pnach_editor.Views"
+             mc:Ignorable="d"
+             d:DesignHeight="1080" d:DesignWidth="1920">
+
+
+    <Grid Height="1080" Width="1920">
+
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/background.png"/>
+        </Grid.Background>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="960*"/>
+            <RowDefinition Height="960*"/>
+            <RowDefinition Height="960*"/>
+            <RowDefinition Height="960*"/>
+            <RowDefinition Height="960*"/>
+            <RowDefinition Height="960*"/>
+            <RowDefinition Height="960*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="540*"/>
+            <ColumnDefinition Width="540*"/>
+            <ColumnDefinition Width="540*"/>
+            <ColumnDefinition Width="540*"/>
+            <ColumnDefinition Width="540*"/>
+            <ColumnDefinition Width="540*"/>
+            <ColumnDefinition Width="540*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Image x:Name="gifImage"
+               Width="1920"
+               Height="1080"
+               Grid.ColumnSpan="100"
+               Grid.RowSpan="100"/>
+
+        <MediaElement x:Name="customSound" LoadedBehavior="Play"/>
+
+        <!--RandomButton-->
+        <Button Grid.Row="0"
+                Grid.Column="0"
+                x:Name="btnRandomAll"
+                Background="#292990"
+                FontFamily="Calibri"
+                FontSize="38"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="RandomAll_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Randomize All" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--MaxWeaponsDmg-->
+        <Button Grid.Row="5"
+                Grid.Column="1"
+                x:Name="btnMaxWeaponsDmg"
+                Background="#297929"
+                FontFamily="Calibri"
+                FontSize="37"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="MaxWeaponsDmg_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Max Weapon Damage" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--RegionalShowdown-->
+        <Button Grid.Row="4"
+                Grid.Column="0"
+                x:Name="btnRegional"
+                Background="#065535"
+                FontFamily="Calibri"
+                FontSize="38"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="RegionalShowdown_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Regional Showdown" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--1 VS 3-->
+        <Button Grid.Row="5"
+                Grid.Column="2"
+                x:Name="OneVersusThree"
+                Background="DarkRed"
+                FontFamily="Century Gothic"
+                FontSize="35"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,20,10,10"
+                Click="OneVersusThree_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="1 VS 3" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--P5Enemy-->
+        <Button Grid.Row="3"
+                Grid.Column="0"
+                x:Name="btnP5"
+                Background="#996DBA"
+                FontFamily="Calibri"
+                FontSize="38"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="P5Enemy_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="P5 Enemy" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--4vs4-->
+        <Button Grid.Row="4"
+                Grid.Column="1"
+                x:Name="btn4vs4"
+                FontFamily="Calibri"
+                FontSize="44"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Foreground="#000088"
+                Margin="6,6,6,6"
+        Click="FourVsFour_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Image x:Name="buttonImage" Source="{Binding SnowImg1, UpdateSourceTrigger=PropertyChanged}" Stretch="Fill"/>
+                        <Border Background="Transparent" BorderBrush="Transparent" BorderThickness="0" CornerRadius="20">
+                            <!-- Adjust CornerRadius as needed -->
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="buttonImage" Property="Source" Value="{Binding SnowImg1x, UpdateSourceTrigger=PropertyChanged}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="4 VS 4" TextAlignment="Center"  />
+            </Button.Content>
+        </Button>
+
+
+
+
+
+
+        <!--UltimateUzi-->
+        <!--
+        <Button Grid.Row="2"
+                Grid.Column="0"
+                x:Name="btnUzi"
+                Background="#FB064D"
+                FontFamily="Calibri"
+                FontSize="38"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="UltimateUzi_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Ultimate Uzi" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>-->
+
+        <!--P1God-->
+        <Button Grid.Row="6"
+                Grid.Column="1"
+                x:Name="P1GodCode"
+                Background="#CC0000"
+                Foreground="#000033"
+                FontFamily="Calibri"
+                FontSize="39"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="P1God_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Player 1 God" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--AutoGuardAll-->
+        <Button Grid.Row="1"
+                Grid.Column="1"
+                x:Name="AutoGuardAllCode"
+                Background="#0000FF"
+                Foreground="#001818"
+                FontFamily="Calibri"
+                FontSize="35"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="AutoGuardAll_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Auto Guard All" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--PersonalizedAll-->
+        <Button Grid.Row="1"
+                Grid.Column="0"
+                x:Name="PersonalizedAllCode"
+                Background="#22CC44"
+                FontFamily="Calibri"
+                FontSize="38"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="PersonalizedAll_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Personalized Stats All" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--SpikedWall-->
+        <Button Grid.Row="0"
+                Grid.Column="1"
+                x:Name="SpikedWallCode"
+                Background="#345678"
+                FontFamily="Calibri"
+                FontSize="42"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="SpikedWall_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Spiked Wall" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Weak Story Opponents-->
+        <Button Grid.Row="6"
+                Grid.Column="0"
+                x:Name="WeakStoryOpponentsCode"
+                Background="#66CC22"
+                FontFamily="Calibri"
+                FontSize="36"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="WeakStoryOpponents_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Weak Enemies in Story" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Activate Moves And Stats Modifier-->
+        <Button Grid.Row="3"
+                Grid.Column="5"
+                x:Name="MovesModifiers"
+                Background="#A83C19"
+                FontFamily="Calibri"
+                FontSize="33"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="MovesStatsModifier_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Activate Moveset + Stats Modifier" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <TextBlock Grid.Row="4"
+                   Grid.Column="5"
+                   Foreground="#FFAAAA" 
+                   FontSize="34"
+                   FontWeight="Bold"
+                   Text="P1"
+                   Margin="10,0,0,0"/>
+        <ComboBox x:Name="CharaCombo1"
+                  Grid.Column="5"
+                  Grid.Row="4"
+                  FontSize="22"
+                  Margin="80,0,20,100"/>
+        <TextBlock Grid.Row="4"
+                   Grid.Column="5"
+                   Foreground="#FFAAAA" 
+                   FontSize="34"
+                   FontWeight="Bold"
+                   Text="P2"
+                   Margin="10,100,0,0"/>
+        <ComboBox x:Name="CharaCombo2"
+                  Grid.Column="5"
+                  Grid.Row="4"
+                  FontSize="22"
+                  Margin="80,100,20,0"/>
+        <Border Grid.Column="5"
+                Grid.Row="3"
+                Grid.RowSpan="2"
+                BorderThickness="6"
+                Margin="0,0,0,-6"
+                BorderBrush="Orange">
+        </Border>
+
+
+        <!--Active Code-->
+        <TextBlock Grid.Row="6"
+                   Grid.Column="3"
+                   FontFamily="Palatino Linotype"
+                   Foreground="Red" 
+                   FontSize="36"
+                   FontWeight="Bold"
+                   Text="Active Code"
+                   Margin="35,10,0,0"/>
+        <TextBlock Grid.Row="6"
+                   Grid.Column="3"
+                   Foreground="#FFFFFF" 
+                   x:Name="CodeText"
+                   FontSize="30"
+                   FontWeight="Bold"
+                   TextWrapping="WrapWithOverflow"
+                   Text="{Binding CodeString, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="0,50,0,0"
+                   TextAlignment="Center"/>
+
+        <!--Clear Codes-->
+        <Button Grid.Row="6"
+                Grid.Column="4"
+                x:Name="ClearCodes"
+                Background="#FFFFFF"
+                FontFamily="Times New Roman"
+                FontSize="39"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,20,10,20"
+                Click="Clear_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Clear Codes" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--1 Star Characters Only-->
+        <Button Grid.Row="5"
+                Grid.Column="5"
+                x:Name="OneStarOnly"
+                Background="#BBBBBB"
+                FontFamily="Calibri"
+                FontSize="36"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,100"
+                Click="OneStarOnly_Click">
+            ★ Only
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--2 Stars Characters Only-->
+        <Button Grid.Row="5"
+                Grid.Column="5"
+                x:Name="TwoStarsOnly"
+                Background="#BBBBBB"
+                FontFamily="Calibri"
+                FontSize="36"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,70,10,40"
+                Click="TwoStarsOnly_Click">
+            ★★ Only
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--3 Stars Characters Only-->
+        <Button Grid.Row="5"
+                Grid.RowSpan="2"
+                Grid.Column="5"
+                x:Name="ThreeStarsOnly"
+                Background="#BBBBBB"
+                FontFamily="Calibri"
+                FontSize="36"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,130,10,135"
+                Click="ThreeStarsOnly_Click">
+            ★★★ Only
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--4 Stars Characters Only-->
+        <Button Grid.Row="6"
+                Grid.Column="5"
+                x:Name="FourStarsOnly"
+                Background="#BBBBBB"
+                FontFamily="Calibri"
+                FontSize="36"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,40,10,70"
+                Click="FourStarsOnly_Click">
+            ★★★★ Only
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--5 Stars Characters Only-->
+        <Button Grid.Row="6"
+                Grid.Column="5"
+                x:Name="FiveStarsOnly"
+                Background="#BBBBBB"
+                FontFamily="Calibri"
+                FontSize="36"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,100,10,10"
+                Click="FiveStarsOnly_Click">
+            ★★★★★ Only
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--FilePath-->
+        <TextBox x:Name="FilePath"
+                 Grid.Column="6"
+                 Grid.Row="0"
+                 FontSize="22"
+                 Text="{Binding FolderPath, UpdateSourceTrigger=PropertyChanged}"
+                 MaxLength="200"
+                 Margin="8,20,8,100"/>
+        <!--versionText-->
+        <TextBlock Grid.Row="0"
+                   Grid.Column="6"
+                   Foreground="Red" 
+                   FontSize="28"
+                   FontWeight="Bold"
+                   Text="Codes File Path"
+                   Margin="44,55,0,40"/>
+        <!--Save Path-->
+        <Button Grid.Row="0"
+                Grid.Column="6"
+                x:Name="SavePath"
+                Background="#AAAAAA"
+                FontFamily="Times New Roman"
+                FontSize="34"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="40,100,40,10"
+                Click="SavePath_Click">
+            Save Path
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Weapons Only-->
+        <Button Grid.Row="5"
+                Grid.Column="0"
+                x:Name="WeaponsOnly"
+                Background="#0882d8"
+                FontFamily="Calibri"
+                FontSize="43"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="WeaponsOnlyCodes_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Weapons Only" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Weak Bullets-->
+        <Button Grid.Row="6"
+                Grid.Column="2"
+                x:Name="WeakBullets"
+                Background="#666666"
+                Foreground="#222222"
+                FontFamily="Calibri"
+                FontSize="43"
+                FontWeight="Bold"
+                Margin="20,20,20,20"
+                Click="WeakBullets_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Fake Bullets" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <!--Randomize All Upgraded-->
+        <Button Grid.Row="3"
+                Grid.Column="1"
+                x:Name="RandomizeAllUpgraded"
+                Foreground="#FF4411"
+                FontFamily="Calibri"
+                FontSize="38"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="StartTimer_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="{Binding RandomizeSupremeStatus, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#101040" Offset="0" />
+                    <GradientStop Color="#202058" Offset="0.25" />
+                    <GradientStop Color="#303070" Offset="0.5" />
+                    <GradientStop Color="#202058" Offset="0.75" />
+                    <GradientStop Color="#101040" Offset="1" />
+
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Activate Spa Down Modifier-->
+        <Button Grid.Row="3"
+                Grid.Column="6"
+                x:Name="SpaDownModifier"
+                Background="Violet"
+                FontFamily="Calibri"
+                FontSize="38"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="SpaDownModifier_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Change Spa Down" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <TextBlock Grid.Row="4"
+                   Grid.Column="7"
+                   Foreground="#FFAAAA" 
+                   FontSize="34"
+                   FontWeight="Bold"
+                   Text="P1"
+                   Margin="20,20,0,0"/>
+        <ComboBox x:Name="SpaDown1"
+                  Grid.Column="7"
+                  Grid.Row="4"
+                  FontSize="22"
+                  Margin="80,10,20,90"/>
+        <TextBlock Grid.Row="4"
+                   Grid.Column="7"
+                   Foreground="#FFAAAA" 
+                   FontSize="34"
+                   FontWeight="Bold"
+                   Text="P2"
+                   Margin="20,90,0,0"/>
+        <ComboBox x:Name="SpaDown2"
+                  Grid.Column="7"
+                  Grid.Row="4"
+                  FontSize="22"
+                  Margin="80,90,20,10"/>
+
+        <TextBlock Grid.Row="5"
+                   Grid.Column="7"
+                   Foreground="#FFAAAA" 
+                   FontSize="34"
+                   FontWeight="Bold"
+                   Text="P3"
+                   Margin="20,20,0,0"/>
+        <ComboBox x:Name="SpaDown3"
+                  Grid.Column="7"
+                  Grid.Row="5"
+                  FontSize="22"
+                  Margin="80,10,20,90"/>
+        <TextBlock Grid.Row="5"
+                   Grid.Column="7"
+                   Foreground="#FFAAAA" 
+                   FontSize="34"
+                   FontWeight="Bold"
+                   Text="P4"
+                   Margin="20,100,0,0"/>
+        <ComboBox x:Name="SpaDown4"
+                  Grid.Column="7"
+                  Grid.Row="5"
+                  FontSize="22"
+                  Margin="80,90,20,10"/>
+        <Border Grid.Column="6"
+                Grid.Row="3"
+                Grid.RowSpan="3"
+                BorderThickness="6"
+                Margin="0,0,0,-6"
+                BorderBrush="Yellow">
+        </Border>
+
+        <!--InputValueCode-->
+        <TextBox x:Name="CodeFileName"
+                 Grid.Column="6"
+                 Grid.Row="1"
+                 MaxLength="8"
+                 FontSize="32"
+                 Text="{Binding CRC_Name, UpdateSourceTrigger=PropertyChanged}"
+                 Margin="55,0,55,105"/>
+
+        <!--Change Code File Name-->
+        <Button Grid.Row="1"
+                Grid.Column="6"
+                x:Name="ChangeCodeFileName"
+                Background="DarkSlateGray"
+                FontFamily="Times New Roman"
+                FontSize="37"
+                Margin="6,60,6,0"
+                Click="ChangeCodeFileName_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Save CRC (fileName)" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Border Grid.Column="6"
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                BorderThickness="6"
+                Margin="0,0,0,-6"
+                BorderBrush="LightGreen">
+        </Border>
+
+
+
+
+        <!--Go To Texture Changer Page-->
+        <Button Grid.Row="0"
+                Grid.Column="3"
+                x:Name="GoToTextureChanger"
+                Foreground="#444444"
+                FontFamily="Palatino Linotype"
+                FontSize="35"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="140,20,-130,0"
+                Click="GoToTextureChanger_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center"  Text="Go To Textures Page" />
+            </Button.Content>
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#109900" Offset="0" />
+                    <GradientStop Color="#18BB00" Offset="0.25" />
+                    <GradientStop Color="#20DD00" Offset="0.5" />
+                    <GradientStop Color="#18BB00" Offset="0.75" />
+                    <GradientStop Color="#109900" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--Go To Challenges Page-->
+        <Button Grid.Row="2"
+                Grid.Column="3"
+                x:Name="GoToChallengePage"
+                Foreground="#444444"
+                FontFamily="Palatino Linotype"
+                FontSize="30"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="-130,20,140,0"
+                Click="GoToChallengePage_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center"  Text="Go To Multiplayer Team Trials Page" />
+            </Button.Content>
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#996000" Offset="0" />
+                    <GradientStop Color="#BB7000" Offset="0.25" />
+                    <GradientStop Color="#DD8000" Offset="0.5" />
+                    <GradientStop Color="#BB7000" Offset="0.75" />
+                    <GradientStop Color="#996000" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--Switch to Character Modifier Page-->
+        <Button Grid.Row="1"
+                Grid.Column="3"
+                x:Name="CharacterModifiers"
+                Foreground="#111111"
+                FontFamily="Palatino Linotype"
+                FontSize="30"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="-130,20,140,0"
+                Click="GoToCharacterPage_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Go to Free Mode X Multiplayer Page" />
+            </Button.Content>
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#202099" Offset="0" />
+                    <GradientStop Color="#3030BB" Offset="0.25" />
+                    <GradientStop Color="#4040DD" Offset="0.5" />
+                    <GradientStop Color="#3030BB" Offset="0.75" />
+                    <GradientStop Color="#202099" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--Switch to Developers Page-->
+        <Button Grid.Row="3"
+                Grid.Column="3"
+                x:Name="DeveloperPage"
+                Foreground="#181818"
+                FontFamily="Palatino Linotype"
+                FontSize="34"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="140,20,-130,0"
+                Click="GoToDeveloperPage_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Go to Developers Page" />
+            </Button.Content>
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#55165E" Offset="0" />
+                    <GradientStop Color="#661E7E" Offset="0.25" />
+                    <GradientStop Color="#77269E" Offset="0.5" />
+                    <GradientStop Color="#661E7E" Offset="0.75" />
+                    <GradientStop Color="#55165E" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+
+        <!--Switch to Stats Modifier Page-->
+        <Button Grid.Row="0"
+                Grid.Column="3"
+                x:Name="StatsModifiers"
+                Foreground="#444444"
+                FontFamily="Palatino Linotype"
+                FontSize="35"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="-130,20,140,0"
+                Click="GoToStatsPage_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center"  Text="Go to Stats Page" />
+            </Button.Content>
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#991000" Offset="0" />
+                    <GradientStop Color="#BB1800" Offset="0.25" />
+                    <GradientStop Color="#DD2000" Offset="0.5" />
+                    <GradientStop Color="#BB1800" Offset="0.75" />
+                    <GradientStop Color="#991000" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--Switch to Challenge Mode Page-->
+        <Button Grid.Row="3"
+                Grid.Column="3"
+                x:Name="ChallengeModePage"
+                Foreground="#181818"
+                FontFamily="Palatino Linotype"
+                FontSize="34"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="-130,20,140,0"
+                Click="GoToChallengeModePage_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Go to Challenge Mode Page" />
+            </Button.Content>
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#185858" Offset="0" />
+                    <GradientStop Color="#207070" Offset="0.25" />
+                    <GradientStop Color="#288888" Offset="0.5" />
+                    <GradientStop Color="#207070" Offset="0.75" />
+                    <GradientStop Color="#185858" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--Switch to Moveset Editor Mode Page-->
+        <Button Grid.Row="2"
+                Grid.Column="3"
+                x:Name="MovesetEditorPage"
+                Foreground="#181818"
+                FontFamily="Palatino Linotype"
+                FontSize="34"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="140,20,-130,0"
+                Click="GoToMovesetEditorPage_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Go to Moveset Editor Page" />
+            </Button.Content>
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#224466" Offset="0" />
+                    <GradientStop Color="#6688AA" Offset="0.25" />
+                    <GradientStop Color="#AACCEE" Offset="0.5" />
+                    <GradientStop Color="#6688AA" Offset="0.75" />
+                    <GradientStop Color="#224466" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--Switch to Models and Music Page-->
+        <Button Grid.Row="1"
+                Grid.Column="3"
+                x:Name="MusicAndModelsPage"
+                Foreground="#181818"
+                FontFamily="Palatino Linotype"
+                FontSize="34"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="140,20,-130,0"
+                Click="MusicAndModelsPage_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Go to Music And Models Page" />
+            </Button.Content>
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#660033" Offset="0" />
+                    <GradientStop Color="#AA0066" Offset="0.25" />
+                    <GradientStop Color="#EE0099" Offset="0.5" />
+                    <GradientStop Color="#AA0066" Offset="0.75" />
+                    <GradientStop Color="#660033" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+
+        <!--Switch to Miscellaneous Cheats Page-->
+        <Button Grid.Row="4"
+                Grid.Column="3"
+                x:Name="MiscellaneousCheatsPage"
+                Foreground="#181818"
+                FontFamily="Palatino Linotype"
+                FontSize="32"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="-130,20,140,0"
+                Click="MiscellaneousCheatsPage_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Go to Miscellaneous Cheats Page" />
+            </Button.Content>
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#666600" Offset="0" />
+                    <GradientStop Color="#AAAA00" Offset="0.25" />
+                    <GradientStop Color="#EEEE00" Offset="0.5" />
+                    <GradientStop Color="#AAAA00" Offset="0.75" />
+                    <GradientStop Color="#666600" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+
+        <!--Switch to Mysterious Page-->
+        <Button Grid.Row="4"
+                Grid.Column="3"
+                x:Name="MysteriousPage"
+                Foreground="#181818"
+                FontFamily="Palatino Linotype"
+                FontSize="34"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="140,20,-130,0"
+                Click="MysteriousPage_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Go to Towers Page" />
+            </Button.Content>
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#4444AA" Offset="0" />
+                    <GradientStop Color="#7777AA" Offset="0.25" />
+                    <GradientStop Color="#AAAAAA" Offset="0.5" />
+                    <GradientStop Color="#AA7777" Offset="0.75" />
+                    <GradientStop Color="#AA4444" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--Switch to Stats Modifier Page Info-->
+        <Button Grid.Row="0"
+                Grid.Column="3"
+                x:Name="StatsModifiersInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="98,25,145,100"
+                Click="GoToStatsPage_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center"  Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Switch to Character Modifier Page Info-->
+        <Button Grid.Row="1"
+                Grid.Column="3"
+                x:Name="CharacterModifiersInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="98,25,145,100"
+                Click="GoToCharacterPage_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Go To Challenges Page Info-->
+        <Button Grid.Row="2"
+                Grid.Column="3"
+                x:Name="GoToChallengePageInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="98,25,145,100"
+                Click="GoToChallengePage_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center"  Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Switch to Challenge Mode Page Info-->
+        <Button Grid.Row="3"
+                Grid.Column="3"
+                x:Name="ChallengeModePageInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="98,25,145,100"
+                Click="GoToChallengeModePage_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Go To Texture Changer Page Info-->
+        <Button Grid.Row="0"
+                Grid.Column="4"
+                x:Name="GoToTextureChangerInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="93,25,150,100"
+                Click="GoToTextureChanger_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center"  Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Switch to Developers Page Info-->
+        <Button Grid.Row="3"
+                Grid.Column="4"
+                x:Name="DeveloperPageInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="93,25,150,100"
+                Click="GoToDeveloperPage_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Switch to Moveset Editor Page Info-->
+        <Button Grid.Row="2"
+                Grid.Column="4"
+                x:Name="MovesetEditorInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="93,25,150,100"
+                Click="GoToMovesetEditor_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Switch to Models And Music Info-->
+        <Button Grid.Row="1"
+                Grid.Column="4"
+                x:Name="ModelsAndMusicInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="93,25,150,100"
+                Click="GoToModelsAndMusic_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Switch to Miscellaneous Cheats Page Info-->
+        <Button Grid.Row="4"
+                Grid.Column="3"
+                x:Name="MiscellaneousCheatsInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="93,25,150,100"
+                Click="GoToMiscellaneousCheats_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Switch to Mysterious Page Info-->
+        <Button Grid.Row="4"
+                Grid.Column="4"
+                x:Name="MysteriousInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="93,25,150,100"
+                Click="GoToMysterious_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Border Grid.Column="2"
+                Grid.Row="0"
+                Grid.RowSpan="6"
+                BorderThickness="6"
+                Margin="130,0,130,140"
+                BorderBrush="Red" Grid.ColumnSpan="3">
+        </Border>
+
+
+
+        <!--RandomButtonInfo-->
+        <Button Grid.Row="0"
+                Grid.Column="0"
+                x:Name="infoRandomAll"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="210,25,35,100"
+                Click="RandomAll_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--SpikedWallInfo-->
+        <Button Grid.Row="0"
+                Grid.Column="1"
+                x:Name="SpikedWallInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="210,25,35,100"
+                Click="SpikedWall_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--PersonalizedAllInfo-->
+        <Button Grid.Row="1"
+                Grid.Column="0"
+                x:Name="PersonalizedAllInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="210,100,35,25"
+                Click="PersonalizedAll_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--AutoGuardAllInfo-->
+        <Button Grid.Row="1"
+                Grid.Column="1"
+                x:Name="AutoGuardAllInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="210,100,35,25"
+                Click="AutoGuardAll_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Randomize All Upgraded Info-->
+        <Button Grid.Row="3"
+                Grid.Column="1"
+                x:Name="RandomizeAllUpgradedInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="190,15,55,110"
+                Click="RandomizeAllUpgraded_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--RegionalShowdownInfo-->
+        <Button Grid.Row="4"
+                Grid.Column="0"
+                x:Name="infoRegional"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="210,25,35,100"
+                Click="RegionalShowdown_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--P5EnemyInfo-->
+        <Button Grid.Row="3"
+                Grid.Column="0"
+                x:Name="infoShooter"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="210,25,35,100"
+                Click="P5Enemy_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--4VS4Info-->
+        <Button Grid.Row="4"
+                Grid.Column="1"
+                x:Name="info4vs4"
+                Background="#FF00FF"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="230,15,15,110"
+                Click="FourVsFour_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--UltimateUziInfo-->
+        <!--
+        <Button Grid.Row="2"
+                Grid.Column="0"
+                x:Name="infoUzi"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="210,25,35,100"
+                Click="UltimateUzi_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>-->
+
+        <!--Weapons Only Info-->
+        <Button Grid.Row="5"
+                Grid.Column="0"
+                x:Name="WeaponsOnlyInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="210,100,35,25"
+                Click="WeaponsOnlyCodes_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--MaxWeaponsDmgInfo-->
+        <Button Grid.Row="5"
+                Grid.Column="1"
+                x:Name="infoMaxWeaponsDmg"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="210,100,35,25"
+                Click="MaxWeaponsDmg_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Weak Story Opponents Info-->
+        <Button Grid.Row="6"
+                Grid.Column="0"
+                x:Name="WeakStoryOpponentsInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="210,100,35,25"
+                Click="WeakStoryOpponents_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--P1GodInfo-->
+        <Button Grid.Row="6"
+                Grid.Column="1"
+                x:Name="P1GodCodeInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="210,100,35,25"
+                Click="P1God_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Weak Bullets Info-->
+        <Button Grid.Row="6"
+                Grid.Column="2"
+                x:Name="WeakBulletsInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="210,25,35,100"
+                Click="WeakBullets_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Change Code File Name Info-->
+        <Button Grid.Row="1"
+                Grid.Column="6"
+                x:Name="ChangeCodeFileNameInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="226,65,19,60"
+                Click="ChangeCodeFileName_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Activate Moves And Stats Modifier Info-->
+        <Button Grid.Row="3"
+                Grid.Column="5"
+                x:Name="MovesModifiersInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="210,20,35,105"
+                Click="MovesStatsModifier_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Activate Spa Down Modifier Info-->
+        <Button Grid.Row="3"
+                Grid.Column="6"
+                x:Name="SpaDownModifierInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="210,20,35,105"
+                Click="SpaDownModifier_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--OneVersusThree_Info-->
+        <Button Grid.Row="5"
+                Grid.Column="2"
+                x:Name="infoOneVersusThree"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="210,100,35,25"
+                Click="OneVersusThree_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Clear Codes Info-->
+        <Button Grid.Row="6"
+                Grid.Column="4"
+                x:Name="ClearCodesInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="210,25,35,100"
+                Click="Clear_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--Version-->
+        <TextBlock Grid.Row="6"
+                   Grid.Column="6"
+                   Foreground="Gold" 
+                   FontSize="34"
+                   FontWeight="Bold"
+                   Text="{Binding EditorVersion, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="110,5,0,0"/>
+        <!--Discord-->
+        <TextBlock
+            Grid.Row="6"
+            Grid.Column="6"
+            Margin="25,45,0,0"
+            FontSize="35">
+        <Text:Hyperlink
+            NavigateUri="{Binding DiscordServer, UpdateSourceTrigger=PropertyChanged}"
+            RequestNavigate="Hyperlink_RequestNavigate">
+            Discord Server
+        </Text:Hyperlink>
+        </TextBlock>
+        <!--Youtube-->
+        <TextBlock
+            Grid.Row="6"
+            Grid.Column="6"
+            Margin="20,90,0,0"
+            FontSize="35">
+        <Text:Hyperlink
+            NavigateUri="{Binding YoutubeLink, UpdateSourceTrigger=PropertyChanged}"
+            RequestNavigate="Hyperlink_RequestNavigate">
+            Youtube Playlist
+        </Text:Hyperlink>
+        </TextBlock>
+
+
+        <Image Source="{Binding SnowImg2, UpdateSourceTrigger=PropertyChanged}"
+               Grid.RowSpan="3"
+               Grid.Column="4"
+               Grid.ColumnSpan="2"
+               Width="440"
+               Height="440"
+               Margin="98,14,11,9"/>
+
+    </Grid>
+
+
+</UserControl>

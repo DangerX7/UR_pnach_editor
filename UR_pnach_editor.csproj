@@ -1,0 +1,1263 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+	  <ApplicationIcon>UR.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Main\**" />
+    <EmbeddedResource Remove="Main\**" />
+    <None Remove="Main\**" />
+    <Page Remove="Main\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\background.png" />
+    <None Remove="Resources\background2.png" />
+    <None Remove="Resources\back_UI.png" />
+    <None Remove="Resources\Blooding.gif" />
+    <None Remove="Resources\Box.png" />
+    <None Remove="Resources\BoxFocus.png" />
+    <None Remove="Resources\Brad_OhYeah.mp3" />
+    <None Remove="Resources\char_wall.png" />
+    <None Remove="Resources\christmas-brad_hawk.png" />
+    <None Remove="Resources\Cover.png" />
+    <None Remove="Resources\Gate_Clossing.mp3" />
+    <None Remove="Resources\gift_box.png" />
+    <None Remove="Resources\gift_box_open.png" />
+    <None Remove="Resources\Golem_Roar.mp3" />
+    <None Remove="Resources\Gun.gif" />
+    <None Remove="Resources\Ihm.mp3" />
+    <None Remove="Resources\img_1000.png" />
+    <None Remove="Resources\img_101.png" />
+    <None Remove="Resources\img_102.png" />
+    <None Remove="Resources\img_103.png" />
+    <None Remove="Resources\img_104.png" />
+    <None Remove="Resources\img_105.png" />
+    <None Remove="Resources\img_106.png" />
+    <None Remove="Resources\img_107.png" />
+    <None Remove="Resources\img_108.png" />
+    <None Remove="Resources\img_109.png" />
+    <None Remove="Resources\img_110.png" />
+    <None Remove="Resources\img_111.png" />
+    <None Remove="Resources\img_112.png" />
+    <None Remove="Resources\img_113.png" />
+    <None Remove="Resources\img_114.png" />
+    <None Remove="Resources\img_115.png" />
+    <None Remove="Resources\img_116.png" />
+    <None Remove="Resources\img_117.png" />
+    <None Remove="Resources\img_118.png" />
+    <None Remove="Resources\img_119.png" />
+    <None Remove="Resources\img_120.png" />
+    <None Remove="Resources\img_201.png" />
+    <None Remove="Resources\img_202.png" />
+    <None Remove="Resources\img_203.png" />
+    <None Remove="Resources\img_204.png" />
+    <None Remove="Resources\img_205.png" />
+    <None Remove="Resources\img_206.png" />
+    <None Remove="Resources\img_207.png" />
+    <None Remove="Resources\img_208.png" />
+    <None Remove="Resources\img_209.png" />
+    <None Remove="Resources\img_301.png" />
+    <None Remove="Resources\img_302.png" />
+    <None Remove="Resources\img_303.png" />
+    <None Remove="Resources\img_304.png" />
+    <None Remove="Resources\img_305.png" />
+    <None Remove="Resources\img_306.png" />
+    <None Remove="Resources\img_307.png" />
+    <None Remove="Resources\img_308.png" />
+    <None Remove="Resources\img_309.png" />
+    <None Remove="Resources\img_311.png" />
+    <None Remove="Resources\img_312.png" />
+    <None Remove="Resources\img_99.png" />
+    <None Remove="Resources\Leaves.gif" />
+    <None Remove="Resources\movie01.gif" />
+    <None Remove="Resources\movie02.gif" />
+    <None Remove="Resources\movie03.gif" />
+    <None Remove="Resources\movie04.gif" />
+    <None Remove="Resources\movie05.gif" />
+    <None Remove="Resources\movie06.gif" />
+    <None Remove="Resources\movie07.gif" />
+    <None Remove="Resources\movie08.gif" />
+    <None Remove="Resources\movie09.gif" />
+    <None Remove="Resources\movie1.gif" />
+    <None Remove="Resources\movie10.gif" />
+    <None Remove="Resources\movie11.gif" />
+    <None Remove="Resources\movie12.gif" />
+    <None Remove="Resources\movie13.gif" />
+    <None Remove="Resources\movie14.gif" />
+    <None Remove="Resources\movie14.png" />
+    <None Remove="Resources\movie15.gif" />
+    <None Remove="Resources\movie15.png" />
+    <None Remove="Resources\movie16.gif" />
+    <None Remove="Resources\movie17.gif" />
+    <None Remove="Resources\movie18.gif" />
+    <None Remove="Resources\movie19.gif" />
+    <None Remove="Resources\movie2.gif" />
+    <None Remove="Resources\movie20.gif" />
+    <None Remove="Resources\movie21.gif" />
+    <None Remove="Resources\movie22.gif" />
+    <None Remove="Resources\movie23.gif" />
+    <None Remove="Resources\movie24.gif" />
+    <None Remove="Resources\movie3.gif" />
+    <None Remove="Resources\movie4.gif" />
+    <None Remove="Resources\movie5.gif" />
+    <None Remove="Resources\movie6.gif" />
+    <None Remove="Resources\movie7.gif" />
+    <None Remove="Resources\movie8.gif" />
+    <None Remove="Resources\movie9.gif" />
+    <None Remove="Resources\Nightmare.png" />
+    <None Remove="Resources\Nothing.png" />
+    <None Remove="Resources\PreviewSkin1.png" />
+    <None Remove="Resources\PreviewSkin10.png" />
+    <None Remove="Resources\PreviewSkin101.png" />
+    <None Remove="Resources\PreviewSkin102.png" />
+    <None Remove="Resources\PreviewSkin103.png" />
+    <None Remove="Resources\PreviewSkin104.png" />
+    <None Remove="Resources\PreviewSkin105.png" />
+    <None Remove="Resources\PreviewSkin106.png" />
+    <None Remove="Resources\PreviewSkin107.png" />
+    <None Remove="Resources\PreviewSkin108.png" />
+    <None Remove="Resources\PreviewSkin109.png" />
+    <None Remove="Resources\PreviewSkin11.png" />
+    <None Remove="Resources\PreviewSkin110.png" />
+    <None Remove="Resources\PreviewSkin111.png" />
+    <None Remove="Resources\PreviewSkin112.png" />
+    <None Remove="Resources\PreviewSkin113.png" />
+    <None Remove="Resources\PreviewSkin114.png" />
+    <None Remove="Resources\PreviewSkin115.png" />
+    <None Remove="Resources\PreviewSkin116.png" />
+    <None Remove="Resources\PreviewSkin117.png" />
+    <None Remove="Resources\PreviewSkin118.png" />
+    <None Remove="Resources\PreviewSkin119.png" />
+    <None Remove="Resources\PreviewSkin12.png" />
+    <None Remove="Resources\PreviewSkin120.png" />
+    <None Remove="Resources\PreviewSkin121.png" />
+    <None Remove="Resources\PreviewSkin122.png" />
+    <None Remove="Resources\PreviewSkin123.png" />
+    <None Remove="Resources\PreviewSkin124.png" />
+    <None Remove="Resources\PreviewSkin125.png" />
+    <None Remove="Resources\PreviewSkin126.png" />
+    <None Remove="Resources\PreviewSkin127.png" />
+    <None Remove="Resources\PreviewSkin128.png" />
+    <None Remove="Resources\PreviewSkin129.png" />
+    <None Remove="Resources\PreviewSkin13.png" />
+    <None Remove="Resources\PreviewSkin130.png" />
+    <None Remove="Resources\PreviewSkin131.png" />
+    <None Remove="Resources\PreviewSkin132.png" />
+    <None Remove="Resources\PreviewSkin133.png" />
+    <None Remove="Resources\PreviewSkin134.png" />
+    <None Remove="Resources\PreviewSkin135.png" />
+    <None Remove="Resources\PreviewSkin136.png" />
+    <None Remove="Resources\PreviewSkin137.png" />
+    <None Remove="Resources\PreviewSkin138.png" />
+    <None Remove="Resources\PreviewSkin139.png" />
+    <None Remove="Resources\PreviewSkin14.png" />
+    <None Remove="Resources\PreviewSkin140.png" />
+    <None Remove="Resources\PreviewSkin141.png" />
+    <None Remove="Resources\PreviewSkin142.png" />
+    <None Remove="Resources\PreviewSkin143.png" />
+    <None Remove="Resources\PreviewSkin144.png" />
+    <None Remove="Resources\PreviewSkin145.png" />
+    <None Remove="Resources\PreviewSkin146.png" />
+    <None Remove="Resources\PreviewSkin147.png" />
+    <None Remove="Resources\PreviewSkin148.png" />
+    <None Remove="Resources\PreviewSkin149.png" />
+    <None Remove="Resources\PreviewSkin15.png" />
+    <None Remove="Resources\PreviewSkin150.png" />
+    <None Remove="Resources\PreviewSkin151.png" />
+    <None Remove="Resources\PreviewSkin152.png" />
+    <None Remove="Resources\PreviewSkin153.png" />
+    <None Remove="Resources\PreviewSkin154.png" />
+    <None Remove="Resources\PreviewSkin155.png" />
+    <None Remove="Resources\PreviewSkin156.png" />
+    <None Remove="Resources\PreviewSkin157.png" />
+    <None Remove="Resources\PreviewSkin158.png" />
+    <None Remove="Resources\PreviewSkin159.png" />
+    <None Remove="Resources\PreviewSkin16.png" />
+    <None Remove="Resources\PreviewSkin160.png" />
+    <None Remove="Resources\PreviewSkin161.png" />
+    <None Remove="Resources\PreviewSkin162.png" />
+    <None Remove="Resources\PreviewSkin163.png" />
+    <None Remove="Resources\PreviewSkin164.png" />
+    <None Remove="Resources\PreviewSkin165.png" />
+    <None Remove="Resources\PreviewSkin166.png" />
+    <None Remove="Resources\PreviewSkin167.png" />
+    <None Remove="Resources\PreviewSkin168.png" />
+    <None Remove="Resources\PreviewSkin169.png" />
+    <None Remove="Resources\PreviewSkin17.png" />
+    <None Remove="Resources\PreviewSkin170.png" />
+    <None Remove="Resources\PreviewSkin171.png" />
+    <None Remove="Resources\PreviewSkin172.png" />
+    <None Remove="Resources\PreviewSkin173.png" />
+    <None Remove="Resources\PreviewSkin174.png" />
+    <None Remove="Resources\PreviewSkin175.png" />
+    <None Remove="Resources\PreviewSkin176.png" />
+    <None Remove="Resources\PreviewSkin177.png" />
+    <None Remove="Resources\PreviewSkin178.png" />
+    <None Remove="Resources\PreviewSkin179.png" />
+    <None Remove="Resources\PreviewSkin18.png" />
+    <None Remove="Resources\PreviewSkin180.png" />
+    <None Remove="Resources\PreviewSkin181.png" />
+    <None Remove="Resources\PreviewSkin182.png" />
+    <None Remove="Resources\PreviewSkin183.png" />
+    <None Remove="Resources\PreviewSkin184.png" />
+    <None Remove="Resources\PreviewSkin185.png" />
+    <None Remove="Resources\PreviewSkin186.png" />
+    <None Remove="Resources\PreviewSkin187.png" />
+    <None Remove="Resources\PreviewSkin19.png" />
+    <None Remove="Resources\PreviewSkin2.png" />
+    <None Remove="Resources\PreviewSkin20.png" />
+    <None Remove="Resources\PreviewSkin21.png" />
+    <None Remove="Resources\PreviewSkin22.png" />
+    <None Remove="Resources\PreviewSkin23.png" />
+    <None Remove="Resources\PreviewSkin24.png" />
+    <None Remove="Resources\PreviewSkin25.png" />
+    <None Remove="Resources\PreviewSkin26.png" />
+    <None Remove="Resources\PreviewSkin27.png" />
+    <None Remove="Resources\PreviewSkin28.png" />
+    <None Remove="Resources\PreviewSkin29.png" />
+    <None Remove="Resources\PreviewSkin3.png" />
+    <None Remove="Resources\PreviewSkin30.png" />
+    <None Remove="Resources\PreviewSkin31.png" />
+    <None Remove="Resources\PreviewSkin32.png" />
+    <None Remove="Resources\PreviewSkin33.png" />
+    <None Remove="Resources\PreviewSkin34.png" />
+    <None Remove="Resources\PreviewSkin35.png" />
+    <None Remove="Resources\PreviewSkin36.png" />
+    <None Remove="Resources\PreviewSkin37.png" />
+    <None Remove="Resources\PreviewSkin38.png" />
+    <None Remove="Resources\PreviewSkin39.png" />
+    <None Remove="Resources\PreviewSkin4.png" />
+    <None Remove="Resources\PreviewSkin40.png" />
+    <None Remove="Resources\PreviewSkin41.png" />
+    <None Remove="Resources\PreviewSkin42.png" />
+    <None Remove="Resources\PreviewSkin43.png" />
+    <None Remove="Resources\PreviewSkin44.png" />
+    <None Remove="Resources\PreviewSkin45.png" />
+    <None Remove="Resources\PreviewSkin46.png" />
+    <None Remove="Resources\PreviewSkin47.png" />
+    <None Remove="Resources\PreviewSkin48.png" />
+    <None Remove="Resources\PreviewSkin49.png" />
+    <None Remove="Resources\PreviewSkin5.png" />
+    <None Remove="Resources\PreviewSkin50.png" />
+    <None Remove="Resources\PreviewSkin51.png" />
+    <None Remove="Resources\PreviewSkin52.png" />
+    <None Remove="Resources\PreviewSkin53.png" />
+    <None Remove="Resources\PreviewSkin54.png" />
+    <None Remove="Resources\PreviewSkin55.png" />
+    <None Remove="Resources\PreviewSkin56.png" />
+    <None Remove="Resources\PreviewSkin57.png" />
+    <None Remove="Resources\PreviewSkin58.png" />
+    <None Remove="Resources\PreviewSkin59.png" />
+    <None Remove="Resources\PreviewSkin6.png" />
+    <None Remove="Resources\PreviewSkin7.png" />
+    <None Remove="Resources\PreviewSkin8.png" />
+    <None Remove="Resources\PreviewSkin9.png" />
+    <None Remove="Resources\Raining.gif" />
+    <None Remove="Resources\short_sms_tone.mp3" />
+    <None Remove="Resources\SkinPreview1.png" />
+    <None Remove="Resources\SkinPreview2.png" />
+    <None Remove="Resources\Snowing.gif" />
+    <None Remove="Resources\SoundOff.png" />
+    <None Remove="Resources\SoundOn.png" />
+    <None Remove="Resources\SpaWave.mp3" />
+    <None Remove="Resources\tile000.png" />
+    <None Remove="Resources\tile001.png" />
+    <None Remove="Resources\tile002.png" />
+    <None Remove="Resources\tile003.png" />
+    <None Remove="Resources\tile004.png" />
+    <None Remove="Resources\tile005.png" />
+    <None Remove="Resources\tile006.png" />
+    <None Remove="Resources\tile007.png" />
+    <None Remove="Resources\tile008.png" />
+    <None Remove="Resources\tile009.png" />
+    <None Remove="Resources\tile010.png" />
+    <None Remove="Resources\tile011.png" />
+    <None Remove="Resources\tile012.png" />
+    <None Remove="Resources\tile013.png" />
+    <None Remove="Resources\tile014.png" />
+    <None Remove="Resources\tile015.png" />
+    <None Remove="Resources\tile016.png" />
+    <None Remove="Resources\tile017.png" />
+    <None Remove="Resources\tile018.png" />
+    <None Remove="Resources\tile019.png" />
+    <None Remove="Resources\tile020.png" />
+    <None Remove="Resources\tile021.png" />
+    <None Remove="Resources\tile022.png" />
+    <None Remove="Resources\tile023.png" />
+    <None Remove="Resources\tile024.png" />
+    <None Remove="Resources\tile025.png" />
+    <None Remove="Resources\tile026.png" />
+    <None Remove="Resources\tile027.png" />
+    <None Remove="Resources\tile028.png" />
+    <None Remove="Resources\tile029.png" />
+    <None Remove="Resources\tile030.png" />
+    <None Remove="Resources\tile031.png" />
+    <None Remove="Resources\tile032.png" />
+    <None Remove="Resources\tile033.png" />
+    <None Remove="Resources\tile034.png" />
+    <None Remove="Resources\tile035.png" />
+    <None Remove="Resources\tile036.png" />
+    <None Remove="Resources\tile037.png" />
+    <None Remove="Resources\tile038.png" />
+    <None Remove="Resources\tile039.png" />
+    <None Remove="Resources\tile040.png" />
+    <None Remove="Resources\tile041.png" />
+    <None Remove="Resources\tile042.png" />
+    <None Remove="Resources\tile043.png" />
+    <None Remove="Resources\tile044.png" />
+    <None Remove="Resources\tile045.png" />
+    <None Remove="Resources\tile046.png" />
+    <None Remove="Resources\tile047.png" />
+    <None Remove="Resources\tile048.png" />
+    <None Remove="Resources\tile049.png" />
+    <None Remove="Resources\tile050.png" />
+    <None Remove="Resources\tile051.png" />
+    <None Remove="Resources\tile052.png" />
+    <None Remove="Resources\tile053.png" />
+    <None Remove="Resources\tile054.png" />
+    <None Remove="Resources\tile055.png" />
+    <None Remove="Resources\tile056.png" />
+    <None Remove="Resources\tile057.png" />
+    <None Remove="Resources\tile058.png" />
+    <None Remove="Resources\tile059.png" />
+    <None Remove="Resources\tile060.png" />
+    <None Remove="Resources\tile061.png" />
+    <None Remove="Resources\tile062.png" />
+    <None Remove="Resources\tile063.png" />
+    <None Remove="Views\TextureView.xaml.cs~RF334e6b50.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Blooding.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Box.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\BoxFocus.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\gift_box.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\gift_box_open.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_119.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_120.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_311.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_312.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\background2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\back_UI.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\christmas-brad_hawk.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Cover.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Gun.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\img_1000.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_112.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\char_wall.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_102.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_103.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_104.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_105.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_106.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_107.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_108.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_109.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_110.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_111.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_113.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_114.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_115.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_116.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_117.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_118.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_201.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_202.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_203.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_204.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_205.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_206.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_207.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_208.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_209.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_301.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_302.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_303.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_304.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_305.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_306.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_307.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_308.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Leaves.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\movie1.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\movie10.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\movie11.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\movie12.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\movie13.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\movie14.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\movie15.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\movie16.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\movie17.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\movie18.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\movie19.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\movie2.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\movie20.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\movie21.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\movie22.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\movie23.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\movie24.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\movie3.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\movie4.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\movie5.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\movie6.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\movie7.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\movie8.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\movie9.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Nightmare.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Nothing.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin10.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin101.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin102.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin103.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin104.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin105.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin106.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin107.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin108.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin109.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin11.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin110.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin111.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin112.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin113.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin114.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin115.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin116.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin117.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin118.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin119.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin12.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin120.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin121.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin122.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin123.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin124.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin125.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin126.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin127.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin128.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin129.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin13.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin130.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin131.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin132.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin133.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin134.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin135.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin136.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin137.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin138.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin139.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin14.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin140.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin141.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin142.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin143.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin144.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin145.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin146.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin147.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin148.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin149.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin15.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin150.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin151.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin152.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin153.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin154.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin155.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin156.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin157.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin158.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin159.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin160.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin161.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin162.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin163.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin164.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin165.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin166.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin167.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin168.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin169.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin17.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin170.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin171.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin172.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin173.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin174.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin175.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin176.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin177.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin178.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin179.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin18.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin180.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin181.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin182.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin183.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin184.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin185.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin186.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin187.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin19.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin20.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin21.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin22.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin23.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin25.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin26.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin27.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin28.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin29.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin30.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin31.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin33.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin34.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin35.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin36.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin37.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin38.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin39.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin40.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin41.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin42.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin43.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin44.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin45.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin46.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin47.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin48.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin49.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin50.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin51.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin52.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin53.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin54.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin55.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin56.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin57.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin58.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin59.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin7.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin8.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin9.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Raining.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Snowing.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\SoundOff.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\SoundOn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile010.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\background.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_101.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile000.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile001.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile002.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile003.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile004.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile005.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile006.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile007.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile008.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile009.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile011.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile012.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile013.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile014.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile015.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile016.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile017.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile018.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile019.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile020.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile021.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile022.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile023.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile024.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile025.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile026.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile027.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile028.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile029.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile030.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile031.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile032.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile033.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile034.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile035.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile036.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile037.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile038.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile039.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile040.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile041.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile042.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile043.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile044.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile045.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile046.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile047.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile048.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile049.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile050.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile051.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile052.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile053.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile054.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile055.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile056.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile057.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile058.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile059.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile060.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile061.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile062.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\tile063.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="6.1.2" />
+    <PackageReference Include="Ionic.Zlib" Version="1.9.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="NAudio" Version="2.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="SharpZipLib" Version="1.4.2" />
+    <PackageReference Include="System.Data.HashFunction.CRC" Version="2.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+    <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\short_sms_tone.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\CharacterView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>

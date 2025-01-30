@@ -1,0 +1,795 @@
+﻿<UserControl x:Class="UR_pnach_editor.Views.DeveloperView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UR_pnach_editor.Views" xmlns:viewmodels="clr-namespace:UR_pnach_editor.ViewModels"
+             mc:Ignorable="d"
+             d:DesignHeight="1080" d:DesignWidth="1920"
+             xmlns:gif = "https://github.com/XamlAnimatedGif/XamlAnimatedGif"
+             >
+
+
+    <Grid Height="1080" Width="1920">
+
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/background2.png"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="356*"/>
+            <ColumnDefinition Width="146*"/>
+            <ColumnDefinition Width="281*"/>
+            <ColumnDefinition Width="284*"/>
+            <ColumnDefinition Width="284*"/>
+            <ColumnDefinition Width="284*"/>
+            <ColumnDefinition Width="284*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Image x:Name="gifImage"
+               Width="1920"
+               Height="1080"
+               Grid.ColumnSpan="100"
+               Grid.RowSpan="100"/>
+
+        <MediaElement x:Name="customSound" LoadedBehavior="Play" Grid.ColumnSpan="2" Margin="0,0,145,0"/>
+
+        <Image x:Name="SoundBtn" 
+               Source="{Binding SoundButton}"
+               Grid.Row="5"
+               Grid.RowSpan="2"
+               Grid.Column="4"
+               Margin="82,37,69,60"
+               MouseLeftButtonDown="MouseLeftClickSound"/>
+
+        <!--Tool Status-->
+        <TextBlock Grid.Row="0"
+                   Grid.Column="2"
+                   FontFamily="Palatino Linotype"
+                   Name="stat1"
+                   FontSize="36"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="Codes"
+                   Margin="281,5,180,55" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Row="0"
+                   Grid.Column="4"
+                   FontFamily="Palatino Linotype"
+                   Name="stat1x"
+                   FontSize="36"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="{Binding CodesStatus, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="0,5,100,55"/>
+        <TextBlock Grid.Row="0"
+                   Grid.Column="2"
+                   FontFamily="Palatino Linotype"
+                   Name="stat2"
+                   FontSize="36"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="Skins"
+                   Margin="281,55,180,0" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Row="0"
+                   Grid.Column="4"
+                   FontFamily="Palatino Linotype"
+                   Name="stat2x"
+                   FontSize="36"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="{Binding SkinsStatus, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="0,55,100,0"/>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="2"
+                   FontFamily="Palatino Linotype"
+                   Name="stat3"
+                   FontSize="36"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="Models"
+                   Margin="281,0,160,55" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="4"
+                   FontFamily="Palatino Linotype"
+                   Name="stat3x"
+                   FontSize="36"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="{Binding ModelsStatus, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="0,0,100,55"/>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="2"
+                   FontFamily="Palatino Linotype"
+                   Name="stat4"
+                   FontSize="36"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="Moveset"
+                   Margin="281,50,140,0" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="4"
+                   FontFamily="Palatino Linotype"
+                   Name="stat4x"
+                   FontSize="36"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="{Binding MovesetStatus, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="0,50,100,0"/>
+        <TextBlock Grid.Row="2"
+                   Grid.Column="2"
+                   FontFamily="Palatino Linotype"
+                   Name="stat5"
+                   FontSize="36"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="Music"
+                   Margin="281,-5,80,40" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Row="2"
+                   Grid.Column="4"
+                   FontFamily="Palatino Linotype"
+                   Name="stat5x"
+                   FontSize="36"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="{Binding MusicStatus, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="0,-5,0,40"/>
+        <TextBlock Grid.Row="2"
+                   Grid.Column="2"
+                   FontFamily="Palatino Linotype"
+                   Name="stat6"
+                   FontSize="36"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="Folder Paths"
+                   Margin="281,50,160,10" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Row="2"
+                   Grid.Column="4"
+                   FontFamily="Palatino Linotype"
+                   Name="stat6x"
+                   FontSize="36"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="{Binding FolderPathsStatus, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="0,50,100,0"/>
+        <TextBlock Grid.Row="3"
+                   Grid.Column="2"
+                   FontFamily="Palatino Linotype"
+                   Name="stat7"
+                   FontSize="36"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="Stats"
+                   Margin="281,-5,80,40" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Row="3"
+                   Grid.Column="4"
+                   FontFamily="Palatino Linotype"
+                   Name="stat7x"
+                   FontSize="36"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="{Binding StatsStatus, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="0,-5,0,40"/>
+        <TextBlock Grid.Row="3"
+                   Grid.Column="2"
+                   FontFamily="Palatino Linotype"
+                   Name="stat8"
+                   FontSize="36"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="Effect"
+                   Margin="281,55,80,0" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Row="3"
+                   Grid.Column="4"
+                   FontFamily="Palatino Linotype"
+                   Name="stat8x"
+                   FontSize="36"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="{Binding EffectStatus, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="0,55,0,0"/>
+
+
+
+        <Border Grid.Column="2"
+                Grid.ColumnSpan="3"
+                Grid.Row="0"
+                Grid.RowSpan="4"
+                BorderThickness="6"
+                Margin="275,0,6,0"
+                BorderBrush="Purple">
+        </Border>
+
+
+
+        <!--Original Codes-->
+        <TextBlock Grid.Row="7"
+                   Grid.Column="0"
+                   FontFamily="Palatino Linotype"
+                   Name="cT"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightCoral"
+                   Text="Original Codes" Grid.ColumnSpan="2" Margin="0,0,145,0" />
+        <TextBlock Grid.Row="8"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3"
+                   FontFamily="Palatino Linotype"
+                   Name="code1"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightCoral"
+                   Margin="0,0,-50,0"
+                   Text="Same Characters: R2, R2, ▢, ▢, ❌, R2, L1, ↑, ↓, ↑, ↑, ↑, ▢" />
+        <TextBlock Grid.Row="9"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3"
+                   FontFamily="Palatino Linotype"
+                   Name="code2"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightCoral"
+                   Margin="0,0,-50,0"
+                   Text="2Players Free Mode: L1, R2, ⭕, ⭕, 🔺, L2, R1, ⭕, 🔺, ⭕," />
+        <TextBlock Grid.Row="10"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3"
+                   FontFamily="Palatino Linotype"
+                   Name="code3"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightCoral"
+                   Margin="0,0,-50,0"
+                   Text="Weapons F.M.: L1, R1, L2, R2, L2, ⭕, R2, ↑, R2, R2, ⭕, ❌, R1" />
+
+        <Border Grid.Column="0"
+                Grid.ColumnSpan="4"
+                Grid.Row="6"
+                Grid.RowSpan="6"
+                BorderThickness="6"
+                Margin="-6,102,249,102"
+                BorderBrush="Blue">
+        </Border>
+
+
+
+        <!--SearchValues-->
+        <Button Grid.Row="0"
+                Grid.Column="6"
+                x:Name="SearchCodes"
+                Background="#2222FF"
+                FontFamily="Garamond"
+                FontSize="36"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="SearchCodes_Click">
+            Manual Input
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--InputBeginCode-->
+        <TextBox x:Name="InputBeginCode"
+                 Grid.Column="6"
+                 Grid.Row="1"
+                 FontSize="30"
+                 MaxLength="8"
+                 Margin="50,10,50,60"/>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="5"
+                   Name="ad1"
+                   FontFamily="Palatino Linotype"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Starting Address"
+                   Margin="90,8,254,0" Grid.ColumnSpan="2"/>
+
+
+        <!--InputEndCode-->
+        <TextBox x:Name="InputEndCode"
+                 Grid.Column="6"
+                 Grid.Row="1"
+                 FontSize="30"
+                 MaxLength="8"
+                 Margin="50,60,50,10"/>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="5"
+                   FontFamily="Palatino Linotype"
+                   Name="ad2"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Last Address"
+                   Margin="140,56,254,0" Grid.ColumnSpan="2"/>
+
+        <!--InputValueCode-->
+        <TextBox x:Name="InputValueCode"
+                 Grid.Column="6"
+                 Grid.Row="2"
+                 MaxLength="8"
+                 FontSize="30"
+                 Margin="60,30,60,40"/>
+        <TextBlock Grid.Row="2"
+                   Grid.Column="5"
+                   Name="ad3"
+                   FontFamily="Palatino Linotype"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Value"
+                   Margin="220,28,254,0" Grid.ColumnSpan="2"/>
+
+        <Border Grid.Column="5"
+                Grid.ColumnSpan="2"
+                Grid.Row="0"
+                Grid.RowSpan="4"
+                BorderThickness="6"
+                Margin="60,0,0,102"
+                BorderBrush="darkcyan">
+        </Border>
+
+
+
+        <!--EuropeanVersionCheats-->
+        <Button Grid.Row="6"
+                Grid.Column="6"
+                x:Name="eurocodes"
+                Background="#88CC22"
+                FontFamily="Garamond"
+                FontSize="32"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="EuropeanCodes_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="European Version Cheats" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--Developers-->
+        <TextBlock Grid.Row="4"
+                   Grid.Column="5"
+                   FontFamily="Palatino Linotype"
+                   Name="devX"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Developers"
+                   TextAlignment="Center"
+                   Margin="0,10,0,0"/>
+        <TextBlock Grid.Row="4"
+                   Grid.Column="5"
+                   FontFamily="Palatino Linotype"
+                   Name="dev1"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Gold"
+                   Text="Danger X"
+                   TextAlignment="Center"
+                   Margin="0,60,0,0"/>
+        <TextBlock Grid.Row="5"
+                   Grid.Column="5"
+                   FontFamily="Palatino Linotype"
+                   Name="dev2"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Gold"
+                   Text="So007"
+                   TextAlignment="Center"
+                   Margin="0,10,0,0"/>
+        <TextBlock Grid.Row="5"
+                   Grid.Column="5"
+                   FontFamily="Palatino Linotype"
+                   Name="dev3"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Kyle Shinji"
+                   TextAlignment="Center"
+                   Margin="0,60,0,0"/>
+        <TextBlock Grid.Row="6"
+                   Grid.Column="5"
+                   FontFamily="Palatino Linotype"
+                   Name="dev4"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Extra Stellar"
+                   TextAlignment="Center"
+                   Margin="0,10,0,0"/>
+        <TextBlock Grid.Row="6"
+                   Grid.Column="5"
+                   FontFamily="Palatino Linotype"
+                   Name="dev5"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Infinity Ninja"
+                   TextAlignment="Center"
+                   Margin="0,60,0,0"/>
+        <TextBlock Grid.Row="7"
+                   Grid.Column="5"
+                   FontFamily="Palatino Linotype"
+                   Name="dev6"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Haru"
+                   TextAlignment="Center"
+                   Margin="0,10,0,0"/>
+        <TextBlock Grid.Row="7"
+                   Grid.Column="5"
+                   FontFamily="Palatino Linotype"
+                   Name="dev7"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Flowchart Ken"
+                   TextAlignment="Center"
+                   Margin="0,60,0,-60"/>
+        <TextBlock Grid.Row="8"
+                   Grid.Column="5"
+                   FontFamily="Palatino Linotype"
+                   Name="dev8"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Ganesh"
+                   TextAlignment="Center"
+                   Margin="0,60,0,-60"/>
+        <TextBlock Grid.Row="9"
+                   Grid.Column="5"
+                   FontFamily="Palatino Linotype"
+                   Name="dev9"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Steve Craft"
+                   TextAlignment="Center"
+                   Margin="0,60,0,-60"/>
+
+        <Border Grid.Column="5"
+                Grid.Row="4"
+                Grid.RowSpan="8"
+                BorderThickness="6"
+                Margin="0,0,5,102"
+                BorderBrush="Red"/>
+
+
+        <!--Version-->
+        <TextBlock Grid.Row="8"
+                   Grid.Column="6"
+                   Name="rel1"
+                   FontFamily="Palatino Linotype"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="{Binding EditorVersion, UpdateSourceTrigger=PropertyChanged}"
+                   TextAlignment="Center"/>
+        <TextBlock Grid.Row="9"
+                   Grid.Column="6"
+                   FontFamily="Palatino Linotype"
+                   Name="rel2"
+                   FontSize="25"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="{Binding EditorReleaseDate, UpdateSourceTrigger=PropertyChanged}"
+                   TextAlignment="Center"/>
+        <Border Grid.Column="5"
+                Grid.Row="7"
+                Grid.RowSpan="4"
+                BorderThickness="6"
+                Margin="279,48,0,48"
+                BorderBrush="black" Grid.ColumnSpan="2">
+        </Border>
+
+
+        <Image Source="/Resources/Cover.png"
+               Grid.Row="3"
+               Grid.RowSpan="4"
+               Grid.Column="0"
+               Grid.ColumnSpan="3"
+               Margin="96,26,93,0"
+               Height="382"
+               VerticalAlignment="Top"/>
+
+
+
+
+        <!--Switch to Main Page-->
+        <Button Grid.Row="11"
+                Grid.Column="6"
+                x:Name="GetBackToMainPage"
+                Background="#251446"
+                Foreground="#BBBBBB"
+                FontFamily="Times New Roman"
+                FontSize="28"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="GoToMainPage_Click">
+            Back to Main Menu
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Stats Change-->
+        <Button Grid.Row="5"
+                Grid.Column="3"
+                x:Name="StatsChange"
+                Background="#666666"
+                Foreground="#222222"
+                FontFamily="Calibri"
+                FontSize="48"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="StatsChange_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Swap Stats" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--Change Editor Effects-->
+        <!--<Button Grid.Row="7"
+                Grid.Column="4"
+                Grid.RowSpan="2"
+                x:Name="EditorEffects"
+                Background="#663311"
+                FontFamily="Calibri"
+                FontSize="48"
+                FontWeight="Bold"
+                Margin="-150,0,150,0"
+                Click="EditorEffects_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="EditorEffects" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>-->
+        <TextBlock Grid.Row="8"
+                   Grid.Column="3"
+                   Name="editorEffectText"
+                   FontFamily="Calibri"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Editor Effects"
+                   TextAlignment="Center" Grid.ColumnSpan="2" Margin="149,0,204,0"/>
+        <ComboBox x:Name="EditorEffect"
+                Grid.Column="3"
+                Grid.ColumnSpan="2"
+                Grid.Row="9"
+                FontSize="32"
+                Margin="149,0,161,0"
+                SelectionChanged="EditorEffect_SelectionChanged" />
+        <Border Grid.Column="3"
+                Grid.Row="7"
+                Grid.RowSpan="3"
+                BorderThickness="6"
+                Margin="136,48,148,-20"
+                BorderBrush="Orange" Grid.ColumnSpan="2"/>
+
+        <!--SearchValuesInfo-->
+        <Button Grid.Row="0"
+                Grid.Column="5"
+                x:Name="SearchCodesInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="100,35,30,35"
+                Click="SearchCodes_Info">
+            Information
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--EuropeanVersionCheatsInfo-->
+        <Button Grid.Row="6"
+                Grid.Column="6"
+                x:Name="eurocodesInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="210,15,35,60"
+                Click="EuropeanCodes_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--Stats Change Info-->
+        <Button Grid.Row="5"
+                Grid.Column="3"
+                x:Name="WeakBulletsInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="235,5,15,75"
+                Click="StatsChange_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--Editor Effects Info-->
+        <Button Grid.Row="8"
+                Grid.Column="4"
+                x:Name="EditorEffectsInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="87,12,162,9"
+                Click="EditorEffects_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <TextBlock Grid.Row="0"
+           Grid.Column="0"
+           Foreground="#FFAAAA" 
+           FontSize="35"
+           FontWeight="Bold"
+           Text="Face Away Up"
+           Margin="10,10,80,0"/>
+        <ComboBox x:Name="SettingUp"
+          Grid.Column="1"
+          Grid.Row="0"
+          FontSize="32"
+          Margin="-60,10,-200,50"/>
+        <TextBlock Grid.Row="1"
+           Grid.Column="0"
+           Foreground="#FFAAAA" 
+           FontSize="35"
+           FontWeight="Bold"
+           Text="Face to Face"
+           Margin="10,-10,80,20"/>
+        <ComboBox x:Name="SettingNormal"
+          Grid.Column="1"
+          Grid.Row="1"
+          FontSize="32"
+          Margin="-60,-10,-200,70"/>
+        <TextBlock Grid.Row="2"
+           Grid.Column="0"
+           Foreground="#FFAAAA" 
+           FontSize="35"
+           FontWeight="Bold"
+           Text="Face Away Down"
+           Margin="10,-30,70,40"/>
+        <ComboBox x:Name="SettingDown"
+          Grid.Column="1"
+          Grid.Row="2"
+          FontSize="32"
+          Margin="-60,-30,-200,90"/>
+        <TextBlock Grid.Row="2"
+                   Grid.RowSpan="2"
+           Grid.Column="0"
+           Foreground="#FFAAAA" 
+           FontSize="38"
+           FontWeight="Bold"
+           Text="AI use gun"
+           Margin="10,40,140,110"/>
+        <ComboBox x:Name="SettingAI"
+          Grid.Column="1"
+          Grid.Row="3"
+          FontSize="32"
+          Margin="-130,-65,160,120"/>
+
+        <!--Modify Gun-->
+        <Button Grid.Row="2"
+                Grid.Column="1"
+                x:Name="ModifyGun"
+                Background="#456789"
+                Foreground="#654321"
+                FontFamily="Calibri"
+                FontSize="48"
+                FontWeight="Bold"
+                Margin="0,30,-150,0"
+                Click="ModifyGun_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Modify Gun" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <!--Modify Gun Info-->
+        <Button Grid.Row="2"
+                Grid.Column="1"
+                x:Name="ModifyGunInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="240,30,-125,50"
+                Click="ModifyGun_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="i" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <Border Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Grid.Row="0"
+                Grid.RowSpan="4"
+                BorderThickness="6"
+                Margin="0,0,70,100"
+                BorderBrush="Green">
+        </Border>
+
+
+    </Grid>
+
+
+</UserControl>

@@ -1,0 +1,627 @@
+﻿<UserControl x:Class="UR_pnach_editor.Views.MovesetView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UR_pnach_editor.Views" xmlns:viewmodels="clr-namespace:UR_pnach_editor.ViewModels"
+             mc:Ignorable="d"
+             d:DesignHeight="1080" d:DesignWidth="1920">
+
+    <Grid Height="1080" Width="1920">
+
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/background.png"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="54"/>
+            <RowDefinition Height="54"/>
+            <RowDefinition Height="54"/>
+            <RowDefinition Height="54"/>
+            <RowDefinition Height="54"/>
+            <RowDefinition Height="54"/>
+            <RowDefinition Height="54"/>
+            <RowDefinition Height="54"/>
+            <RowDefinition Height="54"/>
+            <RowDefinition Height="54"/>
+            <RowDefinition Height="54"/>
+            <RowDefinition Height="54"/>
+            <RowDefinition Height="54"/>
+            <RowDefinition Height="54"/>
+            <RowDefinition Height="54"/>
+            <RowDefinition Height="54"/>
+            <RowDefinition Height="54"/>
+            <RowDefinition Height="54"/>
+            <RowDefinition Height="54"/>
+            <RowDefinition Height="54"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="520"/>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="520"/>
+            <ColumnDefinition Width="480"/>
+        </Grid.ColumnDefinitions>
+
+        
+        <Image x:Name="gifImage"
+               Width="1920"
+               Height="1080"
+               Grid.ColumnSpan="100"
+               Grid.RowSpan="100"/>
+
+        <MediaElement x:Name="customSound" LoadedBehavior="Play"/>
+
+
+        <!--FilePath-->
+        <TextBox x:Name="FilePath"
+                 Grid.Column="1"
+                 Grid.Row="0"
+                 Grid.RowSpan="2"
+                 FontSize="22"
+                 Text="{Binding GameFolderPath, UpdateSourceTrigger=PropertyChanged}"
+                 MaxLength="200"
+                 Margin="10,20,10,40"/>
+        <!--versionText-->
+        <TextBlock Grid.Row="0"
+                   Grid.RowSpan="2"
+                   Grid.Column="1"
+                   Foreground="Red" 
+                   FontFamily="Palatino Linotype"
+                   FontSize="30"
+                   FontWeight="Bold"
+                   Text="Game Folder Path"
+                   Margin="60,65,145,0" Grid.ColumnSpan="2"/>
+        <!--Save Path-->
+        <Button Grid.Row="2"
+                Grid.RowSpan="2"
+                Grid.Column="1"
+                x:Name="GamePath"
+                Background="#AAAAAA"
+                FontFamily="Times New Roman"
+                FontSize="36"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="40,10,40,40"
+                Click="SavePath_Click">
+            Save Path
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--Master Brad-->
+        <Border Grid.Row="0"
+                Grid.Column="0"
+                Name="check1"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,440,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding MasterBradMoves}"
+                          Width="20"
+                   MouseEnter="MasterBrad_MouseEnter"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="0"
+                   Grid.Column="0"
+                   Name="movelist1"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="#00DD00"
+                   Text="Master Brad"
+                   Margin="60,0,0,0"
+                   MouseEnter="MasterBrad_MouseEnter"/>
+
+        <!--Brad Parry-->
+        <Border Grid.Row="0"
+                Grid.Column="2"
+                Name="check0"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,440,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding BradAndOthersParry}"
+                          Width="20"
+                   MouseEnter="BradAndOthersParry_MouseEnter"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="0"
+                   Grid.Column="2"
+                   Name="movelist0"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="#00BBBB"
+                   Text="Brad Parry"
+                   Margin="60,0,0,0"
+                   MouseEnter="BradAndOthersParry_MouseEnter"/>
+        
+        <!--Golem Broken Shit-->
+        <Border Grid.Row="1"
+                Grid.Column="0"
+                Name="check2"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,440,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding GolemBrokenShitMoves}"
+                          Width="20"
+                   MouseEnter="GolemBrokenShit_MouseEnter"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="0"
+                   Name="movelist2"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="#00DD00"
+                   Text="Golem SPA Master"
+                   Margin="60,0,0,0"
+                   MouseEnter="GolemBrokenShit_MouseEnter"/>
+        
+        
+        <!--Bordin All-Around-->
+        <Border Grid.Row="2"
+                Grid.Column="0"
+                Name="check3"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,440,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding BordinAllAroundMoves}"
+                          Width="20"
+                   MouseEnter="BordinAllAround_MouseEnter"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="2"
+                   Grid.Column="0"
+                   Name="movelist3"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="#00DD00"
+                   Text="Bordin Improved"
+                   Margin="60,0,0,0"
+                   MouseEnter="BordinAllAround_MouseEnter"/>
+
+
+        <!--Paul Ashes-->
+        <Border Grid.Row="3"
+                Grid.Column="0"
+                Name="check4"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,440,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding PaulAshesMoves}"
+                          Width="20"
+                   MouseEnter="PaulAshes_MouseEnter"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="3"
+                   Grid.Column="0"
+                   Name="movelist4"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="#00DD00"
+                   Text="Paul Ashes"
+                   Margin="60,0,0,0"
+                   MouseEnter="PaulAshes_MouseEnter"/>
+
+
+        <!--Sakamoto Ryoma-->
+        <Border Grid.Row="4"
+                Grid.Column="0"
+                Name="check5"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,440,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding SakamotoRyomaMoves}"
+                          Width="20"
+                   MouseEnter="SakamotoRyoma_MouseEnter"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="4"
+                   Grid.Column="0"
+                   Name="movelist5"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="#00DD00"
+                   Text="Sakamoto Ryoma"
+                   Margin="60,0,0,0"
+                   MouseEnter="SakamotoRyoma_MouseEnter"/>
+
+
+        <!--Shin Bordin-->
+        <Border Grid.Row="2"
+                Grid.Column="2"
+                Name="check6"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,440,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding ShinBordinMoves}"
+                          Width="20"
+                   MouseEnter="ShinBordin_MouseEnter"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="2"
+                   Grid.Column="2"
+                   Name="movelist6"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="#00BBBB"
+                   Text="Shin Bordin"
+                   Margin="60,0,0,0"
+                   MouseEnter="ShinBordin_MouseEnter"/>
+
+
+        <!--KOG (KG moveset)-->
+        <Border Grid.Row="5"
+                Grid.Column="0"
+                Name="check7"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,440,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding KOGMoves}"
+                          Width="20"
+                   MouseEnter="KOG_MouseEnter"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="5"
+                   Grid.Column="0"
+                   Name="movelist7"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="#00DD00"
+                   Text="KOG"
+                   Margin="60,0,0,0"
+                   MouseEnter="KOG_MouseEnter"/>
+
+
+        <!--King Jake-->
+        <Border Grid.Row="6"
+                Grid.Column="0"
+                Name="check8"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,440,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding KingJakeMoves}"
+                          Width="20"
+                   MouseEnter="KingJake_MouseEnter"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="6"
+                   Grid.Column="0"
+                   Name="movelist8"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="#00DD00"
+                   Text="King Jake"
+                   Margin="60,0,0,0"
+                   MouseEnter="KingJake_MouseEnter"/>
+
+
+        <!--MMA Gipsies (First Gang)-->
+        <Border Grid.Row="7"
+                Grid.Column="0"
+                Name="check9"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,440,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding MMAGipsiesMoves}"
+                          Width="20"
+                   MouseEnter="MMAGipsies_MouseEnter"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="7"
+                   Grid.Column="0"
+                   Name="movelist9"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="#00DD00"
+                   Text="MMA Gipsies"
+                   Margin="60,0,0,0"
+                   MouseEnter="MMAGipsies_MouseEnter"/>
+
+
+        <!--Riki Densetsu-->
+        <Border Grid.Row="8"
+                Grid.Column="0"
+                Name="check10"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,440,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding RikiDensetsuMoves}"
+                          Width="20"
+                   MouseEnter="RikiDensetsu_MouseEnter"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="8"
+                   Grid.Column="0"
+                   Name="movelist10"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="#00DD00"
+                   Text="Riki Densetsu"
+                   Margin="60,0,0,0"
+                   MouseEnter="RikiDensetsu_MouseEnter"/>
+
+
+        <!--Phoenix Stance Shun Ying-->
+        <Border Grid.Row="9"
+                Grid.Column="0"
+                Name="check11"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,440,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding PhoenixStanceShunYingMoves}"
+                          Width="20"
+                   MouseEnter="PhoenixStanceShunYing_MouseEnter"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="9"
+                   Grid.Column="0"
+                   Name="movelist11"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="#00DD00"
+                   Text="Phoenix Stance Shun Ying"
+                   Margin="60,0,0,0"
+                   MouseEnter="PhoenixStanceShunYing_MouseEnter"/>
+
+
+        <!--Broken Dwayne-->
+        <Border Grid.Row="1"
+                Grid.Column="2"
+                Name="check12"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,440,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding BrokenDwayneMoves}"
+                          Width="20"
+                   MouseEnter="BrokenDwayne_MouseEnter"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="2"
+                   Name="movelist12"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="#00BBBB"
+                   Text="Broken Dwayne"
+                   Margin="60,0,0,0"
+                   MouseEnter="BrokenDwayne_MouseEnter"/>
+
+        
+
+        <!--Modify Button-->
+        <Button Grid.Row="4"
+                Grid.RowSpan="2"
+                Grid.Column="1"
+                x:Name="ApplyMovesets"
+                Background="MediumTurquoise"
+                Foreground="#000000"
+                FontFamily="Century Gothic"
+                FontSize="34"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,40,20,0"
+                Click="MovesetsModify">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Apply Movesets" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        
+        <!--Activate All-->
+        <Button Grid.Row="10"
+                Grid.RowSpan="2"
+                Grid.Column="1"
+                x:Name="ActivateAll"
+                Background="green"
+                FontFamily="Times New Roman"
+                FontSize="42"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,-10,10,-10"
+                Click="ActivateAll_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Activate All Primary Movesets" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Clear Codes-->
+        <Button Grid.Row="16"
+                Grid.RowSpan="2"
+                Grid.Column="1"
+                x:Name="ClearCodes"
+                Background="red"
+                FontFamily="Times New Roman"
+                FontSize="42"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="Clear_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Reset to Original" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--Switch to Main Page-->
+        <Button Grid.Row="18"
+                Grid.RowSpan="2"
+                Grid.Column="7"
+                x:Name="GetBackToMainPage"
+                Background="#251446"
+                Foreground="#BBBBBB"
+                FontFamily="Times New Roman"
+                FontSize="37"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="GoToMainPage_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Back to Main Menu" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <Border Grid.Column="3"
+                Grid.Row="0"
+                Grid.RowSpan="18"
+                BorderThickness="6"
+                Margin="10,10,10,10"
+                BorderBrush="Purple">
+        </Border>
+
+        <!--Information-->
+        <TextBlock Grid.Row="0"
+                   Grid.RowSpan="18"
+                   Grid.Column="4"
+                   Grid.ColumnSpan="3"
+                   Name="info"
+                   FontSize="36"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="{Binding ModeInformation, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="20,20,20,20"/>
+
+
+        <Border Grid.Column="1"
+                Grid.Row="0"
+                Grid.RowSpan="4"
+                BorderThickness="6"
+                Margin="0,0,0,10"
+                BorderBrush="Orange">
+        </Border>
+
+        <!--Apply Movesets Info-->
+        <Button Grid.Row="4"
+                Grid.RowSpan="2"
+                Grid.Column="1"
+                x:Name="ApplyMovesetsInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="396,40,40,30"
+                Click="ApplyMovesets_Info">
+            i
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Activate All Info-->
+        <Button Grid.Row="10"
+                Grid.RowSpan="2"
+                Grid.Column="1"
+                x:Name="ActivateAllInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="406,60,30,10"
+                Click="ActivateAll_Info">
+            i
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        
+        <!--Reset All Info-->
+        <Button Grid.Row="16"
+                Grid.RowSpan="2"
+                Grid.Column="1"
+                x:Name="ResetAllInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="406,20,30,50"
+                Click="ResetAll_Info">
+            i
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+    </Grid>
+
+
+</UserControl>

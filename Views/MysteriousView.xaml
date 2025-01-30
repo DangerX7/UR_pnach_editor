@@ -1,0 +1,206 @@
+﻿<UserControl x:Class="UR_pnach_editor.Views.MysteriousView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UR_pnach_editor.Views" xmlns:viewmodels="clr-namespace:UR_pnach_editor.ViewModels"
+             xmlns:gif="http://wpfanimatedgif.codeplex.com"
+             mc:Ignorable="d"
+             d:DesignHeight="1080" d:DesignWidth="1920">
+
+
+
+    <Grid Height="1080" Width="1920">
+
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/background2.png"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="356*"/>
+            <ColumnDefinition Width="313*"/>
+            <ColumnDefinition Width="114*"/>
+            <ColumnDefinition Width="284*"/>
+            <ColumnDefinition Width="284*"/>
+            <ColumnDefinition Width="284*"/>
+            <ColumnDefinition Width="284*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="gifImage"
+               Width="1920"
+               Height="1080"
+               Grid.ColumnSpan="100"
+               Grid.RowSpan="100"/>
+
+        <MediaElement x:Name="customSound" LoadedBehavior="Play" Grid.ColumnSpan="2" Margin="0,0,145,0"/>
+
+        <!--Animated Gifs-->
+        <Image gif:ImageBehavior.AnimatedSource=
+               "{Binding AnimatedSource}"
+               Grid.Column="3"
+               Grid.Row="1"
+               Grid.RowSpan="3"
+               Grid.ColumnSpan="2"
+               Margin="235,101,10,7"/>
+        <Image gif:ImageBehavior.AnimatedSource=
+               "{Binding AnimatedSource2}"
+               Grid.Column="4"
+               Grid.Row="5"
+               Grid.RowSpan="3"
+               Grid.ColumnSpan="2"
+               Margin="213,35,32,19"/>
+        <Image gif:ImageBehavior.AnimatedSource=
+               "{Binding AnimatedSource3}"
+               Grid.Row="5"
+               Grid.RowSpan="3"
+               Grid.ColumnSpan="3"
+               Margin="81,10,278,44" Grid.Column="2"/>
+
+
+        <TextBlock Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   FontFamily="Courier New"
+                   Foreground="#22EEEE" 
+                   FontSize="44"
+                   FontWeight="Bold"
+                   Text="Towers Mode"
+                   Margin="200,20,170,30"/>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="0"
+                   FontFamily="Palatino Linotype"
+                   Foreground="Yellow" 
+                   FontSize="36"
+                   FontWeight="Bold"
+                   Text="Modifier Difficulty: "
+                   Margin="10,0,0,54"/>
+        <ComboBox x:Name="DifficultyBox"
+                  Grid.Column="1"
+                  Grid.Row="1"
+                  FontSize="26"
+                  Margin="0,0,10,50"/>
+        <TextBlock Grid.Row="2"
+                   Grid.Column="0"
+                   FontFamily="Palatino Linotype"
+                   Foreground="Yellow" 
+                   FontSize="36"
+                   FontWeight="Bold"
+                   Text="Number of Rounds: "
+                   Margin="10,0,0,54"/>
+        <ComboBox x:Name="EnemiesBox"
+                  Grid.Column="1"
+                  Grid.Row="2"
+                  FontSize="26"
+                  Margin="0,0,10,50"/>
+        <TextBlock Grid.Row="3"
+                   Grid.Column="0"
+                   FontFamily="Palatino Linotype"
+                   Foreground="Yellow" 
+                   FontSize="36"
+                   FontWeight="Bold"
+                   Text="Enemies AI: "
+                   Margin="10,0,0,54"/>
+        <ComboBox x:Name="EnemiesDifBox"
+                  Grid.Column="1"
+                  Grid.Row="3"
+                  FontSize="26"
+                  Margin="0,0,10,50"/>
+        <TextBlock Grid.Row="4"
+                   Grid.Column="0"
+                   FontFamily="Palatino Linotype"
+                   Foreground="#FFFF00" 
+                   FontSize="36"
+                   FontWeight="Bold"
+                   Text="Challenge Format: "
+                   Margin="10,0,0,54"/>
+        <ComboBox x:Name="ChallengeFormatBox"
+                  Grid.Column="1"
+                  Grid.Row="4"
+                  FontSize="26"
+                  Margin="0,0,10,50"/>
+        <Button Grid.Row="5"
+            Grid.Column="1"
+            x:Name="SwapMusic"
+            Background="#008890"
+            Foreground="#FFFFFF"
+            FontFamily="Garamond"
+            FontSize="40"
+            FontStyle="Italic"
+            FontWeight="Bold"
+            Margin="0,0,10,10"
+            Click="GenerateCodes_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Generate Codes" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <!--Modifiers Info-->
+        <Button Grid.Row="5"
+                Grid.Column="0"
+                x:Name="ModifiersInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="133,35,150,35"
+                Click="Modifiers_Info">
+            Info
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Border Grid.Column="0"
+                Grid.Row="0"
+                Grid.RowSpan="6"
+                BorderThickness="6"
+                Margin="0,0,0,0"
+                BorderBrush="Purple" Grid.ColumnSpan="2">
+        </Border>
+
+
+        <!--Switch to Main Page-->
+        <Button Grid.Row="11"
+                Grid.Column="6"
+                x:Name="GetBackToMainPage"
+                Background="#251446"
+                Foreground="#BBBBBB"
+                FontFamily="Times New Roman"
+                FontSize="32"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="GoToMainPage_Click">
+            Back to Main Menu
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+    </Grid>
+
+
+</UserControl>

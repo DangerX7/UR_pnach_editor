@@ -1,0 +1,1675 @@
+﻿<UserControl x:Class="UR_pnach_editor.Views.CharacterView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UR_pnach_editor.Views" xmlns:viewmodels="clr-namespace:UR_pnach_editor.ViewModels"
+             mc:Ignorable="d"
+             d:DesignHeight="1080" d:DesignWidth="1920">
+
+
+
+    <Grid Height="1080" Width="1920" x:Name ="myGrid">
+
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/background.png"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="210*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="450*"/>
+            <ColumnDefinition Width="210*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Image x:Name="gifImage"
+               Width="1920"
+               Height="1080"
+               Grid.ColumnSpan="100"
+               Grid.RowSpan="100"/>
+
+        <MediaElement x:Name="customSound" LoadedBehavior="Play"/>
+
+        <!--Everyone-->
+        <TextBlock Grid.Row="0"
+                   Grid.Column="0"
+                   Name="everyone"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Everyone"
+                   Margin="20,10,0,0"/>
+        <!--Enemies-->
+        <TextBlock Grid.Row="0"
+                   Grid.Column="0"
+                   Name="enemies"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Enemies"
+                   Margin="20,10,0,0"/>
+        <!--Everyone-->
+        <Button Grid.Row="0"
+                Grid.Column="1"
+                x:Name="AllChar"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,13,10,13"
+                Click="EveryoneStatsModifier_Click"
+                MouseRightButtonDown="EveryoneDefaultStats_Click">
+        </Button>
+
+        <!--Player 1-->
+        <TextBlock Grid.Row="1"
+                   Grid.Column="0"
+                   Name="P1"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="Player 1"
+                   Margin="20,10,0,0"/>
+        <!--Player 1-->
+        <TextBlock Grid.Row="1"
+                   Grid.Column="0"
+                   Name="Player1"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightYellow"
+                   Text="Player 1"
+                   Margin="20,10,0,0"/>
+        <!--P1Char-->
+        <Button Grid.Row="1"
+                Grid.Column="1"
+                x:Name="P1Char"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="P1StatsModifier_Click"
+                MouseRightButtonDown="P1DefaultStats_Click">
+        </Button>
+
+        <!--Player 2-->
+        <TextBlock Grid.Row="2"
+                   Grid.Column="0"
+                   Name="P2"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="Player 2"
+                   Margin="20,10,0,0"/>
+        <!--Player 2-->
+        <TextBlock Grid.Row="2"
+                   Grid.Column="0"
+                   Name="Player2"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightYellow"
+                   Text="Player 2"
+                   Margin="20,10,0,0"/>
+        <!--P2Char-->
+        <Button Grid.Row="2"
+                Grid.Column="1"
+                x:Name="P2Char"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="P2StatsModifier_Click"
+                MouseRightButtonDown="P2DefaultStats_Click">
+        </Button>
+
+        <!--Player 3-->
+        <TextBlock Grid.Row="3"
+                   Grid.Column="0"
+                   Name="P3"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="Player 3"
+                   Margin="20,10,0,0"/>
+        <!--Enemy 1-->
+        <TextBlock Grid.Row="3"
+                   Grid.Column="0"
+                   Name="Enemy1"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightYellow"
+                   Text="Enemy 1"
+                   Margin="20,10,0,0"/>
+        <!--P3Char-->
+        <Button Grid.Row="3"
+                Grid.Column="1"
+                x:Name="P3Char"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="P3StatsModifier_Click"
+                MouseRightButtonDown="P3DefaultStats_Click">
+        </Button>
+
+        <!--Player 4-->
+        <TextBlock Grid.Row="4"
+                   Grid.Column="0"
+                   Name="P4"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="Player 4"
+                   Margin="20,10,0,0"/>
+        <!--Enemy 2-->
+        <TextBlock Grid.Row="4"
+                   Grid.Column="0"
+                   Name="Enemy2"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightYellow"
+                   Text="Enemy 2"
+                   Margin="20,10,0,0"/>
+        <!--P4Char-->
+        <Button Grid.Row="4"
+                Grid.Column="1"
+                x:Name="P4Char"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="P4StatsModifier_Click"
+                MouseRightButtonDown="P4DefaultStats_Click">
+        </Button>
+
+        <!--Enemy 3-->
+        <TextBlock Grid.Row="5"
+                   Grid.Column="0"
+                   Name="Enemy3"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightYellow"
+                   Text="Enemy 3"
+                   Margin="20,10,0,0"/>
+        <!--P5Char-->
+        <Button Grid.Row="5"
+                Grid.Column="1"
+                x:Name="P5Char"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="P5StatsModifier_Click"
+                MouseRightButtonDown="P5DefaultStats_Click"
+                >
+        </Button>
+
+        <!--Enemy 4-->
+        <TextBlock Grid.Row="6"
+                   Grid.Column="0"
+                   Name="Enemy4"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightYellow"
+                   Text="Enemy 4"
+                   Margin="20,10,0,0"/>
+        <!--P6Char-->
+        <Button Grid.Row="6"
+                Grid.Column="1"
+                x:Name="P6Char"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="P6StatsModifier_Click"
+                MouseRightButtonDown="P6DefaultStats_Click">
+        </Button>
+
+        <!--Enemy 5-->
+        <TextBlock Grid.Row="7"
+                   Grid.Column="0"
+                   Name="Enemy5"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightYellow"
+                   Text="Enemy 5"
+                   Margin="20,10,0,0"/>
+        <!--P7Char-->
+        <Button Grid.Row="7"
+                Grid.Column="1"
+                x:Name="P7Char"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="P7StatsModifier_Click"
+                MouseRightButtonDown="P7DefaultStats_Click">
+        </Button>
+
+        <!--Enemy 6-->
+        <TextBlock Grid.Row="8"
+                   Grid.Column="0"
+                   Name="Enemy6"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightYellow"
+                   Text="Enemy 6"
+                   Margin="20,10,0,0"/>
+        <!--P8Char-->
+        <Button Grid.Row="8"
+                Grid.Column="1"
+                x:Name="P8Char"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="P8StatsModifier_Click"
+                MouseRightButtonDown="P8DefaultStats_Click">
+        </Button>
+
+        <Border Grid.Column="13"
+                Grid.ColumnSpan="2"
+                Grid.Row="0"
+                Grid.RowSpan="12"
+                BorderThickness="6"
+                Margin="16,2,-8,2"
+                BorderBrush="Green">
+            <Border.Background>
+                <ImageBrush ImageSource="/Resources/back_UI.png"/>
+            </Border.Background>
+        </Border>
+        <!--Stats-->
+        <TextBlock Grid.Row="0"
+                   Grid.Column="14"
+                   FontSize="44"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Strike"
+                FontFamily="Courier New"
+                   Margin="20,20,0,0"/>
+        <TextBlock Grid.Row="0"
+                   Grid.Column="13"
+                   FontSize="38"
+                   Foreground="White"
+                   Text="{Binding StrikePoints, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="30,10,0,0"/>
+
+        <TextBlock Grid.Row="1"
+                   Grid.Column="14"
+                   FontSize="44"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Grapple"
+                FontFamily="Courier New"
+                   Margin="20,20,0,0"/>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="13"
+                   FontSize="38"
+                   Foreground="White"
+                   Text="{Binding GrapplePoints, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="30,10,0,0"/>
+
+        <TextBlock Grid.Row="2"
+                   Grid.Column="14"
+                   FontSize="44"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Regional"
+                FontFamily="Courier New"
+                   Margin="20,20,0,0"/>
+        <TextBlock Grid.Row="2"
+                   Grid.Column="13"
+                   FontSize="38"
+                   Foreground="White"
+                   Text="{Binding RegionalPoints, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="30,10,0,0"/>
+
+        <TextBlock Grid.Row="3"
+                   Grid.Column="14"
+                   FontSize="44"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Special"
+                FontFamily="Courier New"
+                   Margin="20,20,0,0"/>
+        <TextBlock Grid.Row="3"
+                   Grid.Column="13"
+                   FontSize="38"
+                   Foreground="White"
+                   Text="{Binding SpecialPoints, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="30,10,0,0"/>
+
+        <TextBlock Grid.Row="4"
+                   Grid.Column="14"
+                   FontSize="44"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Weapon"
+                FontFamily="Courier New"
+                   Margin="20,20,0,0"/>
+        <TextBlock Grid.Row="4"
+                   Grid.Column="13"
+                   FontSize="38"
+                   Foreground="White"
+                   Text="{Binding WeaponPoints, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="30,10,0,0"/>
+
+        <TextBlock Grid.Row="5"
+                   Grid.Column="14"
+                   FontSize="44"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Toughness"
+                FontFamily="Courier New"
+                   Margin="20,20,0,0"/>
+        <TextBlock Grid.Row="5"
+                   Grid.Column="13"
+                   FontSize="38"
+                   Foreground="White"
+                   Text="{Binding ToughnessPoints, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="30,10,0,0"/>
+
+        <TextBlock Grid.Row="6"
+                   Grid.Column="14"
+                   FontSize="38"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Head Endurance"
+                FontFamily="Courier New"
+                   Margin="20,20,0,0"/>
+        <TextBlock Grid.Row="6"
+                   Grid.Column="13"
+                   FontSize="38"
+                   Foreground="White"
+                   Text="{Binding HeadEndurancePoints, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="30,10,0,0"/>
+
+        <TextBlock Grid.Row="7"
+                   Grid.Column="14"
+                   FontSize="38"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Upper Body End."
+                FontFamily="Courier New"
+                   Margin="20,20,0,0"/>
+        <TextBlock Grid.Row="7"
+                   Grid.Column="13"
+                   FontSize="38"
+                   Foreground="White"
+                   Text="{Binding UpperBodyEndurancePoints, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="30,10,0,0"/>
+
+        <TextBlock Grid.Row="8"
+                   Grid.Column="14"
+                   FontSize="38"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Lower Body End."
+                FontFamily="Courier New"
+                   Margin="20,20,0,0"/>
+        <TextBlock Grid.Row="8"
+                   Grid.Column="13"
+                   FontSize="38"
+                   Foreground="White"
+                   Text="{Binding LowerBodyEndurancePoints, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="30,10,0,0"/>
+
+        <TextBlock Grid.Row="9"
+                   Grid.Column="14"
+                   FontSize="38"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Special Art Down"
+                FontFamily="Courier New"
+                   Margin="20,20,0,0"/>
+        <TextBlock Grid.Row="9"
+                   Grid.Column="13"
+                   FontSize="24"
+                   Foreground="White"
+                   Text="{Binding SpecialArtDownPoints, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="30,25,0,0"/>
+
+        <TextBlock Grid.Row="10"
+                   Grid.Column="14"
+                   FontSize="38"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="SPA Recovery"
+                FontFamily="Courier New"
+                   Margin="20,20,0,0"/>
+        <TextBlock Grid.Row="10"
+                   Grid.Column="13"
+                   FontSize="38"
+                   Foreground="White"
+                   Text="{Binding SPARecoveryPoints, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="30,10,0,0"/>
+
+        <TextBlock Grid.Row="11"
+                   Grid.Column="14"
+                   FontSize="38"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Ultra Instinct"
+                FontFamily="Courier New"
+                   Margin="20,20,0,0"/>
+        <TextBlock Grid.Row="11"
+                   Grid.Column="13"
+                   FontSize="38"
+                   Foreground="White"
+                   Text="{Binding UltraInstinct, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="30,10,0,0"/>
+
+
+
+
+        <Border Grid.Column="3"
+                Grid.ColumnSpan="10"
+                Grid.Row="1"
+                Grid.RowSpan="8"
+                BorderThickness="6"
+                Margin="-8,-8,-8,-8"
+                BorderBrush="Blue">
+            <Border.Background>
+                <ImageBrush ImageSource="/Resources/char_wall.png"/>
+            </Border.Background>
+        </Border>
+        <!--Napalm-->
+        <Button Grid.Row="1"
+                Grid.Column="8"
+                x:Name="Napalm"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="Napalm_Click"
+                MouseEnter="Napalm_MouseEnter">
+            <Image Source="/Resources/img_101.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--Shinkai-->
+        <Button Grid.Row="1"
+                Grid.Column="6"
+                x:Name="Shinkai"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="Shinkai_Click"
+                MouseEnter="Shinkai_MouseEnter">
+            <Image Source="/Resources/img_102.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--Suspect-->
+        <Button Grid.Row="2"
+                Grid.Column="3"
+                x:Name="Suspect"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="Suspect_Click"
+                MouseEnter="Suspect_MouseEnter">
+            <Image Source="/Resources/img_103.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--Kadonashi-->
+        <Button Grid.Row="1"
+                Grid.Column="4"
+                x:Name="Kadonashi"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="Kadonashi_Click"
+                MouseEnter="Kadonashi_MouseEnter">
+            <Image Source="/Resources/img_104.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--Brad Shark-->
+        <Button Grid.Row="1"
+                Grid.Column="3"
+                x:Name="BradShark"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="BradShark_Click"
+                MouseEnter="BradShark_MouseEnter">
+            <Image Source="/Resources/img_105.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--El Miguel-->
+        <Button Grid.Row="1"
+                Grid.Column="10"
+                x:Name="ElMiguel"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="ElMiguel_Click"
+                MouseEnter="ElMiguel_MouseEnter">
+            <Image Source="/Resources/img_106.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--Beaten Kg-->
+        <Button Grid.Row="2"
+                Grid.Column="5"
+                x:Name="BeatenKg"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="BeatenKg_Click"
+                MouseEnter="BeatenKg_MouseEnter">
+            <Image Source="/Resources/img_107.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--BradHawkBeginner-->
+        <Button Grid.Row="2"
+                Grid.Column="4"
+                x:Name="BradHawkBeginner"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="BradHawkBeginner_Click"
+                MouseEnter="BradHawkBeginner_MouseEnter">
+            <Image Source="/Resources/img_108.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--Shun Ying-->
+        <Button Grid.Row="1"
+                Grid.Column="5"
+                x:Name="ShunYing"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="ShunYing_Click"
+                MouseEnter="ShunYing_MouseEnter">
+            <Image Source="/Resources/img_110.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--Nightmare-->
+        <Button Grid.Row="1"
+                Grid.Column="7"
+                x:Name="Nightmare"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="Nightmare_Click"
+                MouseEnter="Nightmare_MouseEnter">
+            <Image Source="/Resources/img_109.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--Bordin Story-->
+        <Button Grid.Row="2"
+                Grid.Column="6"
+                x:Name="Bordin"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="Bordin_Click"
+                MouseEnter="Bordin_MouseEnter">
+            <Image Source="/Resources/img_111.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--Paul-->
+        <Button Grid.Row="1"
+                Grid.Column="11"
+                x:Name="Paul"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="Paul_Click"
+                MouseEnter="Paul_MouseEnter">
+            <Image Source="/Resources/img_112.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--Law-->
+        <Button Grid.Row="1"
+                Grid.Column="12"
+                x:Name="Law"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="Law_Click"
+                MouseEnter="Law_MouseEnter">
+            <Image Source="/Resources/img_113.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--Mckinzie-->
+        <Button Grid.Row="1"
+                Grid.Column="9"
+                x:Name="Mckinzie"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="Mckinzie_Click"
+                MouseEnter="Mckinzie_MouseEnter">
+            <Image Source="/Resources/img_114.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--KG Zombie-->
+        <Button Grid.Row="2"
+                Grid.Column="7"
+                x:Name="KG_Zombie"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="KG_Zombie_Click"
+                MouseEnter="KG_Zombie_MouseEnter">
+            <Image Source="/Resources/img_115.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--Max Power Up-->
+        <Button Grid.Row="2"
+                Grid.Column="8"
+                x:Name="MaxPowerUp"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="MaxPowerUp_Click"
+                MouseEnter="MaxPowerUp_MouseEnter">
+            <Image Source="/Resources/img_116.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--Only Weapon-->
+        <Button Grid.Row="2"
+                Grid.Column="9"
+                x:Name="OnlyWeapon"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="OnlyWeapon_Click"
+                MouseEnter="OnlyWeapon_MouseEnter">
+            <Image Source="/Resources/img_117.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--Strife Surge-->
+        <Button Grid.Row="2"
+                Grid.Column="10"
+                x:Name="StrifeSurge"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="StrifeSurge_Click"
+                MouseEnter="StrifeSurge_MouseEnter">
+            <Image Source="/Resources/img_118.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--Superman Flight-->
+        <Button Grid.Row="2"
+                Grid.Column="11"
+                x:Name="SupermanFlight"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="SupermanFlight_Click"
+                MouseEnter="SupermanFlight_MouseEnter">
+            <Image Source="/Resources/img_119.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--Devil Jin Power-->
+        <Button Grid.Row="2"
+                Grid.Column="12"
+                x:Name="DevilJinPower"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="DevilJinPower_Click"
+                MouseEnter="DevilJinPower_MouseEnter">
+            <Image Source="/Resources/img_120.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--FLY ???-->
+        <Button Grid.Row="8"
+                Grid.Column="11"
+                x:Name="FLY"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="FLY_Click"
+                MouseEnter="FLY_MouseEnter">
+            <Image Source="/Resources/img_1000.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+
+
+        <!--DeadPlayer-->
+        <Button Grid.Row="8"
+                Grid.Column="3"
+                x:Name="DeadPlayer"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="DeadPlayer_Click"
+                MouseEnter="DeadPlayer_MouseEnter">
+            <Image Source="/Resources/img_201.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--WeakPlayer-->
+        <Button Grid.Row="8"
+                Grid.Column="4"
+                x:Name="WeakPlayer"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="WeakPlayer_Click"
+                MouseEnter="WeakPlayer_MouseEnter">
+            <Image Source="/Resources/img_202.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--StrongPLayer-->
+        <Button Grid.Row="8"
+                Grid.Column="5"
+                x:Name="StrongPLayer"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="StrongPLayer_Click"
+                MouseEnter="StrongPLayer_MouseEnter">
+            <Image Source="/Resources/img_203.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--TankPlayer-->
+        <Button Grid.Row="8"
+                Grid.Column="6"
+                x:Name="TankPlayer"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="TankPlayer_Click"
+                MouseEnter="TankPlayer_MouseEnter">
+            <Image Source="/Resources/img_204.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--BeatUpPlayer-->
+        <Button Grid.Row="8"
+                Grid.Column="7"
+                x:Name="BeatUpPlayer"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="BeatUpPlayer_Click"
+                MouseEnter="BeatUpPlayer_MouseEnter">
+            <Image Source="/Resources/img_205.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--NoSPA_Player-->
+        <Button Grid.Row="8"
+                Grid.Column="8"
+                x:Name="NoSPA_Player"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="NoSPA_Player_Click"
+                MouseEnter="NoSPA_Player_MouseEnter">
+            <Image Source="/Resources/img_206.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--InfiniteSPA_Player-->
+        <Button Grid.Row="8"
+                Grid.Column="9"
+                x:Name="InfiniteSPA_Player"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="InfiniteSPA__Click"
+                MouseEnter="InfiniteSPA__MouseEnter">
+            <Image Source="/Resources/img_207.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+
+
+        <!--UltraInstinct-->
+        <Button Grid.Row="8"
+                Grid.Column="10"
+                x:Name="UltraInstinctPlayer"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="UltraInstinctPlayer_Click"
+                MouseEnter="UltraInstinctPlayer_MouseEnter">
+            <Image Source="/Resources/img_208.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--RandomStats-->
+        <Button Grid.Row="8"
+                Grid.Column="12"
+                x:Name="RandomStats"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="RandomStats_Click"
+                MouseEnter="RandomStats_MouseEnter">
+            <Image Source="/Resources/img_209.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+
+
+        <!--SpaDownInfinite1-->
+        <Button Grid.Row="7"
+                Grid.Column="3"
+                x:Name="SpaDownInfinite1"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="SpaDownInfinite1_Click"
+                MouseEnter="SpaDownInfinite1_MouseEnter">
+            <Image Source="/Resources/img_301.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--SpaDownInfinite2-->
+        <Button Grid.Row="7"
+                Grid.Column="4"
+                x:Name="SpaDownInfinite2"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="SpaDownInfinite2_Click"
+                MouseEnter="SpaDownInfinite2_MouseEnter">
+            <Image Source="/Resources/img_302.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--SpaDownInfinite3-->
+        <Button Grid.Row="7"
+                Grid.Column="5"
+                x:Name="SpaDownInfinite3"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="SpaDownInfinite3_Click"
+                MouseEnter="SpaDownInfinite3_MouseEnter">
+            <Image Source="/Resources/img_303.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--SpaDownInfinite4-->
+        <Button Grid.Row="7"
+                Grid.Column="6"
+                x:Name="SpaDownInfinite4"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="SpaDownInfinite4_Click"
+                MouseEnter="SpaDownInfinite4_MouseEnter">
+            <Image Source="/Resources/img_304.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--SpaDownInfinite5-->
+        <Button Grid.Row="7"
+                Grid.Column="7"
+                x:Name="SpaDownInfinite5"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="SpaDownInfinite5_Click"
+                MouseEnter="SpaDownInfinite5_MouseEnter">
+            <Image Source="/Resources/img_305.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--SpaDownInfinite6-->
+        <Button Grid.Row="7"
+                Grid.Column="8"
+                x:Name="SpaDownInfinite6"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="SpaDownInfinite6_Click"
+                MouseEnter="SpaDownInfinite6_MouseEnter">
+            <Image Source="/Resources/img_306.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--SpaDownInfinite7-->
+        <Button Grid.Row="7"
+                Grid.Column="9"
+                x:Name="SpaDownInfinite7"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="SpaDownInfinite7_Click"
+                MouseEnter="SpaDownInfinite7_MouseEnter">
+            <Image Source="/Resources/img_307.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--SpaDownInfinite8-->
+        <Button Grid.Row="7"
+                Grid.Column="10"
+                x:Name="SpaDownInfinite8"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="SpaDownInfinite8_Click"
+                MouseEnter="SpaDownInfinite8_MouseEnter">
+            <Image Source="/Resources/img_308.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--SpaDownInfiniteCustom1-->
+        <Button Grid.Row="7"
+                Grid.Column="11"
+                x:Name="SpaDownInfiniteCustom1"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="SpaDownInfiniteCustom1_Click"
+                MouseEnter="SpaDownInfiniteCustom1_MouseEnter">
+            <Image Source="/Resources/img_311.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--SpaDownInfiniteCustom2-->
+        <Button Grid.Row="7"
+                Grid.Column="12"
+                x:Name="SpaDownInfiniteCustom2"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="SpaDownInfiniteCustom2_Click"
+                MouseEnter="SpaDownInfiniteCustom2_MouseEnter">
+            <Image Source="/Resources/img_312.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+
+
+        <!--Activate Stats-->
+        <Button Grid.Row="10"
+                Grid.ColumnSpan="2"
+                Grid.Column="10"
+                x:Name="CodeText"
+                Background="DarkRed"
+                Foreground="LightBlue"
+                FontFamily="Calibri"
+                FontSize="42"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,-20,-20,0"
+                Click="ApplyChanges_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Activate Codes" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Switch to Main Page-->
+        <Button Grid.Row="11"
+                Grid.Column="18"
+                x:Name="GetBackToMainPage"
+                Background="#251446"
+                Foreground="#BBBBBB"
+                FontFamily="Times New Roman"
+                FontSize="24"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="11,3,3,3"
+                Click="GoToMainPage_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Back to Main Menu" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Switch to Texture Page-->
+        <Button Grid.Row="9"
+                Grid.Column="18"
+                x:Name="GoToTexturePage"
+                Background="#345678"
+                Foreground="#BBBBBB"
+                FontFamily="Times New Roman"
+                FontSize="24"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="GoToTexturePage_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Textures Page" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--Mission Box-->
+
+        <Border Grid.Column="0"
+                Grid.ColumnSpan="13"
+                Grid.Row="9"
+                Grid.RowSpan="8"
+                x:Name="MissionBox"
+                BorderThickness="5"
+                Margin="0,10,0,0"
+                BorderBrush="DarkRed">
+        </Border>
+
+        <Button Grid.Row="9"
+                Grid.Column="0"
+                x:Name="SetMissionData"
+                Background="#114545"
+                Foreground="#BBBBBB"
+                FontFamily="Verdana"
+                FontSize="24"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="20,30,0,0"
+                Click="SetMissionDataPath_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Set Path" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <TextBox x:Name="MissionFolderPath"
+                 Grid.Column="0"
+                 Grid.ColumnSpan="3"
+                 Grid.Row="10"
+                 FontSize="24"
+                 Text="{Binding MissionFolderPath, UpdateSourceTrigger=PropertyChanged}"
+                 MaxLength="200"
+                 Margin="20,15,20,15"/>
+
+        <TextBlock Grid.Row="11"
+                   Grid.Column="0"
+                   Name="MissionTxt"
+                   Grid.ColumnSpan="3"
+                   FontSize="34"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="Missions Data Path"
+                   Margin="20,10,0,0"/>
+
+
+        <!--Mission Set-->
+        <TextBlock Grid.Row="10"
+                   Grid.Column="5"
+                   Grid.ColumnSpan="2"
+                   Name="MisTxt"
+                   FontSize="44"
+                   FontFamily="Impact"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="Mission"
+                   Margin="10,17,0,0"/>
+
+        <TextBox x:Name="MissionNumber"
+                 Grid.Column="4"
+                 Grid.Row="10"
+                 FontSize="44"
+                 Text="{Binding MissionNumber, UpdateSourceTrigger=PropertyChanged}"
+                 MaxLength="3"
+                 Margin="0,10,0,10"/>
+
+
+
+        <!--Enemies-->
+
+        <TextBox x:Name="EnemiesNumber"
+                 Grid.Column="10"
+                 Grid.Row="11"
+                 FontSize="44"
+                 Text="{Binding EnemiesNumber, UpdateSourceTrigger=PropertyChanged}"
+                 MaxLength="1"
+                 Margin="10,15,10,15"/>
+
+        <TextBlock Grid.Row="11"
+                   Grid.Column="11"
+                   Name="EneTextnr"
+                   Grid.ColumnSpan="2"
+                   FontSize="44"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="Enemies"
+                   Margin="0,16,0,0"/>
+
+        <!--P2Weapon-->
+        <Border Grid.Row="11"
+                Grid.Column="4"
+                Name="P2WPN"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding WeaponsOn}"
+                          Width="18"/>
+            </Viewbox>
+        </Border>
+
+        <TextBlock Grid.Row="11"
+                   Grid.Column="5"
+                   Name="p2WTXT"
+                   Grid.ColumnSpan="2"
+                   FontSize="37"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="P2weapon"
+                   Margin="0,20,0,0"/>
+
+        <!--EnemyWeapon-->
+        <Border Grid.Row="11"
+                Grid.Column="7"
+                x:Name="ENE_WEAPON"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding WeaponsEnemyOn}"
+                          Width="18"/>
+            </Viewbox>
+        </Border>
+
+        <TextBlock Grid.Row="11"
+                   Grid.Column="8"
+                   Name="eneTxtWe"
+                   Grid.ColumnSpan="2"
+                   FontSize="34"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="EnemyWpn"
+                   Margin="0,20,0,0"/>
+
+        <!--EnemyAI-->
+        <ComboBox x:Name="enemyAIbox"
+                  Grid.Column="7"
+                  Grid.ColumnSpan="3"
+                  Grid.Row="10"
+                  FontSize="28"
+                  Margin="10,0,10,40"/>
+
+        <TextBlock Grid.Row="10"
+                   Grid.Column="7"
+                   Name="eneAI"
+                   Grid.ColumnSpan="3"
+                   FontSize="34"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="Enemy AI"
+                   Margin="66,45,0,0"/>
+
+
+        <!--Switch Mode-->
+        <Button Grid.Row="0"
+                Grid.Column="6"
+                Grid.ColumnSpan="2"
+                x:Name="SwitchMode"
+                Background="#25A466"
+                Foreground="#BBBBBB"
+                FontFamily="Times New Roman"
+                FontSize="27"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,15,10,15"
+                Click="SwitchMode_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Switch Mode" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <TextBlock Grid.Row="0"
+                   Grid.Column="3"
+                   Grid.ColumnSpan="3"
+                   x:Name="ModeName"
+                   
+                FontFamily="Courier New"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="XXXX"
+                   Margin="0,18,0,0"/>
+
+
+        <TextBlock Grid.Row="9"
+                   Grid.Column="7"
+                   Name="cameraTxt"
+                   Grid.ColumnSpan="5"
+                   FontSize="37"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="2 Players Mode"
+                   Margin="86,20,10,0"/>
+
+        <Border Grid.Row="9"
+            Grid.Column="7"
+            x:Name="multiCamera"
+            BorderBrush="Blue"
+            BorderThickness="0"
+            Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                      Foreground="Black"
+                      IsChecked="{Binding MultiplayerCamera}"
+                      Width="18"/>
+            </Viewbox>
+        </Border>
+
+        <!--Characters Info-->
+        <Button Grid.Row="0"
+                Grid.Column="9"
+                Grid.ColumnSpan="2"
+                x:Name="CharactersInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="10,25,10,30"
+                Click="Characters_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Information" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Missions Info-->
+        <Button Grid.Row="9"
+                Grid.Column="4"
+                Grid.ColumnSpan="2"
+                x:Name="MissionsInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="0,30,20,25"
+                Click="Missions_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Information" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Teams Info-->
+        <Button Grid.Row="0"
+                Grid.Column="15"
+                x:Name="TeamsInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="10,13,10,36"
+                Click="Teams_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Information" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <TextBlock Grid.Row="0"
+                   Grid.Column="15"
+                   Name="ins1"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="C"
+                   Margin="78,55,85,0"/>
+        <TextBlock Grid.Row="0"
+                   Grid.Column="15"
+                   Name="ins2"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="T"
+                   Margin="138,55,25,0"/>
+        <!--Player1 Team-->
+        <TextBlock Grid.Row="1"
+                   Grid.Column="15"
+                   Name="p1Team"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="P1"
+                   Margin="10,24,129,24"/>
+        <TextBox x:Name="p1ControlBox"
+                  Grid.Column="15"
+                  Grid.Row="1"
+                  FontSize="28"
+                  Text="{Binding P1Control, UpdateSourceTrigger=PropertyChanged}"
+                  MaxLength="2" 
+                  Margin="65,24,75,24"/>
+        <TextBox x:Name="p1TeamBox"
+                  Grid.Column="15"
+                  Grid.Row="1"
+                  FontSize="28"
+                  Text="{Binding P1Team, UpdateSourceTrigger=PropertyChanged}"
+                  MaxLength="1" 
+                  Margin="125,24,15,24"/>
+        <!--Player2 Team-->
+        <TextBlock Grid.Row="2"
+                   Grid.Column="15"
+                   Name="p2Team"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="P2"
+                   Margin="10,24,129,24"/>
+        <TextBox x:Name="p2ControlBox"
+                  Grid.Column="15"
+                  Grid.Row="2"
+                  FontSize="28"
+                  Text="{Binding P2Control, UpdateSourceTrigger=PropertyChanged}"
+                  MaxLength="2" 
+                  Margin="65,24,75,24"/>
+        <TextBox x:Name="p2TeamBox"
+                  Grid.Column="15"
+                  Grid.Row="2"
+                  FontSize="28"
+                  Text="{Binding P2Team, UpdateSourceTrigger=PropertyChanged}"
+                  MaxLength="1" 
+                  Margin="125,24,15,24"/>
+        <!--Player3 Team-->
+        <TextBlock Grid.Row="3"
+                   Grid.Column="15"
+                   Name="p3Team"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="P3"
+                   Margin="10,24,129,24"/>
+        <TextBox x:Name="p3ControlBox"
+                  Grid.Column="15"
+                  Grid.Row="3"
+                  FontSize="28"
+                  Text="{Binding P3Control, UpdateSourceTrigger=PropertyChanged}"
+                  MaxLength="2" 
+                  Margin="65,24,75,24"/>
+        <TextBox x:Name="p3TeamBox"
+                  Grid.Column="15"
+                  Grid.Row="3"
+                  FontSize="28"
+                  Text="{Binding P3Team, UpdateSourceTrigger=PropertyChanged}"
+                  MaxLength="1" 
+                  Margin="125,24,15,24"/>
+        <!--Player4 Team-->
+        <TextBlock Grid.Row="4"
+                   Grid.Column="15"
+                   Name="p4Team"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="P4"
+                   Margin="10,24,129,24"/>
+        <TextBox x:Name="p4TeamBox"
+                  Grid.Column="15"
+                  Grid.Row="4"
+                  FontSize="28"
+                  Text="{Binding P4Control, UpdateSourceTrigger=PropertyChanged}"
+                  MaxLength="2" 
+                  Margin="65,24,75,24"/>
+        <TextBox x:Name="p4ControlBox"
+                  Grid.Column="15"
+                  Grid.Row="4"
+                  FontSize="28"
+                  Text="{Binding P4Team, UpdateSourceTrigger=PropertyChanged}"
+                  MaxLength="1" 
+                  Margin="125,24,15,24"/>
+
+        <!--Player5 Team-->
+        <TextBlock Grid.Row="5"
+                   Grid.Column="15"
+                   Name="p5Team"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="P5"
+                   Margin="10,24,129,24"/>
+        <TextBox x:Name="p5ControlBox"
+                  Grid.Column="15"
+                  Grid.Row="5"
+                  FontSize="28"
+                  Text="{Binding P5Control, UpdateSourceTrigger=PropertyChanged}"
+                  MaxLength="2" 
+                  Margin="65,24,75,24"/>
+        <TextBox x:Name="p5TeamBox"
+                  Grid.Column="15"
+                  Grid.Row="5"
+                  FontSize="28"
+                  Text="{Binding P5Team, UpdateSourceTrigger=PropertyChanged}"
+                  MaxLength="1" 
+                  Margin="125,24,15,24"/>
+        <!--Player6 Team-->
+        <TextBlock Grid.Row="6"
+                   Grid.Column="15"
+                   Name="p6Team"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="P6"
+                   Margin="10,24,129,24"/>
+        <TextBox x:Name="p6ControlBox"
+                  Grid.Column="15"
+                  Grid.Row="6"
+                  FontSize="28"
+                  Text="{Binding P6Control, UpdateSourceTrigger=PropertyChanged}"
+                  MaxLength="2" 
+                  Margin="65,24,75,24"/>
+        <TextBox x:Name="p6TeamBox"
+                  Grid.Column="15"
+                  Grid.Row="6"
+                  FontSize="28"
+                  Text="{Binding P6Team, UpdateSourceTrigger=PropertyChanged}"
+                  MaxLength="1" 
+                  Margin="125,24,15,24"/>
+        <!--Player7 Team-->
+        <TextBlock Grid.Row="7"
+                   Grid.Column="15"
+                   Name="p7Team"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="P7"
+                   Margin="10,24,129,24"/>
+        <TextBox x:Name="p7ControlBox"
+                  Grid.Column="15"
+                  Grid.Row="7"
+                  FontSize="28"
+                  Text="{Binding P7Control, UpdateSourceTrigger=PropertyChanged}"
+                  MaxLength="2" 
+                  Margin="65,24,75,24"/>
+        <TextBox x:Name="p7TeamBox"
+                  Grid.Column="15"
+                  Grid.Row="7"
+                  FontSize="28"
+                  Text="{Binding P7Team, UpdateSourceTrigger=PropertyChanged}"
+                  MaxLength="1" 
+                  Margin="125,24,15,24"/>
+        <!--Player8 Team-->
+        <TextBlock Grid.Row="8"
+                   Grid.Column="15"
+                   Name="p8Team"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="P8"
+                   Margin="10,24,129,24"/>
+        <TextBox x:Name="p8ControlBox"
+                  Grid.Column="15"
+                  Grid.Row="8"
+                  FontSize="28"
+                  Text="{Binding P8Control, UpdateSourceTrigger=PropertyChanged}"
+                  MaxLength="2" 
+                  Margin="65,24,75,24"/>
+        <TextBox x:Name="p8TeamBox"
+                  Grid.Column="15"
+                  Grid.Row="8"
+                  FontSize="28"
+                  Text="{Binding P8Team, UpdateSourceTrigger=PropertyChanged}"
+                  MaxLength="1" 
+                  Margin="125,24,15,24"/>
+
+
+        <Border Grid.Column="14"
+                Grid.Row="0"
+                Grid.RowSpan="9"
+                BorderThickness="6"
+                Margin="389,2,0,0"
+                BorderBrush="Yellow" Grid.ColumnSpan="2"/>
+
+        <!--MultiplayerAI--><!--
+        <Border Grid.Row="10"
+                Grid.Column="4"
+                Name="multiplayerAI"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding MultiplayerAI}"
+                          Width="18"/>
+            </Viewbox>
+        </Border>
+
+        <TextBlock Grid.Row="10"
+                   Grid.Column="5"
+                   Name="multiplayerAITXT"
+                   Grid.ColumnSpan="2"
+                   FontSize="46"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="Best AI"
+                   Margin="0,20,0,0"/>-->
+
+    </Grid>
+
+
+</UserControl>

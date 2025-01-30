@@ -1,0 +1,384 @@
+﻿<UserControl x:Class="UR_pnach_editor.Views.MiscellaneousCheatsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UR_pnach_editor.Views" xmlns:viewmodels="clr-namespace:UR_pnach_editor.ViewModels"
+             mc:Ignorable="d"
+             d:DesignHeight="1080" d:DesignWidth="1920">
+
+    
+    
+    <Grid Height="1080" Width="1920">
+
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/background.png"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="960*"/>
+            <RowDefinition Height="960*"/>
+            <RowDefinition Height="960*"/>
+            <RowDefinition Height="960*"/>
+            <RowDefinition Height="960*"/>
+            <RowDefinition Height="960*"/>
+            <RowDefinition Height="960*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="540*"/>
+            <ColumnDefinition Width="540*"/>
+            <ColumnDefinition Width="540*"/>
+            <ColumnDefinition Width="540*"/>
+            <ColumnDefinition Width="540*"/>
+            <ColumnDefinition Width="540*"/>
+            <ColumnDefinition Width="540*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="gifImage"
+               Width="1920"
+               Height="1080"
+               Grid.ColumnSpan="100"
+               Grid.RowSpan="100"/>
+
+        <MediaElement x:Name="customSound" LoadedBehavior="Play" Grid.ColumnSpan="2" Margin="0,0,145,0"/>
+
+
+        <!--2 Players Full Free Mode-->
+        <Button Grid.Row="0"
+                Grid.Column="0"
+                x:Name="x2PlayersFullFreeMode"
+                Background="LightSeaGreen"
+                Foreground="#000000"
+                FontFamily="Century Gothic"
+                FontSize="37"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="5,5,5,5"
+                Click="x2PlayersFullFreeMode_Click"
+                MouseEnter="x2PlayersFullFreeMode_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="2 Players Full Free Mode" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--3 Players Full Free Mode-->
+        <Button Grid.Row="0"
+                Grid.Column="1"
+                x:Name="x3PlayersFullFreeMode"
+                Background="LightSeaGreen"
+                Foreground="#000000"
+                FontFamily="Century Gothic"
+                FontSize="37"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="5,5,5,5"
+                Click="x3PlayersFullFreeMode_Click"
+                MouseEnter="x3PlayersFullFreeMode_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="3 Players Full Free Mode" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--4 Players Full Free Mode-->
+        <Button Grid.Row="0"
+                Grid.Column="2"
+                x:Name="x4PlayersFullFreeMode"
+                Background="LightSeaGreen"
+                Foreground="#000000"
+                FontFamily="Century Gothic"
+                FontSize="37"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="5,5,5,5"
+                Click="x4PlayersFullFreeMode_Click"
+                MouseEnter="x4PlayersFullFreeMode_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="4 Players Full Free Mode" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Brads Deluxe Offensive-->
+        <Button Grid.Row="1"
+                Grid.Column="0"
+                x:Name="BradsDeluxeOffensive"
+                Background="#345678"
+                Foreground="#000000"
+                FontFamily="Century Gothic"
+                FontSize="40"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="5,5,5,5"
+                Click="BradsDeluxeOffensive_Click"
+                MouseEnter="BradsDeluxeOffensive_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Brads Deluxe Offensive" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Golems Boss Rush-->
+        <Button Grid.Row="1"
+                Grid.Column="1"
+                x:Name="GolemsBossRush"
+                Background="#860111"
+                Foreground="#000000"
+                FontFamily="Century Gothic"
+                FontSize="45"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="5,5,5,5"
+                Click="GolemsBossRush_Click"
+                MouseEnter="GolemsBossRush_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Golems Boss Rush" TextAlignment="Center" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Healing SPA-->
+        <Button Grid.Row="1"
+                Grid.Column="2"
+                x:Name="HealingSPA"
+                Background="#226712"
+                Foreground="#000000"
+                FontFamily="Century Gothic"
+                FontSize="48"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="5,5,5,5"
+                Click="HealingSPA_Click"
+                MouseEnter="HealingSPA_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Healing SPA" TextAlignment="Center" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Brad Style Switching-->
+        <Button Grid.Row="2"
+                Grid.Column="0"
+                x:Name="BradStyleSwitching"
+                Background="#593603"
+                Foreground="#000000"
+                FontFamily="Century Gothic"
+                FontSize="44"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="5,5,5,5"
+                Click="BradStyleSwitching_Click"
+                MouseEnter="BradStyleSwitching_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Brad Style Switching" TextAlignment="Center" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--SPA Mode-->
+        <Button Grid.Row="2"
+                Grid.Column="1"
+                x:Name="SPAMode"
+                Background="Bisque"
+                Foreground="#000000"
+                FontFamily="Century Gothic"
+                FontSize="48"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="5,5,5,5"
+                Click="SPAMode_Click"
+                MouseEnter="SPAMode_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="SPA Mode" TextAlignment="Center" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--New Game Plus-->
+        <Button Grid.Row="3"
+                Grid.Column="0"
+                x:Name="newGamePlus"
+                FontFamily="Calibri"
+                FontSize="44"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Foreground="#000088"
+                Margin="6,6,6,6"
+                Click="NewGamePlus_Click"
+                MouseEnter="NewGamePlus_MouseEnter">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Image x:Name="buttonImage" Source="{Binding SnowImg1, UpdateSourceTrigger=PropertyChanged}" Stretch="Fill"/>
+                        <Border Background="Transparent" BorderBrush="Transparent" BorderThickness="0" CornerRadius="20">
+                            <!-- Adjust CornerRadius as needed -->
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="buttonImage" Property="Source" Value="{Binding SnowImg1x, UpdateSourceTrigger=PropertyChanged}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="New Game Plus" TextAlignment="Center" />
+            </Button.Content>
+        </Button>
+
+        <!--New Game Plus 2 Players-->
+        <Button Grid.Row="3"
+                Grid.Column="1"
+                x:Name="newGamePlus2P"
+                FontFamily="Calibri"
+                FontSize="44"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Foreground="#000088"
+                Margin="6,6,6,6"
+                Click="NewGamePlus2Players_Click"
+                MouseEnter="NewGamePlus2Players_MouseEnter">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Image x:Name="buttonImage" Source="{Binding SnowImg1, UpdateSourceTrigger=PropertyChanged}" Stretch="Fill"/>
+                        <Border Background="Transparent" BorderBrush="Transparent" BorderThickness="0" CornerRadius="20">
+                            <!-- Adjust CornerRadius as needed -->
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="buttonImage" Property="Source" Value="{Binding SnowImg1x, UpdateSourceTrigger=PropertyChanged}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="2 Players New Game Plus" TextAlignment="Center" />
+            </Button.Content>
+        </Button>
+
+
+        <!--Active Code-->
+        <TextBlock Grid.Row="6"
+                   Grid.Column="3"
+                   Foreground="Red" 
+                   FontSize="36"
+                   FontFamily="Palatino Linotype"
+                   FontWeight="Bold"
+                   Text="Active Code"
+                   Margin="35,10,0,0"/>
+        <TextBlock Grid.Row="6"
+                   Grid.Column="3"
+                   Foreground="#FFFFFF" 
+                   x:Name="CodeText"
+                   FontSize="30"
+                   FontWeight="Bold"
+                   TextWrapping="WrapWithOverflow"
+                   Text="{Binding CodeString, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="0,60,0,0"
+                   TextAlignment="Center"/>
+
+        <!--Clear Codes-->
+        <Button Grid.Row="5"
+                Grid.Column="3"
+                x:Name="ClearCodes"
+                Background="#FFFFFF"
+                FontFamily="Times New Roman"
+                FontSize="42"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="Clear_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Clear Codes" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Information-->
+        <TextBlock Grid.Row="0"
+                   Grid.RowSpan="6"
+                   Grid.Column="4"
+                   Grid.ColumnSpan="3"
+                   Name="info"
+                   FontSize="36"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="{Binding ModeInformation, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="0,20,0,0"/>
+
+        <Border Grid.Column="4"
+                Grid.ColumnSpan="3"
+                Grid.Row="0"
+                Grid.RowSpan="6"
+                BorderThickness="6"
+                Margin="-10,10,0,-10"
+                BorderBrush="Yellow">
+        </Border>
+
+        <!--Switch to Main Page-->
+        <Button Grid.Row="11"
+                Grid.Column="6"
+                x:Name="GetBackToMainPage"
+                Background="#251446"
+                Foreground="#BBBBBB"
+                FontFamily="Times New Roman"
+                FontSize="28"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="GoToMainPage_Click">
+            Back to Main Menu
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+    </Grid>
+
+
+</UserControl>

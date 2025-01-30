@@ -1,0 +1,1361 @@
+﻿<UserControl x:Class="UR_pnach_editor.Views.StatsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UR_pnach_editor.Views" xmlns:viewmodels="clr-namespace:UR_pnach_editor.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:StatsViewModel}"
+             mc:Ignorable="d"
+             d:DesignHeight="1080" d:DesignWidth="1920">
+
+    <Grid Height="1080" Width="1920">
+
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/background.png"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="gifImage"
+               Width="1920"
+               Height="1080"
+               Grid.ColumnSpan="100"
+               Grid.RowSpan="100"/>
+
+        <MediaElement x:Name="customSound" LoadedBehavior="Play"/>
+
+
+        <TextBlock Grid.Row="0"
+                   Grid.Column="0"
+                   Name="txtSTK1"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Strike" />
+        <Slider Grid.Row="0"
+                Grid.Column="1"
+                Name="sliderSTK1"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="0"
+                   Grid.Column="1"
+                   Name="txtValueSTK1"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderSTK1, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="0"
+                   Grid.Column="2"
+                   Name="txtSTK2"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Strike" />
+        <Slider Grid.Row="0"
+                Grid.Column="3"
+                Name="sliderSTK2"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="0"
+                   Grid.Column="3"
+                   Name="txtValueSTK2"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderSTK2, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="0"
+                   Grid.Column="4"
+                   Name="txtSTK3"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Strike" />
+        <Slider Grid.Row="0"
+                Grid.Column="5"
+                Name="sliderSTK3"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="0"
+                   Grid.Column="5"
+                   Name="txtValueSTK3"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderSTK3, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="0"
+                   Grid.Column="6"
+                   Name="txtSTK4"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Strike" />
+        <Slider Grid.Row="0"
+                Grid.Column="7"
+                Name="sliderSTK4"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="0"
+                   Grid.Column="7"
+                   Name="txtValueSTK4"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderSTK4, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="1"
+                   Grid.Column="0"
+                   Name="txtGRP1"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Grapple" />
+        <Slider Grid.Row="1"
+                Grid.Column="1"
+                Name="sliderGRP1"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="1"
+                   Name="txtValueGRP1"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderGRP1, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="1"
+                   Grid.Column="2"
+                   Name="txtGRP2"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Grapple" />
+        <Slider Grid.Row="1"
+                Grid.Column="3"
+                Name="sliderGRP2"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="3"
+                   Name="txtValueGRP2"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderGRP2, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="1"
+                   Grid.Column="4"
+                   Name="txtGRP3"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Grapple" />
+        <Slider Grid.Row="1"
+                Grid.Column="5"
+                Name="sliderGRP3"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="5"
+                   Name="txtValueGRP3"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderGRP3, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="1"
+                   Grid.Column="6"
+                   Name="txtGRP4"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Grapple" />
+        <Slider Grid.Row="1"
+                Grid.Column="7"
+                Name="sliderGRP4"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="7"
+                   Name="txtValueGRP4"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderGRP4, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="2"
+                   Grid.Column="0"
+                   Name="txtRGA1"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Regional" />
+        <Slider Grid.Row="2"
+                Grid.Column="1"
+                Name="sliderRGA1"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="2"
+                   Grid.Column="1"
+                   Name="txtValueRGA1"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderRGA1, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="2"
+                   Grid.Column="2"
+                   Name="txtRGA2"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Regional" />
+        <Slider Grid.Row="2"
+                Grid.Column="3"
+                Name="sliderRGA2"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="2"
+                   Grid.Column="3"
+                   Name="txtValueRGA2"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderRGA2, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="2"
+                   Grid.Column="4"
+                   Name="txtRGA3"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Regional" />
+        <Slider Grid.Row="2"
+                Grid.Column="5"
+                Name="sliderRGA3"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="2"
+                   Grid.Column="5"
+                   Name="txtValueRGA3"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderRGA3, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="2"
+                   Grid.Column="6"
+                   Name="txtRGA4"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Regional" />
+        <Slider Grid.Row="2"
+                Grid.Column="7"
+                Name="sliderRGA4"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="2"
+                   Grid.Column="7"
+                   Name="txtValueRGA4"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderRGA4, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="3"
+                   Grid.Column="0"
+                   Name="txtSPA1"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Special" />
+        <Slider Grid.Row="3"
+                Grid.Column="1"
+                Name="sliderSPA1"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="3"
+                   Grid.Column="1"
+                   Name="txtValueSPA1"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderSPA1, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="3"
+                   Grid.Column="2"
+                   Name="txtSPA2"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Special" />
+        <Slider Grid.Row="3"
+                Grid.Column="3"
+                Name="sliderSPA2"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="3"
+                   Grid.Column="3"
+                   Name="txtValueSPA2"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderSPA2, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="3"
+                   Grid.Column="4"
+                   Name="txtSPA3"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Special" />
+        <Slider Grid.Row="3"
+                Grid.Column="5"
+                Name="sliderSPA3"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="3"
+                   Grid.Column="5"
+                   Name="txtValueSPA3"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderSPA3, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="3"
+                   Grid.Column="6"
+                   Name="txtSPA4"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Special" />
+        <Slider Grid.Row="3"
+                Grid.Column="7"
+                Name="sliderSPA4"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="3"
+                   Grid.Column="7"
+                   Name="txtValueSPA4"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderSPA4, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="4"
+                   Grid.Column="0"
+                   Name="txtWPA1"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Weapon" />
+        <Slider Grid.Row="4"
+                Grid.Column="1"
+                Name="sliderWPA1"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="4"
+                   Grid.Column="1"
+                   Name="txtValueWPA1"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderWPA1, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="4"
+                   Grid.Column="2"
+                   Name="txtWPA2"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Weapon" />
+        <Slider Grid.Row="4"
+                Grid.Column="3"
+                Name="sliderWPA2"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="4"
+                   Grid.Column="3"
+                   Name="txtValueWPA2"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderWPA2, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="4"
+                   Grid.Column="4"
+                   Name="txtWPA3"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Weapon" />
+        <Slider Grid.Row="4"
+                Grid.Column="5"
+                Name="sliderWPA3"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="4"
+                   Grid.Column="5"
+                   Name="txtValueWPA3"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderWPA3, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="4"
+                   Grid.Column="6"
+                   Name="txtWPA4"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Weapon" />
+        <Slider Grid.Row="4"
+                Grid.Column="7"
+                Name="sliderWPA4"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="4"
+                   Grid.Column="7"
+                   Name="txtValueWPA4"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderWPA4, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="5"
+                   Grid.Column="0"
+                   Name="txtTGH1"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Toughness" />
+        <Slider Grid.Row="5"
+                Grid.Column="1"
+                Name="sliderTGH1"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="5"
+                   Grid.Column="1"
+                   Name="txtValueTGH1"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderTGH1, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="5"
+                   Grid.Column="2"
+                   Name="txtTGH2"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Toughness" />
+        <Slider Grid.Row="5"
+                Grid.Column="3"
+                Name="sliderTGH2"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="5"
+                   Grid.Column="3"
+                   Name="txtValueTGH2"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderTGH2, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="5"
+                   Grid.Column="4"
+                   Name="txtTGH3"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Toughness" />
+        <Slider Grid.Row="5"
+                Grid.Column="5"
+                Name="sliderTGH3"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="5"
+                   Grid.Column="5"
+                   Name="txtValueTGH3"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderTGH3, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="5"
+                   Grid.Column="6"
+                   Name="txtTGH4"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Toughness" />
+        <Slider Grid.Row="5"
+                Grid.Column="7"
+                Name="sliderTGH4"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="5"
+                   Grid.Column="7"
+                   Name="txtValueTGH4"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderTGH4, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="6"
+                   Grid.Column="0"
+                   Name="txtHDE1"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Head Endurance" />
+        <Slider Grid.Row="6"
+                Grid.Column="1"
+                Name="sliderHDE1"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="6"
+                   Grid.Column="1"
+                   Name="txtValueHDE1"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderHDE1, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="6"
+                   Grid.Column="2"
+                   Name="txtHDE2"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Head Endurance" />
+        <Slider Grid.Row="6"
+                Grid.Column="3"
+                Name="sliderHDE2"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="6"
+                   Grid.Column="3"
+                   Name="txtValueHDE2"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderHDE2, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="6"
+                   Grid.Column="4"
+                   Name="txtHDE3"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Head Endurance" />
+        <Slider Grid.Row="6"
+                Grid.Column="5"
+                Name="sliderHDE3"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="6"
+                   Grid.Column="5"
+                   Name="txtValueHDE3"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderHDE3, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="6"
+                   Grid.Column="6"
+                   Name="txtHDE4"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Head Endurance" />
+        <Slider Grid.Row="6"
+                Grid.Column="7"
+                Name="sliderHDE4"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="6"
+                   Grid.Column="7"
+                   Name="txtValueHDE4"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderHDE4, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="7"
+                   Grid.Column="0"
+                   Name="txtUBE1"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Upper Body Endurance" />
+        <Slider Grid.Row="7"
+                Grid.Column="1"
+                Name="sliderUBE1"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="7"
+                   Grid.Column="1"
+                   Name="txtValueUBE1"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderUBE1, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="7"
+                   Grid.Column="2"
+                   Name="txtUBE2"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Upper Body Endurance" />
+        <Slider Grid.Row="7"
+                Grid.Column="3"
+                Name="sliderUBE2"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="7"
+                   Grid.Column="3"
+                   Name="txtValueUBE2"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderUBE2, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="7"
+                   Grid.Column="4"
+                   Name="txtUBE3"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Upper Body Endurance" />
+        <Slider Grid.Row="7"
+                Grid.Column="5"
+                Name="sliderUBE3"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="7"
+                   Grid.Column="5"
+                   Name="txtValueUBE3"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderUBE3, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="7"
+                   Grid.Column="6"
+                   Name="txtUBE4"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Upper Body Endurance" />
+        <Slider Grid.Row="7"
+                Grid.Column="7"
+                Name="sliderUBE4"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="7"
+                   Grid.Column="7"
+                   Name="txtValueUBE4"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderUBE4, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="8"
+                   Grid.Column="0"
+                   Name="txtLBE1"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Lower Body Endurance" />
+        <Slider Grid.Row="8"
+                Grid.Column="1"
+                Name="sliderLBE1"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="8"
+                   Grid.Column="1"
+                   Name="txtValueLBE1"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderLBE1, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="8"
+                   Grid.Column="2"
+                   Name="txtLBE2"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Lower Body Endurance" />
+        <Slider Grid.Row="8"
+                Grid.Column="3"
+                Name="sliderLBE2"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="8"
+                   Grid.Column="3"
+                   Name="txtValueLBE2"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderLBE2, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="8"
+                   Grid.Column="4"
+                   Name="txtLBE3"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Lower Body Endurance" />
+        <Slider Grid.Row="8"
+                Grid.Column="5"
+                Name="sliderLBE3"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="8"
+                   Grid.Column="5"
+                   Name="txtValueLBE3"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderLBE3, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="8"
+                   Grid.Column="6"
+                   Name="txtLBE4"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="White"
+                   Text="Lower Body Endurance" />
+        <Slider Grid.Row="8"
+                Grid.Column="7"
+                Name="sliderLBE4"
+                Minimum="10"
+                Maximum="3000"
+                Value="1000"
+                ValueChanged="slider_ValueChanged"
+                TickFrequency="10"
+                IsSnapToTickEnabled="True"
+                Margin="0,20,60,0"/>
+        <TextBlock Grid.Row="8"
+                   Grid.Column="7"
+                   Name="txtValueLBE4"
+                   FontSize="40"
+                   Foreground="White"
+                   Text="{Binding ElementName=sliderLBE4, Path=Value}"
+                   Margin="80,40,0,0"/>
+
+        <TextBlock Grid.Row="9"
+                   Grid.Column="1"
+                   Name="txt1"
+                   FontSize="33"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Player 1 Stats"
+                   Margin="16,0,0,0"/>
+        <TextBlock Grid.Row="9"
+                   Grid.Column="3"
+                   Name="txt2"
+                   FontSize="33"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Player 2 Stats"
+                   Margin="16,0,0,0"/>
+        <TextBlock Grid.Row="9"
+                   Grid.Column="5"
+                   Name="txt3"
+                   FontSize="33"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Player 3 Stats"
+                   Margin="16,0,0,0"/>
+        <TextBlock Grid.Row="9"
+                   Grid.Column="7"
+                   Name="txt4"
+                   FontSize="33"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Player 4 Stats"
+                   Margin="16,0,0,0"/>
+
+        
+        
+        <TextBlock Grid.Row="10"
+                   Grid.Column="0"
+                   Name="txtLimit1"
+                   FontSize="36"
+                   Foreground="White"
+                   Text="{Binding LimitP1, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="10,-10,0,60"/>
+        <TextBlock Grid.Row="9"
+                   Grid.Column="0"
+                   Name="txtLimit1txt"
+                   FontSize="30"
+                   Foreground="White"
+                   Text="Points"
+                   Margin="10,0,0,0"/>
+
+        <TextBlock Grid.Row="10"
+                   Grid.Column="2"
+                   Name="txtLimit2"
+                   FontSize="36"
+                   Foreground="White"
+                   Text="{Binding LimitP2, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="10,-10,0,60"/>
+        <TextBlock Grid.Row="9"
+                   Grid.Column="2"
+                   Name="txtLimit2txt"
+                   FontSize="30"
+                   Foreground="White"
+                   Text="Points"
+                   Margin="10,0,0,0"/>
+
+        <TextBlock Grid.Row="10"
+                   Grid.Column="4"
+                   Name="txtLimit3"
+                   FontSize="36"
+                   Foreground="White"
+                   Text="{Binding LimitP3, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="10,-10,0,60"/>
+        <TextBlock Grid.Row="9"
+                   Grid.Column="4"
+                   Name="txtLimit3txt"
+                   FontSize="30"
+                   Foreground="White"
+                   Text="Points"
+                   Margin="10,0,0,0"/>
+
+        <TextBlock Grid.Row="10"
+                   Grid.Column="6"
+                   Name="txtLimit4"
+                   FontSize="36"
+                   Foreground="White"
+                   Text="{Binding LimitP4, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="10,-10,0,60"/>
+        <TextBlock Grid.Row="9"
+                   Grid.Column="6"
+                   Name="txtLimit4txt"
+                   FontSize="30"
+                   Foreground="White"
+                   Text="Points"
+                   Margin="10,0,0,0"/>
+
+
+        <!--Activate Stats Modifier-->
+        <Button Grid.Row="10"
+                Grid.Column="5"
+                x:Name="ActivateStatsModifier"
+                Background="#254614"
+                Foreground="#BBBBBB"
+                FontFamily="Calibri"
+                FontSize="36"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="ActivateStatsModifier_Click">
+            Overwrite Stats
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        
+        <!--Switch to Main Page-->
+        <Button Grid.Row="10"
+                Grid.Column="7"
+                x:Name="GetBackToMainPage"
+                Background="#251446"
+                Foreground="#BBBBBB"
+                FontFamily="Times New Roman"
+                FontSize="32"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="GoToMainPage_Click">
+            Back to Main Menu
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--Player 1 ON/OFF-->
+        <Button Grid.Row="10"
+                Grid.Column="0"
+                x:Name="Player1Switch"
+                Background="#FFA500"
+                Foreground="#000000"
+                FontFamily="Times New Roman"
+                FontSize="27"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,40,70,10"
+                Click="SwitchP1_Click">
+            Stats
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBlock Grid.Row="10"
+                   Grid.Column="0"
+                   Name="P1switch"
+                   FontSize="30"
+                   Foreground="White"
+                   Text="{Binding TextP1, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="90,44,0,0"/>
+
+        <!--Player 2 ON/OFF-->
+        <Button Grid.Row="10"
+                Grid.Column="2"
+                x:Name="Player2Switch"
+                Background="#FFA500"
+                Foreground="#000000"
+                FontFamily="Times New Roman"
+                FontSize="27"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,40,70,10"
+                Click="SwitchP2_Click">
+            Stats
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBlock Grid.Row="10"
+                   Grid.Column="2"
+                   Name="P2switch"
+                   FontSize="30"
+                   Foreground="White"
+                   Text="{Binding TextP2, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="90,44,0,0"/>
+
+        <!--Player 3 ON/OFF-->
+        <Button Grid.Row="10"
+                Grid.Column="4"
+                x:Name="Player3Switch"
+                Background="#FFA500"
+                Foreground="#000000"
+                FontFamily="Times New Roman"
+                FontSize="27"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,40,70,10"
+                Click="SwitchP3_Click">
+            Stats
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBlock Grid.Row="10"
+                   Grid.Column="4"
+                   Name="P3switch"
+                   FontSize="30"
+                   Foreground="White"
+                   Text="{Binding TextP3, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="90,44,0,0"/>
+
+        <!--Player 4 ON/OFF-->
+        <Button Grid.Row="10"
+                Grid.Column="6"
+                x:Name="Player4Switch"
+                Background="#FFA500"
+                Foreground="#000000"
+                FontFamily="Times New Roman"
+                FontSize="27"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,40,70,10"
+                Click="SwitchP4_Click">
+            Stats
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBlock Grid.Row="10"
+                   Grid.Column="6"
+                   Name="P4switch"
+                   FontSize="30"
+                   Foreground="White"
+                   Text="{Binding TextP4, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="90,44,0,0"/>
+
+
+        
+        <Border Grid.Column="1"
+                Grid.Row="10"
+                BorderThickness="6"
+                Margin="-6,-6,-6,-6"
+                BorderBrush="Blue">
+        </Border>
+        <Border Grid.Column="3"
+                Grid.Row="10"
+                BorderThickness="6"
+                Margin="-6,-6,-6,-6"
+                BorderBrush="Blue">
+        </Border>
+        
+        <!--Load Preset-->
+        <TextBlock Grid.Row="10"
+                   Grid.Column="1"
+                   FontSize="33"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Slot"
+                   Margin="0,50,0,0"/>
+        <TextBlock Grid.Row="10"
+                   Grid.Column="1"
+                   FontSize="33"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="to player"
+                   Margin="136,50,30,0"/>
+        <TextBox x:Name="InputLoadSlot"
+                 Grid.Column="1"
+                 Grid.Row="10"
+                 FontSize="34"
+                 MaxLength="8"
+                 Margin="70,50,204,4"/>
+        <TextBox x:Name="InputLoadPlayer"
+                 Grid.Column="1"
+                 Grid.Row="10"
+                 FontSize="34"
+                 MaxLength="8"
+                 Margin="272,50,0,4"/>
+
+        <Button Grid.Row="10"
+                Grid.Column="1"
+                x:Name="LoadButtonX"
+                Background="#FFA500"
+                Foreground="#000000"
+                FontFamily="Times New Roman"
+                FontSize="28"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="50,0,50,60"
+                Click="LoadButton_Click">
+            Load Button
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <!--Save Preset-->
+        <TextBlock Grid.Row="10"
+                   Grid.Column="3"
+                   FontSize="33"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Player"
+                   Margin="0,50,0,0"/>
+        <TextBlock Grid.Row="10"
+                   Grid.Column="3"
+                   FontSize="33"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="to slot"
+                   Margin="166,50,0,0"/>
+        <TextBox x:Name="InputSavePlayer"
+                 Grid.Column="3"
+                 Grid.Row="10"
+                 FontSize="34"
+                 MaxLength="8"
+                 Margin="100,50,174,4"/>
+        <TextBox x:Name="InputSaveSlot"
+                 Grid.Column="3"
+                 Grid.Row="10"
+                 FontSize="34"
+                 MaxLength="8"
+                 Margin="272,50,0,4"/>
+
+        <Button Grid.Row="10"
+                Grid.Column="3"
+                x:Name="SaveButtonX"
+                Background="#FFA500"
+                Foreground="#000000"
+                FontFamily="Times New Roman"
+                FontSize="28"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="50,00,50,60"
+                Click="SaveButton_Click">
+            Save Button
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <Border Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Grid.Row="0"
+                Grid.RowSpan="9"
+                BorderThickness="6"
+                Margin="-10,-10,5,0"
+                BorderBrush="Yellow">
+        </Border>
+        <Border Grid.Column="2"
+                Grid.ColumnSpan="2"
+                Grid.Row="0"
+                Grid.RowSpan="9"
+                BorderThickness="6"
+                Margin="-10,-10,5,0"
+                BorderBrush="Yellow">
+        </Border>
+        <Border Grid.Column="4"
+                Grid.ColumnSpan="2"
+                Grid.Row="0"
+                Grid.RowSpan="9"
+                BorderThickness="6"
+                Margin="-10,-10,5,0"
+                BorderBrush="Yellow">
+        </Border>
+        <Border Grid.Column="6"
+                Grid.ColumnSpan="2"
+                Grid.Row="0"
+                Grid.RowSpan="9"
+                BorderThickness="6"
+                Margin="-10,-10,-10,0"
+                BorderBrush="Yellow">
+        </Border>
+
+        <!--Activate Stats Modifier Info-->
+        <Button Grid.Row="10"
+                Grid.Column="5"
+                x:Name="ActivateStatsModifierInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="270,10,15,55"
+                Click="ActivateStatsModifier_Info">
+            i
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        
+    </Grid>
+
+
+</UserControl>

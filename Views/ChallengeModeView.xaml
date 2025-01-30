@@ -1,0 +1,421 @@
+﻿<UserControl x:Class="UR_pnach_editor.Views.ChallengeModeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UR_pnach_editor.Views" xmlns:viewmodels="clr-namespace:UR_pnach_editor.ViewModels"
+             mc:Ignorable="d"
+             d:DesignHeight="1080" d:DesignWidth="1920">
+
+    <Grid Height="1080" Width="1920">
+
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/background.png"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="960*"/>
+            <RowDefinition Height="960*"/>
+            <RowDefinition Height="960*"/>
+            <RowDefinition Height="960*"/>
+            <RowDefinition Height="960*"/>
+            <RowDefinition Height="960*"/>
+            <RowDefinition Height="960*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="540*"/>
+            <ColumnDefinition Width="540*"/>
+            <ColumnDefinition Width="540*"/>
+            <ColumnDefinition Width="540*"/>
+            <ColumnDefinition Width="540*"/>
+            <ColumnDefinition Width="540*"/>
+            <ColumnDefinition Width="540*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="gifImage"
+               Width="1920"
+               Height="1080"
+               Grid.ColumnSpan="100"
+               Grid.RowSpan="100"/>
+        
+        <MediaElement x:Name="customSound" LoadedBehavior="Play"/>
+
+
+        <!--Amateur Player Team-->
+        <Button Grid.Row="1"
+                Grid.Column="0"
+                x:Name="AmateurPlayerTeam"
+                Background="Orange"
+                FontFamily="Century Gothic"
+                FontSize="35"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="AmateurPlayerTeam_Click"
+                MouseEnter="AmateurPlayerTeam_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Amateur Player Team" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        
+        <!--Angry Enemy Team-->
+        <Button Grid.Row="1"
+                Grid.Column="1"
+                x:Name="RedSPAEnemyTeam"
+                Background="Orange"
+                FontFamily="Century Gothic"
+                FontSize="35"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="RedSPAEnemyTeam_Click"
+                MouseEnter="RedSPAEnemyTeam_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Angry Enemy Team" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Master Enemy Team-->
+        <Button Grid.Row="4"
+                Grid.Column="2"
+                x:Name="MasterEnemyTeam"
+                Background="Red"
+                FontFamily="Century Gothic"
+                FontSize="35"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="MasterEnemyTeam_Click"
+                MouseEnter="MasterEnemyTeam_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Master Enemy Team" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Tank Enemy Team-->
+        <Button Grid.Row="4"
+                Grid.Column="0"
+                x:Name="TankEnemyTeam"
+                Background="Red"
+                FontFamily="Century Gothic"
+                FontSize="35"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="TankEnemyTeam_Click"
+                MouseEnter="TankEnemyTeam_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Tank Enemy Team" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Tough Enemy Team-->
+        <Button Grid.Row="3"
+                Grid.Column="1"
+                x:Name="ToughEnemyTeam"
+                Background="Orange"
+                FontFamily="Century Gothic"
+                FontSize="35"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="ToughEnemyTeam_Click"
+                MouseEnter="ToughEnemyTeam_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Tough Enemy Team" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Recover Enemy Team-->
+        <Button Grid.Row="2"
+                Grid.Column="2"
+                x:Name="RecoverEnemyTeam"
+                Background="Orange"
+                FontFamily="Century Gothic"
+                FontSize="35"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="RecoverEnemyTeam_Click"
+                MouseEnter="RecoverEnemyTeam_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Recover Enemy Team" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Strong Enemy Team-->
+        <Button Grid.Row="2"
+                Grid.Column="0"
+                x:Name="StrongEnemyTeam"
+                Background="Orange"
+                FontFamily="Century Gothic"
+                FontSize="35"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="StrongEnemyTeam_Click"
+                MouseEnter="StrongEnemyTeam_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Strong Enemy Team" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Extreme Enemy Team-->
+        <Button Grid.Row="4"
+                Grid.Column="1"
+                x:Name="ExtremeEnemyTeam"
+                Background="Red"
+                FontFamily="Century Gothic"
+                FontSize="35"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="ExtremeEnemyTeam_Click"
+                MouseEnter="ExtremeEnemyTeam_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Extreme Enemy Team" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Fair Enemy Team-->
+        <Button Grid.Row="2"
+                Grid.Column="1"
+                x:Name="FairEnemyTeam"
+                Background="Orange"
+                FontFamily="Century Gothic"
+                FontSize="35"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="FairEnemyTeam_Click"
+                MouseEnter="FairEnemyTeam_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Fair Enemy Team" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--OneHit Enemy Team-->
+        <Button Grid.Row="5"
+                Grid.Column="1"
+                x:Name="OneHitEnemyTeam"
+                Background="DarkRed"
+                FontFamily="Century Gothic"
+                FontSize="35"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="OneHitEnemyTeam_Click"
+                MouseEnter="OneHitEnemyTeam_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="One Hit Enemy Team" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Fair Player Team-->
+        <Button Grid.Row="1"
+                Grid.Column="2"
+                x:Name="FairPlayerTeam"
+                Background="Orange"
+                FontFamily="Century Gothic"
+                FontSize="35"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="FairPlayerTeam_Click"
+                MouseEnter="FairPlayerTeam_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Fair Player Team" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Ultimate Player Team-->
+        <Button Grid.Row="0"
+                Grid.Column="1"
+                x:Name="UltimatePlayerTeam"
+                Background="Green"
+                FontFamily="Century Gothic"
+                FontSize="35"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,20,10,10"
+                Click="UltimatePlayerTeam_Click"
+                MouseEnter="UltimatePlayerTeam_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Ultimate Player Team" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Information-->
+        <TextBlock Grid.Row="0"
+                   Grid.RowSpan="4"
+                   Grid.Column="4"
+                   Grid.ColumnSpan="3"
+                   Name="info"
+                   FontSize="36"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="{Binding ModeInformation, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="0,20,0,0"/>
+
+
+
+        <!--Active Code-->
+        <TextBlock Grid.Row="6"
+                   Grid.Column="3"
+                   Foreground="Red" 
+                   FontSize="34"
+                   FontWeight="Bold"
+                   Text="Active Code"
+                   Margin="40,10,0,0"/>
+        <TextBlock Grid.Row="6"
+                   Grid.Column="3"
+                   x:Name="CodeText"
+                   Foreground="#FFFFFF" 
+                   FontSize="30"
+                   FontWeight="Bold"
+                   TextWrapping="WrapWithOverflow"
+                   Text="{Binding CodeString, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="0,60,0,0"
+                   TextAlignment="Center"/>
+
+        <!--Clear Codes-->
+        <Button Grid.Row="5"
+                Grid.Column="3"
+                x:Name="ClearCodes"
+                Background="#333333"
+                FontFamily="Times New Roman"
+                FontSize="41"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="Clear_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Clear Codes" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--Go to Multiplayer Challenges Page-->
+        <Button Grid.Row="6"
+                Grid.Column="5"
+                x:Name="GoToMultiplayerChallengesPage"
+                Background="#345678"
+                Foreground="#BBBBBB"
+                FontFamily="Times New Roman"
+                FontSize="34"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="GoMultiplayerChallengesPage_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Go to Multiplayer Challenges" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+        <Border Grid.Column="4"
+                Grid.ColumnSpan="3"
+                Grid.Row="0"
+                Grid.RowSpan="6"
+                BorderThickness="6"
+                Margin="-10,10,0,-10"
+                BorderBrush="Yellow">
+        </Border>
+
+
+        <!--Switch to Main Page-->
+        <Button Grid.Row="6"
+                Grid.Column="6"
+                x:Name="GetBackToMainPage"
+                Background="#251446"
+                Foreground="#BBBBBB"
+                FontFamily="Times New Roman"
+                FontSize="38"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="10,10,10,10"
+                Click="GoToMainPage_Click">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Back to Main Menu" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+    </Grid>
+
+
+</UserControl>
