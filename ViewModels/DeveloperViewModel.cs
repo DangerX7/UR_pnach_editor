@@ -310,6 +310,20 @@ namespace UR_pnach_editor.ViewModels
             }
         }
 
+        private string _bradModelStatus;
+        public string BradModelStatus
+        {
+            get { return _bradModelStatus; }
+            set
+            {
+                if (_bradModelStatus != value)
+                {
+                    _bradModelStatus = value;
+                    RaisePropertyChanged("BradModelStatus");
+                }
+            }
+        }
+
         public List<string> BGM_List = new List<string>
         {
             "Original",
@@ -323,18 +337,24 @@ namespace UR_pnach_editor.ViewModels
         };
 
 
-        public List<string> GunMoves = new List<string>
+        public List<string> GunMoves = new List<string>/////TEST
         {
+            "Golden revolver",
             "Regular shoot",
-            "3 bullets in a row",
-            "Hidden gun trick",
+            "Delayed bullet",
             "Punch gun",
-            "Shovel bullet combo",
-            "Knife bullet combo",
+            "Rad uzi",
+            "Hidden gun trick",
             "SPA bullet blowout",
             "SPA sword slash",
-            "Ultimate Uzi",
-            "Delayed bullet",
+            "3 bullets in a row",
+            "Bullet push combo",
+            "Shovel bullet combo",
+            "Bullet sword combo",
+            "Knife bullet combo",
+            "Bullet heavy combo",
+            "Bullet claw combo",
+            "Bullet hammer",
         };
 
         public List<string> YesOrNo = new List<string>
@@ -468,6 +488,16 @@ namespace UR_pnach_editor.ViewModels
             else
             {
                 FolderPathsStatus = "Configured";
+            }
+
+
+            if (SettingsClass.BradModelSwap != "Original")
+            {
+                BradModelStatus = "ON";
+            }
+            else
+            {
+                BradModelStatus = "OFF";
             }
 
             EffectStatus = EditorEffects[SettingsClass.EditorEffectsIndex];

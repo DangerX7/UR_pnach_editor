@@ -5,7 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:UR_pnach_editor.Views" xmlns:viewmodels="clr-namespace:UR_pnach_editor.ViewModels"
              mc:Ignorable="d"
-             d:DesignHeight="1080" d:DesignWidth="1920">
+             d:DesignHeight="1080" d:DesignWidth="1920"
+             KeyDown="Window_KeyDown"
+             Focusable="True"
+             Loaded="Window_Loaded">
 
 
 
@@ -327,7 +330,7 @@
                    FontSize="38"
                    Foreground="White"
                    Text="{Binding StrikePoints, UpdateSourceTrigger=PropertyChanged}"
-                   Margin="30,10,0,0"/>
+                   Margin="30,15,0,0"/>
 
         <TextBlock Grid.Row="1"
                    Grid.Column="14"
@@ -342,7 +345,7 @@
                    FontSize="38"
                    Foreground="White"
                    Text="{Binding GrapplePoints, UpdateSourceTrigger=PropertyChanged}"
-                   Margin="30,10,0,0"/>
+                   Margin="30,15,0,0"/>
 
         <TextBlock Grid.Row="2"
                    Grid.Column="14"
@@ -357,7 +360,7 @@
                    FontSize="38"
                    Foreground="White"
                    Text="{Binding RegionalPoints, UpdateSourceTrigger=PropertyChanged}"
-                   Margin="30,10,0,0"/>
+                   Margin="30,15,0,0"/>
 
         <TextBlock Grid.Row="3"
                    Grid.Column="14"
@@ -372,7 +375,7 @@
                    FontSize="38"
                    Foreground="White"
                    Text="{Binding SpecialPoints, UpdateSourceTrigger=PropertyChanged}"
-                   Margin="30,10,0,0"/>
+                   Margin="30,15,0,0"/>
 
         <TextBlock Grid.Row="4"
                    Grid.Column="14"
@@ -387,7 +390,7 @@
                    FontSize="38"
                    Foreground="White"
                    Text="{Binding WeaponPoints, UpdateSourceTrigger=PropertyChanged}"
-                   Margin="30,10,0,0"/>
+                   Margin="30,15,0,0"/>
 
         <TextBlock Grid.Row="5"
                    Grid.Column="14"
@@ -402,7 +405,7 @@
                    FontSize="38"
                    Foreground="White"
                    Text="{Binding ToughnessPoints, UpdateSourceTrigger=PropertyChanged}"
-                   Margin="30,10,0,0"/>
+                   Margin="30,15,0,0"/>
 
         <TextBlock Grid.Row="6"
                    Grid.Column="14"
@@ -417,7 +420,7 @@
                    FontSize="38"
                    Foreground="White"
                    Text="{Binding HeadEndurancePoints, UpdateSourceTrigger=PropertyChanged}"
-                   Margin="30,10,0,0"/>
+                   Margin="30,15,0,0"/>
 
         <TextBlock Grid.Row="7"
                    Grid.Column="14"
@@ -432,7 +435,7 @@
                    FontSize="38"
                    Foreground="White"
                    Text="{Binding UpperBodyEndurancePoints, UpdateSourceTrigger=PropertyChanged}"
-                   Margin="30,10,0,0"/>
+                   Margin="30,15,0,0"/>
 
         <TextBlock Grid.Row="8"
                    Grid.Column="14"
@@ -447,7 +450,7 @@
                    FontSize="38"
                    Foreground="White"
                    Text="{Binding LowerBodyEndurancePoints, UpdateSourceTrigger=PropertyChanged}"
-                   Margin="30,10,0,0"/>
+                   Margin="30,15,0,0"/>
 
         <TextBlock Grid.Row="9"
                    Grid.Column="14"
@@ -462,7 +465,7 @@
                    FontSize="24"
                    Foreground="White"
                    Text="{Binding SpecialArtDownPoints, UpdateSourceTrigger=PropertyChanged}"
-                   Margin="30,25,0,0"/>
+                   Margin="30,20,0,0"/>
 
         <TextBlock Grid.Row="10"
                    Grid.Column="14"
@@ -471,13 +474,13 @@
                    Foreground="LightGreen"
                    Text="SPA Recovery"
                 FontFamily="Courier New"
-                   Margin="20,20,0,0"/>
+                   Margin="20,0,0,50"/>
         <TextBlock Grid.Row="10"
                    Grid.Column="13"
                    FontSize="38"
                    Foreground="White"
                    Text="{Binding SPARecoveryPoints, UpdateSourceTrigger=PropertyChanged}"
-                   Margin="30,10,0,0"/>
+                   Margin="30,-10,0,40"/>
 
         <TextBlock Grid.Row="11"
                    Grid.Column="14"
@@ -486,13 +489,28 @@
                    Foreground="LightGreen"
                    Text="Ultra Instinct"
                 FontFamily="Courier New"
-                   Margin="20,20,0,0"/>
+                   Margin="20,-30,0,80"/>
         <TextBlock Grid.Row="11"
                    Grid.Column="13"
                    FontSize="38"
                    Foreground="White"
                    Text="{Binding UltraInstinct, UpdateSourceTrigger=PropertyChanged}"
-                   Margin="30,10,0,0"/>
+                   Margin="30,-35,0,70"/>
+
+        <TextBlock Grid.Row="11"
+                   Grid.Column="14"
+                   FontSize="38"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Weapon Grip"
+                   FontFamily="Courier New"
+                   Margin="20,30,0,0"/>
+        <TextBlock Grid.Row="11"
+                   Grid.Column="13"
+                   FontSize="38"
+                   Foreground="White"
+                   Text="{Binding WeaponGrip, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="30,20,0,0"/>
 
 
 
@@ -1072,6 +1090,34 @@
                 Click="SpaDownInfiniteCustom2_Click"
                 MouseEnter="SpaDownInfiniteCustom2_MouseEnter">
             <Image Source="/Resources/img_312.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--Poisoned Character-->
+        <Button Grid.Row="6"
+                Grid.Column="3"
+                x:Name="PoisonedChar"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="PoisonedChar_Click"
+                MouseEnter="PoisonedChar_MouseEnter">
+            <Image Source="/Resources/img_321.png"
+                   Margin="-2,-2,-2,-2"/>
+        </Button>
+        <!--Raise Stats Over Time-->
+        <Button Grid.Row="6"
+                Grid.Column="12"
+                x:Name="PowerOverTimeChar"
+                FontFamily="Verdana"
+                FontSize="26"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="0,0,0,0"
+                Click="PowerOverTimeChar_Click"
+                MouseEnter="PowerOverTimeChar_MouseEnter">
+            <Image Source="/Resources/img_322.png"
                    Margin="-2,-2,-2,-2"/>
         </Button>
 

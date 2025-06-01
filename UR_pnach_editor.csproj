@@ -73,6 +73,8 @@
     <None Remove="Resources\img_309.png" />
     <None Remove="Resources\img_311.png" />
     <None Remove="Resources\img_312.png" />
+    <None Remove="Resources\img_321.png" />
+    <None Remove="Resources\img_322.png" />
     <None Remove="Resources\img_99.png" />
     <None Remove="Resources\Leaves.gif" />
     <None Remove="Resources\movie01.gif" />
@@ -209,7 +211,19 @@
     <None Remove="Resources\PreviewSkin185.png" />
     <None Remove="Resources\PreviewSkin186.png" />
     <None Remove="Resources\PreviewSkin187.png" />
+    <None Remove="Resources\PreviewSkin188.png" />
+    <None Remove="Resources\PreviewSkin189.png" />
     <None Remove="Resources\PreviewSkin19.png" />
+    <None Remove="Resources\PreviewSkin190.png" />
+    <None Remove="Resources\PreviewSkin191.png" />
+    <None Remove="Resources\PreviewSkin192.png" />
+    <None Remove="Resources\PreviewSkin193.png" />
+    <None Remove="Resources\PreviewSkin194.png" />
+    <None Remove="Resources\PreviewSkin195.png" />
+    <None Remove="Resources\PreviewSkin196.png" />
+    <None Remove="Resources\PreviewSkin197.png" />
+    <None Remove="Resources\PreviewSkin198.png" />
+    <None Remove="Resources\PreviewSkin199.png" />
     <None Remove="Resources\PreviewSkin2.png" />
     <None Remove="Resources\PreviewSkin20.png" />
     <None Remove="Resources\PreviewSkin21.png" />
@@ -491,6 +505,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\img_308.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_321.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\img_322.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Leaves.gif">
@@ -865,7 +885,43 @@
     <Content Include="Resources\PreviewSkin187.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\PreviewSkin188.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin189.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\PreviewSkin19.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin190.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin191.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin192.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin193.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin194.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin195.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin196.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin197.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin198.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin199.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\PreviewSkin2.png">

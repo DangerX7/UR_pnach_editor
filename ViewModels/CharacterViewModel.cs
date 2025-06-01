@@ -13,6 +13,8 @@ using System.Windows.Documents;
 using System.Windows.Shapes;
 using System.Windows.Controls;
 using UR_pnach_editor.Codes;
+using System.DirectoryServices;
+using System.Text.RegularExpressions;
 
 namespace UR_pnach_editor.ViewModels
 {
@@ -571,6 +573,21 @@ namespace UR_pnach_editor.ViewModels
         }
 
 
+        private string _weaponGrip;
+        public string WeaponGrip
+        {
+            get { return _weaponGrip; }
+            set
+            {
+                if (_weaponGrip != value)
+                {
+                    _weaponGrip = value;
+                    RaisePropertyChanged("WeaponGrip");
+                }
+            }
+        }
+
+
         private bool _multiplayerAI;
         public bool MultiplayerAI
         {
@@ -602,42 +619,42 @@ namespace UR_pnach_editor.ViewModels
             player1Data = GetStats(player1, "105A6018", "105A601A", "105A601C", "105A601E", "105A6020", "105A6022", "105A5FD2", "105A5FD8", "105A5FD4", "105A5FDA",
                 "105A5FD6", "105A5FDC", "205A6010", "205A6002", "205A6006", "205A600A", "205A600E", "205A6014", "105A6070", "105A65EA", "1059C8A6", "105A5FC8",
                 "105A5FF2", 1, "105A5FCC", "105A5FCE", "105A5FD0", "205A5A50", "D05A5FC8", "D05A6016", "D05A5FC8", "005A5FC8", "D05A5FF2", "005A5FF2",
-                "D05A5A52", "D0359854", "005A5A52", freeModeOn, "105A65C8");
+                "D05A5A52", "D0359854", "005A5A52", freeModeOn, "105A65C8", "005A6018", "005A601A", "005A601C", "005A601E", "005A6020", "005A6022", "105A5FC6");
 
             player2Data = GetStats(player2, "105AF768", "105AF76A", "105AF76C", "105AF76E", "105AF770", "105AF772", "105AF722", "105AF728", "105AF724", "105AF72A",
                 "105AF726", "105AF72C", "205AF760", "205AF752", "205AF756", "205AF75A", "205AF75E", "205AF764", "105AF7C0", "105AFD3A", "105A5FF6", "105AF718",
                 "105AF742", 2, "105AF71C", "105AF71E", "105AF720", "205AF1A0", "D05AF718", "D05AF766", "D05AF718", "005AF718", "D05AF742", "005AF742",
-                "D05AF1A2", "D0359924", "005AF1A2", freeModeOn, "105AFD18");
+                "D05AF1A2", "D0359924", "005AF1A2", freeModeOn, "105AFD18", "005AF768", "005AF76A", "005AF76C", "005AF76E", "005AF770", "005AF772", "105AF716");
 
             player3Data = GetStats(player3, "105B8EB8", "105B8EBA", "105B8EBC", "105B8EBE", "105B8EC0", "105B8EC2", "105B8E72", "105B8E78", "105B8E74", "105B8E7A",
                 "105B8E76", "105B8E7C", "205B8EB0", "205B8EA2", "205B8EA6", "205B8EAA", "205B8EAE", "205B8EB4", "105B8F10", "105B948A", "105AF746", "105B8E68",
                 "105B8E92", 3, "105B8E6C", "105B8E6E", "105B8E70", "205B88F0", "D05B8E68", "D05B8EB6", "D05B8E68", "005B8E68", "D05B8E92", "005B8E92",
-                "D05B88F2", "D0359AC4", "005B88F2", freeModeOn, "105B9468");
+                "D05B88F2", "D0359AC4", "005B88F2", freeModeOn, "105B9468", "005B8EB8", "005B8EBA", "005B8EBC", "005B8EBE", "005B8EC0", "005B8EC2", "105B8E66");
 
             player4Data = GetStats(player4, "105C2608", "105C260A", "105C260C", "105C260E", "105C2610", "105C2612", "105C25C2", "105C25C8", "105C25C4", "105C25CA",
                 "105C25C6", "105C25CC", "205C2600", "205C25F2", "205C25F6", "205C25FA", "205C25FE", "205C2604", "105C2660", "105C2BDA", "105B8E96", "105C25B8",
                 "105C25E2", 4, "105C25BC", "105C25BE", "105C25C0", "205C2040", "D05C25B8", "D05C2606", "D05C25B8", "005C25B8", "D05C25E2", "005C25E2",
-                "D05C2042", "D0359C64", "005C2042", freeModeOn, "105C2BB8");
+                "D05C2042", "D0359C64", "005C2042", freeModeOn, "105C2BB8", "005C2608", "005C260A", "005C260C", "005C260E", "005C2610", "005C2612", "105C25B6");
 
             player5Data = GetStats(player5, "105CBD58", "105CBD5A", "105CBD5C", "105CBD5E", "105CBD60", "105CBD62", "105CBD12", "105CBD18", "105CBD14", "105CBD1A",
                 "105CBD16", "105CBD1C", "205CBD50", "205CBD42", "205CBD46", "205CBD4A", "205CBD4E", "205CBD54", "105CBD1C", "105CC32A", "105C25E6", "105CBD08",
                 "105CBD32", 5, "105CBD0C", "105CBD0E", "105CBD10", "205CB790", "D05CBD08", "D05CBD56", "D05CBD08", "005CBD08", "D05CBD32", "005CBD32",
-                "D05CB792", "D0359E04", "005CB792", freeModeOn, "105CC308");
+                "D05CB792", "D0359E04", "005CB792", freeModeOn, "105CC308", "005CBD58", "005CBD5A", "005CBD5C", "005CBD5E", "005CBD60", "005CBD62", "105CBD06");
 
             player6Data = GetStats(player6, "105D54A8", "105D54AA", "105D54AC", "105D54AE", "105D54B0", "105D54B2", "105D5462", "105D5468", "105D5464", "105D546A",
                 "105D5466", "105D546C", "205D54A0", "205D5492", "205D5496", "205D549A", "205D549E", "205D54A4", "105D5500", "105D5A7A", "105CBD36", "105D5458",
                 "105D5482", 6, "105D545C", "105D545E", "105D5460", "205D4EE0", "D05D5458", "D05D54A6", "D05D5458", "005D5458", "D05D5482", "005D5482",
-                "D05D4EE2", "D0359FA4", "005D4EE2", freeModeOn, "105D5A58");
+                "D05D4EE2", "D0359FA4", "005D4EE2", freeModeOn, "105D5A58", "005D54A8", "005D54AA", "005D54AC", "005D54AE", "005D54B0", "005D54B2", "105D5456");
 
             player7Data = GetStats(player7, "105DEBF8", "105DEBFA", "105DEBFC", "105DEBFE", "105DEC00", "105DEC02", "105DEBB2", "105DEBB8", "105DEBB4", "105DEBBA",
                 "105DEBB6", "105DEBBC", "205DEBF0", "205DEBE2", "205DEBE6", "205DEBEA", "205DEBEE", "205DEBF4", "105DEC50", "105DF1CA", "105D5486", "105DEBA8",
                 "105DEBD2", 7, "105DEBAC", "105DEBAE", "105DEBB0", "205DE630", "D05DEBA8", "D05DEBF6", "D05DEBA8", "005DEBA8", "D05DEBD2", "005DEBD2",
-                "D05DE632", "D035A144", "005DE632", freeModeOn, "105DF1A8");
+                "D05DE632", "D035A144", "005DE632", freeModeOn, "105DF1A8", "005DEBF8", "005DEBFA", "005DEBFC", "005DEBFE", "005DEC00", "005DEC02", "105DEBA6");
 
             player8Data = GetStats(player8, "105E8348", "105E834A", "105E834C", "105E834E", "105E8350", "105E8352", "105E8302", "105E8308", "105E8304", "105E830A",
                 "105E8306", "105E830C", "205E8340", "205E8332", "205E8336", "205E833A", "205E833E", "205E8344", "105E83A0", "105E891A", "105DEBD6", "105E82F8",
                 "105E8322", 8, "105E82FC", "105E82FE", "105E8300", "205E7D80", "D05E82F8", "D05E8346", "D05E82F8", "005E82F8", "D05E8322", "005E8322",
-                "D05E7D82", "D035A2E4", "005E7D82", freeModeOn, "105E88F8");
+                "D05E7D82", "D035A2E4", "005E7D82", freeModeOn, "105E88F8", "005E8348", "005E834A", "005E834C", "005E834E", "005E8350", "005E8352", "105E82F6");
 
             string controls = "";
             string p1control = GetControlCode(P1Control, 1);
@@ -735,7 +752,8 @@ namespace UR_pnach_editor.ViewModels
             string LBE, string LBEbal, string SPAdown, string SPAred, string SPAgreen, string SPAblue, string SPAalpha, string infiniteSPAdown, string SPAregained,
             string autoParry, string spaCooldown, string hp, string spaBar, int player, string HDEfix, string UBEfix, string LBEfix, string fly, string hpCondition,
             string spaActivation, string playerHpCondition, string playerHealthValueCondition, string spaCondition, string playerSpaValueCondition,
-            string yAxisCondition, string rightStickInput, string yAxisValueCondition, bool freeModeOn, string autaGrab)
+            string yAxisCondition, string rightStickInput, string yAxisValueCondition, bool freeModeOn, string autaGrab,
+            string stkIncrease, string grpIncrease, string rgaIncrease, string spaIncrease, string wpaIncrease, string tghIncrease, string wpnGrip)
         {
             string data = "";
 
@@ -785,6 +803,7 @@ namespace UR_pnach_editor.ViewModels
                            "patch=1,EE," + SPAregained + ",extended,0020 //SPA Regained" + Environment.NewLine +
                            "patch=1,EE," + autaGrab + ",extended,0001 //Auta-Grab" + Environment.NewLine +
                            "patch=1,EE," + autoParry + ",extended,0000 //Auto-Parry" + Environment.NewLine +
+                           "patch=1,EE," + wpnGrip + ",extended,0003 //Weapon Grip" + Environment.NewLine +
                            "patch=1,EE," + spaCooldown + ",extended,0000 //SPA Cooldown";
                     break;
                 case 3://Suspect
@@ -802,6 +821,7 @@ namespace UR_pnach_editor.ViewModels
                            "patch=1,EE," + UBEbal + ",extended,00C8 //UBE Balance" + Environment.NewLine +
                            "patch=1,EE," + LBE + ",extended,0190 //LBE" + Environment.NewLine +
                            "patch=1,EE," + LBEbal + ",extended,00C8 //LBE Balance" + Environment.NewLine +
+                           "patch=1,EE," + wpnGrip + ",extended,0002 //Weapon Grip" + Environment.NewLine +
                            "patch=1,EE," + SPAregained + ",extended,0020 //SPA Regained";
                     break;
                 case 4://Kadonashi
@@ -901,6 +921,7 @@ namespace UR_pnach_editor.ViewModels
                            "patch=1,EE," + UBEbal + ",extended,009E //UBE Balance" + Environment.NewLine +
                            "patch=1,EE," + LBE + ",extended,00F5 //LBE" + Environment.NewLine +
                            "patch=1,EE," + LBEbal + ",extended,007B //LBE Balance" + Environment.NewLine +
+                           "patch=1,EE," + wpnGrip + ",extended,0000 //Weapon Grip" + Environment.NewLine +
                            "patch=1,EE," + SPAdown + ",extended,0000 //Spa Down";
                     break;
                 case 9://Nightmare
@@ -968,6 +989,7 @@ namespace UR_pnach_editor.ViewModels
                            "patch=1,EE," + SPAgreen + ",extended,3E20 //Spa Down Green Bar Color" + Environment.NewLine +
                            "patch=1,EE," + SPAblue + ",extended,3E80 //Spa Down Blue Bar Color" + Environment.NewLine +
                            "patch=1,EE," + SPAalpha + ",extended,3E80 //Spa Down Alpha Bar Color" + Environment.NewLine +
+                           "patch=1,EE," + wpnGrip + ",extended,0003 //Weapon Grip" + Environment.NewLine +
                            "patch=1,EE," + SPAdown + ",extended,0007 //Spa Down";
                     break;
                 case 12://Paul
@@ -1078,7 +1100,8 @@ namespace UR_pnach_editor.ViewModels
                            "patch=1,EE," + GRP + ",extended,000A //GRP" + Environment.NewLine +
                            "patch=1,EE," + RGA + ",extended,000A //RGA" + Environment.NewLine +
                            "patch=1,EE," + SPA + ",extended,000A //SPA" + Environment.NewLine +
-                           "patch=1,EE," + WPA + ",extended,07D0 //WPA";
+                           "patch=1,EE," + WPA + ",extended,07D0 //WPA" + Environment.NewLine +
+                           "patch=1,EE," + wpnGrip + ",extended,0003 //Weapon Grip";
                     break;
                 case 19://Superman Flight (R3 Up or R3 Down)
                     data = "" + Environment.NewLine +
@@ -1137,6 +1160,21 @@ namespace UR_pnach_editor.ViewModels
                            "patch=1,EE," + spaActivation + ",extended,01300000 //If SPA is activated" + Environment.NewLine +
                            "patch=1,EE," + LBEbal + ",extended,0258 //LBE Balance";
                     break;
+                case 21://Poisoned
+                    data = "" + Environment.NewLine +
+                           "patch=1,EE," + playerHpCondition + ",extended,01300001 //If HP is higher than 0" + Environment.NewLine +
+                           "patch=1,EE,30300001,extended," + playerHealthValueCondition + " //Lose Health by 1";
+                    break;
+                case 22://Auto Raise Stats
+                    data = "" + Environment.NewLine +
+                           "patch=1,EE," + spaActivation + ",extended,01300000 //If SPA is activated" + Environment.NewLine +
+                           "patch=1,EE,30200001,extended," + stkIncrease + " //Increase STK by 1" + Environment.NewLine +
+                           "patch=1,EE,30200001,extended," + grpIncrease + " //Increase GRP by 1" + Environment.NewLine +
+                           "patch=1,EE,30200001,extended," + rgaIncrease + " //Increase RGA by 1" + Environment.NewLine +
+                           "patch=1,EE,30200001,extended," + spaIncrease + " //Increase SPA by 1" + Environment.NewLine +
+                           "patch=1,EE,30200001,extended," + wpaIncrease + " //Increase WPA by 1" + Environment.NewLine +
+                           "patch=1,EE,30200001,extended," + tghIncrease + " //Increase TGH by 1";
+                    break;
 
                 case 101://Dead
                     data = "" + Environment.NewLine +
@@ -1146,12 +1184,14 @@ namespace UR_pnach_editor.ViewModels
                 case 102://Weak
                     data = "" + Environment.NewLine +
                            "Player" + player + Environment.NewLine +
-                           "patch=1,EE," + TGH + ",extended,00FA //TGH";
+                           "patch=1,EE," + TGH + ",extended,00FA //TGH" + Environment.NewLine +
+                           "patch=1,EE," + wpnGrip + ",extended,0000 //Weapon Grip";
                     break;
                 case 103://Strong
                     data = "" + Environment.NewLine +
                            "Player" + player + Environment.NewLine +
-                           "patch=1,EE," + TGH + ",extended,03E8 //TGH";
+                           "patch=1,EE," + TGH + ",extended,03E8 //TGH" + Environment.NewLine +
+                           "patch=1,EE," + wpnGrip + ",extended,0001 //Weapon Grip";
                     break;
                 case 104://Tank
                     data = "" + Environment.NewLine +
@@ -1162,7 +1202,8 @@ namespace UR_pnach_editor.ViewModels
                            "patch=1,EE," + UBE + ",extended,2710 //UBE" + Environment.NewLine +
                            "patch=1,EE," + UBEfix + ",extended,1388 //UBE Fix" + Environment.NewLine +
                            "patch=1,EE," + LBE + ",extended,2710 //LBE" + Environment.NewLine +
-                           "patch=1,EE," + LBEfix + ",extended,1388 //LBE Fix";
+                           "patch=1,EE," + LBEfix + ",extended,1388 //LBE Fix" + Environment.NewLine +
+                           "patch=1,EE," + wpnGrip + ",extended,0002 //Weapon Grip";
                     break;
                 case 105://Beat-Up Player
                     data = "" + Environment.NewLine +
@@ -1172,7 +1213,8 @@ namespace UR_pnach_editor.ViewModels
                            "patch=1,EE," + UBE + ",extended,0000 //UBE" + Environment.NewLine +
                            "patch=1,EE," + UBEfix + ",extended,0000 //UBE Fix" + Environment.NewLine +
                            "patch=1,EE," + LBE + ",extended,0000 //LBE" + Environment.NewLine +
-                           "patch=1,EE," + LBEfix + ",extended,0000 //LBE Fix";
+                           "patch=1,EE," + LBEfix + ",extended,0000 //LBE Fix" + Environment.NewLine +
+                           "patch=1,EE," + wpnGrip + ",extended,0000 //Weapon Grip";
                     break;
                 case 106://No Spa
                     data = "" + Environment.NewLine +
@@ -3349,16 +3391,322 @@ namespace UR_pnach_editor.ViewModels
             string cameraCode = "";
             if (MultiplayerCamera)
             {
-                cameraCode = "patch=1,EE,004616C0,extended,08 //Multiplayer camera for Free Mode" + Environment.NewLine +
-                "patch=1,EE,10ABFA74,extended,0001 //partner is controller by player 2";
+                cameraCode = "patch=1,EE,10ABFA74,extended,0001 //partner is controller by player 2";
+            }
+            else
+            {
+                cameraCode = "patch=1,EE,10ABFA74,extended,0000 //partner is controller by AI";
             }
 
+            string enemiesData = "";
+
+            if (missionNumber != 0)
+            {
+                enemiesData =
+                              noPosChange + "patch=1,EE,205B88F0,extended,3F900000 //player 3 y-pos" + Environment.NewLine +
+                              noPosChange + "patch=1,EE,205C2040,extended,3F900000 //player 3 y-pos" + Environment.NewLine +
+                              noPosChange + "patch=1,EE,205CB790,extended,3F900000 //player 3 y-pos" + Environment.NewLine +
+                              noPosChange + "patch=1,EE,205D4EE0,extended,3F900000 //player 3 y-pos" + Environment.NewLine +
+                              noPosChange + "patch=1,EE,205DE630,extended,3F900000 //player 3 y-pos" + Environment.NewLine +
+                              noPosChange + "patch=1,EE,205E7D80,extended,3F900000 //player 3 y-pos" + Environment.NewLine +
+
+                              "" + Environment.NewLine +
+                              "patch=1,EE,21DA8654,extended," + enemy1ID + "//1st id" + Environment.NewLine +
+                              "patch=1,EE,21DA8658,extended," + enemy1_data1 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA865C,extended," + enemy1_data2 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA8660,extended," + enemy1_data3 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA8664,extended," + enemy1_data4 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA8668,extended," + enemy1_data5 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA866C,extended," + enemy1_data6 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA8670,extended," + enemy1_data7 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA8674,extended," + enemy1_data8 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA8678,extended," + enemy1_data9 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA867C,extended," + enemy1_data10 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA8680,extended," + enemy1_data11 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA8684,extended," + enemy1_data12 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA8688,extended," + enemy1_data13 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA868C,extended," + enemy1_data14 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA8690,extended," + enemy1_data15 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA8694,extended," + enemy1_data16 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA8698,extended," + enemy1_data17 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA869C,extended," + enemy1_data18 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA86A0,extended," + enemy1_data19 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA86A4,extended," + enemy1_data20 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA86A8,extended," + enemy1_data21 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA86AC,extended," + enemy1_data22 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA86B0,extended," + enemy1_data23 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA86B4,extended," + enemy1_data24 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA86B8,extended," + enemy1_data25 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA86BC,extended," + enemy1_data26 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA86C0,extended," + enemy1_data27 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA86C4,extended," + enemy1_data28 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA86C8,extended," + enemy1_data29 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA86CC,extended," + enemy1_data30 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA86D0,extended," + enemy1_data31 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA86D4,extended," + enemy1_data32 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA86D8,extended," + enemy1_data33 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA86DC,extended," + enemy1_data34 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA86E0,extended," + enemy1_data35 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA86E4,extended," + enemy1_data36 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA86E8,extended," + enemy1_data37 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA86EC,extended," + enemy1_data38 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA86F0,extended," + enemy1_data39 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA86F4,extended," + enemy1_data40 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA86F8,extended," + enemy1_data41 + "//1st code" + Environment.NewLine +
+                              "patch=1,EE,21DA86FC,extended," + enemy1_data42 + "//1st code" + Environment.NewLine +
+
+                              "" + Environment.NewLine +
+                              "patch=1,EE,21DA8700,extended," + enemy2ID + "//2nd id" + Environment.NewLine +
+                              "patch=1,EE,21DA8704,extended," + enemy2_data1 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8708,extended," + enemy2_data2 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA870C,extended," + enemy2_data3 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8710,extended," + enemy2_data4 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8714,extended," + enemy2_data5 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8718,extended," + enemy2_data6 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA871C,extended," + enemy2_data7 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8720,extended," + enemy2_data8 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8724,extended," + enemy2_data9 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8728,extended," + enemy2_data10 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA872C,extended," + enemy2_data11 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8730,extended," + enemy2_data12 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8734,extended," + enemy2_data13 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8738,extended," + enemy2_data14 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA873C,extended," + enemy2_data15 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8740,extended," + enemy2_data16 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8744,extended," + enemy2_data17 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8748,extended," + enemy2_data18 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA874C,extended," + enemy2_data19 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8750,extended," + enemy2_data20 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8754,extended," + enemy2_data21 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8758,extended," + enemy2_data22 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA875C,extended," + enemy2_data23 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8760,extended," + enemy2_data24 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8764,extended," + enemy2_data25 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8768,extended," + enemy2_data26 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA876C,extended," + enemy2_data27 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8770,extended," + enemy2_data28 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8774,extended," + enemy2_data29 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8778,extended," + enemy2_data30 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA877C,extended," + enemy2_data31 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8780,extended," + enemy2_data32 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8784,extended," + enemy2_data33 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8788,extended," + enemy2_data34 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA878C,extended," + enemy2_data35 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8790,extended," + enemy2_data36 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8794,extended," + enemy2_data37 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8798,extended," + enemy2_data38 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA879C,extended," + enemy2_data39 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA87A0,extended," + enemy2_data40 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA87A4,extended," + enemy2_data41 + "//2nd code" + Environment.NewLine +
+                              "patch=1,EE,21DA87A8,extended," + enemy2_data42 + "//2nd code" + Environment.NewLine +
+
+                              "" + Environment.NewLine +
+                              "patch=1,EE,21DA87AC,extended," + enemy3ID + "//3rd id" + Environment.NewLine +
+                              "patch=1,EE,21DA87B0,extended," + enemy3_data1 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA87B4,extended," + enemy3_data2 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA87B8,extended," + enemy3_data3 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA87BC,extended," + enemy3_data4 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA87C0,extended," + enemy3_data5 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA87C4,extended," + enemy3_data6 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA87C8,extended," + enemy3_data7 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA87CC,extended," + enemy3_data8 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA87D0,extended," + enemy3_data9 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA87D4,extended," + enemy3_data10 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA87D8,extended," + enemy3_data11 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA87DC,extended," + enemy3_data12 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA87E0,extended," + enemy3_data13 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA87E4,extended," + enemy3_data14 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA87E8,extended," + enemy3_data15 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA87EC,extended," + enemy3_data16 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA87F0,extended," + enemy3_data17 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA87F4,extended," + enemy3_data18 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA87F8,extended," + enemy3_data19 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA87FC,extended," + enemy3_data20 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8800,extended," + enemy3_data21 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8804,extended," + enemy3_data22 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8808,extended," + enemy3_data23 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA880C,extended," + enemy3_data24 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8810,extended," + enemy3_data25 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8814,extended," + enemy3_data26 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8818,extended," + enemy3_data27 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA881C,extended," + enemy3_data28 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8820,extended," + enemy3_data29 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8824,extended," + enemy3_data30 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8828,extended," + enemy3_data31 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA882C,extended," + enemy3_data32 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8830,extended," + enemy3_data33 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8834,extended," + enemy3_data34 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8838,extended," + enemy3_data35 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA883C,extended," + enemy3_data36 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8840,extended," + enemy3_data37 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8844,extended," + enemy3_data38 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8848,extended," + enemy3_data39 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA884C,extended," + enemy3_data40 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8850,extended," + enemy3_data41 + "//3rd code" + Environment.NewLine +
+                              "patch=1,EE,21DA8854,extended," + enemy3_data42 + "//3rd code" + Environment.NewLine +
+
+                              "" + Environment.NewLine +
+                              "patch=1,EE,21DA8858,extended," + enemy4ID + "//4th id" + Environment.NewLine +
+                              "patch=1,EE,21DA885C,extended," + enemy4_data1 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8860,extended," + enemy4_data2 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8864,extended," + enemy4_data3 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8868,extended," + enemy4_data4 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA886C,extended," + enemy4_data5 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8870,extended," + enemy4_data6 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8874,extended," + enemy4_data7 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8878,extended," + enemy4_data8 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA887C,extended," + enemy4_data9 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8880,extended," + enemy4_data10 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8884,extended," + enemy4_data11 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8888,extended," + enemy4_data12 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA888C,extended," + enemy4_data13 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8890,extended," + enemy4_data14 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8894,extended," + enemy4_data15 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8898,extended," + enemy4_data16 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA889C,extended," + enemy4_data17 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA88A0,extended," + enemy4_data18 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA88A4,extended," + enemy4_data19 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA88A8,extended," + enemy4_data20 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA88AC,extended," + enemy4_data21 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA88B0,extended," + enemy4_data22 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA88B4,extended," + enemy4_data23 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA88B8,extended," + enemy4_data24 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA88BC,extended," + enemy4_data25 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA88C0,extended," + enemy4_data26 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA88C4,extended," + enemy4_data27 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA88C8,extended," + enemy4_data28 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA88CC,extended," + enemy4_data29 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA88D0,extended," + enemy4_data30 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA88D4,extended," + enemy4_data31 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA88D8,extended," + enemy4_data32 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA88DC,extended," + enemy4_data33 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA88E0,extended," + enemy4_data34 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA88E4,extended," + enemy4_data35 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA88E8,extended," + enemy4_data36 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA88EC,extended," + enemy4_data37 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA88F0,extended," + enemy4_data38 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA88F4,extended," + enemy4_data39 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA88F8,extended," + enemy4_data40 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA88FC,extended," + enemy4_data41 + "//4th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8900,extended," + enemy4_data42 + "//4th code" + Environment.NewLine +
+
+                              "" + Environment.NewLine +
+                              "patch=1,EE,21DA8904,extended," + enemy5ID + "//5th id" + Environment.NewLine +
+                              "patch=1,EE,21DA8908,extended," + enemy5_data1 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA890C,extended," + enemy5_data2 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8910,extended," + enemy5_data3 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8914,extended," + enemy5_data4 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8918,extended," + enemy5_data5 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA891C,extended," + enemy5_data6 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8920,extended," + enemy5_data7 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8924,extended," + enemy5_data8 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8928,extended," + enemy5_data9 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA892C,extended," + enemy5_data10 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8930,extended," + enemy5_data11 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8934,extended," + enemy5_data12 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8938,extended," + enemy5_data13 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA893C,extended," + enemy5_data14 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8940,extended," + enemy5_data15 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8944,extended," + enemy5_data16 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8948,extended," + enemy5_data17 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA894C,extended," + enemy5_data18 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8950,extended," + enemy5_data19 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8954,extended," + enemy5_data20 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8958,extended," + enemy5_data21 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA895C,extended," + enemy5_data22 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8960,extended," + enemy5_data23 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8964,extended," + enemy5_data24 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8968,extended," + enemy5_data25 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA896C,extended," + enemy5_data26 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8970,extended," + enemy5_data27 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8974,extended," + enemy5_data28 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8978,extended," + enemy5_data29 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA897C,extended," + enemy5_data30 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8980,extended," + enemy5_data31 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8984,extended," + enemy5_data32 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8988,extended," + enemy5_data33 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA898C,extended," + enemy5_data34 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8990,extended," + enemy5_data35 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8994,extended," + enemy5_data36 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8998,extended," + enemy5_data37 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA899C,extended," + enemy5_data38 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA89A0,extended," + enemy5_data39 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA89A4,extended," + enemy5_data40 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA89A8,extended," + enemy5_data41 + "//5th code" + Environment.NewLine +
+                              "patch=1,EE,21DA89AC,extended," + enemy5_data42 + "//5th code" + Environment.NewLine +
+
+                              "" + Environment.NewLine +
+                              "patch=1,EE,21DA89B0,extended," + enemy6ID + "//6th id" + Environment.NewLine +
+                              "patch=1,EE,21DA89B4,extended," + enemy6_data1 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA89B8,extended," + enemy6_data2 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA89BC,extended," + enemy6_data3 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA89C0,extended," + enemy6_data4 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA89C4,extended," + enemy6_data5 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA89C8,extended," + enemy6_data6 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA89CC,extended," + enemy6_data7 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA89D0,extended," + enemy6_data8 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA89D4,extended," + enemy6_data9 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA89D8,extended," + enemy6_data10 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA89DC,extended," + enemy6_data11 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA89E0,extended," + enemy6_data12 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA89E4,extended," + enemy6_data13 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA89E8,extended," + enemy6_data14 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA89EC,extended," + enemy6_data15 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA89F0,extended," + enemy6_data16 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA89F4,extended," + enemy6_data17 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA89F8,extended," + enemy6_data18 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA89FC,extended," + enemy6_data19 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8A00,extended," + enemy6_data20 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8A04,extended," + enemy6_data21 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8A08,extended," + enemy6_data22 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8A0C,extended," + enemy6_data23 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8A10,extended," + enemy6_data24 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8A14,extended," + enemy6_data25 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8A18,extended," + enemy6_data26 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8A1C,extended," + enemy6_data27 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8A20,extended," + enemy6_data28 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8A24,extended," + enemy6_data29 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8A28,extended," + enemy6_data30 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8A2C,extended," + enemy6_data31 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8A30,extended," + enemy6_data32 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8A34,extended," + enemy6_data33 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8A38,extended," + enemy6_data34 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8A3C,extended," + enemy6_data35 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8A40,extended," + enemy6_data36 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8A44,extended," + enemy6_data37 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8A48,extended," + enemy6_data38 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8A4C,extended," + enemy6_data39 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8A50,extended," + enemy6_data40 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8A54,extended," + enemy6_data41 + "//6th code" + Environment.NewLine +
+                              "patch=1,EE,21DA8A58,extended," + enemy6_data42 + "//6th code";
+            }
 
             string missionData = bulletHellCodes + Environment.NewLine +
                           "Mission" + missionNumber + Environment.NewLine +
 
                           customStats + Environment.NewLine +
                           cameraCode + Environment.NewLine +
+
+                            "//All Missions Have The Same Objective = Take Everyone Down " + Environment.NewLine +
+                            "patch=1,EE,01DA9BE6,extended,01                             " + Environment.NewLine +
+                            "patch=1,EE,01DA9BE4,extended,00                             " + Environment.NewLine +
+                            "patch=1,EE,01DA854C,extended,01                             " + Environment.NewLine +
+                            "patch=1,EE,01DA8548,extended,01                             " + Environment.NewLine +
+                            "patch=1,EE,01DA85FE,extended,00                             " + Environment.NewLine +
+                            "patch=1,EE,01DA85DC,extended,00                             " + Environment.NewLine +
+                            "patch=1,EE,01DA8552,extended,00                             " + Environment.NewLine +
+                            "patch=1,EE,01DA8554,extended,00                             " + Environment.NewLine +
+
+                            "//switch camera [R2+L3 = ON | R2+R3=OFF]                    " + Environment.NewLine +
+                            "patch=1,EE,D0359852,extended,FDFD                           " + Environment.NewLine +
+                            "patch=1,EE,004616C0,extended,08                             " + Environment.NewLine +
+                            "patch=1,EE,D0359852,extended,FDFD                           " + Environment.NewLine +
+                            "patch=1,EE,004614D0,extended,05                             " + Environment.NewLine +
+                            "patch=1,EE,D0359852,extended,FDFB                           " + Environment.NewLine +
+                            "patch=1,EE,004616C0,extended,00                             " + Environment.NewLine +
+                            "patch=1,EE,D0359852,extended,FDFB                           " + Environment.NewLine +
+                            "patch=1,EE,004614D0,extended,06                             " + Environment.NewLine +
+
 
                           "patch=1,EE,21DA8494,extended," + player2posA + "//player 2 pos" + Environment.NewLine +
                           "patch=1,EE,21DA8498,extended," + player2posB + "//player 2 pos" + Environment.NewLine +
@@ -3383,283 +3731,7 @@ namespace UR_pnach_editor.ViewModels
 
                           "patch=1,EE,21DA8650,extended,0" + EnemiesNumber + " //number of enemies (map pos)" + Environment.NewLine +
 
-                          noPosChange + "patch=1,EE,205B88F0,extended,3F900000 //player 3 y-pos" + Environment.NewLine +
-                          noPosChange + "patch=1,EE,205C2040,extended,3F900000 //player 3 y-pos" + Environment.NewLine +
-                          noPosChange + "patch=1,EE,205CB790,extended,3F900000 //player 3 y-pos" + Environment.NewLine +
-                          noPosChange + "patch=1,EE,205D4EE0,extended,3F900000 //player 3 y-pos" + Environment.NewLine +
-                          noPosChange + "patch=1,EE,205DE630,extended,3F900000 //player 3 y-pos" + Environment.NewLine +
-                          noPosChange + "patch=1,EE,205E7D80,extended,3F900000 //player 3 y-pos" + Environment.NewLine +
-
-                          "" + Environment.NewLine +
-                          "patch=1,EE,21DA8654,extended," + enemy1ID + "//1st id" + Environment.NewLine +
-                          "patch=1,EE,21DA8658,extended," + enemy1_data1 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA865C,extended," + enemy1_data2 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA8660,extended," + enemy1_data3 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA8664,extended," + enemy1_data4 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA8668,extended," + enemy1_data5 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA866C,extended," + enemy1_data6 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA8670,extended," + enemy1_data7 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA8674,extended," + enemy1_data8 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA8678,extended," + enemy1_data9 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA867C,extended," + enemy1_data10 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA8680,extended," + enemy1_data11 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA8684,extended," + enemy1_data12 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA8688,extended," + enemy1_data13 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA868C,extended," + enemy1_data14 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA8690,extended," + enemy1_data15 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA8694,extended," + enemy1_data16 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA8698,extended," + enemy1_data17 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA869C,extended," + enemy1_data18 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA86A0,extended," + enemy1_data19 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA86A4,extended," + enemy1_data20 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA86A8,extended," + enemy1_data21 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA86AC,extended," + enemy1_data22 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA86B0,extended," + enemy1_data23 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA86B4,extended," + enemy1_data24 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA86B8,extended," + enemy1_data25 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA86BC,extended," + enemy1_data26 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA86C0,extended," + enemy1_data27 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA86C4,extended," + enemy1_data28 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA86C8,extended," + enemy1_data29 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA86CC,extended," + enemy1_data30 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA86D0,extended," + enemy1_data31 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA86D4,extended," + enemy1_data32 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA86D8,extended," + enemy1_data33 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA86DC,extended," + enemy1_data34 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA86E0,extended," + enemy1_data35 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA86E4,extended," + enemy1_data36 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA86E8,extended," + enemy1_data37 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA86EC,extended," + enemy1_data38 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA86F0,extended," + enemy1_data39 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA86F4,extended," + enemy1_data40 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA86F8,extended," + enemy1_data41 + "//1st code" + Environment.NewLine +
-                          "patch=1,EE,21DA86FC,extended," + enemy1_data42 + "//1st code" + Environment.NewLine +
-
-                          "" + Environment.NewLine +
-                          "patch=1,EE,21DA8700,extended," + enemy2ID + "//2nd id" + Environment.NewLine +
-                          "patch=1,EE,21DA8704,extended," + enemy2_data1 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8708,extended," + enemy2_data2 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA870C,extended," + enemy2_data3 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8710,extended," + enemy2_data4 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8714,extended," + enemy2_data5 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8718,extended," + enemy2_data6 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA871C,extended," + enemy2_data7 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8720,extended," + enemy2_data8 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8724,extended," + enemy2_data9 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8728,extended," + enemy2_data10 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA872C,extended," + enemy2_data11 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8730,extended," + enemy2_data12 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8734,extended," + enemy2_data13 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8738,extended," + enemy2_data14 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA873C,extended," + enemy2_data15 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8740,extended," + enemy2_data16 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8744,extended," + enemy2_data17 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8748,extended," + enemy2_data18 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA874C,extended," + enemy2_data19 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8750,extended," + enemy2_data20 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8754,extended," + enemy2_data21 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8758,extended," + enemy2_data22 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA875C,extended," + enemy2_data23 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8760,extended," + enemy2_data24 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8764,extended," + enemy2_data25 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8768,extended," + enemy2_data26 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA876C,extended," + enemy2_data27 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8770,extended," + enemy2_data28 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8774,extended," + enemy2_data29 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8778,extended," + enemy2_data30 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA877C,extended," + enemy2_data31 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8780,extended," + enemy2_data32 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8784,extended," + enemy2_data33 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8788,extended," + enemy2_data34 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA878C,extended," + enemy2_data35 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8790,extended," + enemy2_data36 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8794,extended," + enemy2_data37 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8798,extended," + enemy2_data38 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA879C,extended," + enemy2_data39 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA87A0,extended," + enemy2_data40 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA87A4,extended," + enemy2_data41 + "//2nd code" + Environment.NewLine +
-                          "patch=1,EE,21DA87A8,extended," + enemy2_data42 + "//2nd code" + Environment.NewLine +
-
-                          "" + Environment.NewLine +
-                          "patch=1,EE,21DA87AC,extended," + enemy3ID + "//3rd id" + Environment.NewLine +
-                          "patch=1,EE,21DA87B0,extended," + enemy3_data1 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA87B4,extended," + enemy3_data2 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA87B8,extended," + enemy3_data3 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA87BC,extended," + enemy3_data4 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA87C0,extended," + enemy3_data5 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA87C4,extended," + enemy3_data6 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA87C8,extended," + enemy3_data7 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA87CC,extended," + enemy3_data8 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA87D0,extended," + enemy3_data9 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA87D4,extended," + enemy3_data10 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA87D8,extended," + enemy3_data11 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA87DC,extended," + enemy3_data12 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA87E0,extended," + enemy3_data13 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA87E4,extended," + enemy3_data14 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA87E8,extended," + enemy3_data15 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA87EC,extended," + enemy3_data16 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA87F0,extended," + enemy3_data17 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA87F4,extended," + enemy3_data18 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA87F8,extended," + enemy3_data19 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA87FC,extended," + enemy3_data20 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8800,extended," + enemy3_data21 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8804,extended," + enemy3_data22 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8808,extended," + enemy3_data23 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA880C,extended," + enemy3_data24 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8810,extended," + enemy3_data25 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8814,extended," + enemy3_data26 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8818,extended," + enemy3_data27 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA881C,extended," + enemy3_data28 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8820,extended," + enemy3_data29 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8824,extended," + enemy3_data30 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8828,extended," + enemy3_data31 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA882C,extended," + enemy3_data32 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8830,extended," + enemy3_data33 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8834,extended," + enemy3_data34 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8838,extended," + enemy3_data35 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA883C,extended," + enemy3_data36 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8840,extended," + enemy3_data37 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8844,extended," + enemy3_data38 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8848,extended," + enemy3_data39 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA884C,extended," + enemy3_data40 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8850,extended," + enemy3_data41 + "//3rd code" + Environment.NewLine +
-                          "patch=1,EE,21DA8854,extended," + enemy3_data42 + "//3rd code" + Environment.NewLine +
-
-                          "" + Environment.NewLine +
-                          "patch=1,EE,21DA8858,extended," + enemy4ID + "//4th id" + Environment.NewLine +
-                          "patch=1,EE,21DA885C,extended," + enemy4_data1 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8860,extended," + enemy4_data2 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8864,extended," + enemy4_data3 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8868,extended," + enemy4_data4 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA886C,extended," + enemy4_data5 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8870,extended," + enemy4_data6 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8874,extended," + enemy4_data7 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8878,extended," + enemy4_data8 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA887C,extended," + enemy4_data9 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8880,extended," + enemy4_data10 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8884,extended," + enemy4_data11 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8888,extended," + enemy4_data12 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA888C,extended," + enemy4_data13 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8890,extended," + enemy4_data14 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8894,extended," + enemy4_data15 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8898,extended," + enemy4_data16 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA889C,extended," + enemy4_data17 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA88A0,extended," + enemy4_data18 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA88A4,extended," + enemy4_data19 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA88A8,extended," + enemy4_data20 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA88AC,extended," + enemy4_data21 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA88B0,extended," + enemy4_data22 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA88B4,extended," + enemy4_data23 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA88B8,extended," + enemy4_data24 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA88BC,extended," + enemy4_data25 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA88C0,extended," + enemy4_data26 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA88C4,extended," + enemy4_data27 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA88C8,extended," + enemy4_data28 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA88CC,extended," + enemy4_data29 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA88D0,extended," + enemy4_data30 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA88D4,extended," + enemy4_data31 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA88D8,extended," + enemy4_data32 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA88DC,extended," + enemy4_data33 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA88E0,extended," + enemy4_data34 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA88E4,extended," + enemy4_data35 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA88E8,extended," + enemy4_data36 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA88EC,extended," + enemy4_data37 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA88F0,extended," + enemy4_data38 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA88F4,extended," + enemy4_data39 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA88F8,extended," + enemy4_data40 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA88FC,extended," + enemy4_data41 + "//4th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8900,extended," + enemy4_data42 + "//4th code" + Environment.NewLine +
-
-                          "" + Environment.NewLine +
-                          "patch=1,EE,21DA8904,extended," + enemy5ID + "//5th id" + Environment.NewLine +
-                          "patch=1,EE,21DA8908,extended," + enemy5_data1 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA890C,extended," + enemy5_data2 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8910,extended," + enemy5_data3 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8914,extended," + enemy5_data4 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8918,extended," + enemy5_data5 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA891C,extended," + enemy5_data6 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8920,extended," + enemy5_data7 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8924,extended," + enemy5_data8 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8928,extended," + enemy5_data9 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA892C,extended," + enemy5_data10 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8930,extended," + enemy5_data11 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8934,extended," + enemy5_data12 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8938,extended," + enemy5_data13 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA893C,extended," + enemy5_data14 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8940,extended," + enemy5_data15 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8944,extended," + enemy5_data16 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8948,extended," + enemy5_data17 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA894C,extended," + enemy5_data18 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8950,extended," + enemy5_data19 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8954,extended," + enemy5_data20 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8958,extended," + enemy5_data21 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA895C,extended," + enemy5_data22 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8960,extended," + enemy5_data23 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8964,extended," + enemy5_data24 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8968,extended," + enemy5_data25 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA896C,extended," + enemy5_data26 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8970,extended," + enemy5_data27 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8974,extended," + enemy5_data28 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8978,extended," + enemy5_data29 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA897C,extended," + enemy5_data30 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8980,extended," + enemy5_data31 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8984,extended," + enemy5_data32 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8988,extended," + enemy5_data33 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA898C,extended," + enemy5_data34 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8990,extended," + enemy5_data35 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8994,extended," + enemy5_data36 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8998,extended," + enemy5_data37 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA899C,extended," + enemy5_data38 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA89A0,extended," + enemy5_data39 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA89A4,extended," + enemy5_data40 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA89A8,extended," + enemy5_data41 + "//5th code" + Environment.NewLine +
-                          "patch=1,EE,21DA89AC,extended," + enemy5_data42 + "//5th code" + Environment.NewLine +
-
-                          "" + Environment.NewLine +
-                          "patch=1,EE,21DA89B0,extended," + enemy6ID + "//6th id" + Environment.NewLine +
-                          "patch=1,EE,21DA89B4,extended," + enemy6_data1 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA89B8,extended," + enemy6_data2 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA89BC,extended," + enemy6_data3 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA89C0,extended," + enemy6_data4 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA89C4,extended," + enemy6_data5 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA89C8,extended," + enemy6_data6 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA89CC,extended," + enemy6_data7 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA89D0,extended," + enemy6_data8 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA89D4,extended," + enemy6_data9 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA89D8,extended," + enemy6_data10 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA89DC,extended," + enemy6_data11 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA89E0,extended," + enemy6_data12 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA89E4,extended," + enemy6_data13 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA89E8,extended," + enemy6_data14 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA89EC,extended," + enemy6_data15 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA89F0,extended," + enemy6_data16 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA89F4,extended," + enemy6_data17 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA89F8,extended," + enemy6_data18 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA89FC,extended," + enemy6_data19 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8A00,extended," + enemy6_data20 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8A04,extended," + enemy6_data21 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8A08,extended," + enemy6_data22 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8A0C,extended," + enemy6_data23 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8A10,extended," + enemy6_data24 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8A14,extended," + enemy6_data25 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8A18,extended," + enemy6_data26 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8A1C,extended," + enemy6_data27 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8A20,extended," + enemy6_data28 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8A24,extended," + enemy6_data29 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8A28,extended," + enemy6_data30 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8A2C,extended," + enemy6_data31 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8A30,extended," + enemy6_data32 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8A34,extended," + enemy6_data33 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8A38,extended," + enemy6_data34 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8A3C,extended," + enemy6_data35 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8A40,extended," + enemy6_data36 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8A44,extended," + enemy6_data37 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8A48,extended," + enemy6_data38 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8A4C,extended," + enemy6_data39 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8A50,extended," + enemy6_data40 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8A54,extended," + enemy6_data41 + "//6th code" + Environment.NewLine +
-                          "patch=1,EE,21DA8A58,extended," + enemy6_data42 + "//6th code" + Environment.NewLine +
-
+                          enemiesData + Environment.NewLine +
 
                           "";
 
@@ -3789,7 +3861,7 @@ namespace UR_pnach_editor.ViewModels
                     break;
                 case 10:
                     controlCode = "patch=1,EE,"+controlAddress+",extended,00 //Force Human Control" + Environment.NewLine +
-                                  "patch=1,EE,"+playerAddress+",extended,0"+input+" //Number of Player in Control";
+                                  "patch=1,EE,"+playerAddress+",extended,00"+input+" //Number of Player in Control";
                     break;
             }
 

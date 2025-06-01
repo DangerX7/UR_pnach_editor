@@ -633,6 +633,7 @@ namespace UR_pnach_editor.Codes
         public static void GunBackupMission()
         {
             baseCode = "//P1" + Environment.NewLine +
+                "patch=1,EE,105A5FC6,extended,0002 //Weapon grip" + Environment.NewLine +
                 "patch=1,EE,105A6018,extended,0046 //STK" + Environment.NewLine +
                 "patch=1,EE,105A601A,extended,003C //GRP" + Environment.NewLine +
                 "patch=1,EE,105A601C,extended,0050 //RGA" + Environment.NewLine +

@@ -5,7 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:UR_pnach_editor.Views" xmlns:viewmodels="clr-namespace:UR_pnach_editor.ViewModels"
              mc:Ignorable="d"
-             d:DesignHeight="1080" d:DesignWidth="1920">
+             d:DesignHeight="1080" d:DesignWidth="1920"
+             KeyDown="Window_KeyDown"
+             Focusable="True"
+             Loaded="Window_Loaded">
 
 
 
@@ -3893,7 +3896,7 @@
                    Margin="0,0,0,0"
                    MouseEnter="SkinPreview185"/>
 
-        <!--_Paul_2040-->
+        <!--_Paul 2040-->
         <Border Grid.Row="2"
                 Grid.Column="2"
                 Name="check186"
@@ -3919,7 +3922,7 @@
                    Margin="0,0,0,0"
                    MouseEnter="SkinPreview186"/>
 
-        <!--Beach_golem-->
+        <!--Beach golem-->
         <Border Grid.Row="3"
                 Grid.Column="2"
                 Name="check187"
@@ -3944,6 +3947,318 @@
                    Text="Beach Golem"
                    Margin="0,0,0,0"
                    MouseEnter="SkinPreview187"/>
+
+        <!--Space Yakuza-->
+        <Border Grid.Row="4"
+                Grid.Column="2"
+                Name="check188"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding SpaceYakuzaTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview188"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="4"
+                   Grid.Column="3"
+                   Name="skin188"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Gold"
+                   Text="Space Yakuza"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview188"/>
+
+        <!--Almost White Miguel-->
+        <Border Grid.Row="5"
+                Grid.Column="2"
+                Name="check189"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding AlmostWhiteMiguelTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview189"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="5"
+                   Grid.Column="3"
+                   Name="skin189"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Gold"
+                   Text="Almost White Miguel"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview189"/>
+
+        <!--Prince Bordin-->
+        <Border Grid.Row="6"
+                Grid.Column="2"
+                Name="check190"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding PrinceBordinTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview190"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="6"
+                   Grid.Column="3"
+                   Name="skin190"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Gold"
+                   Text="Prince Bordin"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview190"/>
+
+        <!--Classy Shun Ying-->
+        <Border Grid.Row="7"
+                Grid.Column="2"
+                Name="check191"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding ClassyShunYingTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview191"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="7"
+                   Grid.Column="3"
+                   Name="skin191"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Gold"
+                   Text="Classy Shun Ying"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview191"/>
+
+        <!--Schoolgirl Lilian-->
+        <Border Grid.Row="8"
+                Grid.Column="2"
+                Name="check192"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding SchoolgirlLilianTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview192"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="8"
+                   Grid.Column="3"
+                   Name="skin192"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Gold"
+                   Text="Schoolgirl Lilian"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview192"/>
+
+        <!--Street Kelly-->
+        <Border Grid.Row="9"
+                Grid.Column="2"
+                Name="check193"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding StreetKellyTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview193"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="9"
+                   Grid.Column="3"
+                   Name="skin193"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Gold"
+                   Text="Street Kelly"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview193"/>
+
+        <!--Serious Vera-->
+        <Border Grid.Row="10"
+                Grid.Column="2"
+                Name="check194"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding SeriousVeraTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview194"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="10"
+                   Grid.Column="3"
+                   Name="skin194"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Gold"
+                   Text="Serious Vera"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview194"/>
+
+        <!--Crimson Lin Fong-->
+        <Border Grid.Row="11"
+                Grid.Column="2"
+                Name="check195"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding CrimsonLinFongTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview195"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="11"
+                   Grid.Column="3"
+                   Name="skin195"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Gold"
+                   Text="Crimson Lin Fong"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview195"/>
+
+        <!--Easter Bunny Lin Fong-->
+        <Border Grid.Row="12"
+                Grid.Column="2"
+                Name="check196"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding EasterBunnyLinFongTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview196"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="12"
+                   Grid.Column="3"
+                   Name="skin196"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Gold"
+                   Text="Easter Bunny Lin Fong"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview196"/>
+
+        <!--Black Hawk-->
+        <Border Grid.Row="13"
+                Grid.Column="2"
+                Name="check197"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding BlackHawkTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview197"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="13"
+                   Grid.Column="3"
+                   Name="skin197"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Gold"
+                   Text="Black Hawk"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview197"/>
+
+        <!--Golden Dragon Lin Fong-->
+        <Border Grid.Row="14"
+                Grid.Column="2"
+                Name="check198"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding GoldenDragonLinFongTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview198"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="14"
+                   Grid.Column="3"
+                   Name="skin198"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Gold"
+                   Text="Golden Dragon Lin Fong"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview198"/>
+
+        <!--Gothic Shun Ying-->
+        <Border Grid.Row="15"
+                Grid.Column="2"
+                Name="check199"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding GothicShunYingTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview199"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="15"
+                   Grid.Column="3"
+                   Name="skin199"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Gold"
+                   Text="Gothic Shun Ying"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview199"/>
 
         
 
@@ -4038,7 +4353,7 @@
                    FontSize="32"
                    TextWrapping="WrapWithOverflow"
                    Foreground="Cyan"
-                   Text="Multyplayer Textures"
+                   Text="Multiplayer Textures"
                    Margin="0,0,0,0"/>
 
         

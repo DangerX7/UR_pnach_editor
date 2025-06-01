@@ -35,31 +35,35 @@ namespace UR_pnach_editor.Codes
             string frontCode = "";
             string downCode = "";
             string extraCode = "";
+            string extraCode2 = "";
 
             string upAddress = "2058A924";
             string frontAddress = "2058A922";
             string downAddress = "2058A926";
             string extraAddress = "20546640";
+            string extraAddress2 = "20546640";
 
             switch (upValue)
             {
+                case "Golden revolver":
+                    upCode = "patch=1,EE," + upAddress + ",extended,04F5 //Golden Revolver";
+                    extraCode2 = "patch=1,EE," + extraAddress2 + ",extended,04F5 //Golden Revolver infinity";
+                    break;
                 case "Regular shoot" :
                     upCode = "patch=1,EE," + upAddress + ",extended,0A90 //Regular shoot";
                     break;
-                case "3 bullets in a row":
-                    upCode = "patch=1,EE," + upAddress + ",extended,05A7 //3 bullets in a row";
-                    break;
-                case "Hidden gun trick":
-                    upCode = "patch=1,EE," + upAddress + ",extended,04F4 //Hidden gun trick";
+                case "Delayed bullet":
+                    upCode = "patch=1,EE," + upAddress + ",extended,04F8 //Delayed bullet";
                     break;
                 case "Punch gun":
                     upCode = "patch=1,EE," + upAddress + ",extended,04F0 //Punch gun";
                     break;
-                case "Shovel bullet combo":
-                    upCode = "patch=1,EE," + upAddress + ",extended,05A2 //Shovel bullet combo";
+                case "Rad uzi":
+                    upCode = "patch=1,EE," + upAddress + ",extended,05AA //Rad uzi";
+                    extraCode = "patch=1,EE," + extraAddress + ",extended,05AA //Rad uzi infinity";
                     break;
-                case "Knife bullet combo":
-                    upCode = "patch=1,EE," + upAddress + ",extended,0596 //Knife bullet combo";
+                case "Hidden gun trick":
+                    upCode = "patch=1,EE," + upAddress + ",extended,04F4 //Hidden gun trick";
                     break;
                 case "SPA bullet blowout":
                     upCode = "patch=1,EE," + upAddress + ",extended,05A1 //SPA bullet blowout";
@@ -67,34 +71,53 @@ namespace UR_pnach_editor.Codes
                 case "SPA sword slash":
                     upCode = "patch=1,EE," + upAddress + ",extended,059F //SPA sword slash";
                     break;
-                case "Ultimate Uzi":
-                    upCode = "patch=1,EE," + upAddress + ",extended,05AA //Ultimate Uzi";
-                    extraCode = "patch=1,EE," + extraAddress + ",extended,05AA //Ultimate Uzi infinity";
+                case "3 bullets in a row":
+                    upCode = "patch=1,EE," + upAddress + ",extended,05A7 //3 bullets in a row";
                     break;
-                case "Delayed bullet":
-                    upCode = "patch=1,EE," + upAddress + ",extended,04F8 //Delayed bullet";
+                case "Bullet push combo":
+                    upCode = "patch=1,EE," + upAddress + ",extended,058A //Bullet push combo";
+                    break;
+                case "Shovel bullet combo":
+                    upCode = "patch=1,EE," + upAddress + ",extended,05A2 //Shovel bullet combo";
+                    break;
+                case "Bullet sword combo":
+                    upCode = "patch=1,EE," + upAddress + ",extended,0585 //Bullet sword combo";
+                    break;
+                case "Knife bullet combo":
+                    upCode = "patch=1,EE," + upAddress + ",extended,0596 //Knife bullet combo";
+                    break;
+                case "Bullet heavy combo":
+                    upCode = "patch=1,EE," + upAddress + ",extended,059C //Bullet heavy combo";
+                    break;
+                case "Bullet claw combo":
+                    upCode = "patch=1,EE," + upAddress + ",extended,059A //Bullet claw combo";
+                    break;
+                case "Bullet hammer":
+                    upCode = "patch=1,EE," + upAddress + ",extended,05A3 //Bullet hammer";
                     break;
             }
 
             switch (frontValue)
             {
+                case "Golden revolver":
+                    frontCode = "patch=1,EE," + frontAddress + ",extended,04F5 //Golden Revolver";
+                    extraCode2 = "patch=1,EE," + extraAddress2 + ",extended,04F5 //Golden Revolver infinity";
+                    break;
                 case "Regular shoot":
                     frontCode = "patch=1,EE," + frontAddress + ",extended,0A90 //Regular shoot";
                     break;
-                case "3 bullets in a row":
-                    frontCode = "patch=1,EE," + frontAddress + ",extended,05A7 //3 bullets in a row";
-                    break;
-                case "Hidden gun trick":
-                    frontCode = "patch=1,EE," + frontAddress + ",extended,04F4 //Hidden gun trick";
+                case "Delayed bullet":
+                    frontCode = "patch=1,EE," + frontAddress + ",extended,04F8 //Delayed bullet";
                     break;
                 case "Punch gun":
                     frontCode = "patch=1,EE," + frontAddress + ",extended,04F0 //Punch gun";
                     break;
-                case "Shovel bullet combo":
-                    frontCode = "patch=1,EE," + frontAddress + ",extended,05A2 //Shovel bullet combo";
+                case "Rad uzi":
+                    frontCode = "patch=1,EE," + frontAddress + ",extended,05AA //Rad uzi";
+                    extraCode = "patch=1,EE," + extraAddress + ",extended,05AA //Rad uzi infinity";
                     break;
-                case "Knife bullet combo":
-                    frontCode = "patch=1,EE," + frontAddress + ",extended,0596 //Knife bullet combo";
+                case "Hidden gun trick":
+                    frontCode = "patch=1,EE," + frontAddress + ",extended,04F4 //Hidden gun trick";
                     break;
                 case "SPA bullet blowout":
                     frontCode = "patch=1,EE," + frontAddress + ",extended,05A1 //SPA bullet blowout";
@@ -102,34 +125,53 @@ namespace UR_pnach_editor.Codes
                 case "SPA sword slash":
                     frontCode = "patch=1,EE," + frontAddress + ",extended,059F //SPA sword slash";
                     break;
-                case "Ultimate Uzi":
-                    frontCode = "patch=1,EE," + frontAddress + ",extended,05AA //Ultimate Uzi";
-                    extraCode = "patch=1,EE," + extraAddress + ",extended,05AA //Ultimate Uzi infinity";
+                case "3 bullets in a row":
+                    frontCode = "patch=1,EE," + frontAddress + ",extended,05A7 //3 bullets in a row";
                     break;
-                case "Delayed bullet":
-                    frontCode = "patch=1,EE," + frontAddress + ",extended,04F8 //Delayed bullet";
+                case "Bullet push combo":
+                    frontCode = "patch=1,EE," + frontAddress + ",extended,058A //Bullet push combo";
+                    break;
+                case "Shovel bullet combo":
+                    frontCode = "patch=1,EE," + frontAddress + ",extended,05A2 //Shovel bullet combo";
+                    break;
+                case "Bullet sword combo":
+                    frontCode = "patch=1,EE," + frontAddress + ",extended,0585 //Bullet sword combo";
+                    break;
+                case "Knife bullet combo":
+                    frontCode = "patch=1,EE," + frontAddress + ",extended,0596 //Knife bullet combo";
+                    break;
+                case "Bullet heavy combo":
+                    frontCode = "patch=1,EE," + frontAddress + ",extended,059C //Bullet heavy combo";
+                    break;
+                case "Bullet claw combo":
+                    frontCode = "patch=1,EE," + frontAddress + ",extended,059A //Bullet claw combo";
+                    break;
+                case "Bullet hammer":
+                    frontCode = "patch=1,EE," + frontAddress + ",extended,05A3 //Bullet hammer";
                     break;
             }
 
             switch (downValue)
             {
+                case "Golden revolver":
+                    downCode = "patch=1,EE," + downAddress + ",extended,04F5 //Golden Revolver";
+                    extraCode2 = "patch=1,EE," + extraAddress2 + ",extended,04F5 //Golden Revolver infinity";
+                    break;
                 case "Regular shoot":
                     downCode = "patch=1,EE," + downAddress + ",extended,0A90 //Regular shoot";
                     break;
-                case "3 bullets in a row":
-                    downCode = "patch=1,EE," + downAddress + ",extended,05A7 //3 bullets in a row";
-                    break;
-                case "Hidden gun trick":
-                    downCode = "patch=1,EE," + downAddress + ",extended,04F4 //Hidden gun trick";
+                case "Delayed bullet":
+                    downCode = "patch=1,EE," + downAddress + ",extended,04F8 //Delayed bullet";
                     break;
                 case "Punch gun":
                     downCode = "patch=1,EE," + downAddress + ",extended,04F0 //Punch gun";
                     break;
-                case "Shovel bullet combo":
-                    downCode = "patch=1,EE," + downAddress + ",extended,05A2 //Shovel bullet combo";
+                case "Rad uzi":
+                    downCode = "patch=1,EE," + downAddress + ",extended,05AA //Rad uzi";
+                    extraCode = "patch=1,EE," + extraAddress + ",extended,05AA //Rad uzi infinity";
                     break;
-                case "Knife bullet combo":
-                    downCode = "patch=1,EE," + downAddress + ",extended,0596 //Knife bullet combo";
+                case "Hidden gun trick":
+                    downCode = "patch=1,EE," + downAddress + ",extended,04F4 //Hidden gun trick";
                     break;
                 case "SPA bullet blowout":
                     downCode = "patch=1,EE," + downAddress + ",extended,05A1 //SPA bullet blowout";
@@ -137,12 +179,29 @@ namespace UR_pnach_editor.Codes
                 case "SPA sword slash":
                     downCode = "patch=1,EE," + downAddress + ",extended,059F //SPA sword slash";
                     break;
-                case "Ultimate Uzi":
-                    downCode = "patch=1,EE," + downAddress + ",extended,05AA //Ultimate Uzi";
-                    extraCode = "patch=1,EE," + extraAddress + ",extended,05AA //Ultimate Uzi infinity";
+                case "3 bullets in a row":
+                    downCode = "patch=1,EE," + downAddress + ",extended,05A7 //3 bullets in a row";
                     break;
-                case "Delayed bullet":
-                    downCode = "patch=1,EE," + downAddress + ",extended,04F8 //Delayed bullet";
+                case "Bullet push combo":
+                    downCode = "patch=1,EE," + downAddress + ",extended,058A //Bullet push combo";
+                    break;
+                case "Shovel bullet combo":
+                    downCode = "patch=1,EE," + downAddress + ",extended,05A2 //Shovel bullet combo";
+                    break;
+                case "Bullet sword combo":
+                    downCode = "patch=1,EE," + downAddress + ",extended,0585 //Bullet sword combo";
+                    break;
+                case "Knife bullet combo":
+                    downCode = "patch=1,EE," + downAddress + ",extended,0596 //Knife bullet combo";
+                    break;
+                case "Bullet heavy combo":
+                    downCode = "patch=1,EE," + downAddress + ",extended,059C //Bullet heavy combo";
+                    break;
+                case "Bullet claw combo":
+                    downCode = "patch=1,EE," + downAddress + ",extended,059A //Bullet claw combo";
+                    break;
+                case "Bullet hammer":
+                    downCode = "patch=1,EE," + downAddress + ",extended,05A3 //Bullet hammer";
                     break;
             }
 
@@ -161,6 +220,7 @@ namespace UR_pnach_editor.Codes
                 "patch=1,EE,1027E484,extended,00000000 //infinite ammo" + Environment.NewLine +
                 "patch=1,EE,1027E488,extended,00000000 //infinite ammo" + Environment.NewLine +
                 extraCode + Environment.NewLine +
+                extraCode2 + Environment.NewLine +
                 frontCode + Environment.NewLine +
                 upCode + Environment.NewLine +
                 downCode + Environment.NewLine +
@@ -172,7 +232,6 @@ namespace UR_pnach_editor.Codes
         public static void SupremeOutlaw()
         {
             baseCode = "//P3" + Environment.NewLine +
-                "patch=1,EE,105C2506,extended,0000 //P4 team" + Environment.NewLine +
                 "patch=1,EE,105B8EB8,extended,0834 //STK" + Environment.NewLine +
                 "patch=1,EE,105B8EBA,extended,0898 //GRP" + Environment.NewLine +
                 "patch=1,EE,105B8EBC,extended,0640 //RGA" + Environment.NewLine +
@@ -185,7 +244,7 @@ namespace UR_pnach_editor.Codes
                 "patch=1,EE,105B8E7A,extended,0145 //UBE Balance" + Environment.NewLine +
                 "patch=1,EE,105B8E76,extended,0258 //LBE" + Environment.NewLine +
                 "patch=1,EE,105B8E7C,extended,012C //LBE Balance" + Environment.NewLine +
-                "patch=1,EE,205B8E34,extended,000C000C //P4 AI" + Environment.NewLine +
+                "patch=1,EE,205B8E34,extended,000C000C //P3 AI" + Environment.NewLine +
                 "patch=1,EE,205B8EA2,extended,3F80 //SPA Down Red Bar Color" + Environment.NewLine +
                 "patch=1,EE,205B8EA6,extended,3E20 //SPA Down Green Bar Color" + Environment.NewLine +
                 "patch=1,EE,205B8EAA,extended,3E80 //SPA Down Blue Bar Color" + Environment.NewLine +
@@ -195,6 +254,8 @@ namespace UR_pnach_editor.Codes
                 "patch=1,EE,105B8F10,extended,0002 //SPA Regained" + Environment.NewLine +
                 "patch=1,EE,205B0044,extended,002C //Moves & Skin 1" + Environment.NewLine +
                 "patch=1,EE,2094A63C,extended,002C //Moves & Skin 2" + Environment.NewLine +
+                "//P4" + Environment.NewLine +
+                "patch=1,EE,105C2506,extended,0000 //P4 team" + Environment.NewLine +
             "";
 
             ExportPnach.ExportFile(baseCode);
@@ -218,6 +279,7 @@ namespace UR_pnach_editor.Codes
             "patch=1,EE,1027E484,extended,00000000 //infinite ammo" + Environment.NewLine +
             "patch=1,EE,1027E488,extended,00000000 //infinite ammo" + Environment.NewLine +
             "//P3" + Environment.NewLine +
+            "patch=1,EE,105B8E66,extended,0003 //Max weapon grip" + Environment.NewLine +
             "patch=1,EE,105B8EC0,extended,0BB8 //WPA" + Environment.NewLine +
             "patch=1,EE,105B8EC2,extended,03E8 //TGH" + Environment.NewLine +
             "patch=1,EE,205B0044,extended,003D //Moves & Skin 2" + Environment.NewLine +

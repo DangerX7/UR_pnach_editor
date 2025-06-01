@@ -414,6 +414,65 @@ namespace UR_pnach_editor.Views
             timer.Stop();
         }
 
+
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.Focus(); // Ensure the Window gets keyboard input
+        }
+
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if either Shift key is held down
+            if (Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightShift))
+            {
+                if (e.Key == Key.Oem3 || e.Key == Key.Multiply)
+                {
+                    viewModel.DisplayMainView();
+                }
+                else if (e.Key == Key.D1 || e.Key == Key.NumPad1)
+                {
+                    viewModel.DisplayStatsView();
+                }
+                else if (e.Key == Key.D2 || e.Key == Key.NumPad2)
+                {
+                    viewModel.DisplayTextureView();
+                }
+                else if (e.Key == Key.D3 || e.Key == Key.NumPad3)
+                {
+                    viewModel.DisplayCharacterView();
+                }
+                else if (e.Key == Key.D4 || e.Key == Key.NumPad4)
+                {
+                    viewModel.DisplayModelsAndMusicView();
+                }
+                else if (e.Key == Key.D5 || e.Key == Key.NumPad5)
+                {
+                    viewModel.DisplayChallengeView();
+                }
+                else if (e.Key == Key.D6 || e.Key == Key.NumPad6)
+                {
+                    viewModel.DisplayMovesetView();
+                }
+                else if (e.Key == Key.D7 || e.Key == Key.NumPad7)
+                {
+                    viewModel.DisplayChallengeModeView();
+                }
+                else if (e.Key == Key.D8 || e.Key == Key.NumPad8)
+                {
+                    viewModel.DisplayDeveloperView();
+                }
+                else if (e.Key == Key.D9 || e.Key == Key.NumPad9)
+                {
+                    viewModel.DisplayMiscellaneousCheatsView();
+                }
+                else if (e.Key == Key.D0 || e.Key == Key.NumPad0)
+                {
+                    viewModel.DisplayMysteriousView();
+                }
+            }
+        }
     }
 
 

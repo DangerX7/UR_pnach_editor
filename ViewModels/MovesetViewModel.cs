@@ -29,6 +29,10 @@ namespace UR_pnach_editor.ViewModels
             RikiDensetsuMoves = SettingsClass.RikiDensetsuMoves;
             PhoenixStanceShunYingMoves = SettingsClass.PhoenixStanceShunYingMoves;
             BrokenDwayneMoves = SettingsClass.BrokenDwayneMoves;
+            MonsterVeraMoves = SettingsClass.MonsterVeraMoves;
+            ThugKellyMoves = SettingsClass.ThugKellyMoves;
+            SwordmasterShunYingAndLilianMoves = SettingsClass.SwordmasterShunYingAndLilianMoves;
+            SwordmasterLinFongMoves = SettingsClass.SwordmasterLinFongMoves;
 
 
             GameFolderPath = SettingsClass.gameFolderPath;
@@ -267,6 +271,12 @@ namespace UR_pnach_editor.ViewModels
                     _phoenixStanceShunYingMoves = value;
                     SettingsClass.PhoenixStanceShunYingMoves = _phoenixStanceShunYingMoves;
                     RaisePropertyChanged("PhoenixStanceShunYingMoves");
+                    if (_phoenixStanceShunYingMoves)
+                    {
+                        _swordmasterShunYingAndLilianMoves = false;
+                        RaisePropertyChanged("SwordmasterShunYingAndLilianMoves");
+                        SettingsClass.SwordmasterShunYingAndLilianMoves = false;
+                    }
                 }
             }
         }
@@ -287,7 +297,77 @@ namespace UR_pnach_editor.ViewModels
             }
         }
 
-        
+        private bool _monsterVeraMoves;
 
+        public bool MonsterVeraMoves
+        {
+            get { return _monsterVeraMoves; }
+            set
+            {
+                if (_monsterVeraMoves != value)
+                {
+                    _monsterVeraMoves = value;
+                    SettingsClass.MonsterVeraMoves = _monsterVeraMoves;
+                    RaisePropertyChanged("MonsterVeraMoves");
+                }
+            }
+        }
+
+        private bool _thugKellyMoves;
+
+        public bool ThugKellyMoves
+        {
+            get { return _thugKellyMoves; }
+            set
+            {
+                if (_thugKellyMoves != value)
+                {
+                    _thugKellyMoves = value;
+                    SettingsClass.ThugKellyMoves = _thugKellyMoves;
+                    RaisePropertyChanged("ThugKellyMoves");
+                }
+            }
+        }
+
+        private bool _swordmasterShunYingAndLilianMoves;
+
+        public bool SwordmasterShunYingAndLilianMoves
+        {
+            get { return _swordmasterShunYingAndLilianMoves; }
+            set
+            {
+                if (_swordmasterShunYingAndLilianMoves != value)
+                {
+                    _swordmasterShunYingAndLilianMoves = value;
+                    SettingsClass.SwordmasterShunYingAndLilianMoves = _swordmasterShunYingAndLilianMoves;
+                    RaisePropertyChanged("SwordmasterShunYingAndLilianMoves");
+                    if (_swordmasterShunYingAndLilianMoves)
+                    {
+                        _phoenixStanceShunYingMoves = false;
+                        RaisePropertyChanged("PhoenixStanceShunYingMoves");
+                        SettingsClass.PhoenixStanceShunYingMoves = false;
+                    }
+                }
+            }
+        }
+
+        private bool _swordmasterLinFongMoves;
+
+        public bool SwordmasterLinFongMoves
+        {
+            get { return _swordmasterLinFongMoves; }
+            set
+            {
+                if (_swordmasterLinFongMoves != value)
+                {
+                    _swordmasterLinFongMoves = value;
+                    SettingsClass.SwordmasterLinFongMoves = _swordmasterLinFongMoves;
+                    RaisePropertyChanged("SwordmasterLinFongMoves");
+                }
+            }
+        }
+
+
+        
     }
 }

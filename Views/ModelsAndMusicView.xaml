@@ -5,10 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:UR_pnach_editor.Views" xmlns:viewmodels="clr-namespace:UR_pnach_editor.ViewModels"
              mc:Ignorable="d"
-             d:DesignHeight="1080" d:DesignWidth="1920">
+             d:DesignHeight="1080" d:DesignWidth="1920"
+             KeyDown="Window_KeyDown"
+             Focusable="True"
+             Loaded="Window_Loaded">
 
-    
-    
+
+
     <Grid Height="1080" Width="1920">
 
         <Grid.Background>
@@ -264,8 +267,55 @@
                    TextAlignment="Center"/>
 
 
-        <!--Music-->
 
+        <!--Brad Model Swap-->
+        <ComboBox x:Name="BradModelSwapPatch"
+                  Grid.Column="3"
+                  Grid.Row="0"
+                  FontSize="26"
+                  Margin="0,50,0,0"/>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="4"
+                   Grid.ColumnSpan="2"
+                   FontFamily="Palatino Linotype"
+                   Name="patchingStatusBrad"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Gold"
+                   Text="{Binding PatchingStatusBrad, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="125,20,195,40"/>
+        <Button Grid.Row="1"
+                Grid.Column="2"
+                x:Name="SwapBradModel"
+                Background="#008890"
+                Foreground="#FFFFFF"
+                FontFamily="Garamond"
+                FontSize="42"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="200,10,200,0"
+                Click="DeltaSwap_Click" Grid.ColumnSpan="3">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Swap Brad Model" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBlock Grid.Row="2"
+                   Grid.Column="4"
+                   Grid.ColumnSpan="2"
+                   Name="infoB"
+                   FontSize="36"
+                   FontFamily="Palatino Linotype"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="#44FFFF"
+                   Text="Brad model swap was tested in story mode!"
+                   Margin="-360,0,-110,60"/>
+
+        <!--Music-->
         <ComboBox x:Name="MusicPatch"
                   Grid.Column="4"
                   Grid.Row="3"
@@ -290,7 +340,7 @@
                 FontStyle="Italic"
                 FontWeight="Bold"
                 Margin="0,0,0,0"
-                Click="SwapMusic_Click">
+                Click="DeltaSwap_Click">
             <Button.Content>
                 <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Swap Music" />
             </Button.Content>
@@ -373,6 +423,29 @@
             </Button.Resources>
         </Button>
 
+        <!--Swap Brad Model Info-->
+        <Button Grid.Row="0"
+                Grid.Column="4"
+                Grid.ColumnSpan="2"
+                x:Name="SwapBradModelInfo"
+                Background="#FFFF00"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="140,60,220,10"
+                Click="SwapBradModel_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Information" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+
         <!--Swap Music Info-->
         <Button Grid.Row="5"
                 Grid.Column="4"
@@ -401,13 +474,20 @@
                 Margin="0,0,-100,0"
                 BorderBrush="Orange">
         </Border>
-        <Border Grid.Column="3"
-                Grid.ColumnSpan="3"
-                Grid.Row="3"
-                Grid.RowSpan="6"
+        <Border Grid.Column="2"
+                Grid.ColumnSpan="4"
+                Grid.RowSpan="3"
                 BorderThickness="6"
-                Margin="-100,-20,-100,-20"
-                BorderBrush="Green">
+                Margin="178,20,174,50"
+                BorderBrush="Purple">
+        </Border>
+        <Border Grid.Column="2"
+                Grid.ColumnSpan="5"
+                Grid.Row="2"
+                Grid.RowSpan="8"
+                BorderThickness="6"
+                Margin="178,88,0,34"
+                BorderBrush="Green" HorizontalAlignment="Left" Width="1056">
         </Border>
 
     </Grid>

@@ -21,9 +21,9 @@ namespace UR_pnach_editor.Services
 
         public static string originalPnach = "BDD9BAAD";
         public static string deluxePnach = "A9D22191";
-        public static string MovesPnach = "A9E72B15";
+        public static string MovesPnach = "A584220F";
         public static string StatsPnach = "AC59257A";
-        public static string MovesAndStatsPnach = "AC6C2FFE";
+        public static string MovesAndStatsPnach = "A00F26E4";
 
 
         public static string PnachName = "C319B3A4";
@@ -45,6 +45,7 @@ namespace UR_pnach_editor.Services
         public static bool Gnome_Napalm_Model { get; set; } = false;
         public static bool Amazon_Shun_Ying { get; set; } = false;
         public static string MusicStatus { get; set; } = "Original";
+        public static string BradModelSwap { get; set; } = "Original";
 
 
         public static double STK_1 { get; set; } = 0;
@@ -244,6 +245,18 @@ namespace UR_pnach_editor.Services
         public static bool BrademTxt { get; set; } = false;
         public static bool Paul2040Txt { get; set; } = false;
         public static bool BeachGolemTxt { get; set; } = false;
+        public static bool SpaceYakuzaTxt { get; set; } = false;
+        public static bool AlmostWhiteMiguelTxt { get; set; } = false;
+        public static bool PrinceBordinTxt { get; set; } = false;
+        public static bool ClassyShunYingTxt { get; set; } = false;
+        public static bool SchoolgirlLilianTxt { get; set; } = false;
+        public static bool StreetKellyTxt { get; set; } = false;
+        public static bool SeriousVeraTxt { get; set; } = false;
+        public static bool CrimsonLinFongTxt { get; set; } = false;
+        public static bool EasterBunnyLinFongTxt { get; set; } = false;
+        public static bool BlackHawkTxt { get; set; } = false;
+        public static bool GoldenDragonLinFongTxt { get; set; } = false;
+        public static bool GothicShunYingTxt { get; set; } = false;
 
         public static bool WeaponsTxt { get; set; } = false;
         public static bool TitleScreenTxt { get; set; } = false;
@@ -262,6 +275,10 @@ namespace UR_pnach_editor.Services
         public static bool RikiDensetsuMoves { get; set; } = false;
         public static bool PhoenixStanceShunYingMoves { get; set; } = false;
         public static bool BrokenDwayneMoves { get; set; } = false;
+        public static bool MonsterVeraMoves { get; set; } = false;
+        public static bool ThugKellyMoves { get; set; } = false;
+        public static bool SwordmasterShunYingAndLilianMoves { get; set; } = false;
+        public static bool SwordmasterLinFongMoves { get; set; } = false;
 
 
         public static bool StatsChanged { get; set; } = false;
@@ -275,7 +292,7 @@ namespace UR_pnach_editor.Services
         public SettingsClass(string connectionString, string missionFolder, string textureFolderBase, string textureFolderDump,
             string _gameFolderPath, bool _missile, bool _modelsSizeStatus, string pnachName,
             bool kG_Tall_Model, bool real_Dwarf_Model, bool golem_Giant_Model, bool gnome_Napalm_Model,
-            bool amazon_Shun_Ying, string musicStatus, int editorEffectsIndex,
+            bool amazon_Shun_Ying, string musicStatus, string bradModelSwap, int editorEffectsIndex,
             double stk1, double grp1, double rga1, double spa1, double wpa1, double tgh1, double hde1, double ube1, double lbe1,
             double stk2, double grp2, double rga2, double spa2, double wpa2, double tgh2, double hde2, double ube2, double lbe2,
             double stk3, double grp3, double rga3, double spa3, double wpa3, double tgh3, double hde3, double ube3, double lbe3,
@@ -309,11 +326,14 @@ namespace UR_pnach_editor.Services
             bool graveDiggaSkin2, bool boomaSkin2, bool bustaSkin2, bool spiderSkin2, bool painKillahSkin2,
             bool cooperSkin2, bool taylorSkin2, bool chrisSkin2, bool rikiSkin2, bool ryujiSkin2,
             bool yeWeiSkin2, bool shaYingSkin2, bool yanJunSkin2, bool kellySkin2, bool paulSkin2, bool pepsimanTxt, bool eddyTrainerTxt,
-            bool brademTxt, bool paul2040Txt, bool beachGolemTxt,
+            bool brademTxt, bool paul2040Txt, bool beachGolemTxt, bool spaceYakuzaTxt, bool almostWhiteMiguelTxt, bool princeBordinTxt,
+            bool classyShunYingTxt, bool schoolgirlLilianTxt, bool streetKellyTxt, bool seriousVeraTxt, bool crimsonLinFongTxt, bool easterBunnyLinFongTxt,
+            bool blackHawkTxt, bool goldenDragonLinFongTxt, bool gothicShunYingTxt,
             bool weaponsTxt, bool titleScreenTxt, bool multyplayerTxt,
             bool masterBradMoves, bool golemBrokenShitMoves, bool bordinAllAroundMoves, bool paulAshesMoves, bool sakamotoRyomaMoves,
             bool bradAndOthersParry, bool shinBordinMoves, bool kOGMoves, bool kingJakeMoves, bool mMAGipsiesMoves, bool rikiDensetsuMoves,
-            bool phoenixStanceShunYingMoves, bool brokenDwayneMoves,
+            bool phoenixStanceShunYingMoves, bool brokenDwayneMoves, bool monsterVeraMoves, bool thugKellyMoves, bool swordmasterShunYingAndLilianMoves,
+            bool swordmasterLinFongMoves,
             bool statsChanged, bool pageEnterSFX)
         {
             codeFolderPath = connectionString;
@@ -330,6 +350,7 @@ namespace UR_pnach_editor.Services
             Gnome_Napalm_Model = gnome_Napalm_Model;
             Amazon_Shun_Ying = amazon_Shun_Ying;
             MusicStatus = musicStatus;
+            BradModelSwap = bradModelSwap;
             EditorEffectsIndex = editorEffectsIndex;
 
             STK_1 = stk1;
@@ -529,6 +550,18 @@ namespace UR_pnach_editor.Services
             BrademTxt = brademTxt;
             Paul2040Txt = paul2040Txt;
             BeachGolemTxt = beachGolemTxt;
+            SpaceYakuzaTxt = spaceYakuzaTxt;
+            AlmostWhiteMiguelTxt = almostWhiteMiguelTxt;
+            PrinceBordinTxt = princeBordinTxt;
+            ClassyShunYingTxt = classyShunYingTxt;
+            SchoolgirlLilianTxt = schoolgirlLilianTxt;
+            StreetKellyTxt = streetKellyTxt;
+            SeriousVeraTxt = seriousVeraTxt;
+            CrimsonLinFongTxt = crimsonLinFongTxt;
+            EasterBunnyLinFongTxt = easterBunnyLinFongTxt;
+            BlackHawkTxt = blackHawkTxt;
+            GoldenDragonLinFongTxt = goldenDragonLinFongTxt;
+            GothicShunYingTxt = gothicShunYingTxt;
 
             WeaponsTxt = weaponsTxt;
             TitleScreenTxt = titleScreenTxt;
@@ -547,6 +580,10 @@ namespace UR_pnach_editor.Services
             RikiDensetsuMoves = rikiDensetsuMoves;
             PhoenixStanceShunYingMoves = phoenixStanceShunYingMoves;
             BrokenDwayneMoves = brokenDwayneMoves;
+            MonsterVeraMoves = monsterVeraMoves;
+            ThugKellyMoves = thugKellyMoves;
+            SwordmasterShunYingAndLilianMoves = swordmasterShunYingAndLilianMoves;
+            SwordmasterLinFongMoves = swordmasterLinFongMoves;
 
             StatsChanged = statsChanged;
             PageEnterSFX = pageEnterSFX;
@@ -572,6 +609,7 @@ namespace UR_pnach_editor.Services
             public bool Gnome_Napalm_Model { get; set; } = SettingsClass.Gnome_Napalm_Model;
             public bool Amazon_Shun_Ying { get; set; } = SettingsClass.Amazon_Shun_Ying;
             public string MusicStatus { get; set; } = SettingsClass.MusicStatus;
+            public string BradModelSwap { get; set; } = SettingsClass.BradModelSwap;
             public int EditorEffectsIndex { get; set; } = SettingsClass.EditorEffectsIndex;
 
             public double STK_1 { get; set; } = SettingsClass.STK_1;
@@ -771,6 +809,18 @@ namespace UR_pnach_editor.Services
             public bool BrademTxt { get; set; } = SettingsClass.BrademTxt;
             public bool Paul2040Txt { get; set; } = SettingsClass.Paul2040Txt;
             public bool BeachGolemTxt { get; set; } = SettingsClass.BeachGolemTxt;
+            public bool SpaceYakuzaTxt { get; set; } = SettingsClass.SpaceYakuzaTxt;
+            public bool AlmostWhiteMiguelTxt { get; set; } = SettingsClass.AlmostWhiteMiguelTxt;
+            public bool PrinceBordinTxt { get; set; } = SettingsClass.PrinceBordinTxt;
+            public bool ClassyShunYingTxt { get; set; } = SettingsClass.ClassyShunYingTxt;
+            public bool SchoolgirlLilianTxt { get; set; } = SettingsClass.SchoolgirlLilianTxt;
+            public bool StreetKellyTxt { get; set; } = SettingsClass.StreetKellyTxt;
+            public bool SeriousVeraTxt { get; set; } = SettingsClass.SeriousVeraTxt;
+            public bool CrimsonLinFongTxt { get; set; } = SettingsClass.CrimsonLinFongTxt;
+            public bool EasterBunnyLinFongTxt { get; set; } = SettingsClass.EasterBunnyLinFongTxt;
+            public bool BlackHawkTxt { get; set; } = SettingsClass.BlackHawkTxt;
+            public bool GoldenDragonLinFongTxt { get; set; } = SettingsClass.GoldenDragonLinFongTxt;
+            public bool GothicShunYingTxt { get; set; } = SettingsClass.GothicShunYingTxt;
 
 
             public bool WeaponsTxt { get; set; } = SettingsClass.WeaponsTxt;
@@ -790,7 +840,10 @@ namespace UR_pnach_editor.Services
             public bool RikiDensetsuMoves { get; set; } = SettingsClass.RikiDensetsuMoves;
             public bool PhoenixStanceShunYingMoves { get; set; } = SettingsClass.PhoenixStanceShunYingMoves;
             public bool BrokenDwayneMoves { get; set; } = SettingsClass.BrokenDwayneMoves;
-
+            public bool MonsterVeraMoves { get; set; } = SettingsClass.MonsterVeraMoves;
+            public bool ThugKellyMoves { get; set; } = SettingsClass.ThugKellyMoves;
+            public bool SwordmasterShunYingAndLilianMoves { get; set; } = SettingsClass.SwordmasterShunYingAndLilianMoves;
+            public bool SwordmasterLinFongMoves { get; set; } = SettingsClass.SwordmasterLinFongMoves;
 
             public bool StatsChanged { get; set; } = SettingsClass.StatsChanged;
             public bool PageEnterSFX { get; set; } = SettingsClass.PageEnterSFX;
@@ -818,6 +871,7 @@ namespace UR_pnach_editor.Services
                 Gnome_Napalm_Model = Settings.Gnome_Napalm_Model;
                 Amazon_Shun_Ying = Settings.Amazon_Shun_Ying;
                 MusicStatus = Settings.MusicStatus;
+                BradModelSwap = Settings.BradModelSwap;
                 EditorEffectsIndex = Settings.EditorEffectsIndex;
 
                 STK_1 = Settings.STK_1;
@@ -1016,6 +1070,18 @@ namespace UR_pnach_editor.Services
                 BrademTxt = Settings.BrademTxt;
                 Paul2040Txt = Settings.Paul2040Txt;
                 BeachGolemTxt = Settings.BeachGolemTxt;
+                SpaceYakuzaTxt = Settings.SpaceYakuzaTxt;
+                AlmostWhiteMiguelTxt = Settings.AlmostWhiteMiguelTxt;
+                PrinceBordinTxt = Settings.PrinceBordinTxt;
+                ClassyShunYingTxt = Settings.ClassyShunYingTxt;
+                SchoolgirlLilianTxt = Settings.SchoolgirlLilianTxt;
+                StreetKellyTxt = Settings.StreetKellyTxt;
+                SeriousVeraTxt = Settings.SeriousVeraTxt;
+                CrimsonLinFongTxt = Settings.CrimsonLinFongTxt;
+                EasterBunnyLinFongTxt = Settings.EasterBunnyLinFongTxt;
+                BlackHawkTxt = Settings.BlackHawkTxt;
+                GoldenDragonLinFongTxt = Settings.GoldenDragonLinFongTxt;
+                GothicShunYingTxt = Settings.GothicShunYingTxt;
 
                 WeaponsTxt = Settings.WeaponsTxt;
                 TitleScreenTxt = Settings.TitleScreenTxt;
@@ -1036,6 +1102,10 @@ namespace UR_pnach_editor.Services
                 RikiDensetsuMoves = Settings.RikiDensetsuMoves;
                 PhoenixStanceShunYingMoves = Settings.PhoenixStanceShunYingMoves;
                 BrokenDwayneMoves = Settings.BrokenDwayneMoves;
+                MonsterVeraMoves = Settings.MonsterVeraMoves;
+                ThugKellyMoves = Settings.ThugKellyMoves;
+                SwordmasterShunYingAndLilianMoves = Settings.SwordmasterShunYingAndLilianMoves;
+                SwordmasterLinFongMoves = Settings.SwordmasterLinFongMoves;
 
                 StatsChanged = Settings.StatsChanged;
                 PageEnterSFX = Settings.PageEnterSFX;
@@ -1062,6 +1132,7 @@ namespace UR_pnach_editor.Services
             Settings.Gnome_Napalm_Model = Gnome_Napalm_Model;
             Settings.Amazon_Shun_Ying = Amazon_Shun_Ying;
             Settings.MusicStatus = MusicStatus;
+            Settings.BradModelSwap = BradModelSwap;
             Settings.EditorEffectsIndex = EditorEffectsIndex;
 
             Settings.STK_1 = STK_1;
@@ -1260,6 +1331,9 @@ namespace UR_pnach_editor.Services
             Settings.BrademTxt = BrademTxt;
             Settings.Paul2040Txt = Paul2040Txt;
             Settings.BeachGolemTxt = BeachGolemTxt;
+            Settings.SpaceYakuzaTxt = SpaceYakuzaTxt;
+            Settings.AlmostWhiteMiguelTxt = AlmostWhiteMiguelTxt;
+            Settings.PrinceBordinTxt = PrinceBordinTxt;
 
             Settings.WeaponsTxt = WeaponsTxt;
             Settings.TitleScreenTxt = TitleScreenTxt;
@@ -1278,6 +1352,20 @@ namespace UR_pnach_editor.Services
             Settings.RikiDensetsuMoves = RikiDensetsuMoves;
             Settings.PhoenixStanceShunYingMoves = PhoenixStanceShunYingMoves;
             Settings.BrokenDwayneMoves = BrokenDwayneMoves;
+            Settings.MonsterVeraMoves = MonsterVeraMoves;
+            Settings.ThugKellyMoves = ThugKellyMoves;
+            Settings.SwordmasterShunYingAndLilianMoves = SwordmasterShunYingAndLilianMoves;
+            Settings.SwordmasterLinFongMoves = SwordmasterLinFongMoves;
+
+            Settings.ClassyShunYingTxt = ClassyShunYingTxt;
+            Settings.SchoolgirlLilianTxt = SchoolgirlLilianTxt;
+            Settings.StreetKellyTxt = StreetKellyTxt;
+            Settings.SeriousVeraTxt = SeriousVeraTxt;
+            Settings.CrimsonLinFongTxt = CrimsonLinFongTxt;
+            Settings.EasterBunnyLinFongTxt = EasterBunnyLinFongTxt;
+            Settings.BlackHawkTxt = BlackHawkTxt;
+            Settings.GoldenDragonLinFongTxt = GoldenDragonLinFongTxt;
+            Settings.GothicShunYingTxt = GothicShunYingTxt;
 
             Settings.StatsChanged = StatsChanged;
             Settings.PageEnterSFX = PageEnterSFX;

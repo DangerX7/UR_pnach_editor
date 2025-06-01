@@ -425,6 +425,7 @@ namespace UR_pnach_editor.Codes
         public static void BossWeaponMasters()
         {
             baseCode = "//P3" + Environment.NewLine +
+                "patch=1,EE,105B8E66,extended,0003 //Weapon grip" + Environment.NewLine +
                 "patch=1,EE,105B8EB8,extended,03E8 //STK" + Environment.NewLine +
                 "patch=1,EE,105B8EBA,extended,03E0 //GRP" + Environment.NewLine +
                 "patch=1,EE,105B8EBC,extended,0420 //RGA" + Environment.NewLine +
@@ -441,6 +442,7 @@ namespace UR_pnach_editor.Codes
                 "patch=1,EE,205B8E34,extended,00340034 //P3 AI" + Environment.NewLine +
                 "patch=1,EE,2094A63C,extended,0035 //Moves & Skin 2" + Environment.NewLine +
                 "//P4" + Environment.NewLine +
+                "patch=1,EE,105C25B6,extended,0003 //Weapon grip" + Environment.NewLine +
                 "patch=1,EE,105C2608,extended,0420 //STK" + Environment.NewLine +
                 "patch=1,EE,105C260A,extended,03D0 //GRP" + Environment.NewLine +
                 "patch=1,EE,105C260C,extended,03B0 //RGA" + Environment.NewLine +
@@ -466,6 +468,7 @@ namespace UR_pnach_editor.Codes
         public static void BossTheBest()
         {
             baseCode = "//P3" + Environment.NewLine +
+                "patch=1,EE,105B8E66,extended,0003 //Weapon grip" + Environment.NewLine +
                 "patch=1,EE,105B8EB8,extended,03E8 //STK" + Environment.NewLine +
                 "patch=1,EE,105B8EBA,extended,03E0 //GRP" + Environment.NewLine +
                 "patch=1,EE,105B8EBC,extended,0420 //RGA" + Environment.NewLine +
@@ -487,6 +490,7 @@ namespace UR_pnach_editor.Codes
                 "patch=1,EE,205B0044,extended,0035 //Moves & Skin 1" + Environment.NewLine +
                 "patch=1,EE,2094A63C,extended,0035 //Moves & Skin 2" + Environment.NewLine +
                 "//P4" + Environment.NewLine +
+                "patch=1,EE,105C25B6,extended,0002 //Weapon grip" + Environment.NewLine +
                 "patch=1,EE,105C2608,extended,06A4 //STK" + Environment.NewLine +
                 "patch=1,EE,105C260A,extended,0708 //GRP" + Environment.NewLine +
                 "patch=1,EE,105C260C,extended,05DC //RGA" + Environment.NewLine +
@@ -517,6 +521,7 @@ namespace UR_pnach_editor.Codes
                 "patch=1,EE,105A601C,extended,000A //RGA" + Environment.NewLine +
                 "patch=1,EE,105A601E,extended,000A //SPA" + Environment.NewLine +
                 "patch=1,EE,105A5FEA,extended,0001 //WALL DMG" + Environment.NewLine +
+                "patch=1,EE,105A5FC6,extended,0003 //Max weapon grip" + Environment.NewLine +
                 "patch=1,EE,105A6070,extended,0000 //SPA Regained" + Environment.NewLine +
                 "//P2" + Environment.NewLine +
                 "patch=1,EE,105AF768,extended,000A //STK" + Environment.NewLine +
@@ -524,6 +529,7 @@ namespace UR_pnach_editor.Codes
                 "patch=1,EE,105AF76C,extended,000A //RGA" + Environment.NewLine +
                 "patch=1,EE,105AF76E,extended,000A //SPA" + Environment.NewLine +
                 "patch=1,EE,105AF73A,extended,0001 //WALL DMG" + Environment.NewLine +
+                "patch=1,EE,105AF716,extended,0003 //Max weapon grip" + Environment.NewLine +
                 "patch=1,EE,105AF7C0,extended,0000 //SPA Regained" + Environment.NewLine +
                 "//P3" + Environment.NewLine +
                 "patch=1,EE,105B8EB8,extended,000A //STK" + Environment.NewLine +
@@ -531,6 +537,7 @@ namespace UR_pnach_editor.Codes
                 "patch=1,EE,105B8EBC,extended,000A //RGA" + Environment.NewLine +
                 "patch=1,EE,105B8EBE,extended,000A //SPA" + Environment.NewLine +
                 "patch=1,EE,105B8E8A,extended,0001 //WALL DMG" + Environment.NewLine +
+                "patch=1,EE,105B8E66,extended,0003 //Max weapon grip" + Environment.NewLine +
                 "patch=1,EE,105B8F10,extended,0000 //SPA Regained" + Environment.NewLine +
                 "//P4" + Environment.NewLine +
                 "patch=1,EE,105C2608,extended,000A //STK" + Environment.NewLine +
@@ -538,6 +545,7 @@ namespace UR_pnach_editor.Codes
                 "patch=1,EE,105C260C,extended,000A //RGA" + Environment.NewLine +
                 "patch=1,EE,105C260E,extended,000A //SPA" + Environment.NewLine +
                 "patch=1,EE,105C25DA,extended,0001 //WALL DMG" + Environment.NewLine +
+                "patch=1,EE,105C25B6,extended,0003 //Max weapon grip" + Environment.NewLine +
                 "patch=1,EE,105C2660,extended,0000 //SPA Regained" + Environment.NewLine +
                 "";
 
@@ -628,14 +636,24 @@ namespace UR_pnach_editor.Codes
         public static void WeakBullets()
         {
             baseCode = "//P1" + Environment.NewLine +
+                "patch=1,EE,1027E484,extended,00000000 //infinite ammo" + Environment.NewLine +
+                "patch=1,EE,1027E488,extended,00000000 //infinite ammo" + Environment.NewLine +
+                "patch=1,EE,105A5FC6,extended,0003 //Max weapon grip" + Environment.NewLine +
                 "patch=1,EE,105A6020,extended,0064 //WPA" + Environment.NewLine +
                 "//P2" + Environment.NewLine +
+                "patch=1,EE,105AF716,extended,0003 //Max weapon grip" + Environment.NewLine +
                 "patch=1,EE,105AF770,extended,0064 //WPA" + Environment.NewLine +
                 "//P3" + Environment.NewLine +
+                "patch=1,EE,105B8E66,extended,0003 //Max weapon grip" + Environment.NewLine +
                 "patch=1,EE,105B8EC0,extended,0064 //WPA" + Environment.NewLine +
                 "//P4" + Environment.NewLine +
+                "patch=1,EE,105C25B6,extended,0003 //Max weapon grip" + Environment.NewLine +
                 "patch=1,EE,105C2610,extended,0064 //WPA" + Environment.NewLine +
                 "//All" + Environment.NewLine +
+                "patch=1,EE,205A5F94,extended,00040004 //cpu 1 uses gun" + Environment.NewLine +
+                "patch=1,EE,205AF6E4,extended,00040004 //cpu 2 uses gun" + Environment.NewLine +
+                "patch=1,EE,205B8E34,extended,00040004 //cpu 3 uses gun" + Environment.NewLine +
+                "patch=1,EE,205C2584,extended,00040004 //cpu 4 uses gun" + Environment.NewLine +
                 "patch=1,EE,2094A648,extended,16161616 //All players have gun" + Environment.NewLine +
                 "";
 
@@ -666,6 +684,7 @@ namespace UR_pnach_editor.Codes
             string random = "";
             string random2 = "";
             int rndSpecial2 = 0;
+            int wpnGrip = 0;
 
             List<string> weaponsList = new List<string> { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "0A", "0B", "0C", "0D", "0E", "0F",
                 "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "1A", "1B", "1C", "1D", "1E", "1F",
@@ -698,6 +717,7 @@ namespace UR_pnach_editor.Codes
                 rndWeapon = new Random().Next(0, 45);
                 rndAI = new Random().Next(0, 13);
                 rndSpecial2 = new Random().Next(1, 8);//PARRY GRAB
+                wpnGrip = new Random().Next(1, 4);//Weapon grip
                 //rndTeam = new Random().Next(0, 4);
 
                 if (i < 24)
@@ -887,7 +907,7 @@ namespace UR_pnach_editor.Codes
                             break;
                     }
                 }
-                else if (i >= 76 && i <= 83)//AUTO PARRY
+                else if (i >= 76 && i <= 79)//AUTO PARRY
                 {
                     if (rndSpecial2 < 7)
                     {
@@ -897,6 +917,10 @@ namespace UR_pnach_editor.Codes
                     {
                         ValuesList.Add("");
                     }
+                }
+                else if (i >= 80 && i <= 83)//Weapon Grip
+                {
+                    ValuesList.Add("" + wpnGrip);
                 }
                 //else if (i >= 76 && i <= 79)//Team
                 //{
@@ -955,6 +979,7 @@ namespace UR_pnach_editor.Codes
                 "patch=1,EE,105A5FD6,extended," + ValuesList[28] + " //LBE" + Environment.NewLine +
                 "patch=1,EE,105A5FDC,extended," + ValuesList[29] + " //LBE Balance" + Environment.NewLine +
                 "patch=1,EE,105A5FEA,extended," + ValuesList[48] + " //WALL DMG" + Environment.NewLine +
+                "patch=1,EE,105A5FC6,extended,000" + ValuesList[97] + " //Max weapon grip" + Environment.NewLine +
                 "" + ValuesList[64] + "patch=1,EE,105A5FF2,extended," + ValuesList[65] + " //Infinite or No SPA" + Environment.NewLine +
                 "patch=1,EE,105A6018,extended," + ValuesList[0] + " //STK" + Environment.NewLine +
                 "patch=1,EE,105A601A,extended," + ValuesList[1] + " //GRP" + Environment.NewLine +
@@ -974,6 +999,7 @@ namespace UR_pnach_editor.Codes
                 "patch=1,EE,105AF726,extended," + ValuesList[34] + " //LBE" + Environment.NewLine +
                 "patch=1,EE,105AF72C,extended," + ValuesList[35] + " //LBE Balance" + Environment.NewLine +
                 "patch=1,EE,105AF73A,extended," + ValuesList[49] + " //WALL DMG" + Environment.NewLine +
+                "patch=1,EE,105AF716,extended,000" + ValuesList[98] + " //Max weapon grip" + Environment.NewLine +
                 "" + ValuesList[66] + "patch=1,EE,105AF742,extended," + ValuesList[67] + " //Infinite or No SPA" + Environment.NewLine +
                 "patch=1,EE,105AF768,extended," + ValuesList[6] + " //STK" + Environment.NewLine +
                 "patch=1,EE,105AF76A,extended," + ValuesList[7] + " //GRP" + Environment.NewLine +
@@ -993,6 +1019,7 @@ namespace UR_pnach_editor.Codes
                 "patch=1,EE,105B8E76,extended," + ValuesList[40] + " //LBE" + Environment.NewLine +
                 "patch=1,EE,105B8E7C,extended," + ValuesList[41] + " //LBE Balance" + Environment.NewLine +
                 "patch=1,EE,105B8E8A,extended," + ValuesList[50] + " //WALL DMG" + Environment.NewLine +
+                "patch=1,EE,105B8E66,extended,000" + ValuesList[99] + " //Max weapon grip" + Environment.NewLine +
                 "" + ValuesList[68] + "patch=1,EE,105B8E92,extended," + ValuesList[69] + " //Infinite or No SPA" + Environment.NewLine +
                 "patch=1,EE,105B8EB8,extended," + ValuesList[12] + " //STK" + Environment.NewLine +
                 "patch=1,EE,105B8EBA,extended," + ValuesList[13] + " //GRP" + Environment.NewLine +
@@ -1012,6 +1039,7 @@ namespace UR_pnach_editor.Codes
                 "patch=1,EE,105C25C6,extended," + ValuesList[46] + " //LBE" + Environment.NewLine +
                 "patch=1,EE,105C25CC,extended," + ValuesList[47] + " //LBE Balance" + Environment.NewLine +
                 "patch=1,EE,105C25DA,extended," + ValuesList[51] + " //WALL DMG" + Environment.NewLine +
+                "patch=1,EE,105C25B6,extended,000" + ValuesList[100] + " //Max weapon grip" + Environment.NewLine +
                 "" + ValuesList[70] + "patch=1,EE,105C25E2,extended," + ValuesList[71] + " //Infinite or No SPA" + Environment.NewLine +
                 "patch=1,EE,105C2608,extended," + ValuesList[18] + " //STK" + Environment.NewLine +
                 "patch=1,EE,105C260A,extended," + ValuesList[19] + " //GRP" + Environment.NewLine +

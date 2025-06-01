@@ -119,10 +119,19 @@ namespace UR_pnach_editor.Views
             else
             {
                 viewModel.PatchingStatus = "Revert to Original!";
-            }    
+            }
+            if (SettingsClass.BradModelSwap == "Original")
+            {
+                viewModel.PatchingStatusBrad = "Select a model!";
+            }
+            else
+            {
+                viewModel.PatchingStatusBrad = "Revert to Original!";
+            }
             MusicPatch.ItemsSource = viewModel.BGM_List;
             MusicPatch.SelectedItem = SettingsClass.MusicStatus;
-
+            BradModelSwapPatch.ItemsSource = viewModel.BradModels_List;
+            BradModelSwapPatch.SelectedItem = SettingsClass.BradModelSwap;
         }
 
         private void GoToMainPage_Click(object sender, RoutedEventArgs e)
@@ -167,7 +176,7 @@ namespace UR_pnach_editor.Views
             HexClass.ChangeModelsSize();
         }
 
-        private void SwapMusic_Click(object sender, RoutedEventArgs e)
+        private void DeltaSwap_Click(object sender, RoutedEventArgs e)
         {
             //Check
             //if (viewModel.ModelsStatus == "ON")
@@ -178,6 +187,11 @@ namespace UR_pnach_editor.Views
             //    return;
             //}
 
+            string type = "";
+            if (sender is System.Windows.Controls.Button clickedButton)
+            {
+                type = clickedButton.Name;
+            }
 
             if (!File.Exists(SettingsClass.gameFolderPath + @"\Urban Reign Deluxe.iso"))
             {
@@ -205,18 +219,36 @@ namespace UR_pnach_editor.Views
                 return;
             }
 
-            if (Convert.ToString(MusicPatch.SelectedItem) == SettingsClass.MusicStatus)
+            if (type == "SwapMusic")
             {
-                MessageBox.Show("You didn't changed anything!");
-                return;
+                if (Convert.ToString(MusicPatch.SelectedItem) == SettingsClass.MusicStatus)
+                {
+                    MessageBox.Show("You didn't changed anything!");
+                    return;
+                }
+
+                if (Convert.ToString(MusicPatch.SelectedItem) != "Original" && SettingsClass.MusicStatus != "Original")
+                {
+                    MessageBox.Show("Revert back to Original then you can pick another pack!");
+                    return;
+                }
+            }
+            else if (type == "SwapBradModel")
+            {
+                if (Convert.ToString(BradModelSwapPatch.SelectedItem) == SettingsClass.BradModelSwap)
+                {
+                    MessageBox.Show("You didn't changed anything!");
+                    return;
+                }
+
+                if (Convert.ToString(BradModelSwapPatch.SelectedItem) != "Original" && SettingsClass.BradModelSwap != "Original")
+                {
+                    MessageBox.Show("Revert back to Original then you can pick another model!");
+                    return;
+                }
             }
 
-            if (Convert.ToString(MusicPatch.SelectedItem) != "Original" && SettingsClass.MusicStatus != "Original")
-            {
-                MessageBox.Show("Revert back to Original then you can pick another pack!");
-                return;
-            }
-
+            #region temporary RevertHexChanges
             //Check for Hex changes and revert back to normal
             bool KG_Tall_Model = false;
             if (SettingsClass.KG_Tall_Model)
@@ -278,6 +310,72 @@ namespace UR_pnach_editor.Views
                 BradAndOthersParry = true;
                 SettingsClass.BradAndOthersParry = false;
             }
+            bool SakamotoRyomaMoves = false;
+            if (SettingsClass.SakamotoRyomaMoves)
+            {
+                SakamotoRyomaMoves = true;
+                SettingsClass.SakamotoRyomaMoves = false;
+            }
+            bool ShinBordinMoves = false;
+            if (SettingsClass.ShinBordinMoves)
+            {
+                ShinBordinMoves = true;
+                SettingsClass.ShinBordinMoves = false;
+            }
+            bool KOGMoves = false;
+            if (SettingsClass.KOGMoves)
+            {
+                KOGMoves = true;
+                SettingsClass.KOGMoves = false;
+            }
+            bool KingJakeMoves = false;
+            if (SettingsClass.KingJakeMoves)
+            {
+                KingJakeMoves = true;
+                SettingsClass.KingJakeMoves = false;
+            }
+            bool MMAGipsiesMoves = false;
+            if (SettingsClass.MMAGipsiesMoves)
+            {
+                MMAGipsiesMoves = true;
+                SettingsClass.MMAGipsiesMoves = false;
+            }
+            bool RikiDensetsuMoves = false;
+            if (SettingsClass.RikiDensetsuMoves)
+            {
+                RikiDensetsuMoves = true;
+                SettingsClass.RikiDensetsuMoves = false;
+            }
+            bool PhoenixStanceShunYingMoves = false;
+            if (SettingsClass.PhoenixStanceShunYingMoves)
+            {
+                PhoenixStanceShunYingMoves = true;
+                SettingsClass.PhoenixStanceShunYingMoves = false;
+            }
+            bool BrokenDwayneMoves = false;
+            if (SettingsClass.BrokenDwayneMoves)
+            {
+                BrokenDwayneMoves = true;
+                SettingsClass.BrokenDwayneMoves = false;
+            }
+            bool MonsterVeraMoves = false;
+            if (SettingsClass.MonsterVeraMoves)
+            {
+                MonsterVeraMoves = true;
+                SettingsClass.MonsterVeraMoves = false;
+            }
+            bool ThugKellyMoves = false;
+            if (SettingsClass.ThugKellyMoves)
+            {
+                ThugKellyMoves = true;
+                SettingsClass.ThugKellyMoves = false;
+            }
+            bool SwordmasterShunYingAndLilianMoves = false;
+            if (SettingsClass.SwordmasterShunYingAndLilianMoves)
+            {
+                SwordmasterShunYingAndLilianMoves = true;
+                SettingsClass.SwordmasterShunYingAndLilianMoves = false;
+            }
             bool StatsChanged = false;
             if (SettingsClass.StatsChanged)
             {
@@ -287,6 +385,7 @@ namespace UR_pnach_editor.Views
             HexClass.ChangeModelsSize();
             HexClass.ChangeMoveset();
             HexClass.ChangeStats();
+            #endregion
 
 
 
@@ -297,84 +396,114 @@ namespace UR_pnach_editor.Views
             {
                 File.Delete(instructionPath);
             }
-          
-            string selectedBgm = "";
-            switch (Convert.ToString(MusicPatch.SelectedItem))
-            {
-                case "Original":
-                    switch (SettingsClass.MusicStatus)
-                    {
-                        case "Story pack 1":
-                            selectedBgm = "bmg_story_pack_1rev";
-                            break;
-                        case "Story pack 2":
-                            selectedBgm = "bmg_story_pack_2rev";
-                            break;
-                        case "Story pack 3":
-                            selectedBgm = "bmg_story_pack_3rev";
-                            break;
-                        case "Tekken 5 pack":
-                            selectedBgm = "bmg_tekken_5_packrev";
-                            break;
-                        case "Tekken 5: Dark Resurrection pack":
-                            selectedBgm = "bmg_tekken_5DR_packrev";
-                            break;
-                        case "Dead or Alive 2 pack":
-                            selectedBgm = "bmg_doa_2_packrev";
-                            break;
-                        case "WWE SmackDown vs. Raw 2011 pack":
-                            selectedBgm = "bmg_sdvr_2011_packrev";
-                            break;
-                        case "Dragon Ball Z: Budokai Tenkaichi 2 pack":
-                            selectedBgm = "bmg_dbz_bt2_packrev";
-                            break;
-                        case "Tekken 8":
-                            selectedBgm = "bmg_tekken_8_packrev";
-                            break; 
-                    }
-                    break;
-                case "Story pack 1":
-                    selectedBgm = "bmg_story_pack_1";
-                    break;
-                case "Story pack 2":
-                    selectedBgm = "bmg_story_pack_2";
-                    break;
-                case "Story pack 3":
-                    selectedBgm = "bmg_story_pack_3";
-                    break;
-                case "Tekken 5 pack":
-                    selectedBgm = "bmg_tekken_5_pack";
-                    break;
-                case "Tekken 5: Dark Resurrection pack":
-                    selectedBgm = "bmg_tekken_5DR_pack";
-                    break;
-                case "Dead or Alive 2 pack":
-                    selectedBgm = "bmg_doa_2_pack";
-                    break;
-                case "WWE SmackDown vs. Raw 2011 pack":
-                    selectedBgm = "bmg_sdvr_2011_pack";
-                    break;
-                case "Dragon Ball Z: Budokai Tenkaichi 2 pack":
-                    selectedBgm = "bmg_dbz_bt2_pack";
-                    break;
-                case "Tekken 8":
-                    selectedBgm = "bmg_tekken_8_pack";
-                    break;
-            }
-
-            if (viewModel.PatchingStatus == "Select a pack!")
-            {
-                viewModel.PatchingStatus = "Revert to Original!";
-            }
-            else if (viewModel.PatchingStatus == "Revert to Original!")
-            {
-                viewModel.PatchingStatus = "Select a pack!";
-            }
-            SettingsClass.MusicStatus = Convert.ToString(MusicPatch.SelectedItem);
-            SettingsClass.SaveData();
-
             string original = SettingsClass.gameFolderPath + @"\Urban Reign Deluxe.iso";
-            string patch = partialPath + @"\Patches\" + selectedBgm + ".xdelta";
+            string patch = "";
+
+            if (type == "SwapMusic")
+            {
+                string selectedBgm = "";
+                switch (Convert.ToString(MusicPatch.SelectedItem))
+                {
+                    case "Original":
+                        switch (SettingsClass.MusicStatus)
+                        {
+                            case "Story pack 1":
+                                selectedBgm = "bmg_story_pack_1rev";
+                                break;
+                            case "Story pack 2":
+                                selectedBgm = "bmg_story_pack_2rev";
+                                break;
+                            case "Story pack 3":
+                                selectedBgm = "bmg_story_pack_3rev";
+                                break;
+                            case "Tekken 5 pack":
+                                selectedBgm = "bmg_tekken_5_packrev";
+                                break;
+                            case "Tekken 5: Dark Resurrection pack":
+                                selectedBgm = "bmg_tekken_5DR_packrev";
+                                break;
+                            case "Dead or Alive 2 pack":
+                                selectedBgm = "bmg_doa_2_packrev";
+                                break;
+                            case "WWE SmackDown vs. Raw 2011 pack":
+                                selectedBgm = "bmg_sdvr_2011_packrev";
+                                break;
+                            case "Dragon Ball Z: Budokai Tenkaichi 2 pack":
+                                selectedBgm = "bmg_dbz_bt2_packrev";
+                                break;
+                            case "Tekken 8":
+                                selectedBgm = "bmg_tekken_8_packrev";
+                                break;
+                        }
+                        break;
+                    case "Story pack 1":
+                        selectedBgm = "bmg_story_pack_1";
+                        break;
+                    case "Story pack 2":
+                        selectedBgm = "bmg_story_pack_2";
+                        break;
+                    case "Story pack 3":
+                        selectedBgm = "bmg_story_pack_3";
+                        break;
+                    case "Tekken 5 pack":
+                        selectedBgm = "bmg_tekken_5_pack";
+                        break;
+                    case "Tekken 5: Dark Resurrection pack":
+                        selectedBgm = "bmg_tekken_5DR_pack";
+                        break;
+                    case "Dead or Alive 2 pack":
+                        selectedBgm = "bmg_doa_2_pack";
+                        break;
+                    case "WWE SmackDown vs. Raw 2011 pack":
+                        selectedBgm = "bmg_sdvr_2011_pack";
+                        break;
+                    case "Dragon Ball Z: Budokai Tenkaichi 2 pack":
+                        selectedBgm = "bmg_dbz_bt2_pack";
+                        break;
+                    case "Tekken 8":
+                        selectedBgm = "bmg_tekken_8_pack";
+                        break;
+                }
+
+                if (viewModel.PatchingStatus == "Select a pack!")
+                {
+                    viewModel.PatchingStatus = "Revert to Original!";
+                }
+                else if (viewModel.PatchingStatus == "Revert to Original!")
+                {
+                    viewModel.PatchingStatus = "Select a pack!";
+                }
+                SettingsClass.MusicStatus = Convert.ToString(MusicPatch.SelectedItem);
+                patch = partialPath + @"\Patches\" + selectedBgm + ".xdelta";
+            }
+            else if (type == "SwapBradModel")
+            {
+                string selectedModel = "";
+                string comboBoxValue = Convert.ToString(BradModelSwapPatch.SelectedItem);
+                string revertValue = SettingsClass.BradModelSwap;
+                switch (comboBoxValue)
+                {
+                    case "Original":
+                        selectedModel = revertValue + "REV";
+                        break;
+                    default:
+                        selectedModel = comboBoxValue;
+                        break;
+                }
+
+                if (viewModel.PatchingStatusBrad == "Select a model!")
+                {
+                    viewModel.PatchingStatusBrad = "Revert to Original!";
+                }
+                else if (viewModel.PatchingStatusBrad == "Revert to Original!")
+                {
+                    viewModel.PatchingStatusBrad = "Select a model!";
+                }
+                SettingsClass.BradModelSwap = comboBoxValue;
+                patch = partialPath + @"\Patches\" + selectedModel + ".xdelta";
+            }
+
+            SettingsClass.SaveData();
 
             string instructions = "Please copy the following text into Delta Patcher exe and click Apply patch" + Environment.NewLine +
                 "" + Environment.NewLine +
@@ -406,6 +535,19 @@ namespace UR_pnach_editor.Views
                 SettingsClass.BordinAllAroundMoves = BordinAllAroundMoves;
                 SettingsClass.PaulAshesMoves = PaulAshesMoves;
                 SettingsClass.BradAndOthersParry = BradAndOthersParry;
+
+                SettingsClass.SakamotoRyomaMoves = SakamotoRyomaMoves;
+                SettingsClass.ShinBordinMoves = ShinBordinMoves;
+                SettingsClass.KOGMoves = KOGMoves;
+                SettingsClass.KingJakeMoves = KingJakeMoves;
+                SettingsClass.MMAGipsiesMoves = MMAGipsiesMoves;
+                SettingsClass.RikiDensetsuMoves = RikiDensetsuMoves;
+                SettingsClass.PhoenixStanceShunYingMoves = PhoenixStanceShunYingMoves;
+                SettingsClass.BrokenDwayneMoves = BrokenDwayneMoves;
+                SettingsClass.MonsterVeraMoves = MonsterVeraMoves;
+                SettingsClass.ThugKellyMoves = ThugKellyMoves;
+                SettingsClass.SwordmasterShunYingAndLilianMoves = SwordmasterShunYingAndLilianMoves;
+
                 SettingsClass.StatsChanged = StatsChanged;
                 HexClass.ChangeModelsSize();
                 HexClass.ChangeMoveset();
@@ -437,7 +579,82 @@ namespace UR_pnach_editor.Views
                 "to another pack after that, this was made in order to avoid errors.");
         }
 
-       
+        private void SwapBradModel_Info(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("This function is semi-automatic so you need to be carefull in here " +
+                "also make sure you configured the game folder path before continuing.\n" +
+                "Choose any model for Brad from the dropdown menu, then click swap Brad model, and text file " +
+                "with instructions will open along with the delta patcher, follow the instructions and finalize the process " +
+                "then close the text file and delta patcher\n" +
+                "This is very important, as soon as you pressed the swap Brad model button you have to follow the instructions " +
+                "until the end and patch the rom, because the tool won't know if you didn't do it.\n" +
+                "If you want to switch to other model after this you will have to switch to original model first, then " +
+                "to another pack after that, this was made in order to avoid errors.\n" +
+                "There are 3 types of characters in here:\n" +
+                "1.Those that look fine\n" +
+                "2.Those that face look screwed in cutscenes\n" +
+                "3.Those that are not in this list because their models are bigger than Brad's model.");
+        }
+
+
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.Focus(); // Ensure the Window gets keyboard input
+        }
+
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if either Shift key is held down
+            if (Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightShift))
+            {
+                if (e.Key == Key.Oem3 || e.Key == Key.Multiply)
+                {
+                    viewModel.DisplayMainView();
+                }
+                else if (e.Key == Key.D1 || e.Key == Key.NumPad1)
+                {
+                    viewModel.DisplayStatsView();
+                }
+                else if (e.Key == Key.D2 || e.Key == Key.NumPad2)
+                {
+                    viewModel.DisplayTextureView();
+                }
+                else if (e.Key == Key.D3 || e.Key == Key.NumPad3)
+                {
+                    viewModel.DisplayCharacterView();
+                }
+                else if (e.Key == Key.D4 || e.Key == Key.NumPad4)
+                {
+                    viewModel.DisplayModelsAndMusicView();
+                }
+                else if (e.Key == Key.D5 || e.Key == Key.NumPad5)
+                {
+                    viewModel.DisplayChallengeView();
+                }
+                else if (e.Key == Key.D6 || e.Key == Key.NumPad6)
+                {
+                    viewModel.DisplayMovesetView();
+                }
+                else if (e.Key == Key.D7 || e.Key == Key.NumPad7)
+                {
+                    viewModel.DisplayChallengeModeView();
+                }
+                else if (e.Key == Key.D8 || e.Key == Key.NumPad8)
+                {
+                    viewModel.DisplayDeveloperView();
+                }
+                else if (e.Key == Key.D9 || e.Key == Key.NumPad9)
+                {
+                    viewModel.DisplayMiscellaneousCheatsView();
+                }
+                else if (e.Key == Key.D0 || e.Key == Key.NumPad0)
+                {
+                    viewModel.DisplayMysteriousView();
+                }
+            }
+        }
     }
 
 

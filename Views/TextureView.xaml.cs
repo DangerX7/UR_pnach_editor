@@ -473,6 +473,30 @@ namespace UR_pnach_editor.Views
             check186.Visibility = Visibility.Collapsed;
             skin187.Visibility = Visibility.Collapsed;
             check187.Visibility = Visibility.Collapsed;
+            skin188.Visibility = Visibility.Collapsed;
+            check188.Visibility = Visibility.Collapsed;
+            skin189.Visibility = Visibility.Collapsed;
+            check189.Visibility = Visibility.Collapsed;
+            skin190.Visibility = Visibility.Collapsed;
+            check190.Visibility = Visibility.Collapsed;
+            skin191.Visibility = Visibility.Collapsed;
+            check191.Visibility = Visibility.Collapsed;
+            skin192.Visibility = Visibility.Collapsed;
+            check192.Visibility = Visibility.Collapsed;
+            skin193.Visibility = Visibility.Collapsed;
+            check193.Visibility = Visibility.Collapsed;
+            skin194.Visibility = Visibility.Collapsed;
+            check194.Visibility = Visibility.Collapsed;
+            skin195.Visibility = Visibility.Collapsed;
+            check195.Visibility = Visibility.Collapsed;
+            skin196.Visibility = Visibility.Collapsed;
+            check196.Visibility = Visibility.Collapsed;
+            skin197.Visibility = Visibility.Collapsed;
+            check197.Visibility = Visibility.Collapsed;
+            skin198.Visibility = Visibility.Collapsed;
+            check198.Visibility = Visibility.Collapsed;
+            skin199.Visibility = Visibility.Collapsed;
+            check199.Visibility = Visibility.Collapsed;
 
             //checkTS.Visibility = Visibility.Visible;
             //Title_Screen.Visibility = Visibility.Visible;
@@ -780,6 +804,30 @@ namespace UR_pnach_editor.Views
             check186.Visibility = Visibility.Collapsed;
             skin187.Visibility = Visibility.Collapsed;
             check187.Visibility = Visibility.Collapsed;
+            skin188.Visibility = Visibility.Collapsed;
+            check188.Visibility = Visibility.Collapsed;
+            skin189.Visibility = Visibility.Collapsed;
+            check189.Visibility = Visibility.Collapsed;
+            skin190.Visibility = Visibility.Collapsed;
+            check190.Visibility = Visibility.Collapsed;
+            skin191.Visibility = Visibility.Collapsed;
+            check191.Visibility = Visibility.Collapsed;
+            skin192.Visibility = Visibility.Collapsed;
+            check192.Visibility = Visibility.Collapsed;
+            skin193.Visibility = Visibility.Collapsed;
+            check193.Visibility = Visibility.Collapsed;
+            skin194.Visibility = Visibility.Collapsed;
+            check194.Visibility = Visibility.Collapsed;
+            skin195.Visibility = Visibility.Collapsed;
+            check195.Visibility = Visibility.Collapsed;
+            skin196.Visibility = Visibility.Collapsed;
+            check196.Visibility = Visibility.Collapsed;
+            skin197.Visibility = Visibility.Collapsed;
+            check197.Visibility = Visibility.Collapsed;
+            skin198.Visibility = Visibility.Collapsed;
+            check198.Visibility = Visibility.Collapsed;
+            skin199.Visibility = Visibility.Collapsed;
+            check199.Visibility = Visibility.Collapsed;
 
             //checkTS.Visibility = Visibility.Collapsed;
             //Title_Screen.Visibility = Visibility.Collapsed;
@@ -1087,6 +1135,30 @@ namespace UR_pnach_editor.Views
             check186.Visibility = Visibility.Visible;
             skin187.Visibility = Visibility.Visible;
             check187.Visibility = Visibility.Visible;
+            skin188.Visibility = Visibility.Visible;
+            check188.Visibility = Visibility.Visible;
+            skin189.Visibility = Visibility.Visible;
+            check189.Visibility = Visibility.Visible;
+            skin190.Visibility = Visibility.Visible;
+            check190.Visibility = Visibility.Visible;
+            skin191.Visibility = Visibility.Visible;
+            check191.Visibility = Visibility.Visible;
+            skin192.Visibility = Visibility.Visible;
+            check192.Visibility = Visibility.Visible;
+            skin193.Visibility = Visibility.Visible;
+            check193.Visibility = Visibility.Visible;
+            skin194.Visibility = Visibility.Visible;
+            check194.Visibility = Visibility.Visible;
+            skin195.Visibility = Visibility.Visible;
+            check195.Visibility = Visibility.Visible;
+            skin196.Visibility = Visibility.Visible;
+            check196.Visibility = Visibility.Visible;
+            skin197.Visibility = Visibility.Visible;
+            check197.Visibility = Visibility.Visible;
+            skin198.Visibility = Visibility.Visible;
+            check198.Visibility = Visibility.Visible;
+            skin199.Visibility = Visibility.Visible;
+            check199.Visibility = Visibility.Visible;
 
             //checkTS.Visibility = Visibility.Collapsed;
             //Title_Screen.Visibility = Visibility.Collapsed;
@@ -1726,6 +1798,62 @@ namespace UR_pnach_editor.Views
         {
             viewModel.SkinPreview = "/Resources/PreviewSkin187.png";
         }
+        private void SkinPreview188(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin188.png";
+        }
+        private void SkinPreview189(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin189.png";
+        }
+        private void SkinPreview190(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin190.png";
+        }
+        private void SkinPreview191(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin191.png";
+        }
+
+        private void SkinPreview192(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin192.png";
+        }
+
+        private void SkinPreview193(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin193.png";
+        }
+
+        private void SkinPreview194(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin194.png";
+        }
+
+        private void SkinPreview195(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin195.png";
+        }
+
+        private void SkinPreview196(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin196.png";
+        }
+
+        private void SkinPreview197(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin197.png";
+        }
+
+        private void SkinPreview198(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin198.png";
+        }
+
+        private void SkinPreview199(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin199.png";
+        }
         private void SwitchModelsSize_Click(object sender, RoutedEventArgs e)
         {
             //string DanPath = @"G:\Danger\Big Roms and Emulators\ps2 roms\Urban Reign\Urban Reign Deluxe.iso";
@@ -1808,6 +1936,66 @@ namespace UR_pnach_editor.Views
         {
             MessageBox.Show("Disable all textures");
         }
+
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.Focus(); // Ensure the Window gets keyboard input
+        }
+
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if either Shift key is held down
+            if (Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightShift))
+            {
+                if (e.Key == Key.Oem3 || e.Key == Key.Multiply)
+                {
+                    viewModel.DisplayMainView();
+                }
+                else if (e.Key == Key.D1 || e.Key == Key.NumPad1)
+                {
+                    viewModel.DisplayStatsView();
+                }
+                else if (e.Key == Key.D2 || e.Key == Key.NumPad2)
+                {
+                    viewModel.DisplayTextureView();
+                }
+                else if (e.Key == Key.D3 || e.Key == Key.NumPad3)
+                {
+                    viewModel.DisplayCharacterView();
+                }
+                else if (e.Key == Key.D4 || e.Key == Key.NumPad4)
+                {
+                    viewModel.DisplayModelsAndMusicView();
+                }
+                else if (e.Key == Key.D5 || e.Key == Key.NumPad5)
+                {
+                    viewModel.DisplayChallengeView();
+                }
+                else if (e.Key == Key.D6 || e.Key == Key.NumPad6)
+                {
+                    viewModel.DisplayMovesetView();
+                }
+                else if (e.Key == Key.D7 || e.Key == Key.NumPad7)
+                {
+                    viewModel.DisplayChallengeModeView();
+                }
+                else if (e.Key == Key.D8 || e.Key == Key.NumPad8)
+                {
+                    viewModel.DisplayDeveloperView();
+                }
+                else if (e.Key == Key.D9 || e.Key == Key.NumPad9)
+                {
+                    viewModel.DisplayMiscellaneousCheatsView();
+                }
+                else if (e.Key == Key.D0 || e.Key == Key.NumPad0)
+                {
+                    viewModel.DisplayMysteriousView();
+                }
+            }
+        }
+
     }
 
 

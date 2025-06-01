@@ -7,7 +7,10 @@
              xmlns:viewmodels="clr-namespace:UR_pnach_editor.ViewModels"
              xmlns:local="clr-namespace:UR_pnach_editor.Views"
              mc:Ignorable="d"
-             d:DesignHeight="1080" d:DesignWidth="1920">
+             d:DesignHeight="1080" d:DesignWidth="1920"
+             KeyDown="Window_KeyDown"
+             Focusable="True"
+             Loaded="Window_Loaded">
 
 
     <Grid Height="1080" Width="1920">
@@ -1673,9 +1676,8 @@
                Grid.RowSpan="3"
                Grid.Column="4"
                Grid.ColumnSpan="2"
-               Width="440"
                Height="440"
-               Margin="98,14,11,9"/>
+               Margin="135,14,2,9"/>
 
     </Grid>
 

@@ -5,7 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:UR_pnach_editor.Views" xmlns:viewmodels="clr-namespace:UR_pnach_editor.ViewModels"
              mc:Ignorable="d"
-             d:DesignHeight="1080" d:DesignWidth="1920">
+             d:DesignHeight="1080" d:DesignWidth="1920"
+             KeyDown="Window_KeyDown"
+             Focusable="True"
+             Loaded="Window_Loaded">
 
     
     
@@ -292,6 +295,123 @@
             <Button.Content>
                 <TextBlock TextWrapping="Wrap" Text="2 Players New Game Plus" TextAlignment="Center" />
             </Button.Content>
+        </Button>
+
+
+
+        <!--BradAndShinkaiCustomizedTeam-->
+        <Button Grid.Row="4"
+                Grid.Column="0"
+                x:Name="BradAndShinkaiCustomizedTeam"
+                Background="#000088"
+                Foreground="#444444"
+                FontFamily="Century Gothic"
+                FontSize="38"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="5,5,5,5"
+                Click="BradAndShinkaiCustomizedTeam_Click"
+                MouseEnter="BradAndShinkaiCustomizedTeam_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Brad ＆ Shinkai Team" TextAlignment="Center"  />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--ShunYingAndLinFongCustomizedTeam-->
+        <Button Grid.Row="4"
+                Grid.Column="1"
+                x:Name="ShunYingAndLinFongCustomizedTeam"
+                Background="#601020"
+                Foreground="#000000"
+                FontFamily="Century Gothic"
+                FontSize="40"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="5,5,5,5"
+                Click="ShunYingAndLinFongCustomizedTeam_Click"
+                MouseEnter="ShunYingAndLinFongCustomizedTeam_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Shun Ying ＆ Lin Fong Team" TextAlignment="Center" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--McKinzieAndCooperAndBainCustomizedTeam-->
+        <Button Grid.Row="4"
+                Grid.Column="2"
+                x:Name="McKinzieAndCooperAndBainCustomizedTeam"
+                Background="#213422"
+                Foreground="#000000"
+                FontFamily="Century Gothic"
+                FontSize="47"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="5,5,5,5"
+                Click="McKinzieAndCooperAndBainCustomizedTeam_Click"
+                MouseEnter="McKinzieAndCooperAndBainCustomizedTeam_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="McKinzie ＆ Gang" TextAlignment="Center" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--MarshallLawAndPaulPhoenixCustomizedTeam-->
+        <Button Grid.Row="5"
+                Grid.Column="0"
+                x:Name="MarshallLawAndPaulPhoenixCustomizedTeam"
+                Background="#964B00"
+                Foreground="#000000"
+                FontFamily="Century Gothic"
+                FontSize="33"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="5,5,5,5"
+                Click="MarshallLawAndPaulPhoenixCustomizedTeam_Click"
+                MouseEnter="MarshallLawAndPaulPhoenixCustomizedTeam_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Marshall Law ＆ Paul Phoenix Team" TextAlignment="Center" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--ShunYingAndMarshallLawCustomizedTeam-->
+        <Button Grid.Row="5"
+                Grid.Column="1"
+                x:Name="ShunYingAndMarshallLawCustomizedTeam"
+                Background="#2255A8"
+                Foreground="#000000"
+                FontFamily="Century Gothic"
+                FontSize="38"
+                FontStyle="Italic"
+                FontWeight="Bold"
+                Margin="5,5,5,5"
+                Click="ShunYingAndMarshallLawCustomizedTeam_Click"
+                MouseEnter="ShunYingAndMarshallLawCustomizedTeam_MouseEnter">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" Text="Shun Ying ＆ Marshall Law Team" TextAlignment="Center" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
         </Button>
 
 

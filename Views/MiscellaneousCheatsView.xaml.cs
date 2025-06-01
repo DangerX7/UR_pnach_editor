@@ -149,10 +149,10 @@ namespace UR_pnach_editor.Views
             viewModel.ModeInformation =
                 "It will set Solo Missions and specific Partner missions into allowing you to have any partner.\n" +
                 "It will break timer for Timed Missions.\n" +
-                "Camera is switched to multiplayer camera for a better party experience. \n" +
                 "\n" +
-                "\n" +
-                "\n" +
+                "Camera can be switched for a better party experience. \n" +
+                "Hold R2 and press L3 to switch to multiplayer camera\n" +
+                "Hold R2 and press R3 to switch to single player camera\n" +
                 "\n" +
                 "\n" +
                 "\n" +
@@ -182,10 +182,10 @@ namespace UR_pnach_editor.Views
             viewModel.ModeInformation =
                 "It will force the first enemy to be controlled by Player 3, P3 become ally to P1 and P2, player is defeated automatically once all enemies are defeated.\n" +
                 "It will break timer for Timed Missions.\n" +
-                "Camera is switched to multiplayer camera for a better party experience. \n" +
                 "\n" +
-                "\n" +
-                "\n" +
+                "Camera can be switched for a better party experience. \n" +
+                "Hold R2 and press L3 to switch to multiplayer camera\n" +
+                "Hold R2 and press R3 to switch to single player camera\n" +
                 "\n" +
                 "\n" +
                 "\n" +
@@ -215,10 +215,10 @@ namespace UR_pnach_editor.Views
             viewModel.ModeInformation =
                 "It will force the first enemy and second enemy to be controlled by Player 3 and Player 4,they become allies to P1 and P2, player is defeated automatically once all enemies are defeated.\n" +
                 "It will break timer for Timed Missions.\n" +
-                "Camera is switched to multiplayer camera for a better party experience. \n" +
                 "\n" +
-                "\n" +
-                "\n" +
+                "Camera can be switched for a better party experience. \n" +
+                "Hold R2 and press L3 to switch to multiplayer camera\n" +
+                "Hold R2 and press R3 to switch to single player camera\n" +
                 "\n" +
                 "\n" +
                 "\n" +
@@ -419,9 +419,9 @@ namespace UR_pnach_editor.Views
                 "In this mode an AI (with Golem AI from story) will be your partner. \n" +
                 "This is made to work on Story Mode, it's not tested for Free Mode.\n" +
                 "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
+                "Camera can be switched for a better party experience. \n" +
+                "Hold R2 and press L3 to switch to multiplayer camera\n" +
+                "Hold R2 and press R3 to switch to single player camera\n" +
                 "\n" +
                 "\n" +
                 "\n" +
@@ -453,9 +453,9 @@ namespace UR_pnach_editor.Views
                 "Camera is switched to multiplayer camera for a better party experience. \n" +
                 "This is made to work on Story Mode, it's not tested for Free Mode.\n" +
                 "\n" +
-                "\n" +
-                "\n" +
-                "\n" +
+                "Camera can be switched for a better party experience. \n" +
+                "Hold R2 and press L3 to switch to multiplayer camera\n" +
+                "Hold R2 and press R3 to switch to single player camera\n" +
                 "\n" +
                 "\n" +
                 "\n" +
@@ -470,6 +470,230 @@ namespace UR_pnach_editor.Views
         {
             CodeText.Foreground = Brushes.White; // Reset the color to the original
             timer2.Stop();
+        }
+
+        private void BradAndShinkaiCustomizedTeam_Click(object sender, RoutedEventArgs e)
+        {
+            CreatePnach8.BradAndShinkaiCustomizedTeam();
+            viewModel.CodeString = "Brad And Shinkai Team";
+            CodeText.Foreground = Brushes.Yellow;
+            timer2.Start();
+        }
+
+        private void BradAndShinkaiCustomizedTeam_MouseEnter(object sender, MouseEventArgs e)
+        {
+            viewModel.ModeInformation =
+                "These codes where made by Majid for Free Mode! \n" +
+                "The game will automatically select 2 characters for you and your partner \n" +
+                "with custom movesets and others. \n" +
+                "Player 1: Brad Hawk \n" +
+                "Player 2: Shinkai \n" +
+                "\n" +
+                "Camera can be switched for a better party experience. \n" +
+                "Hold R2 and press L3 to switch to multiplayer camera\n" +
+                "Hold R2 and press R3 to switch to single player camera\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n";
+        }
+
+        private void ShunYingAndLinFongCustomizedTeam_Click(object sender, RoutedEventArgs e)
+        {
+            CreatePnach8.ShunYingAndLinFongCustomizedTeam();
+            viewModel.CodeString = "Shun Ying And Lin Fong Team";
+            CodeText.Foreground = Brushes.Yellow;
+            timer2.Start();
+        }
+
+        private void ShunYingAndLinFongCustomizedTeam_MouseEnter(object sender, MouseEventArgs e)
+        {
+            viewModel.ModeInformation =
+                "These codes where made by Majid for Free Mode! \n" +
+                "The game will automatically select 2 characters for you and your partner \n" +
+                "with custom movesets and others. \n" +
+                "Player 1: Shun Ying Lee \n" +
+                "Player 2: Lin Fong Lee \n" +
+                "\n" +
+                "Camera can be switched for a better party experience. \n" +
+                "Hold R2 and press L3 to switch to multiplayer camera\n" +
+                "Hold R2 and press R3 to switch to single player camera\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n";
+        }
+
+        private void McKinzieAndCooperAndBainCustomizedTeam_Click(object sender, RoutedEventArgs e)
+        {
+            CreatePnach8.McKinzieAndCooperAndBainCustomizedTeam();
+            viewModel.CodeString = "McKinzie And Gang";
+            CodeText.Foreground = Brushes.Yellow;
+            timer2.Start();
+        }
+
+        private void McKinzieAndCooperAndBainCustomizedTeam_MouseEnter(object sender, MouseEventArgs e)
+        {
+            viewModel.ModeInformation =
+                "These codes where made by Majid for Free Mode! \n" +
+                "The game will automatically select 2 characters for you and your partner \n" +
+                "with custom movesets and others. \n" +
+                "Player 1: McKinzie \n" +
+                "Player 2: Bain or Cooper \n" +
+                "\n" +
+                "Camera can be switched for a better party experience. \n" +
+                "Hold R2 and press L3 to switch to multiplayer camera\n" +
+                "Hold R2 and press R3 to switch to single player camera\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n";
+        }
+
+        private void MarshallLawAndPaulPhoenixCustomizedTeam_Click(object sender, RoutedEventArgs e)
+        {
+            CreatePnach8.MarshallLawAndPaulPhoenixCustomizedTeam();
+            viewModel.CodeString = "Marshall Law And Paul Phoenix Team";
+            CodeText.Foreground = Brushes.Yellow;
+            timer2.Start();
+        }
+
+        private void MarshallLawAndPaulPhoenixCustomizedTeam_MouseEnter(object sender, MouseEventArgs e)
+        {
+            viewModel.ModeInformation =
+                "These codes where made by Majid for Free Mode! \n" +
+                "The game will automatically select 2 characters for you and your partner \n" +
+                "with custom movesets and others. \n" +
+                "Player 1: Marshall Law \n" +
+                "Player 2: Paul Phoenix \n" +
+                "\n" +
+                "Camera can be switched for a better party experience. \n" +
+                "Hold R2 and press L3 to switch to multiplayer camera\n" +
+                "Hold R2 and press R3 to switch to single player camera\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n";
+        }
+
+        private void ShunYingAndMarshallLawCustomizedTeam_Click(object sender, RoutedEventArgs e)
+        {
+            CreatePnach8.ShunYingAndMarshallLawCustomizedTeam();
+            viewModel.CodeString = "Shun Ying And Marshall Law Team";
+            CodeText.Foreground = Brushes.Yellow;
+            timer2.Start();
+        }
+
+        private void ShunYingAndMarshallLawCustomizedTeam_MouseEnter(object sender, MouseEventArgs e)
+        {
+            viewModel.ModeInformation =
+                "These codes where made by Majid for Free Mode! \n" +
+                "The game will automatically select 2 characters for you and your partner \n" +
+                "with custom movesets and others. \n" +
+                "Player 1: Shun Ying Lee \n" +
+                "Player 2: Marshall Law \n" +
+                "\n" +
+                "Camera can be switched for a better party experience. \n" +
+                "Hold R2 and press L3 to switch to multiplayer camera\n" +
+                "Hold R2 and press R3 to switch to single player camera\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n";
+        }
+
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.Focus(); // Ensure the Window gets keyboard input
+        }
+
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if either Shift key is held down
+            if (Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightShift))
+            {
+                if (e.Key == Key.Oem3 || e.Key == Key.Multiply)
+                {
+                    viewModel.DisplayMainView();
+                }
+                else if (e.Key == Key.D1 || e.Key == Key.NumPad1)
+                {
+                    viewModel.DisplayStatsView();
+                }
+                else if (e.Key == Key.D2 || e.Key == Key.NumPad2)
+                {
+                    viewModel.DisplayTextureView();
+                }
+                else if (e.Key == Key.D3 || e.Key == Key.NumPad3)
+                {
+                    viewModel.DisplayCharacterView();
+                }
+                else if (e.Key == Key.D4 || e.Key == Key.NumPad4)
+                {
+                    viewModel.DisplayModelsAndMusicView();
+                }
+                else if (e.Key == Key.D5 || e.Key == Key.NumPad5)
+                {
+                    viewModel.DisplayChallengeView();
+                }
+                else if (e.Key == Key.D6 || e.Key == Key.NumPad6)
+                {
+                    viewModel.DisplayMovesetView();
+                }
+                else if (e.Key == Key.D7 || e.Key == Key.NumPad7)
+                {
+                    viewModel.DisplayChallengeModeView();
+                }
+                else if (e.Key == Key.D8 || e.Key == Key.NumPad8)
+                {
+                    viewModel.DisplayDeveloperView();
+                }
+                else if (e.Key == Key.D9 || e.Key == Key.NumPad9)
+                {
+                    viewModel.DisplayMiscellaneousCheatsView();
+                }
+                else if (e.Key == Key.D0 || e.Key == Key.NumPad0)
+                {
+                    viewModel.DisplayMysteriousView();
+                }
+            }
         }
 
     }

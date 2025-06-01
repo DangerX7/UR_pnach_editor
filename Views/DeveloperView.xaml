@@ -7,7 +7,9 @@
              mc:Ignorable="d"
              d:DesignHeight="1080" d:DesignWidth="1920"
              xmlns:gif = "https://github.com/XamlAnimatedGif/XamlAnimatedGif"
-             >
+             KeyDown="Window_KeyDown"
+             Focusable="True"
+             Loaded="Window_Loaded">
 
 
     <Grid Height="1080" Width="1920">
@@ -152,13 +154,31 @@
         <TextBlock Grid.Row="2"
                    Grid.Column="2"
                    FontFamily="Palatino Linotype"
+                   Name="stat9"
+                   FontSize="36"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="Brad Model"
+                   Margin="281,50,80,10" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Row="2"
+                   Grid.Column="4"
+                   FontFamily="Palatino Linotype"
+                   Name="stat9x"
+                   FontSize="36"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightBlue"
+                   Text="{Binding BradModelStatus, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="0,50,100,0"/>
+        <TextBlock Grid.Row="3"
+                   Grid.Column="2"
+                   FontFamily="Palatino Linotype"
                    Name="stat6"
                    FontSize="36"
                    TextWrapping="WrapWithOverflow"
                    Foreground="LightBlue"
                    Text="Folder Paths"
-                   Margin="281,50,160,10" Grid.ColumnSpan="2"/>
-        <TextBlock Grid.Row="2"
+                   Margin="281,-5,80,40" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Row="3"
                    Grid.Column="4"
                    FontFamily="Palatino Linotype"
                    Name="stat6x"
@@ -166,7 +186,7 @@
                    TextWrapping="WrapWithOverflow"
                    Foreground="LightBlue"
                    Text="{Binding FolderPathsStatus, UpdateSourceTrigger=PropertyChanged}"
-                   Margin="0,50,100,0"/>
+                   Margin="0,-5,0,40"/>
         <TextBlock Grid.Row="3"
                    Grid.Column="2"
                    FontFamily="Palatino Linotype"
@@ -175,7 +195,7 @@
                    TextWrapping="WrapWithOverflow"
                    Foreground="LightBlue"
                    Text="Stats"
-                   Margin="281,-5,80,40" Grid.ColumnSpan="2"/>
+                   Margin="281,55,80,0" Grid.ColumnSpan="2"/>
         <TextBlock Grid.Row="3"
                    Grid.Column="4"
                    FontFamily="Palatino Linotype"
@@ -184,8 +204,8 @@
                    TextWrapping="WrapWithOverflow"
                    Foreground="LightBlue"
                    Text="{Binding StatsStatus, UpdateSourceTrigger=PropertyChanged}"
-                   Margin="0,-5,0,40"/>
-        <TextBlock Grid.Row="3"
+                   Margin="0,55,0,0"/>
+        <TextBlock Grid.Row="4"
                    Grid.Column="2"
                    FontFamily="Palatino Linotype"
                    Name="stat8"
@@ -193,8 +213,8 @@
                    TextWrapping="WrapWithOverflow"
                    Foreground="LightBlue"
                    Text="Effect"
-                   Margin="281,55,80,0" Grid.ColumnSpan="2"/>
-        <TextBlock Grid.Row="3"
+                   Margin="281,-5,80,40" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Row="4"
                    Grid.Column="4"
                    FontFamily="Palatino Linotype"
                    Name="stat8x"
@@ -202,16 +222,16 @@
                    TextWrapping="WrapWithOverflow"
                    Foreground="LightBlue"
                    Text="{Binding EffectStatus, UpdateSourceTrigger=PropertyChanged}"
-                   Margin="0,55,0,0"/>
+                   Margin="0,-5,0,40"/>
 
 
 
         <Border Grid.Column="2"
                 Grid.ColumnSpan="3"
                 Grid.Row="0"
-                Grid.RowSpan="4"
+                Grid.RowSpan="5"
                 BorderThickness="6"
-                Margin="275,0,6,0"
+                Margin="275,0,20,40"
                 BorderBrush="Purple">
         </Border>
 
@@ -473,12 +493,32 @@
                    Text="Steve Craft"
                    TextAlignment="Center"
                    Margin="0,60,0,-60"/>
+        <TextBlock Grid.Row="10"
+                   Grid.Column="5"
+                   FontFamily="Palatino Linotype"
+                   Name="dev10"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="FallenR"
+                   TextAlignment="Center"
+                   Margin="0,60,0,-60"/>
+        <TextBlock Grid.Row="10"
+                   Grid.Column="5"
+                   FontFamily="Palatino Linotype"
+                   Name="dev11"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Majid"
+                   TextAlignment="Center"
+                   Margin="0,112,0,-100"/>
 
         <Border Grid.Column="5"
                 Grid.Row="4"
                 Grid.RowSpan="8"
                 BorderThickness="6"
-                Margin="0,0,5,102"
+                Margin="0,0,5,1"
                 BorderBrush="Red"/>
 
 

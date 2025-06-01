@@ -3056,6 +3056,148 @@ namespace UR_pnach_editor.Views
             }
         }
 
+        private void PoisonedChar_Click(object sender, RoutedEventArgs e)
+        {
+            switch (selectedPlayer)
+            {
+                case 1:
+                    P1Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_321.png", UriKind.Relative)) };
+                    player1Char = 21;
+                    break;
+                case 2:
+                    P2Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_321.png", UriKind.Relative)) };
+                    player2Char = 21;
+                    break;
+                case 3:
+                    P3Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_321.png", UriKind.Relative)) };
+                    player3Char = 21;
+                    break;
+                case 4:
+                    P4Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_321.png", UriKind.Relative)) };
+                    player4Char = 21;
+                    break;
+                case 5:
+                    P5Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_321.png", UriKind.Relative)) };
+                    player5Char = 21;
+                    break;
+                case 6:
+                    P6Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_321.png", UriKind.Relative)) };
+                    player6Char = 21;
+                    break;
+                case 7:
+                    P7Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_321.png", UriKind.Relative)) };
+                    player7Char = 21;
+                    break;
+                case 8:
+                    P8Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_321.png", UriKind.Relative)) };
+                    player8Char = 21;
+                    break;
+                case 99:
+                    P1Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_321.png", UriKind.Relative)) };
+                    player1Char = 21;
+                    P2Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_321.png", UriKind.Relative)) };
+                    player2Char = 21;
+                    P3Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_321.png", UriKind.Relative)) };
+                    player3Char = 21;
+                    P4Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_321.png", UriKind.Relative)) };
+                    player4Char = 21;
+                    P5Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_321.png", UriKind.Relative)) };
+                    player5Char = 21;
+                    P6Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_321.png", UriKind.Relative)) };
+                    player6Char = 21;
+                    P7Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_321.png", UriKind.Relative)) };
+                    player7Char = 21;
+                    P8Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_321.png", UriKind.Relative)) };
+                    player8Char = 21;
+                    break;
+                case 100:
+                    P3Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_321.png", UriKind.Relative)) };
+                    player3Char = 21;
+                    P4Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_321.png", UriKind.Relative)) };
+                    player4Char = 21;
+                    P5Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_321.png", UriKind.Relative)) };
+                    player5Char = 21;
+                    P6Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_321.png", UriKind.Relative)) };
+                    player6Char = 21;
+                    P7Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_321.png", UriKind.Relative)) };
+                    player7Char = 21;
+                    P8Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_321.png", UriKind.Relative)) };
+                    player8Char = 21;
+                    break;
+            }
+        }
+
+        private void PowerOverTimeChar_Click(object sender, RoutedEventArgs e)
+        {
+            switch (selectedPlayer)
+            {
+                case 1:
+                    P1Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_322.png", UriKind.Relative)) };
+                    player1Char = 22;
+                    break;
+                case 2:
+                    P2Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_322.png", UriKind.Relative)) };
+                    player2Char = 22;
+                    break;
+                case 3:
+                    P3Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_322.png", UriKind.Relative)) };
+                    player3Char = 22;
+                    break;
+                case 4:
+                    P4Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_322.png", UriKind.Relative)) };
+                    player4Char = 22;
+                    break;
+                case 5:
+                    P5Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_322.png", UriKind.Relative)) };
+                    player5Char = 22;
+                    break;
+                case 6:
+                    P6Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_322.png", UriKind.Relative)) };
+                    player6Char = 22;
+                    break;
+                case 7:
+                    P7Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_322.png", UriKind.Relative)) };
+                    player7Char = 22;
+                    break;
+                case 8:
+                    P8Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_322.png", UriKind.Relative)) };
+                    player8Char = 22;
+                    break;
+                case 99:
+                    P1Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_322.png", UriKind.Relative)) };
+                    player1Char = 22;
+                    P2Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_322.png", UriKind.Relative)) };
+                    player2Char = 22;
+                    P3Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_322.png", UriKind.Relative)) };
+                    player3Char = 22;
+                    P4Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_322.png", UriKind.Relative)) };
+                    player4Char = 22;
+                    P5Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_322.png", UriKind.Relative)) };
+                    player5Char = 22;
+                    P6Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_322.png", UriKind.Relative)) };
+                    player6Char = 22;
+                    P7Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_322.png", UriKind.Relative)) };
+                    player7Char = 22;
+                    P8Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_322.png", UriKind.Relative)) };
+                    player8Char = 22;
+                    break;
+                case 100:
+                    P3Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_322.png", UriKind.Relative)) };
+                    player3Char = 22;
+                    P4Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_322.png", UriKind.Relative)) };
+                    player4Char = 22;
+                    P5Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_322.png", UriKind.Relative)) };
+                    player5Char = 22;
+                    P6Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_322.png", UriKind.Relative)) };
+                    player6Char = 22;
+                    P7Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_322.png", UriKind.Relative)) };
+                    player7Char = 22;
+                    P8Char.Content = new Image() { Source = new BitmapImage(new Uri("/Resources/img_322.png", UriKind.Relative)) };
+                    player8Char = 22;
+                    break;
+            }
+        }
+
         #endregion
         private void GoToMainPage_Click(object sender, RoutedEventArgs e)
         {
@@ -3078,6 +3220,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "" + "pow+arm";
             viewModel.SPARecoveryPoints = "" + "24";
             viewModel.UltraInstinct = "" + "";
+            viewModel.WeaponGrip = "" + "";
         }
 
         private void Shinkai_MouseEnter(object sender, MouseEventArgs e)
@@ -3094,6 +3237,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "" + "pow+arm";
             viewModel.SPARecoveryPoints = "" + "32";
             viewModel.UltraInstinct = "" + "full";
+            viewModel.WeaponGrip = "" + "3";
         }
         private void Suspect_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -3109,6 +3253,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "" + "";
             viewModel.SPARecoveryPoints = "" + "32";
             viewModel.UltraInstinct = "" + "";
+            viewModel.WeaponGrip = "" + "2";
         }
         private void Kadonashi_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -3124,6 +3269,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "" + "GUARD";
             viewModel.SPARecoveryPoints = "" + "";
             viewModel.UltraInstinct = "" + "grabs";
+            viewModel.WeaponGrip = "" + "";
         }
 
         private void BradShark_MouseEnter(object sender, MouseEventArgs e)
@@ -3140,6 +3286,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "" + "POW+ARM";
             viewModel.SPARecoveryPoints = "" + "";
             viewModel.UltraInstinct = "" + "full";
+            viewModel.WeaponGrip = "" + "";
         }
 
         private void ElMiguel_MouseEnter(object sender, MouseEventArgs e)
@@ -3156,6 +3303,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "" + "";
             viewModel.SPARecoveryPoints = "" + "";
             viewModel.UltraInstinct = "" + "";
+            viewModel.WeaponGrip = "" + "";
         }
 
         private void BeatenKg_MouseEnter(object sender, MouseEventArgs e)
@@ -3172,6 +3320,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "" + "";
             viewModel.SPARecoveryPoints = "" + "4";
             viewModel.UltraInstinct = "" + "";
+            viewModel.WeaponGrip = "" + "";
         }
 
         private void BradHawkBeginner_MouseEnter(object sender, MouseEventArgs e)
@@ -3188,6 +3337,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "" + "none";
             viewModel.SPARecoveryPoints = "" + "";
             viewModel.UltraInstinct = "" + "";
+            viewModel.WeaponGrip = "" + "0";
         }
 
         private void Nightmare_MouseEnter(object sender, MouseEventArgs e)
@@ -3204,6 +3354,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "" + "POW+ARM";
             viewModel.SPARecoveryPoints = "" + "";
             viewModel.UltraInstinct = "" + "";
+            viewModel.WeaponGrip = "" + "";
         }
 
         private void ShunYing_MouseEnter(object sender, MouseEventArgs e)
@@ -3220,6 +3371,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "" + "pow+def";
             viewModel.SPARecoveryPoints = "" + "64";
             viewModel.UltraInstinct = "" + "hits";
+            viewModel.WeaponGrip = "" + "";
         }
 
         private void Bordin_MouseEnter(object sender, MouseEventArgs e)
@@ -3236,6 +3388,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "pow+def";
             viewModel.SPARecoveryPoints = "";
             viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "3";
         }
 
         private void Paul_MouseEnter(object sender, MouseEventArgs e)
@@ -3252,6 +3405,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "pow+move";
             viewModel.SPARecoveryPoints = "";
             viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "";
         }
 
 
@@ -3269,6 +3423,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "pow+move";
             viewModel.SPARecoveryPoints = "";
             viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "";
         }
 
         private void Mckinzie_MouseEnter(object sender, MouseEventArgs e)
@@ -3285,6 +3440,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "pow+def";
             viewModel.SPARecoveryPoints = "";
             viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "";
         }
 
         private void KG_Zombie_MouseEnter(object sender, MouseEventArgs e)
@@ -3301,6 +3457,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "ARMOR";
             viewModel.SPARecoveryPoints = "";
             viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "";
         }
 
         private void MaxPowerUp_MouseEnter(object sender, MouseEventArgs e)
@@ -3317,6 +3474,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "";
             viewModel.SPARecoveryPoints = "";
             viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "";
         }
 
         private void OnlyWeapon_MouseEnter(object sender, MouseEventArgs e)
@@ -3333,6 +3491,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "";
             viewModel.SPARecoveryPoints = "";
             viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "3";
         }
 
         private void DeadPlayer_MouseEnter(object sender, MouseEventArgs e)
@@ -3349,6 +3508,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "";
             viewModel.SPARecoveryPoints = "";
             viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "";
         }
 
         private void WeakPlayer_MouseEnter(object sender, MouseEventArgs e)
@@ -3365,6 +3525,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "";
             viewModel.SPARecoveryPoints = "";
             viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "0";
         }
 
         private void StrongPLayer_MouseEnter(object sender, MouseEventArgs e)
@@ -3381,6 +3542,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "";
             viewModel.SPARecoveryPoints = "";
             viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "1";
         }
 
         private void TankPlayer_MouseEnter(object sender, MouseEventArgs e)
@@ -3397,6 +3559,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "";
             viewModel.SPARecoveryPoints = "";
             viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "2";
         }
 
         private void BeatUpPlayer_MouseEnter(object sender, MouseEventArgs e)
@@ -3413,6 +3576,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "";
             viewModel.SPARecoveryPoints = "";
             viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "0";
         }
 
         private void NoSPA_Player_MouseEnter(object sender, MouseEventArgs e)
@@ -3429,6 +3593,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "";
             viewModel.SPARecoveryPoints = "NULL";
             viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "";
         }
 
 
@@ -3446,6 +3611,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "";
             viewModel.SPARecoveryPoints = "infinite";
             viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "";
         }
 
         private void UltraInstinctPlayer_MouseEnter(object sender, MouseEventArgs e)
@@ -3462,6 +3628,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "";
             viewModel.SPARecoveryPoints = "";
             viewModel.UltraInstinct = "full";
+            viewModel.WeaponGrip = "" + "";
         }
 
         private void RandomStats_MouseEnter(object sender, MouseEventArgs e)
@@ -3478,6 +3645,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "???";
             viewModel.SPARecoveryPoints = "???";
             viewModel.UltraInstinct = "???";
+            viewModel.WeaponGrip = "";
         }
 
         private void None_MouseEnter(object sender, MouseEventArgs e)
@@ -3494,6 +3662,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "default";
             viewModel.SPARecoveryPoints = "default";
             viewModel.UltraInstinct = "off";
+            viewModel.WeaponGrip = "" + "";
         }
 
         private void SpaDownInfinite1_MouseEnter(object sender, MouseEventArgs e)
@@ -3510,6 +3679,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "ARMOR";
             viewModel.SPARecoveryPoints = "";
             viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "";
         }
 
         private void SpaDownInfinite2_MouseEnter(object sender, MouseEventArgs e)
@@ -3526,6 +3696,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "POWER";
             viewModel.SPARecoveryPoints = "";
             viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "";
         }
 
         private void SpaDownInfinite3_MouseEnter(object sender, MouseEventArgs e)
@@ -3542,6 +3713,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "GUARD";
             viewModel.SPARecoveryPoints = "";
             viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "";
         }
 
         private void SpaDownInfinite4_MouseEnter(object sender, MouseEventArgs e)
@@ -3558,6 +3730,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "MOVES";
             viewModel.SPARecoveryPoints = "";
             viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "";
         }
 
         private void SpaDownInfinite5_MouseEnter(object sender, MouseEventArgs e)
@@ -3574,6 +3747,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "POW+ARMn";
             viewModel.SPARecoveryPoints = "";
             viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "";
         }
 
         private void SpaDownInfinite6_MouseEnter(object sender, MouseEventArgs e)
@@ -3590,6 +3764,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "POW+ARMg";
             viewModel.SPARecoveryPoints = "";
             viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "";
         }
 
         private void SpaDownInfinite7_MouseEnter(object sender, MouseEventArgs e)
@@ -3606,6 +3781,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "POW+GRD";
             viewModel.SPARecoveryPoints = "";
             viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "";
         }
 
         private void SpaDownInfinite8_MouseEnter(object sender, MouseEventArgs e)
@@ -3622,6 +3798,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "POW+MVS";
             viewModel.SPARecoveryPoints = "";
             viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "";
         }
 
 
@@ -3639,6 +3816,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "";
             viewModel.SPARecoveryPoints = "";
             viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "";
         }
 
         private void SpaDownInfiniteCustom1_MouseEnter(object sender, MouseEventArgs e)
@@ -3655,6 +3833,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "Regeneration";
             viewModel.SPARecoveryPoints = "";
             viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "";
         }
 
         private void SpaDownInfiniteCustom2_MouseEnter(object sender, MouseEventArgs e)
@@ -3671,6 +3850,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "Redbull";
             viewModel.SPARecoveryPoints = "";
             viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "";
         }
 
 
@@ -3688,6 +3868,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "" + "";
             viewModel.SPARecoveryPoints = "" + "";
             viewModel.UltraInstinct = "" + "";
+            viewModel.WeaponGrip = "" + "";
         }
         private void SupermanFlight_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -3703,6 +3884,7 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "" + "";
             viewModel.SPARecoveryPoints = "" + "";
             viewModel.UltraInstinct = "" + "";
+            viewModel.WeaponGrip = "" + "";
         }
 
         private void DevilJinPower_MouseEnter(object sender, MouseEventArgs e)
@@ -3719,6 +3901,41 @@ namespace UR_pnach_editor.Views
             viewModel.SpecialArtDownPoints = "" + "TripleStats";
             viewModel.SPARecoveryPoints = "" + "32";
             viewModel.UltraInstinct = "" + "";
+            viewModel.WeaponGrip = "" + "";
+        }
+
+        private void PoisonedChar_MouseEnter(object sender, MouseEventArgs e)
+        {
+            viewModel.StrikePoints = "";
+            viewModel.GrapplePoints = "";
+            viewModel.RegionalPoints = "";
+            viewModel.SpecialPoints = "";
+            viewModel.WeaponPoints = "";
+            viewModel.ToughnessPoints = "lose hp";
+            viewModel.HeadEndurancePoints = "";
+            viewModel.UpperBodyEndurancePoints = "";
+            viewModel.LowerBodyEndurancePoints = "";
+            viewModel.SpecialArtDownPoints = "";
+            viewModel.SPARecoveryPoints = "";
+            viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "";
+        }
+
+        private void PowerOverTimeChar_MouseEnter(object sender, MouseEventArgs e)
+        {
+            viewModel.StrikePoints = "raising";
+            viewModel.GrapplePoints = "raising";
+            viewModel.RegionalPoints = "raising";
+            viewModel.SpecialPoints = "raising";
+            viewModel.WeaponPoints = "raising";
+            viewModel.ToughnessPoints = "raising";
+            viewModel.HeadEndurancePoints = "";
+            viewModel.UpperBodyEndurancePoints = "";
+            viewModel.LowerBodyEndurancePoints = "";
+            viewModel.SpecialArtDownPoints = "";
+            viewModel.SPARecoveryPoints = "";
+            viewModel.UltraInstinct = "";
+            viewModel.WeaponGrip = "" + "";
         }
 
         #endregion
@@ -3789,7 +4006,7 @@ namespace UR_pnach_editor.Views
             charactersCode = viewModel.StatsChange(player1Char, player2Char, player3Char, player4Char, player5Char, player6Char, player7Char, player8Char, freeModeOn);
             if (!viewModel.SelectedMode)//Free Mode
             {
-                if ((viewModel.MissionNumber >=1 && viewModel.MissionNumber <= 100) || (viewModel.MissionNumber == 101) || (viewModel.MissionNumber == 117) ||
+                if ((viewModel.MissionNumber >=0 && viewModel.MissionNumber <= 100) || (viewModel.MissionNumber == 101) || (viewModel.MissionNumber == 117) ||
                     (viewModel.MissionNumber == 178) || (viewModel.MissionNumber == 199) || (viewModel.MissionNumber == 200) ||
                     (viewModel.MissionNumber == 300) || (viewModel.MissionNumber == 400))
                 {
@@ -4018,6 +4235,65 @@ namespace UR_pnach_editor.Views
         {
             CodeText.Foreground = Brushes.White; // Reset the color to the original
             timer2.Stop();
+        }
+
+
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.Focus(); // Ensure the Window gets keyboard input
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if either Shift key is held down
+            if (Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightShift))
+            {
+                if (e.Key == Key.Oem3 || e.Key == Key.Multiply)
+                {
+                    viewModel.DisplayMainView();
+                }
+                else if (e.Key == Key.D1 || e.Key == Key.NumPad1)
+                {
+                    viewModel.DisplayStatsView();
+                }
+                else if (e.Key == Key.D2 || e.Key == Key.NumPad2)
+                {
+                    viewModel.DisplayTextureView();
+                }
+                else if (e.Key == Key.D3 || e.Key == Key.NumPad3)
+                {
+                    viewModel.DisplayCharacterView();
+                }
+                else if (e.Key == Key.D4 || e.Key == Key.NumPad4)
+                {
+                    viewModel.DisplayModelsAndMusicView();
+                }
+                else if (e.Key == Key.D5 || e.Key == Key.NumPad5)
+                {
+                    viewModel.DisplayChallengeView();
+                }
+                else if (e.Key == Key.D6 || e.Key == Key.NumPad6)
+                {
+                    viewModel.DisplayMovesetView();
+                }
+                else if (e.Key == Key.D7 || e.Key == Key.NumPad7)
+                {
+                    viewModel.DisplayChallengeModeView();
+                }
+                else if (e.Key == Key.D8 || e.Key == Key.NumPad8)
+                {
+                    viewModel.DisplayDeveloperView();
+                }
+                else if (e.Key == Key.D9 || e.Key == Key.NumPad9)
+                {
+                    viewModel.DisplayMiscellaneousCheatsView();
+                }
+                else if (e.Key == Key.D0 || e.Key == Key.NumPad0)
+                {
+                    viewModel.DisplayMysteriousView();
+                }
+            }
         }
 
     }

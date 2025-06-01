@@ -147,7 +147,7 @@ namespace UR_pnach_editor.Views
         private void BossShinkaiP3_Click(object sender, RoutedEventArgs e)
         {
             CreatePnach.BossShinkaiP3();
-            viewModel.CodeString = "Boss Shinkai Player 3";
+            viewModel.CodeString = "Boss Katana Master";
             CodeText.Foreground = Brushes.Yellow;
             timer.Start();
         }
@@ -410,6 +410,14 @@ namespace UR_pnach_editor.Views
             timer.Start();
         }
 
+        private void TheRockAndTheFlash_Click(object sender, RoutedEventArgs e)
+        {
+            CreatePnach8.TheRockAndTheFlash();
+            viewModel.CodeString = "The Rock & The Flash";
+            CodeText.Foreground = Brushes.Yellow;
+            timer.Start();
+        }
+
         private void SwitchGroup_Click(object sender, RoutedEventArgs e)
         {
             if (viewModel.IsPrimaryGroupActive)
@@ -437,6 +445,8 @@ namespace UR_pnach_editor.Views
             GrandmasterChallenge.Visibility = Visibility.Visible;
             SupremeOutlaw.Visibility = Visibility.Visible;
             BrainwashBoss.Visibility = Visibility.Visible;
+            TheRockAndTheFlash.Visibility = Visibility.Visible;
+            ThrowAndGunMasters.Visibility = Visibility.Visible;
 
             BossFabioNash.Visibility = Visibility.Collapsed;
             BossDanSorin.Visibility = Visibility.Collapsed;
@@ -479,6 +489,8 @@ namespace UR_pnach_editor.Views
             GrandmasterChallenge.Visibility = Visibility.Collapsed;
             SupremeOutlaw.Visibility = Visibility.Collapsed;
             BrainwashBoss.Visibility = Visibility.Collapsed;
+            TheRockAndTheFlash.Visibility = Visibility.Collapsed;
+            ThrowAndGunMasters.Visibility = Visibility.Collapsed;
 
             BossFabioNash.Visibility = Visibility.Visible;
             BossDanSorin.Visibility = Visibility.Visible;
@@ -1179,7 +1191,7 @@ namespace UR_pnach_editor.Views
 
         private void GrandmasterChallenge_MouseEnter(object sender, MouseEventArgs e)
         {
-            viewModel.ModeInformation = "Player 1 & 2 & 3 (ai)\n" +
+            viewModel.ModeInformation = "Player 1, 2, 4 will be on the same team\n" +
                 "Strike & Weapon Attack - Max\n" +
                 "Grapple & Special Attack - Min\n" +
                 "\n" +
@@ -1202,15 +1214,15 @@ namespace UR_pnach_editor.Views
 
         private void SupremeOutlaw_MouseEnter(object sender, MouseEventArgs e)
         {
-            viewModel.ModeInformation =  "Enemy will be\n" +
-                "fighter number 4\n" +
+            viewModel.ModeInformation =  "\n" +
+                "Enemy 1 is Napalm\n" +
                 "STK-2100 GRP-2200 RGA-1600\n" +
                 "SPA-2000 WPA- 800 TGH-2000\n" +
                 "HDE-1200 UBE-1300 LBE-1200\n" +
                 "SPA DOWN = Armor (infinite)\n" +
-                "Character set to Napalm\n" +
                 "SPA Regain 0.2%\n" +
                 "AI set to Golem Story\n" +
+                "\n" +
                 "\n" +
                 "\n" +
                 "Fighter number 4 \n" +
@@ -1248,13 +1260,13 @@ namespace UR_pnach_editor.Views
 
         private void BrainwashBoss_MouseEnter(object sender, MouseEventArgs e)
         {
-            viewModel.ModeInformation = "Player 3 will be your enemy \n" +
+            viewModel.ModeInformation = "Player 1, 2, 4 will be on the same team\n" + 
+                "Player 3 will be your enemy \n" +
                 "Toughness-2000\n" +
                 "Everytime his hp gets decreased he takes one\n" +
                 "of your allies by his side, that includes you too.\n" +
                 "Beat the brainwashed allied up to make them\n" +
                 "come back to their senses and join your team.\n" +
-                "\n" +
                 "\n" +
                 "\n" +
                 "\n" +
@@ -1309,14 +1321,14 @@ namespace UR_pnach_editor.Views
         {
             viewModel.ModeInformation = "Player 1 or 2 must select Brad\n" +
                 "\n" +
-                "P3 is Bordin\n" +
+                "Enemy 1 is Bordin\n" +
                 "infinite blue spa\n" +
                 "5000 TGH + the gun\n" +
                 "\n" +
-                "P4 is Golem\n" +
+                "Enemy 2 is Golem\n" +
                 "Regeneration SPA\n" +
                 "\n" +
-                "P5 is Brad (clone)\n" +
+                "Enemy 3 is Brad (clone)\n" +
                 "All Stats 1000\n" +
                 "All Stats 3000 when using spa down\n" +
                 "\n" +
@@ -1327,6 +1339,121 @@ namespace UR_pnach_editor.Views
                 "\n" +
                 "Difficulty ★★★★★★★★★★★★\n";
         }
+
+
+        private void TheRockAndTheFlash_MouseEnter(object sender, MouseEventArgs e)
+        {
+            viewModel.ModeInformation = "\n" +
+                "\n" +
+                "\n" +
+                "Enemy 1 is Golem\n" +
+                "2000 GRP\n" +
+                "3000 TGH\n" +
+                "\n" +
+                "\n" +
+                "Enemy 2 is Lin Fong Lee\n" +
+                "2000 WPA\n" +
+                "1000 TGH\n" +
+                "Ultra Instinct Hits\n" +
+                "Ultra Instinct Grabs\n" +
+                "Equiped with Lin Saber\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Difficulty ★★★★★★★★★\n";
+        }
+
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.Focus(); // Ensure the Window gets keyboard input
+        }
+
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if either Shift key is held down
+            if (Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightShift))
+            {
+                if (e.Key == Key.Oem3 || e.Key == Key.Multiply)
+                {
+                    viewModel.DisplayMainView();
+                }
+                else if (e.Key == Key.D1 || e.Key == Key.NumPad1)
+                {
+                    viewModel.DisplayStatsView();
+                }
+                else if (e.Key == Key.D2 || e.Key == Key.NumPad2)
+                {
+                    viewModel.DisplayTextureView();
+                }
+                else if (e.Key == Key.D3 || e.Key == Key.NumPad3)
+                {
+                    viewModel.DisplayCharacterView();
+                }
+                else if (e.Key == Key.D4 || e.Key == Key.NumPad4)
+                {
+                    viewModel.DisplayModelsAndMusicView();
+                }
+                else if (e.Key == Key.D5 || e.Key == Key.NumPad5)
+                {
+                    viewModel.DisplayChallengeView();
+                }
+                else if (e.Key == Key.D6 || e.Key == Key.NumPad6)
+                {
+                    viewModel.DisplayMovesetView();
+                }
+                else if (e.Key == Key.D7 || e.Key == Key.NumPad7)
+                {
+                    viewModel.DisplayChallengeModeView();
+                }
+                else if (e.Key == Key.D8 || e.Key == Key.NumPad8)
+                {
+                    viewModel.DisplayDeveloperView();
+                }
+                else if (e.Key == Key.D9 || e.Key == Key.NumPad9)
+                {
+                    viewModel.DisplayMiscellaneousCheatsView();
+                }
+                else if (e.Key == Key.D0 || e.Key == Key.NumPad0)
+                {
+                    viewModel.DisplayMysteriousView();
+                }
+            }
+        }
+
+
+
+        private void ThrowAndGunMasters_Click(object sender, RoutedEventArgs e)
+        {
+            CreatePnach9.ThrowAndGunMasters();
+            viewModel.CodeString = "Throw and Gun Masters";
+            CodeText.Foreground = Brushes.Yellow;
+            timer.Start();
+        }
+        private void ThrowAndGunMasters_MouseEnter(object sender, MouseEventArgs e)
+        {
+            viewModel.ModeInformation = "Enemy 1\n" +
+                "1000 GRP\n" +
+                "1200 TGH\n" +
+                "Armor SPA\n" +
+                "Ultra instinct for grabs\n" +
+                "Increase Grapple while SPA is active\n" +
+                "\n" +
+                "Enemy 2\n" +
+                "Max weapon grip and bullets\n" +
+                "5 WPA\n" +
+                "5000 TGH\n" +
+                "Have gun\n" +
+                "You need to beat Enemy 1 first\n" +
+                "After enemy 1 is defeated enemy 2 toughness will fall but his gun will get an upgrade\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Difficulty ★???\n";
+        }
+
     }
 
 

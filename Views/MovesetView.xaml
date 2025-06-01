@@ -5,7 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:UR_pnach_editor.Views" xmlns:viewmodels="clr-namespace:UR_pnach_editor.ViewModels"
              mc:Ignorable="d"
-             d:DesignHeight="1080" d:DesignWidth="1920">
+             d:DesignHeight="1080" d:DesignWidth="1920"
+             KeyDown="Window_KeyDown"
+             Focusable="True"
+             Loaded="Window_Loaded">
 
     <Grid Height="1080" Width="1920">
 
@@ -414,6 +417,87 @@
                    Margin="60,0,0,0"
                    MouseEnter="PhoenixStanceShunYing_MouseEnter"/>
 
+        <!--Monster Vera-->
+        <Border Grid.Row="10"
+                Grid.Column="0"
+                Name="check13"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,440,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding MonsterVeraMoves}"
+                          Width="20"
+                   MouseEnter="MonsterVera_MouseEnter"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="10"
+                   Grid.Column="0"
+                   Name="movelist13"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="#00DD00"
+                   Text="Monster Vera"
+                   Margin="60,0,0,0"
+                   MouseEnter="MonsterVera_MouseEnter"/>
+
+
+        <!--Thug Kelly-->
+        <Border Grid.Row="11"
+                Grid.Column="0"
+                Name="check14"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,440,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding ThugKellyMoves}"
+                          Width="20"
+                   MouseEnter="ThugKelly_MouseEnter"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="11"
+                   Grid.Column="0"
+                   Name="movelist14"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="#00DD00"
+                   Text="Thug Kelly"
+                   Margin="60,0,0,0"
+                   MouseEnter="ThugKelly_MouseEnter"/>
+
+
+        <!--Swordmaster Lin Fong-->
+        <Border Grid.Row="12"
+                Grid.Column="0"
+                Name="check16"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,440,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding SwordmasterLinFongMoves}"
+                          Width="20"
+                   MouseEnter="SwordmasterLinFong_MouseEnter"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="12"
+                   Grid.Column="0"
+                   Name="movelist16"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="#00DD00"
+                   Text="Swordmaster Lin Fong"
+                   Margin="60,0,0,0"
+                   MouseEnter="SwordmasterLinFong_MouseEnter"/>
+
+
 
         <!--Broken Dwayne-->
         <Border Grid.Row="1"
@@ -440,6 +524,33 @@
                    Text="Broken Dwayne"
                    Margin="60,0,0,0"
                    MouseEnter="BrokenDwayne_MouseEnter"/>
+
+        <!--Swordmaster Shun Ying & Lilian-->
+        <Border Grid.Row="3"
+                Grid.Column="2"
+                Name="check15"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,440,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding SwordmasterShunYingAndLilianMoves}"
+                          Width="20"
+                   MouseEnter="SwordmasterShunYingAndLilian_MouseEnter"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="3"
+                   Grid.Column="2"
+                   Name="movelist15"
+                   FontSize="40"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="#00BBBB"
+                   Text="S. Shun Ying and Lilian"
+                   Margin="60,0,0,0"
+                   MouseEnter="SwordmasterShunYingAndLilian_MouseEnter"/>
+
 
         
 
