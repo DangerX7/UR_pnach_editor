@@ -768,6 +768,7 @@ namespace UR_pnach_editor.Codes
                 SwordmasterShunYingAndLilianMoves();
             }
             SwordmasterLinFongMoves();
+            SmartParkMoves();
 
             SettingsClass.SaveData();
         }
@@ -6398,11 +6399,11 @@ namespace UR_pnach_editor.Codes
                 WriteFunction(offset, newValues);
 
                 offset = 0x6B76B9DC;//
-                newValues = new byte[] { 0xC3, 0x05, };
+                newValues = new byte[] { 0x6D, 0x04, };
                 WriteFunction(offset, newValues);
 
                 offset = 0x6B76B9DE;//
-                newValues = new byte[] { 0xC4, 0x05, };
+                newValues = new byte[] { 0x70, 0x04, };
                 WriteFunction(offset, newValues);
 
                 offset = 0x6B76B9AC;//
@@ -6756,51 +6757,51 @@ namespace UR_pnach_editor.Codes
                 WriteFunction(offset, newValues);
 
                 offset = 0x6B748998;//
-                newValues = new byte[] { 0xF8, 0x06, };
+                newValues = new byte[] { 0xCF, 0x0B, };
                 WriteFunction(offset, newValues);
 
                 offset = 0x6B749370;//
-                newValues = new byte[] { 0xF8, 0x06, };
+                newValues = new byte[] { 0xCF, 0x0B, };
                 WriteFunction(offset, newValues);
 
                 offset = 0x6B74893E;//
-                newValues = new byte[] { 0xF8, 0x06, };
+                newValues = new byte[] { 0xCF, 0x0B, };
                 WriteFunction(offset, newValues);
 
                 offset = 0x6B749316;//
-                newValues = new byte[] { 0xF8, 0x06, };
+                newValues = new byte[] { 0xCF, 0x0B, };
                 WriteFunction(offset, newValues);
 
                 offset = 0x6B748AA6;//
-                newValues = new byte[] { 0xF8, 0x06, };
+                newValues = new byte[] { 0xCF, 0x0B, };
                 WriteFunction(offset, newValues);
 
                 offset = 0x6B748C4A;//
-                newValues = new byte[] { 0xF8, 0x06, };
+                newValues = new byte[] { 0xCF, 0x0B, };
                 WriteFunction(offset, newValues);
 
                 offset = 0x6B748A6A;//
-                newValues = new byte[] { 0xF8, 0x06, };
+                newValues = new byte[] { 0xCF, 0x0B, };
                 WriteFunction(offset, newValues);
 
                 offset = 0x6B748C0E;//
-                newValues = new byte[] { 0xF8, 0x06, };
+                newValues = new byte[] { 0xCF, 0x0B, };
                 WriteFunction(offset, newValues);
 
                 offset = 0x6B748B3C;//
-                newValues = new byte[] { 0xF8, 0x06, };
+                newValues = new byte[] { 0xCF, 0x0B, };
                 WriteFunction(offset, newValues);
 
                 offset = 0x6B748CE0;//
-                newValues = new byte[] { 0xF8, 0x06, };
+                newValues = new byte[] { 0xCF, 0x0B, };
                 WriteFunction(offset, newValues);
 
                 offset = 0x6B748A10;//
-                newValues = new byte[] { 0xF8, 0x06, };
+                newValues = new byte[] { 0xCF, 0x0B, };
                 WriteFunction(offset, newValues);
 
                 offset = 0x6B748AE2;//
-                newValues = new byte[] { 0xF8, 0x06, };
+                newValues = new byte[] { 0xCF, 0x0B, };
                 WriteFunction(offset, newValues);
             }
             else //original
@@ -7408,7 +7409,7 @@ namespace UR_pnach_editor.Codes
                 WriteFunction(offset, newValues);
 
                 offset = 0x6B775144;
-                newValues = new byte[] { 0x8F, 0x06, };
+                newValues = new byte[] { 0x8E, 0x06, };
                 WriteFunction(offset, newValues);
 
                 offset = 0x6B775146;
@@ -7615,6 +7616,32 @@ namespace UR_pnach_editor.Codes
             }
         }
 
+        #endregion
+
+        #region Smart_Park_Moves
+        public static void SmartParkMoves()
+        {
+            if (SettingsClass.SmartParkMoves) //custom
+            {
+                uint offset = 0xXXXXXXXX;
+                byte[] newValues = new byte[] { 0xXX, 0xXX, };
+                WriteFunction(offset, newValues);
+
+                offset = 0xXXXXXXXX;
+                newValues = new byte[] { 0xXX, 0xXX, };
+                WriteFunction(offset, newValues);
+            }
+            else //original
+            {
+                uint offset = 0xXXXXXXXX;
+                byte[] newValues = new byte[] { 0xXX, 0xXX, };
+                WriteFunction(offset, newValues);
+
+                offset = 0xXXXXXXXX;
+                newValues = new byte[] { 0xXX, 0xXX, };
+                WriteFunction(offset, newValues);
+            }
+        }
         #endregion
 
         public static void ChangeStats()

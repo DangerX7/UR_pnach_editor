@@ -29,6 +29,11 @@ using System.Windows.Threading;
 using System.Threading;
 using WpfAnimatedGif;
 using NAudio.SoundFont;
+using System.Text.RegularExpressions;
+using System;
+using System.IO;
+using System.Text.RegularExpressions;
+using System.Windows;
 
 namespace UR_pnach_editor.Views
 {
@@ -163,76 +168,65 @@ namespace UR_pnach_editor.Views
 
         private void StatsChange_Click(object sender, RoutedEventArgs e)
         {
+            bool usingPnachOverHex = true;
 
-            if (!File.Exists(SettingsClass.gameFolderPath + @"\Urban Reign Deluxe.iso"))
+            if (!usingPnachOverHex)
             {
-                MessageBox.Show("Rom was not found in the provided folder!\n" +
-                    "Make sure your rom name is Urban Reign Deluxe.iso");
-                return;
-            }
-
-            bool canWeContinue = false;
-            try
-            {
-                using (FileStream fs = File.Open(SettingsClass.gameFolderPath + @"\Urban Reign Deluxe.iso", FileMode.Open, FileAccess.ReadWrite, FileShare.None))
+                if (!File.Exists(SettingsClass.gameFolderPath + @"\Urban Reign Deluxe.iso"))
                 {
-                    canWeContinue = true;
+                    MessageBox.Show("Rom was not found in the provided folder!\n" +
+                        "Make sure your rom name is Urban Reign Deluxe.iso");
+                    return;
                 }
-            }
-            catch
-            {
-                canWeContinue = false;
-            }
 
-            if (!canWeContinue)
-            {
-                MessageBox.Show("File is open in another program (possibly PCSX2), close it and try again!");
-                return;
+                bool canWeContinue = false;
+                try
+                {
+                    using (FileStream fs = File.Open(SettingsClass.gameFolderPath + @"\Urban Reign Deluxe.iso", FileMode.Open, FileAccess.ReadWrite, FileShare.None))
+                    {
+                        canWeContinue = true;
+                    }
+                }
+                catch
+                {
+                    canWeContinue = false;
+                }
+
+                if (!canWeContinue)
+                {
+                    MessageBox.Show("File is open in another program (possibly PCSX2), close it and try again!");
+                    return;
+                }
             }
 
             viewModel.StatsChanged = !viewModel.StatsChanged;
             viewModel.GetToolStatus();
-            if (SettingsClass.MasterBradMoves || SettingsClass.GolemBrokenShitMoves || SettingsClass.BordinAllAroundMoves ||
-                SettingsClass.PaulAshesMoves || SettingsClass.BradAndOthersParry)
+
+            if (!usingPnachOverHex)
             {
-                if (viewModel.StatsChanged)
+                if (SettingsClass.MasterBradMoves || SettingsClass.GolemBrokenShitMoves || SettingsClass.BordinAllAroundMoves ||
+                    SettingsClass.PaulAshesMoves || SettingsClass.BradAndOthersParry)
                 {
-                    string currentFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.PnachName + ".pnach";
-                    SettingsClass.PnachName = SettingsClass.MovesAndStatsPnach;
-                    string newFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.MovesAndStatsPnach + ".pnach";
-
-                    if (File.Exists(currentFilePath))
+                    if (viewModel.StatsChanged)
                     {
-                        // Rename the file
-                        File.Move(currentFilePath, newFilePath);
+                        string currentFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.PnachName + ".pnach";
+                        SettingsClass.PnachName = SettingsClass.MovesAndStatsPnach;
+                        string newFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.MovesAndStatsPnach + ".pnach";
+
+                        if (File.Exists(currentFilePath))
+                        {
+                            // Rename the file
+                            File.Move(currentFilePath, newFilePath);
+                        }
+
                     }
-
-                }
-                else
-                {
-                    string currentFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.PnachName + ".pnach";
-                    SettingsClass.PnachName = SettingsClass.MovesPnach;
-                    string newFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.MovesPnach + ".pnach";
-
-                    if (File.Exists(currentFilePath))
+                    else
                     {
-                        // Rename the file
-                        File.Move(currentFilePath, newFilePath);
-                    }
-                }
-            }
-            else
-            {
-                if (viewModel.StatsChanged)
-                {
-                    string currentFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.PnachName + ".pnach";
-                    SettingsClass.PnachName = SettingsClass.StatsPnach;
-                    string newFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.StatsPnach + ".pnach";
+                        string currentFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.PnachName + ".pnach";
+                        SettingsClass.PnachName = SettingsClass.MovesPnach;
+                        string newFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.MovesPnach + ".pnach";
 
-                    if (File.Exists(currentFilePath))
-                    {
-                        // Rename the file
-                        if (!File.Exists(newFilePath))
+                        if (File.Exists(currentFilePath))
                         {
                             // Rename the file
                             File.Move(currentFilePath, newFilePath);
@@ -241,22 +235,46 @@ namespace UR_pnach_editor.Views
                 }
                 else
                 {
-                    string currentFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.PnachName + ".pnach";
-                    SettingsClass.PnachName = SettingsClass.deluxePnach;
-                    string newFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.deluxePnach + ".pnach";
-
-                    if (File.Exists(currentFilePath))
+                    if (viewModel.StatsChanged)
                     {
-                        // Rename the file
-                        if (!File.Exists(newFilePath))
+                        string currentFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.PnachName + ".pnach";
+                        SettingsClass.PnachName = SettingsClass.StatsPnach;
+                        string newFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.StatsPnach + ".pnach";
+
+                        if (File.Exists(currentFilePath))
                         {
                             // Rename the file
-                            File.Move(currentFilePath, newFilePath);
+                            if (!File.Exists(newFilePath))
+                            {
+                                // Rename the file
+                                File.Move(currentFilePath, newFilePath);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        string currentFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.PnachName + ".pnach";
+                        SettingsClass.PnachName = SettingsClass.deluxePnach;
+                        string newFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.deluxePnach + ".pnach";
+
+                        if (File.Exists(currentFilePath))
+                        {
+                            // Rename the file
+                            if (!File.Exists(newFilePath))
+                            {
+                                // Rename the file
+                                File.Move(currentFilePath, newFilePath);
+                            }
                         }
                     }
                 }
+                HexClass.ChangeStats();
             }
-            HexClass.ChangeStats();
+
+            if (usingPnachOverHex)
+            {
+                ExportPnach.ExportFile("clean stats");
+            }
             SettingsClass.SaveData();
         }
 

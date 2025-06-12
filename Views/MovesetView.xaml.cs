@@ -116,30 +116,35 @@ namespace UR_pnach_editor.Views
 
         private void ActivateAll_Click(object sender, RoutedEventArgs e)
         {
-            if (!File.Exists(SettingsClass.gameFolderPath + @"\Urban Reign Deluxe.iso"))
-            {
-                MessageBox.Show("Rom was not found in the provided folder!\n" +
-                    "Make sure your rom name is Urban Reign Deluxe.iso");
-                return;
-            }
+            bool usingPnachOverHex = false;//can't do it with pnach because some moves doesn't work without hex
 
-            bool canWeContinue = false;
-            try
+            if (!usingPnachOverHex)
             {
-                using (FileStream fs = File.Open(SettingsClass.gameFolderPath + @"\Urban Reign Deluxe.iso", FileMode.Open, FileAccess.ReadWrite, FileShare.None))
+                if (!File.Exists(SettingsClass.gameFolderPath + @"\Urban Reign Deluxe.iso"))
                 {
-                    canWeContinue = true;
+                    MessageBox.Show("Rom was not found in the provided folder!\n" +
+                        "Make sure your rom name is Urban Reign Deluxe.iso");
+                    return;
                 }
-            }
-            catch
-            {
-                canWeContinue = false;
-            }
 
-            if (!canWeContinue)
-            {
-                MessageBox.Show("File is open in another program (possibly PCSX2), close it and try again!");
-                return;
+                bool canWeContinue = false;
+                try
+                {
+                    using (FileStream fs = File.Open(SettingsClass.gameFolderPath + @"\Urban Reign Deluxe.iso", FileMode.Open, FileAccess.ReadWrite, FileShare.None))
+                    {
+                        canWeContinue = true;
+                    }
+                }
+                catch
+                {
+                    canWeContinue = false;
+                }
+
+                if (!canWeContinue)
+                {
+                    MessageBox.Show("File is open in another program (possibly PCSX2), close it and try again!");
+                    return;
+                }
             }
 
             viewModel.MasterBradMoves = true;
@@ -155,6 +160,7 @@ namespace UR_pnach_editor.Views
             viewModel.MonsterVeraMoves = true;
             viewModel.ThugKellyMoves = true;
             viewModel.SwordmasterLinFongMoves = true;
+            viewModel.SmartParkMoves = true;
 
             viewModel.BradAndOthersParry = false;
             viewModel.ShinBordinMoves = false;
@@ -174,37 +180,21 @@ namespace UR_pnach_editor.Views
             SettingsClass.MonsterVeraMoves = true;
             SettingsClass.ThugKellyMoves = true;
             SettingsClass.SwordmasterLinFongMoves = true;
+            SettingsClass.SmartParkMoves = true;
 
             SettingsClass.BradAndOthersParry = false;
             SettingsClass.ShinBordinMoves = false;
             SettingsClass.BrokenDwayneMoves = false;
             SettingsClass.SwordmasterShunYingAndLilianMoves = false;
 
-            if (SettingsClass.StatsChanged == true)
+            if (!usingPnachOverHex)
             {
-                string currentFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.PnachName + ".pnach";
-                SettingsClass.PnachName = SettingsClass.MovesAndStatsPnach;
-                string newFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.MovesAndStatsPnach + ".pnach";
-
-                if (File.Exists(currentFilePath))
+                if (SettingsClass.StatsChanged == true)
                 {
-                    if (File.Exists(newFilePath))
-                    {
-                        File.Delete(newFilePath);
-                    }
-                    // Rename the file
-                    File.Move(currentFilePath, newFilePath);
-                }
+                    string currentFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.PnachName + ".pnach";
+                    SettingsClass.PnachName = SettingsClass.MovesAndStatsPnach;
+                    string newFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.MovesAndStatsPnach + ".pnach";
 
-            }
-            else
-            {
-                string currentFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.PnachName + ".pnach";
-                SettingsClass.PnachName = SettingsClass.MovesPnach;
-                string newFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.MovesPnach + ".pnach";
-
-                if (currentFilePath != newFilePath)// in case the name changes
-                {
                     if (File.Exists(currentFilePath))
                     {
                         if (File.Exists(newFilePath))
@@ -214,39 +204,69 @@ namespace UR_pnach_editor.Views
                         // Rename the file
                         File.Move(currentFilePath, newFilePath);
                     }
-                }
 
+                }
+                else
+                {
+                    string currentFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.PnachName + ".pnach";
+                    SettingsClass.PnachName = SettingsClass.MovesPnach;
+                    string newFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.MovesPnach + ".pnach";
+
+                    if (currentFilePath != newFilePath)// in case the name changes
+                    {
+                        if (File.Exists(currentFilePath))
+                        {
+                            if (File.Exists(newFilePath))
+                            {
+                                File.Delete(newFilePath);
+                            }
+                            // Rename the file
+                            File.Move(currentFilePath, newFilePath);
+                        }
+                    }
+
+                }
+                HexClass.ChangeMoveset();
+            }
+
+            if (usingPnachOverHex)
+            {
+                ExportPnach.ExportFile("clean moves");
             }
             SettingsClass.SaveData();
-            HexClass.ChangeMoveset();
         }
 
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
-            if (!File.Exists(SettingsClass.gameFolderPath + @"\Urban Reign Deluxe.iso"))
-            {
-                MessageBox.Show("Rom was not found in the provided folder!\n" +
-                    "Make sure your rom name is Urban Reign Deluxe.iso");
-                return;
-            }
+            bool usingPnachOverHex = false;//can't do it with pnach because some moves doesn't work without hex
 
-            bool canWeContinue = false;
-            try
+            if (!usingPnachOverHex)
             {
-                using (FileStream fs = File.Open(SettingsClass.gameFolderPath + @"\Urban Reign Deluxe.iso", FileMode.Open, FileAccess.ReadWrite, FileShare.None))
+                if (!File.Exists(SettingsClass.gameFolderPath + @"\Urban Reign Deluxe.iso"))
                 {
-                    canWeContinue = true;
+                    MessageBox.Show("Rom was not found in the provided folder!\n" +
+                        "Make sure your rom name is Urban Reign Deluxe.iso");
+                    return;
                 }
-            }
-            catch
-            {
-                canWeContinue = false;
-            }
 
-            if (!canWeContinue)
-            {
-                MessageBox.Show("File is open in another program (possibly PCSX2), close it and try again!");
-                return;
+                bool canWeContinue = false;
+                try
+                {
+                    using (FileStream fs = File.Open(SettingsClass.gameFolderPath + @"\Urban Reign Deluxe.iso", FileMode.Open, FileAccess.ReadWrite, FileShare.None))
+                    {
+                        canWeContinue = true;
+                    }
+                }
+                catch
+                {
+                    canWeContinue = false;
+                }
+
+                if (!canWeContinue)
+                {
+                    MessageBox.Show("File is open in another program (possibly PCSX2), close it and try again!");
+                    return;
+                }
             }
 
             viewModel.MasterBradMoves = false;
@@ -266,6 +286,7 @@ namespace UR_pnach_editor.Views
             viewModel.ThugKellyMoves = false;
             viewModel.SwordmasterShunYingAndLilianMoves = false;
             viewModel.SwordmasterLinFongMoves = false;
+            viewModel.SmartParkMoves = false;
 
             SettingsClass.MasterBradMoves = false;
             SettingsClass.BradAndOthersParry = false;
@@ -284,15 +305,36 @@ namespace UR_pnach_editor.Views
             SettingsClass.ThugKellyMoves = false;
             SettingsClass.SwordmasterShunYingAndLilianMoves = false;
             SettingsClass.SwordmasterLinFongMoves = false;
+            SettingsClass.SmartParkMoves = false;
 
-            if (SettingsClass.StatsChanged == true)
+            if (!usingPnachOverHex)
             {
-                string currentFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.PnachName + ".pnach";
-                SettingsClass.PnachName = SettingsClass.StatsPnach;
-                string newFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.StatsPnach + ".pnach";
-
-                if (currentFilePath != newFilePath)// in case the name changes
+                if (SettingsClass.StatsChanged == true)
                 {
+                    string currentFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.PnachName + ".pnach";
+                    SettingsClass.PnachName = SettingsClass.StatsPnach;
+                    string newFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.StatsPnach + ".pnach";
+
+                    if (currentFilePath != newFilePath)// in case the name changes
+                    {
+                        if (File.Exists(currentFilePath))
+                        {
+                            if (File.Exists(newFilePath))
+                            {
+                                File.Delete(newFilePath);
+                            }
+                            // Rename the file
+                            File.Move(currentFilePath, newFilePath);
+                        }
+                    }
+
+                }
+                else
+                {
+                    string currentFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.PnachName + ".pnach";
+                    SettingsClass.PnachName = SettingsClass.deluxePnach;
+                    string newFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.deluxePnach + ".pnach";
+
                     if (File.Exists(currentFilePath))
                     {
                         if (File.Exists(newFilePath))
@@ -302,65 +344,62 @@ namespace UR_pnach_editor.Views
                         // Rename the file
                         File.Move(currentFilePath, newFilePath);
                     }
-                }
 
+                }
+                HexClass.ChangeMoveset();
             }
-            else
+
+            if (usingPnachOverHex)
             {
-                string currentFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.PnachName + ".pnach";
-                SettingsClass.PnachName = SettingsClass.deluxePnach;
-                string newFilePath = SettingsClass.codeFolderPath + @"\" + SettingsClass.deluxePnach + ".pnach";
-
-                if (File.Exists(currentFilePath))
-                {
-                    if (File.Exists(newFilePath))
-                    {
-                        File.Delete(newFilePath);
-                    }
-                    // Rename the file
-                    File.Move(currentFilePath, newFilePath);
-                }
-
+                ExportPnach.ExportFile("clean moves");
             }
             SettingsClass.SaveData();
-            HexClass.ChangeMoveset();
         }
 
         private void MovesetsModify(object sender, RoutedEventArgs e)
         {
-            if (!File.Exists(SettingsClass.gameFolderPath + @"\Urban Reign Deluxe.iso"))
-            {
-                MessageBox.Show("Rom was not found in the provided folder!\n" +
-                    "Make sure your rom name is Urban Reign Deluxe.iso");
-                return;
-            }
+            bool usingPnachOverHex = false;//can't do it with pnach because some moves doesn't work without hex
 
-            bool canWeContinue = false;
-            try
+            if (!usingPnachOverHex)
             {
-                using (FileStream fs = File.Open(SettingsClass.gameFolderPath + @"\Urban Reign Deluxe.iso", FileMode.Open, FileAccess.ReadWrite, FileShare.None))
+                if (!File.Exists(SettingsClass.gameFolderPath + @"\Urban Reign Deluxe.iso"))
                 {
-                    canWeContinue = true;
+                    MessageBox.Show("Rom was not found in the provided folder!\n" +
+                        "Make sure your rom name is Urban Reign Deluxe.iso");
+                    return;
+                }
+
+                bool canWeContinue = false;
+                try
+                {
+                    using (FileStream fs = File.Open(SettingsClass.gameFolderPath + @"\Urban Reign Deluxe.iso", FileMode.Open, FileAccess.ReadWrite, FileShare.None))
+                    {
+                        canWeContinue = true;
+                    }
+                }
+                catch
+                {
+                    canWeContinue = false;
+                }
+
+                if (!canWeContinue)
+                {
+                    MessageBox.Show("File is open in another program (possibly PCSX2), close it and try again!");
+                    return;
+                }
+
+                MessageBoxResult result = MessageBox.Show("If you proceed you will have to set the CRC manually.\nARE YOU SURE???", "Message", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+                if (result == MessageBoxResult.Yes)
+                {
+                    HexClass.ChangeMoveset();
                 }
             }
-            catch
+            else
             {
-                canWeContinue = false;
+                ExportPnach.ExportFile("clean moves");
             }
-
-            if (!canWeContinue)
-            {
-                MessageBox.Show("File is open in another program (possibly PCSX2), close it and try again!");
-                return;
-            }
-
-            MessageBoxResult result = MessageBox.Show("If you proceed you will have to set the CRC manually.\nARE YOU SURE???", "Message", MessageBoxButton.YesNo, MessageBoxImage.Question);
-
-            if (result == MessageBoxResult.Yes)
-            {
-                HexClass.ChangeMoveset();
-            }
-
+            SettingsClass.SaveData();
         }
 
         private void MasterBrad_MouseEnter(object sender, MouseEventArgs e)
@@ -516,8 +555,17 @@ namespace UR_pnach_editor.Views
                 "better swordsmanship (chinese sword, sabers and katanas). Taunt button as cartwheel dodge. SPA down: armor + regeneration.\n" +
                 "Made by FallenR";
         }
+        private void SmartParkMoves_MouseEnter(object sender, MouseEventArgs e)
+        {
+            viewModel.ModeInformation = "Changed side and neutral combos (facing and not facing the opponent).\n" +
+                "Combo sample: ↑O (wait a bit), O, O, O (wait a bit), O, O, O, O, O.\n" +
+                "Grapples are cooler and safer (opponents' counter-grapples are light attacks, not grapples).\n" +
+                "Taunt button as cartwheel dodge.\n" +
+                "SPA down: armor + regeneration.\n" +
+                "Made by FallenR";
+        }
 
-        
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             this.Focus(); // Ensure the Window gets keyboard input
@@ -574,6 +622,7 @@ namespace UR_pnach_editor.Views
                 }
             }
         }
+
     }
 
 

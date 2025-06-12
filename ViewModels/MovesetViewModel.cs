@@ -33,6 +33,7 @@ namespace UR_pnach_editor.ViewModels
             ThugKellyMoves = SettingsClass.ThugKellyMoves;
             SwordmasterShunYingAndLilianMoves = SettingsClass.SwordmasterShunYingAndLilianMoves;
             SwordmasterLinFongMoves = SettingsClass.SwordmasterLinFongMoves;
+            SmartParkMoves = SettingsClass.SmartParkMoves;
 
 
             GameFolderPath = SettingsClass.gameFolderPath;
@@ -367,7 +368,23 @@ namespace UR_pnach_editor.ViewModels
             }
         }
 
+        private bool _smartParkMoves;
+
+        public bool SmartParkMoves
+        {
+            get { return _smartParkMoves; }
+            set
+            {
+                if (_smartParkMoves != value)
+                {
+                    _smartParkMoves = value;
+                    SettingsClass.SmartParkMoves = _smartParkMoves;
+                    RaisePropertyChanged("SmartParkMoves");
+                }
+            }
+        }
 
         
+
     }
 }
