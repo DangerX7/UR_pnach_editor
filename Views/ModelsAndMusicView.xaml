@@ -490,6 +490,27 @@
                 BorderBrush="Green" HorizontalAlignment="Left" Width="1056">
         </Border>
 
+
+        <!--Path Info-->
+        <Button Grid.Row="0"
+                Grid.Column="6"
+                x:Name="PathInfo"
+                Background="#FF0000"
+                FontFamily="Times New Roman"
+                FontSize="26"
+                FontWeight="Bold"
+                Margin="10,30,10,29"
+                Click="Path_Info">
+            <Button.Content>
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Information" />
+            </Button.Content>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
     </Grid>
 
 

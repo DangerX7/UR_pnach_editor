@@ -1958,7 +1958,16 @@ namespace UR_pnach_editor.ViewModels
         internal string GetMissionData(int missionNumber, int enemyAI)
         {
             // Read the text file
-            string[] lines = File.ReadAllLines(SettingsClass.missionFolderPath + @"\M" + missionNumber + ".txt");
+            string[] lines = new string[0];
+            try
+            {
+                lines = File.ReadAllLines(SettingsClass.missionFolderPath + @"\M" + missionNumber + ".txt");
+            }
+            catch
+            {
+                MessageBox.Show("Mission data was not found in the provided path\nMake sure you configurated Mission Data Path\nin Free Mode X Multiplayer Page");
+                return "";
+            }
 
             // Assign each line to a string variable
             string player2posA = lines[0];

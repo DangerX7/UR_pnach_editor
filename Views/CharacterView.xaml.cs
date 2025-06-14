@@ -81,6 +81,11 @@ namespace UR_pnach_editor.Views
                 var imageUri = new Uri("pack://application:,,,/Resources/Leaves.gif");
                 ImageBehavior.SetAnimatedSource(gifImage, new BitmapImage(imageUri));
             }
+            else if (SettingsClass.EditorEffectsIndex == 5)
+            {
+                var imageUri = new Uri("pack://application:,,,/Resources/Fireworks.gif");
+                ImageBehavior.SetAnimatedSource(gifImage, new BitmapImage(imageUri));
+            }
 
             //was code activated?
             timer2 = new DispatcherTimer();

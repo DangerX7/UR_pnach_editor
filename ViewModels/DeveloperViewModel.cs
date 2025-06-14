@@ -370,6 +370,7 @@ namespace UR_pnach_editor.ViewModels
             "Raining",
             "Blooding",
             "Leaves",
+            "Fireworks",
         };
 
         internal void GetToolStatus()

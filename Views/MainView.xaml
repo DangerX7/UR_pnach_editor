@@ -1650,8 +1650,8 @@
         <TextBlock
             Grid.Row="6"
             Grid.Column="6"
-            Margin="25,45,0,0"
-            FontSize="35">
+            Margin="60,45,0,80"
+            FontSize="25">
         <Text:Hyperlink
             NavigateUri="{Binding DiscordServer, UpdateSourceTrigger=PropertyChanged}"
             RequestNavigate="Hyperlink_RequestNavigate">
@@ -1662,12 +1662,24 @@
         <TextBlock
             Grid.Row="6"
             Grid.Column="6"
-            Margin="20,90,0,0"
-            FontSize="35">
+            Margin="55,80,0,40"
+            FontSize="25">
         <Text:Hyperlink
             NavigateUri="{Binding YoutubeLink, UpdateSourceTrigger=PropertyChanged}"
             RequestNavigate="Hyperlink_RequestNavigate">
             Youtube Playlist
+        </Text:Hyperlink>
+        </TextBlock>
+        <!--Youtube-->
+        <TextBlock
+            Grid.Row="6"
+            Grid.Column="6"
+            Margin="100,115,0,10"
+            FontSize="25">
+        <Text:Hyperlink
+            NavigateUri="{Binding TutorialLink, UpdateSourceTrigger=PropertyChanged}"
+            RequestNavigate="Hyperlink_RequestNavigate">
+            Tutorial
         </Text:Hyperlink>
         </TextBlock>
 

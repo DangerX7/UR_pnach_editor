@@ -4260,6 +4260,58 @@
                    Margin="0,0,0,0"
                    MouseEnter="SkinPreview199"/>
 
+        <!--Captain Ameripark-->
+        <Border Grid.Row="16"
+                Grid.Column="2"
+                Name="check200"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding CaptainAmeriparkTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview200"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="16"
+                   Grid.Column="3"
+                   Name="skin200"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Gold"
+                   Text="Captain Ameripark"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview200"/>
+
+        <!--Cowboy Park-->
+        <Border Grid.Row="17"
+                Grid.Column="2"
+                Name="check201"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding CowboyParkTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview201"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="17"
+                   Grid.Column="3"
+                   Name="skin201"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Gold"
+                   Text="Cowboy Park"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview201"/>
+
         
 
 

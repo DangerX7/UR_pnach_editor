@@ -64,6 +64,11 @@ namespace UR_pnach_editor.Views
                 var imageUri = new Uri("pack://application:,,,/Resources/Leaves.gif");
                 ImageBehavior.SetAnimatedSource(gifImage, new BitmapImage(imageUri));
             }
+            else if (SettingsClass.EditorEffectsIndex == 5)
+            {
+                var imageUri = new Uri("pack://application:,,,/Resources/Fireworks.gif");
+                ImageBehavior.SetAnimatedSource(gifImage, new BitmapImage(imageUri));
+            }
 
             viewModel = new();
 
@@ -497,6 +502,10 @@ namespace UR_pnach_editor.Views
             check198.Visibility = Visibility.Collapsed;
             skin199.Visibility = Visibility.Collapsed;
             check199.Visibility = Visibility.Collapsed;
+            skin200.Visibility = Visibility.Collapsed;
+            check200.Visibility = Visibility.Collapsed;
+            skin201.Visibility = Visibility.Collapsed;
+            check201.Visibility = Visibility.Collapsed;
 
             //checkTS.Visibility = Visibility.Visible;
             //Title_Screen.Visibility = Visibility.Visible;
@@ -828,6 +837,10 @@ namespace UR_pnach_editor.Views
             check198.Visibility = Visibility.Collapsed;
             skin199.Visibility = Visibility.Collapsed;
             check199.Visibility = Visibility.Collapsed;
+            skin200.Visibility = Visibility.Collapsed;
+            check200.Visibility = Visibility.Collapsed;
+            skin201.Visibility = Visibility.Collapsed;
+            check201.Visibility = Visibility.Collapsed;
 
             //checkTS.Visibility = Visibility.Collapsed;
             //Title_Screen.Visibility = Visibility.Collapsed;
@@ -1159,6 +1172,10 @@ namespace UR_pnach_editor.Views
             check198.Visibility = Visibility.Visible;
             skin199.Visibility = Visibility.Visible;
             check199.Visibility = Visibility.Visible;
+            skin200.Visibility = Visibility.Visible;
+            check200.Visibility = Visibility.Visible;
+            skin201.Visibility = Visibility.Visible;
+            check201.Visibility = Visibility.Visible;
 
             //checkTS.Visibility = Visibility.Collapsed;
             //Title_Screen.Visibility = Visibility.Collapsed;
@@ -1854,6 +1871,17 @@ namespace UR_pnach_editor.Views
         {
             viewModel.SkinPreview = "/Resources/PreviewSkin199.png";
         }
+
+        private void SkinPreview200(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin200.png";
+        }
+
+        private void SkinPreview201(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin201.png";
+        }
+
         private void SwitchModelsSize_Click(object sender, RoutedEventArgs e)
         {
             //string DanPath = @"G:\Danger\Big Roms and Emulators\ps2 roms\Urban Reign\Urban Reign Deluxe.iso";

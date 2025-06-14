@@ -76,6 +76,11 @@ namespace UR_pnach_editor.Views
                 var imageUri = new Uri("pack://application:,,,/Resources/Leaves.gif");
                 ImageBehavior.SetAnimatedSource(gifImage, new BitmapImage(imageUri));
             }
+            else if (SettingsClass.EditorEffectsIndex == 5)
+            {
+                var imageUri = new Uri("pack://application:,,,/Resources/Fireworks.gif");
+                ImageBehavior.SetAnimatedSource(gifImage, new BitmapImage(imageUri));
+            }
 
             viewModel = new();
 
@@ -654,6 +659,11 @@ namespace UR_pnach_editor.Views
                     viewModel.DisplayMysteriousView();
                 }
             }
+        }
+
+        private void Path_Info(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("For music and brad model swap to work\nyou need to set the Missions Data Path\nin Free Mode X Multiplayer Page.");
         }
     }
 

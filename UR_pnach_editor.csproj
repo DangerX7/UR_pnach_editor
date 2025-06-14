@@ -26,6 +26,7 @@
     <None Remove="Resources\char_wall.png" />
     <None Remove="Resources\christmas-brad_hawk.png" />
     <None Remove="Resources\Cover.png" />
+    <None Remove="Resources\Fireworks.gif" />
     <None Remove="Resources\Gate_Clossing.mp3" />
     <None Remove="Resources\gift_box.png" />
     <None Remove="Resources\gift_box_open.png" />
@@ -226,6 +227,8 @@
     <None Remove="Resources\PreviewSkin199.png" />
     <None Remove="Resources\PreviewSkin2.png" />
     <None Remove="Resources\PreviewSkin20.png" />
+    <None Remove="Resources\PreviewSkin200.png" />
+    <None Remove="Resources\PreviewSkin201.png" />
     <None Remove="Resources\PreviewSkin21.png" />
     <None Remove="Resources\PreviewSkin22.png" />
     <None Remove="Resources\PreviewSkin23.png" />
@@ -355,6 +358,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\BoxFocus.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fireworks.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\gift_box.png">
@@ -928,6 +934,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\PreviewSkin20.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin200.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin201.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\PreviewSkin21.png">

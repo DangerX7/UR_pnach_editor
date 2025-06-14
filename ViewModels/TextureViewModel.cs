@@ -195,6 +195,8 @@ namespace UR_pnach_editor.ViewModels
             BlackHawkTxt = SettingsClass.BlackHawkTxt;
             GoldenDragonLinFongTxt = SettingsClass.GoldenDragonLinFongTxt;
             GothicShunYingTxt = SettingsClass.GothicShunYingTxt;
+            CaptainAmeriparkTxt = SettingsClass.CaptainAmeriparkTxt;
+            CowboyParkTxt = SettingsClass.CowboyParkTxt;
 
             TitleScreenTxt = SettingsClass.TitleScreenTxt;
             WarehouseTxt = SettingsClass.WarehouseTxt;
@@ -2688,10 +2690,16 @@ namespace UR_pnach_editor.ViewModels
                     {
                         _parkDanteTxt = false;
                         _symbioteSpiderTxt = false;
+                        _captainAmeriparkTxt = false;
+                        _cowboyParkTxt = false;
                         RaisePropertyChanged("ParkDanteTxt");
                         RaisePropertyChanged("SymbioteSpiderTxt");
+                        RaisePropertyChanged("CaptainAmeriparkTxt");
+                        RaisePropertyChanged("CowboyParkTxt");
                         SettingsClass.ParkDanteTxt = false;
                         SettingsClass.SymbioteSpiderTxt = false;
+                        SettingsClass.CaptainAmeriparkTxt = false;
+                        SettingsClass.CowboyParkTxt = false;
                     }
                 }
             }
@@ -2713,10 +2721,16 @@ namespace UR_pnach_editor.ViewModels
                     {
                         _alternativeParkTxt = false;
                         _symbioteSpiderTxt = false;
+                        _captainAmeriparkTxt = false;
+                        _cowboyParkTxt = false;
                         RaisePropertyChanged("AlternativeParkTxt");
                         RaisePropertyChanged("SymbioteSpiderTxt");
+                        RaisePropertyChanged("CaptainAmeriparkTxt");
+                        RaisePropertyChanged("CowboyParkTxt");
                         SettingsClass.AlternativeParkTxt = false;
                         SettingsClass.SymbioteSpiderTxt = false;
+                        SettingsClass.CaptainAmeriparkTxt = false;
+                        SettingsClass.CowboyParkTxt = false;
                     }
                 }
             }
@@ -2738,14 +2752,83 @@ namespace UR_pnach_editor.ViewModels
                     {
                         _alternativeParkTxt = false;
                         _parkDanteTxt = false;
+                        _captainAmeriparkTxt = false;
+                        _cowboyParkTxt = false;
                         RaisePropertyChanged("AlternativeParkTxt");
                         RaisePropertyChanged("ParkDanteTxt");
+                        RaisePropertyChanged("CaptainAmeriparkTxt");
+                        RaisePropertyChanged("CowboyParkTxt");
                         SettingsClass.AlternativeParkTxt = false;
                         SettingsClass.ParkDanteTxt = false;
+                        SettingsClass.CaptainAmeriparkTxt = false;
+                        SettingsClass.CowboyParkTxt = false;
                     }
                 }
             }
         }
+
+        private bool _captainAmeriparkTxt;
+
+        public bool CaptainAmeriparkTxt
+        {
+            get { return _captainAmeriparkTxt; }
+            set
+            {
+                if (_captainAmeriparkTxt != value)
+                {
+                    _captainAmeriparkTxt = value;
+                    SettingsClass.CaptainAmeriparkTxt = _captainAmeriparkTxt;
+                    RaisePropertyChanged("CaptainAmeriparkTxt");
+                    if (_captainAmeriparkTxt)
+                    {
+                        _alternativeParkTxt = false;
+                        _parkDanteTxt = false;
+                        _symbioteSpiderTxt = false;
+                        _cowboyParkTxt = false;
+                        RaisePropertyChanged("AlternativeParkTxt");
+                        RaisePropertyChanged("ParkDanteTxt");
+                        RaisePropertyChanged("SymbioteSpiderTxt");
+                        RaisePropertyChanged("CowboyParkTxt");
+                        SettingsClass.AlternativeParkTxt = false;
+                        SettingsClass.ParkDanteTxt = false;
+                        SettingsClass.SymbioteSpiderTxt = false;
+                        SettingsClass.CowboyParkTxt = false;
+                    }
+                }
+            }
+        }
+
+        private bool _cowboyParkTxt;
+
+        public bool CowboyParkTxt
+        {
+            get { return _cowboyParkTxt; }
+            set
+            {
+                if (_cowboyParkTxt != value)
+                {
+                    _cowboyParkTxt = value;
+                    SettingsClass.CowboyParkTxt = _cowboyParkTxt;
+                    RaisePropertyChanged("CowboyParkTxt");
+                    if (_cowboyParkTxt)
+                    {
+                        _alternativeParkTxt = false;
+                        _parkDanteTxt = false;
+                        _symbioteSpiderTxt = false;
+                        _captainAmeriparkTxt = false;
+                        RaisePropertyChanged("AlternativeParkTxt");
+                        RaisePropertyChanged("ParkDanteTxt");
+                        RaisePropertyChanged("SymbioteSpiderTxt");
+                        RaisePropertyChanged("CaptainAmeriparkTxt");
+                        SettingsClass.AlternativeParkTxt = false;
+                        SettingsClass.ParkDanteTxt = false;
+                        SettingsClass.SymbioteSpiderTxt = false;
+                        SettingsClass.CaptainAmeriparkTxt = false;
+                    }
+                }
+            }
+        }
+
         //2A - Alex*********************************************************
 
         private bool _alexSkin;
@@ -7208,6 +7291,17 @@ namespace UR_pnach_editor.ViewModels
                     "", "",
                     "", "");
 
+            RemoveTextures("", "",
+                    "2da2203d39a74446-3511f0037a4ef3d6-r64x64-00002a93", "3ffc5305ef65a6b5-fc2484321ad9da19-r256x256-00002a93",
+                    "4e558b8619f28a2f-7b311ba27ede9ae6-r64x32-00002a93", "7de3823bf5429edd-fcab27e758cda11f-r64x32-00002a93",
+                    "7e5a55fce8300fdd-c71c295ac5e058ff-r64x64-00002a93", "630dae20806ec0af-243b397743caf199-r32x32-00002a93",
+                    "854d32a17ad71bd5-503b62eaff159fa9-r128x128-00002a93", "7767b9cc7ea85def-c4919a1f25371bec-r32x32-00002a93",
+                    "24835cad676d9cd6-6786baf34695a3b4-r32x64-00002a93", "647238311528bdd8-69257ba70cb1b598-r128x128-00002a93",
+                    "b33cfcfbb6c2eed-bf42ce9e6478c707-r256x256-00002a93", "c651823a32cbe911-495b1d4e7f137e3f-r64x64-00002a93",
+                    "cb1b8f54b36f5f35-c76526accdb5253-r64x16-00002a93", "ecf59619d0b8b35-4303fe8f71a49215-r128x128-00002a93",
+                    "", "",
+                    "", "");
+
             if (AlternativeParkTxt)
             {
                 try
@@ -7269,6 +7363,48 @@ namespace UR_pnach_editor.ViewModels
                 {
                     SymbioteSpiderTxt = false;
                     notFound += "SymbioteSpiderTxt" + Environment.NewLine + "";
+                }
+            }
+            else if (CaptainAmeriparkTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Captain_Ameripark\", "", "",
+                        "2da2203d39a74446-3511f0037a4ef3d6-r64x64-00002a93", "3ffc5305ef65a6b5-fc2484321ad9da19-r256x256-00002a93",
+                        "4e558b8619f28a2f-7b311ba27ede9ae6-r64x32-00002a93", "7de3823bf5429edd-fcab27e758cda11f-r64x32-00002a93",
+                        "7e5a55fce8300fdd-c71c295ac5e058ff-r64x64-00002a93", "630dae20806ec0af-243b397743caf199-r32x32-00002a93",
+                        "854d32a17ad71bd5-503b62eaff159fa9-r128x128-00002a93", "7767b9cc7ea85def-c4919a1f25371bec-r32x32-00002a93",
+                        "24835cad676d9cd6-6786baf34695a3b4-r32x64-00002a93", "647238311528bdd8-69257ba70cb1b598-r128x128-00002a93",
+                        "b33cfcfbb6c2eed-bf42ce9e6478c707-r256x256-00002a93", "c651823a32cbe911-495b1d4e7f137e3f-r64x64-00002a93",
+                        "cb1b8f54b36f5f35-c76526accdb5253-r64x16-00002a93", "ecf59619d0b8b35-4303fe8f71a49215-r128x128-00002a93",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    CaptainAmeriparkTxt = false;
+                    notFound += "CaptainAmeriparkTxt" + Environment.NewLine + "";
+                }
+            }
+            else if (CowboyParkTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Cowboy_Park\", "", "",
+                        "2da2203d39a74446-3511f0037a4ef3d6-r64x64-00002a93", "3ffc5305ef65a6b5-fc2484321ad9da19-r256x256-00002a93",
+                        "4e558b8619f28a2f-7b311ba27ede9ae6-r64x32-00002a93", "7e5a55fce8300fdd-c71c295ac5e058ff-r64x64-00002a93",
+                        "630dae20806ec0af-243b397743caf199-r32x32-00002a93", "854d32a17ad71bd5-503b62eaff159fa9-r128x128-00002a93",
+                        "7767b9cc7ea85def-c4919a1f25371bec-r32x32-00002a93", "24835cad676d9cd6-6786baf34695a3b4-r32x64-00002a93",
+                        "647238311528bdd8-69257ba70cb1b598-r128x128-00002a93", "c651823a32cbe911-495b1d4e7f137e3f-r64x64-00002a93",
+                        "cb1b8f54b36f5f35-c76526accdb5253-r64x16-00002a93", "ecf59619d0b8b35-4303fe8f71a49215-r128x128-00002a93",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    CowboyParkTxt = false;
+                    notFound += "CowboyParkTxt" + Environment.NewLine + "";
                 }
             }
 
@@ -9218,7 +9354,7 @@ namespace UR_pnach_editor.ViewModels
 
             if (notFound != "")
             {
-                MessageBox.Show("Textures were not found for" + Environment.NewLine + notFound);
+                MessageBox.Show("Textures were not found for " + notFound + "\nMake sure you configurated Base Folder Path and Replacements Folder Path in Textures Page");
             }
             SettingsClass.SaveData();
         }
@@ -9567,6 +9703,8 @@ namespace UR_pnach_editor.ViewModels
             BlackHawkTxt = false;
             GoldenDragonLinFongTxt = false;
             GothicShunYingTxt = false;
+            CaptainAmeriparkTxt = false;
+            CowboyParkTxt = false;
 
             TitleScreenTxt = true;
             WarehouseTxt = true;
@@ -9740,6 +9878,8 @@ namespace UR_pnach_editor.ViewModels
             BlackHawkTxt = false;
             GoldenDragonLinFongTxt = false;
             GothicShunYingTxt = false;
+            CaptainAmeriparkTxt = false;
+            CowboyParkTxt = false;
 
             TitleScreenTxt = true;
             WarehouseTxt = true;
@@ -9911,6 +10051,8 @@ namespace UR_pnach_editor.ViewModels
             BlackHawkTxt = false;
             GoldenDragonLinFongTxt = false;
             GothicShunYingTxt = false;
+            CaptainAmeriparkTxt = false;
+            CowboyParkTxt = false;
 
             TitleScreenTxt = false;
             WarehouseTxt = false;
@@ -10396,7 +10538,7 @@ namespace UR_pnach_editor.ViewModels
                     break;
             }
 
-            random = new Random().Next(1, 3 + 1);//Park
+            random = new Random().Next(1, 5 + 1);//Park
             switch (random)
             {
                 case 1:
@@ -10407,6 +10549,12 @@ namespace UR_pnach_editor.ViewModels
                     break;
                 case 3:
                     SymbioteSpiderTxt = true;
+                    break;
+                case 4:
+                    CaptainAmeriparkTxt = true;
+                    break;
+                case 5:
+                    CowboyParkTxt = true;
                     break;
             }
 

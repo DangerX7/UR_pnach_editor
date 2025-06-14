@@ -17,6 +17,7 @@ namespace UR_pnach_editor.ViewModels
             EditorVersion = InfoClass.editorVersion;
             DiscordServer = InfoClass.discordServer;
             YoutubeLink = InfoClass.youtubeLink;
+            TutorialLink = InfoClass.tutorialLink;
 
 
             if (SettingsClass.EditorEffectsIndex == 1)
@@ -233,6 +234,20 @@ namespace UR_pnach_editor.ViewModels
             }
         }
 
+        private string _tutorialLink;
+        public string TutorialLink
+        {
+            get { return _tutorialLink; }
+            set
+            {
+                if (_tutorialLink != value)
+                {
+                    _tutorialLink = value;
+                    RaisePropertyChanged("TutorialLink");
+                }
+            }
+        }
+        
         private string _randomizeSupremeStatus;
         public string RandomizeSupremeStatus
         {

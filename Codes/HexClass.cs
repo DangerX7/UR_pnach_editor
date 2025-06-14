@@ -6299,7 +6299,7 @@ namespace UR_pnach_editor.Codes
                 WriteFunction(offset, newValues);
 
                 offset = 0x6B76BA3E;//
-                newValues = new byte[] { 0x3A, 0x0F, };
+                newValues = new byte[] { 0xC9, 0x0C, };
                 WriteFunction(offset, newValues);
 
                 offset = 0x6B76BA40;//
@@ -6383,7 +6383,7 @@ namespace UR_pnach_editor.Codes
                 WriteFunction(offset, newValues);
 
                 offset = 0x6B76B998;//
-                newValues = new byte[] { 0x04, 0x0C, };
+                newValues = new byte[] { 0xCF, 0x0B, };
                 WriteFunction(offset, newValues);
 
                 offset = 0x6B76B9B0;//
@@ -7623,22 +7623,238 @@ namespace UR_pnach_editor.Codes
         {
             if (SettingsClass.SmartParkMoves) //custom
             {
-                uint offset = 0xXXXXXXXX;
-                byte[] newValues = new byte[] { 0xXX, 0xXX, };
+                uint offset = 0x6B766728;
+                byte[] newValues = new byte[] { 0xBD, 0x03, };
                 WriteFunction(offset, newValues);
 
-                offset = 0xXXXXXXXX;
-                newValues = new byte[] { 0xXX, 0xXX, };
+                offset = 0x6B76675A;
+                newValues = new byte[] { 0xD0, 0x01, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B766738;
+                newValues = new byte[] { 0xA7, 0x0C, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B7669B6;
+                newValues = new byte[] { 0xBC, 0x0D, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B766978;
+                newValues = new byte[] { 0x37, 0x0C, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B76697A;
+                newValues = new byte[] { 0x37, 0x0C, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B7669B8;
+                newValues = new byte[] { 0x69, 0x0C, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B76697C;
+                newValues = new byte[] { 0xEF, 0x0C, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B76699A;
+                newValues = new byte[] { 0xF0, 0x0C, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B7667A6;
+                newValues = new byte[] { 0xD5, 0x07, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B738156;
+                newValues = new byte[] { 0xEA, 0x0B, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B738390;
+                newValues = new byte[] { 0xEA, 0x0B, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B766932;
+                newValues = new byte[] { 0xD9, 0x04, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B766934;
+                newValues = new byte[] { 0x6D, 0x04, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B766936;
+                newValues = new byte[] { 0x70, 0x04, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B747930;
+                newValues = new byte[] { 0xF6, 0x06, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B749028;
+                newValues = new byte[] { 0xF6, 0x06, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B7478D6;
+                newValues = new byte[] { 0xF6, 0x06, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B748FCE;
+                newValues = new byte[] { 0xF6, 0x06, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B747BE2;
+                newValues = new byte[] { 0xF6, 0x06, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B747A3E;
+                newValues = new byte[] { 0xF6, 0x06, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B747BA6;
+                newValues = new byte[] { 0xF6, 0x06, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B747A02;
+                newValues = new byte[] { 0xF6, 0x06, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B747C78;
+                newValues = new byte[] { 0xF6, 0x06, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B747AD4;
+                newValues = new byte[] { 0xF6, 0x06, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B7479A8;
+                newValues = new byte[] { 0xF6, 0x06, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B747A7A;
+                newValues = new byte[] { 0xF6, 0x06, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B766902;
+                newValues = new byte[] { 0x9C, 0x06, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B7668F0;
+                newValues = new byte[] { 0xCF, 0x0B, };
                 WriteFunction(offset, newValues);
             }
             else //original
             {
-                uint offset = 0xXXXXXXXX;
-                byte[] newValues = new byte[] { 0xXX, 0xXX, };
+                uint offset = 0x6B766728;
+                byte[] newValues = new byte[] { 0x33, 0x02, };
                 WriteFunction(offset, newValues);
 
-                offset = 0xXXXXXXXX;
-                newValues = new byte[] { 0xXX, 0xXX, };
+                offset = 0x6B76675A;
+                newValues = new byte[] { 0xDA, 0x03, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B766738;
+                newValues = new byte[] { 0xB4, 0x00, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B7669B6;
+                newValues = new byte[] { 0xE2, 0x0D, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B766978;
+                newValues = new byte[] { 0xDD, 0x0D, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B76697A;
+                newValues = new byte[] { 0xE1, 0x0D, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B7669B8;
+                newValues = new byte[] { 0xE0, 0x0D, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B76697C;
+                newValues = new byte[] { 0xDF, 0x0D, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B76699A;
+                newValues = new byte[] { 0xBD, 0x0D, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B7667A6;
+                newValues = new byte[] { 0x95, 0x0A, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B738156;
+                newValues = new byte[] { 0xE2, 0x07, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B738390;
+                newValues = new byte[] { 0xE2, 0x07, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B766932;
+                newValues = new byte[] { 0xE8, 0x0A, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B766934;
+                newValues = new byte[] { 0xEC, 0x0B, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B766936;
+                newValues = new byte[] { 0xEC, 0x0B, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B747930;
+                newValues = new byte[] { 0xEF, 0x0D, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B749028;
+                newValues = new byte[] { 0xEF, 0x0D, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B7478D6;
+                newValues = new byte[] { 0xF0, 0x0D, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B748FCE;
+                newValues = new byte[] { 0xF0, 0x0D, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B747BE2;
+                newValues = new byte[] { 0x04, 0x0F, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B747A3E;
+                newValues = new byte[] { 0x04, 0x0F, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B747BA6;
+                newValues = new byte[] { 0xEF, 0x0D, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B747A02;
+                newValues = new byte[] { 0xEF, 0x0D, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B747C78;
+                newValues = new byte[] { 0xEF, 0x0D, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B747AD4;
+                newValues = new byte[] { 0xEF, 0x0D, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B7479A8;
+                newValues = new byte[] { 0xF0, 0x0D, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B747A7A;
+                newValues = new byte[] { 0xF0, 0x0D, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B766902;
+                newValues = new byte[] { 0xF6, 0x06, };
+                WriteFunction(offset, newValues);
+
+                offset = 0x6B7668F0;
+                newValues = new byte[] { 0xEA, 0x0B, };
                 WriteFunction(offset, newValues);
             }
         }

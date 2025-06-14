@@ -21,9 +21,9 @@ namespace UR_pnach_editor.Services
 
         public static string originalPnach = "BDD9BAAD";
         public static string deluxePnach = "A9D22191";
-        public static string MovesPnach = "A584220F";
-        public static string StatsPnach = "AC59257A";
-        public static string MovesAndStatsPnach = "A00F26E4";
+        public static string MovesPnach = "A8A22628";
+        public static string StatsPnach = "AC59257A";//obsolete
+        public static string MovesAndStatsPnach = "A00F26E4";//obsolete
 
 
         public static string PnachName = "C319B3A4";
@@ -257,6 +257,8 @@ namespace UR_pnach_editor.Services
         public static bool BlackHawkTxt { get; set; } = false;
         public static bool GoldenDragonLinFongTxt { get; set; } = false;
         public static bool GothicShunYingTxt { get; set; } = false;
+        public static bool CaptainAmeriparkTxt { get; set; } = false;
+        public static bool CowboyParkTxt { get; set; } = false;
 
         public static bool WeaponsTxt { get; set; } = false;
         public static bool TitleScreenTxt { get; set; } = false;
@@ -329,7 +331,7 @@ namespace UR_pnach_editor.Services
             bool yeWeiSkin2, bool shaYingSkin2, bool yanJunSkin2, bool kellySkin2, bool paulSkin2, bool pepsimanTxt, bool eddyTrainerTxt,
             bool brademTxt, bool paul2040Txt, bool beachGolemTxt, bool spaceYakuzaTxt, bool almostWhiteMiguelTxt, bool princeBordinTxt,
             bool classyShunYingTxt, bool schoolgirlLilianTxt, bool streetKellyTxt, bool seriousVeraTxt, bool crimsonLinFongTxt, bool easterBunnyLinFongTxt,
-            bool blackHawkTxt, bool goldenDragonLinFongTxt, bool gothicShunYingTxt,
+            bool blackHawkTxt, bool goldenDragonLinFongTxt, bool gothicShunYingTxt, bool captainAmeriparkTxt, bool cowboyParkTxt,
             bool weaponsTxt, bool titleScreenTxt, bool multyplayerTxt,
             bool masterBradMoves, bool golemBrokenShitMoves, bool bordinAllAroundMoves, bool paulAshesMoves, bool sakamotoRyomaMoves,
             bool bradAndOthersParry, bool shinBordinMoves, bool kOGMoves, bool kingJakeMoves, bool mMAGipsiesMoves, bool rikiDensetsuMoves,
@@ -563,6 +565,8 @@ namespace UR_pnach_editor.Services
             BlackHawkTxt = blackHawkTxt;
             GoldenDragonLinFongTxt = goldenDragonLinFongTxt;
             GothicShunYingTxt = gothicShunYingTxt;
+            CaptainAmeriparkTxt = captainAmeriparkTxt;
+            CowboyParkTxt = cowboyParkTxt;
 
             WeaponsTxt = weaponsTxt;
             TitleScreenTxt = titleScreenTxt;
@@ -823,6 +827,8 @@ namespace UR_pnach_editor.Services
             public bool BlackHawkTxt { get; set; } = SettingsClass.BlackHawkTxt;
             public bool GoldenDragonLinFongTxt { get; set; } = SettingsClass.GoldenDragonLinFongTxt;
             public bool GothicShunYingTxt { get; set; } = SettingsClass.GothicShunYingTxt;
+            public bool CaptainAmeriparkTxt { get; set; } = SettingsClass.CaptainAmeriparkTxt;
+            public bool CowboyParkTxt { get; set; } = SettingsClass.CowboyParkTxt;
 
 
             public bool WeaponsTxt { get; set; } = SettingsClass.WeaponsTxt;
@@ -1085,6 +1091,8 @@ namespace UR_pnach_editor.Services
                 BlackHawkTxt = Settings.BlackHawkTxt;
                 GoldenDragonLinFongTxt = Settings.GoldenDragonLinFongTxt;
                 GothicShunYingTxt = Settings.GothicShunYingTxt;
+                CaptainAmeriparkTxt = Settings.CaptainAmeriparkTxt;
+                CowboyParkTxt = Settings.CowboyParkTxt;
 
                 WeaponsTxt = Settings.WeaponsTxt;
                 TitleScreenTxt = Settings.TitleScreenTxt;
@@ -1371,6 +1379,8 @@ namespace UR_pnach_editor.Services
             Settings.BlackHawkTxt = BlackHawkTxt;
             Settings.GoldenDragonLinFongTxt = GoldenDragonLinFongTxt;
             Settings.GothicShunYingTxt = GothicShunYingTxt;
+            Settings.CaptainAmeriparkTxt = CaptainAmeriparkTxt;
+            Settings.CowboyParkTxt = CowboyParkTxt;
 
             Settings.StatsChanged = StatsChanged;
             Settings.PageEnterSFX = PageEnterSFX;
