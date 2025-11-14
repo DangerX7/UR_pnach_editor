@@ -171,6 +171,7 @@ namespace UR_pnach_editor.Views
             viewModel.ShinBordinMoves = false;
             viewModel.BrokenDwayneMoves = false;
             viewModel.SwordmasterShunYingAndLilianMoves = false;
+            viewModel.OriginalTaunts = false;
 
             SettingsClass.MasterBradMoves = true;
             SettingsClass.GolemBrokenShitMoves = true;
@@ -191,6 +192,7 @@ namespace UR_pnach_editor.Views
             SettingsClass.ShinBordinMoves = false;
             SettingsClass.BrokenDwayneMoves = false;
             SettingsClass.SwordmasterShunYingAndLilianMoves = false;
+            SettingsClass.OriginalTaunts = false;
 
             if (!usingPnachOverHex)
             {
@@ -292,7 +294,8 @@ namespace UR_pnach_editor.Views
             viewModel.SwordmasterShunYingAndLilianMoves = false;
             viewModel.SwordmasterLinFongMoves = false;
             viewModel.SmartParkMoves = false;
-
+            viewModel.OriginalTaunts = false;
+            
             SettingsClass.MasterBradMoves = false;
             SettingsClass.BradAndOthersParry = false;
             SettingsClass.GolemBrokenShitMoves = false;
@@ -311,6 +314,7 @@ namespace UR_pnach_editor.Views
             SettingsClass.SwordmasterShunYingAndLilianMoves = false;
             SettingsClass.SwordmasterLinFongMoves = false;
             SettingsClass.SmartParkMoves = false;
+            SettingsClass.OriginalTaunts = false;
 
             if (!usingPnachOverHex)
             {
@@ -570,6 +574,12 @@ namespace UR_pnach_editor.Views
                 "Made by FallenR";
         }
 
+        private void OriginalTaunts_MouseEnter(object sender, MouseEventArgs e)
+        {
+            viewModel.ModeInformation = "This restores every activated custom moveset taunt to original " +
+                "(only for those that doesn't have a taunt).\n" +
+                "Requested by Zenca";
+        }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {

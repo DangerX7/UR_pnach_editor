@@ -34,6 +34,7 @@ namespace UR_pnach_editor.ViewModels
             SwordmasterShunYingAndLilianMoves = SettingsClass.SwordmasterShunYingAndLilianMoves;
             SwordmasterLinFongMoves = SettingsClass.SwordmasterLinFongMoves;
             SmartParkMoves = SettingsClass.SmartParkMoves;
+            OriginalTaunts = SettingsClass.OriginalTaunts;
 
 
             GameFolderPath = SettingsClass.gameFolderPath;
@@ -384,7 +385,23 @@ namespace UR_pnach_editor.ViewModels
             }
         }
 
-        
+        private bool _originalTaunts;
 
+        public bool OriginalTaunts
+        {
+            get { return _originalTaunts; }
+            set
+            {
+                if (_originalTaunts != value)
+                {
+                    _originalTaunts = value;
+                    SettingsClass.OriginalTaunts = _originalTaunts;
+                    RaisePropertyChanged("OriginalTaunts");
+                }
+            }
+        }
+
+
+        
     }
 }

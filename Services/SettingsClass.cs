@@ -282,8 +282,9 @@ namespace UR_pnach_editor.Services
         public static bool SwordmasterShunYingAndLilianMoves { get; set; } = false;
         public static bool SwordmasterLinFongMoves { get; set; } = false;
         public static bool SmartParkMoves { get; set; } = false;
+        public static bool OriginalTaunts { get; set; } = false;
 
-
+        
         public static bool StatsChanged { get; set; } = false;
 
 
@@ -336,7 +337,7 @@ namespace UR_pnach_editor.Services
             bool masterBradMoves, bool golemBrokenShitMoves, bool bordinAllAroundMoves, bool paulAshesMoves, bool sakamotoRyomaMoves,
             bool bradAndOthersParry, bool shinBordinMoves, bool kOGMoves, bool kingJakeMoves, bool mMAGipsiesMoves, bool rikiDensetsuMoves,
             bool phoenixStanceShunYingMoves, bool brokenDwayneMoves, bool monsterVeraMoves, bool thugKellyMoves, bool swordmasterShunYingAndLilianMoves,
-            bool swordmasterLinFongMoves, bool smartParkMoves,
+            bool swordmasterLinFongMoves, bool smartParkMoves, bool originalTaunts,
             bool statsChanged, bool pageEnterSFX)
         {
             codeFolderPath = connectionString;
@@ -590,6 +591,7 @@ namespace UR_pnach_editor.Services
             SwordmasterShunYingAndLilianMoves = swordmasterShunYingAndLilianMoves;
             SwordmasterLinFongMoves = swordmasterLinFongMoves;
             SmartParkMoves = smartParkMoves;
+            OriginalTaunts = originalTaunts;
 
             StatsChanged = statsChanged;
             PageEnterSFX = pageEnterSFX;
@@ -853,6 +855,7 @@ namespace UR_pnach_editor.Services
             public bool SwordmasterShunYingAndLilianMoves { get; set; } = SettingsClass.SwordmasterShunYingAndLilianMoves;
             public bool SwordmasterLinFongMoves { get; set; } = SettingsClass.SwordmasterLinFongMoves;
             public bool SmartParkMoves { get; set; } = SettingsClass.SmartParkMoves;
+            public bool OriginalTaunts { get; set; } = SettingsClass.OriginalTaunts;
 
             public bool StatsChanged { get; set; } = SettingsClass.StatsChanged;
             public bool PageEnterSFX { get; set; } = SettingsClass.PageEnterSFX;
@@ -1118,6 +1121,7 @@ namespace UR_pnach_editor.Services
                 SwordmasterShunYingAndLilianMoves = Settings.SwordmasterShunYingAndLilianMoves;
                 SwordmasterLinFongMoves = Settings.SwordmasterLinFongMoves;
                 SmartParkMoves = Settings.SmartParkMoves;
+                OriginalTaunts = Settings.OriginalTaunts;
 
                 StatsChanged = Settings.StatsChanged;
                 PageEnterSFX = Settings.PageEnterSFX;
@@ -1369,6 +1373,7 @@ namespace UR_pnach_editor.Services
             Settings.SwordmasterShunYingAndLilianMoves = SwordmasterShunYingAndLilianMoves;
             Settings.SwordmasterLinFongMoves = SwordmasterLinFongMoves;
             Settings.SmartParkMoves = SmartParkMoves;
+            Settings.OriginalTaunts = OriginalTaunts;
 
             Settings.ClassyShunYingTxt = ClassyShunYingTxt;
             Settings.SchoolgirlLilianTxt = SchoolgirlLilianTxt;

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using NAudio.CoreAudioApi;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -744,6 +746,18 @@ namespace UR_pnach_editor.Codes
 
         public static void ChangeMoveset()
         {
+            //Taunt Originals
+            //Golem SPA Master
+            //Phoenix Stance Shun Ying
+            //Monster Vera
+            //Thug Kelly
+            //Swordmaster Lin Fong
+            //Smart Park
+
+            //Broken Dwayne
+            //Shun Ying +Lilian
+
+
             //#4B1EC800
             MasterBradMoveset();
             BradAndOthersParry();
@@ -3290,6 +3304,7 @@ namespace UR_pnach_editor.Codes
         {
             if (SettingsClass.GolemBrokenShitMoves) //custom
             {
+
                 uint offset = 0x6B76635A;
                 byte[] newValues = new byte[] { 0x3F, 0x07, };
                 WriteFunction(offset, newValues);
@@ -3354,9 +3369,20 @@ namespace UR_pnach_editor.Codes
                 newValues = new byte[] { 0x97, 0x08, };
                 WriteFunction(offset, newValues);
 
-                offset = 0x6B7661CA;
-                newValues = new byte[] { 0x45, 0x03, };
-                WriteFunction(offset, newValues);
+                if (SettingsClass.OriginalTaunts)
+                {
+                    //Restore taunt
+                    offset = 0x6B7661CA;
+                    newValues = new byte[] { 0xDB, 0x03, };
+                    WriteFunction(offset, newValues);
+                }
+                else
+                {
+                    //Use custom
+                    offset = 0x6B7661CA;
+                    newValues = new byte[] { 0x45, 0x03, };
+                    WriteFunction(offset, newValues);
+                }
 
                 offset = 0x6B76619E;
                 newValues = new byte[] { 0x8E, 0x06, };
@@ -5763,9 +5789,20 @@ namespace UR_pnach_editor.Codes
                 byte[] newValues = new byte[] { 0x20, 0x03, };
                 WriteFunction(offset, newValues);
 
-                offset = 0x6B766492;
-                newValues = new byte[] { 0x90, 0x00, };
-                WriteFunction(offset, newValues);
+                if (SettingsClass.OriginalTaunts)
+                {
+                    //Restore taunt
+                    offset = 0x6B766492;
+                    newValues = new byte[] { 0xC4, 0x03, };
+                    WriteFunction(offset, newValues);
+                }
+                else
+                {
+                    //Use custom
+                    offset = 0x6B766492;
+                    newValues = new byte[] { 0x90, 0x00, };
+                    WriteFunction(offset, newValues);
+                }
 
                 offset = 0x6B7664E0;
                 newValues = new byte[] { 0x97, 0x08, };
@@ -5991,9 +6028,20 @@ namespace UR_pnach_editor.Codes
                 byte[] newValues = new byte[] { 0x33, 0x02, };
                 WriteFunction(offset, newValues);
 
-                offset = 0x6B766FB2;
-                newValues = new byte[] { 0x91, 0x00, };
-                WriteFunction(offset, newValues);
+                if (SettingsClass.OriginalTaunts)
+                {
+                    //Restore taunt
+                    offset = 0x6B766FB2;
+                    newValues = new byte[] { 0xDA, 0x03, };
+                    WriteFunction(offset, newValues);
+                }
+                else
+                {
+                    //Use custom
+                    offset = 0x6B766FB2;
+                    newValues = new byte[] { 0x91, 0x00, };
+                    WriteFunction(offset, newValues);
+                }
 
                 offset = 0x6B73B072;
                 newValues = new byte[] { 0x53, 0x06, };
@@ -6274,9 +6322,20 @@ namespace UR_pnach_editor.Codes
                 byte[] newValues = new byte[] { 0x50, 0x04, };
                 WriteFunction(offset, newValues);
 
-                offset = 0x6B76B802;//
-                newValues = new byte[] { 0xB4, 0x00, };
-                WriteFunction(offset, newValues);
+                if (SettingsClass.OriginalTaunts)
+                {
+                    //Restore taunt
+                    offset = 0x6B76B802;//
+                    newValues = new byte[] { 0xD9, 0x03, };
+                    WriteFunction(offset, newValues);
+                }
+                else
+                {
+                    //Use custom
+                    offset = 0x6B76B802;//
+                    newValues = new byte[] { 0xB4, 0x00, };
+                    WriteFunction(offset, newValues);
+                }
 
                 offset = 0x6B76B7E0;//
                 newValues = new byte[] { 0xA7, 0x0C, };
@@ -6700,9 +6759,20 @@ namespace UR_pnach_editor.Codes
                 byte[] newValues = new byte[] { 0x50, 0x04, };
                 WriteFunction(offset, newValues);
 
-                offset = 0x6B767542;//
-                newValues = new byte[] { 0xD0, 0x01, };
-                WriteFunction(offset, newValues);
+                if (SettingsClass.OriginalTaunts)
+                {
+                    //Restore taunt
+                    offset = 0x6B767542;//
+                    newValues = new byte[] { 0xD9, 0x03, };
+                    WriteFunction(offset, newValues);
+                }
+                else
+                {
+                    //Use custom
+                    offset = 0x6B767542;//
+                    newValues = new byte[] { 0xD0, 0x01, };
+                    WriteFunction(offset, newValues);
+                }
 
                 offset = 0x6B767520;//
                 newValues = new byte[] { 0xA7, 0x0C, };
@@ -6926,9 +6996,20 @@ namespace UR_pnach_editor.Codes
                 byte[] newValues = new byte[] { 0x43, 0x03, };
                 WriteFunction(offset, newValues);
 
-                offset = 0x6B766492;//;
-                newValues = new byte[] { 0xD0, 0x01, };
-                WriteFunction(offset, newValues);
+                if (SettingsClass.OriginalTaunts)
+                {
+                    //Restore taunt
+                    offset = 0x6B766492;//;
+                    newValues = new byte[] { 0xC4, 0x03, };
+                    WriteFunction(offset, newValues);
+                }
+                else
+                {
+                    //Use custom
+                    offset = 0x6B766492;//;
+                    newValues = new byte[] { 0xD0, 0x01, };
+                    WriteFunction(offset, newValues);
+                }
 
                 offset = 0x6B766470;//;
                 newValues = new byte[] { 0xBA, 0x00, };
@@ -6998,9 +7079,20 @@ namespace UR_pnach_editor.Codes
                 newValues = new byte[] { 0x43, 0x03, };
                 WriteFunction(offset, newValues);
 
-                offset = 0x6B765F02;//;
-                newValues = new byte[] { 0xD0, 0x01, };
-                WriteFunction(offset, newValues);
+                if (SettingsClass.OriginalTaunts)
+                {
+                    //Restore taunt
+                    offset = 0x6B765F02;//;
+                    newValues = new byte[] { 0xC4, 0x03, };
+                    WriteFunction(offset, newValues);
+                }
+                else
+                {
+                    //Use custom
+                    offset = 0x6B765F02;//;
+                    newValues = new byte[] { 0xD0, 0x01, };
+                    WriteFunction(offset, newValues);
+                }
 
                 offset = 0x6B76615E;//;
                 newValues = new byte[] { 0xC9, 0x0D, };
@@ -7380,13 +7472,24 @@ namespace UR_pnach_editor.Codes
         {
             if (SettingsClass.SwordmasterLinFongMoves) //custom
             {
-                uint offset = 0x6B7750FA;
-                byte[] newValues = new byte[] { 0xD0, 0x01, };
+                uint offset = 0x6B7750D8;
+                byte[] newValues = new byte[] { 0xBA, 0x00, };
                 WriteFunction(offset, newValues);
 
-                offset = 0x6B7750D8;
-                newValues = new byte[] { 0xBA, 0x00, };
-                WriteFunction(offset, newValues);
+                if (SettingsClass.OriginalTaunts)
+                {
+                    //Restore taunt
+                    offset = 0x6B7750FA;
+                    newValues = new byte[] { 0xEE, 0x03, };
+                    WriteFunction(offset, newValues);
+                }
+                else
+                {
+                    //Use custom
+                    offset = 0x6B7750FA;
+                    newValues = new byte[] { 0xD0, 0x01, };
+                    WriteFunction(offset, newValues);
+                }
 
                 offset = 0x6B775356;
                 newValues = new byte[] { 0xD9, 0x0D, };
@@ -7498,12 +7601,12 @@ namespace UR_pnach_editor.Codes
             }
             else //original
             {
-                uint offset = 0x6B7750FA;
-                byte[] newValues = new byte[] { 0xEE, 0x03, };
+                uint offset = 0x6B7750D8;
+                byte[] newValues = new byte[] { 0xB4, 0x00, };
                 WriteFunction(offset, newValues);
 
-                offset = 0x6B7750D8;
-                newValues = new byte[] { 0xB4, 0x00, };
+                offset = 0x6B7750FA;
+                newValues = new byte[] { 0xEE, 0x03, };
                 WriteFunction(offset, newValues);
 
                 offset = 0x6B775356;
@@ -7627,9 +7730,20 @@ namespace UR_pnach_editor.Codes
                 byte[] newValues = new byte[] { 0xBD, 0x03, };
                 WriteFunction(offset, newValues);
 
-                offset = 0x6B76675A;
-                newValues = new byte[] { 0xD0, 0x01, };
-                WriteFunction(offset, newValues);
+                if (SettingsClass.OriginalTaunts)
+                {
+                    //Restore taunt
+                    offset = 0x6B76675A;
+                    newValues = new byte[] { 0xDA, 0x03, };
+                    WriteFunction(offset, newValues);
+                }
+                else
+                {
+                    //Use custom
+                    offset = 0x6B76675A;
+                    newValues = new byte[] { 0xD0, 0x01, };
+                    WriteFunction(offset, newValues);
+                }
 
                 offset = 0x6B766738;
                 newValues = new byte[] { 0xA7, 0x0C, };
