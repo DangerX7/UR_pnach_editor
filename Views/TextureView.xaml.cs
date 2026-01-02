@@ -506,6 +506,34 @@ namespace UR_pnach_editor.Views
             check200.Visibility = Visibility.Collapsed;
             skin201.Visibility = Visibility.Collapsed;
             check201.Visibility = Visibility.Collapsed;
+            skin202.Visibility = Visibility.Collapsed;
+            check202.Visibility = Visibility.Collapsed;
+            skin203.Visibility = Visibility.Collapsed;
+            check203.Visibility = Visibility.Collapsed;
+            skin204.Visibility = Visibility.Collapsed;
+            check204.Visibility = Visibility.Collapsed;
+            skin205.Visibility = Visibility.Collapsed;
+            check205.Visibility = Visibility.Collapsed;
+            skin206.Visibility = Visibility.Collapsed;
+            check206.Visibility = Visibility.Collapsed;
+            skin207.Visibility = Visibility.Collapsed;
+            check207.Visibility = Visibility.Collapsed;
+            skin208.Visibility = Visibility.Collapsed;
+            check208.Visibility = Visibility.Collapsed;
+            skin209.Visibility = Visibility.Collapsed;
+            check209.Visibility = Visibility.Collapsed;
+            skin210.Visibility = Visibility.Collapsed;
+            check210.Visibility = Visibility.Collapsed;
+            skin211.Visibility = Visibility.Collapsed;
+            check211.Visibility = Visibility.Collapsed;
+            skin212.Visibility = Visibility.Collapsed;
+            check212.Visibility = Visibility.Collapsed;
+            skin213.Visibility = Visibility.Collapsed;
+            check213.Visibility = Visibility.Collapsed;
+            skin214.Visibility = Visibility.Collapsed;
+            check214.Visibility = Visibility.Collapsed;
+            skin215.Visibility = Visibility.Collapsed;
+            check215.Visibility = Visibility.Collapsed;
 
             //checkTS.Visibility = Visibility.Visible;
             //Title_Screen.Visibility = Visibility.Visible;
@@ -841,6 +869,34 @@ namespace UR_pnach_editor.Views
             check200.Visibility = Visibility.Collapsed;
             skin201.Visibility = Visibility.Collapsed;
             check201.Visibility = Visibility.Collapsed;
+            skin202.Visibility = Visibility.Collapsed;
+            check202.Visibility = Visibility.Collapsed;
+            skin203.Visibility = Visibility.Collapsed;
+            check203.Visibility = Visibility.Collapsed;
+            skin204.Visibility = Visibility.Collapsed;
+            check204.Visibility = Visibility.Collapsed;
+            skin205.Visibility = Visibility.Collapsed;
+            check205.Visibility = Visibility.Collapsed;
+            skin206.Visibility = Visibility.Collapsed;
+            check206.Visibility = Visibility.Collapsed;
+            skin207.Visibility = Visibility.Collapsed;
+            check207.Visibility = Visibility.Collapsed;
+            skin208.Visibility = Visibility.Collapsed;
+            check208.Visibility = Visibility.Collapsed;
+            skin209.Visibility = Visibility.Collapsed;
+            check209.Visibility = Visibility.Collapsed;
+            skin210.Visibility = Visibility.Collapsed;
+            check210.Visibility = Visibility.Collapsed;
+            skin211.Visibility = Visibility.Collapsed;
+            check211.Visibility = Visibility.Collapsed;
+            skin212.Visibility = Visibility.Collapsed;
+            check212.Visibility = Visibility.Collapsed;
+            skin213.Visibility = Visibility.Collapsed;
+            check213.Visibility = Visibility.Collapsed;
+            skin214.Visibility = Visibility.Collapsed;
+            check214.Visibility = Visibility.Collapsed;
+            skin215.Visibility = Visibility.Collapsed;
+            check215.Visibility = Visibility.Collapsed;
 
             //checkTS.Visibility = Visibility.Collapsed;
             //Title_Screen.Visibility = Visibility.Collapsed;
@@ -1176,6 +1232,34 @@ namespace UR_pnach_editor.Views
             check200.Visibility = Visibility.Visible;
             skin201.Visibility = Visibility.Visible;
             check201.Visibility = Visibility.Visible;
+            skin202.Visibility = Visibility.Visible;
+            check202.Visibility = Visibility.Visible;
+            skin203.Visibility = Visibility.Visible;
+            check203.Visibility = Visibility.Visible;
+            skin204.Visibility = Visibility.Visible;
+            check204.Visibility = Visibility.Visible;
+            skin205.Visibility = Visibility.Visible;
+            check205.Visibility = Visibility.Visible;
+            skin206.Visibility = Visibility.Visible;
+            check206.Visibility = Visibility.Visible;
+            skin207.Visibility = Visibility.Visible;
+            check207.Visibility = Visibility.Visible;
+            skin208.Visibility = Visibility.Visible;
+            check208.Visibility = Visibility.Visible;
+            skin209.Visibility = Visibility.Visible;
+            check209.Visibility = Visibility.Visible;
+            skin210.Visibility = Visibility.Visible;
+            check210.Visibility = Visibility.Visible;
+            skin211.Visibility = Visibility.Visible;
+            check211.Visibility = Visibility.Visible;
+            skin212.Visibility = Visibility.Visible;
+            check212.Visibility = Visibility.Visible;
+            skin213.Visibility = Visibility.Visible;
+            check213.Visibility = Visibility.Visible;
+            skin214.Visibility = Visibility.Visible;
+            check214.Visibility = Visibility.Visible;
+            skin215.Visibility = Visibility.Visible;
+            check215.Visibility = Visibility.Visible;
 
             //checkTS.Visibility = Visibility.Collapsed;
             //Title_Screen.Visibility = Visibility.Collapsed;
@@ -1880,6 +1964,76 @@ namespace UR_pnach_editor.Views
         private void SkinPreview201(object sender, MouseEventArgs e)
         {
             viewModel.SkinPreview = "/Resources/PreviewSkin201.png";
+        }
+
+        private void SkinPreview202(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin202.png";
+        }
+
+        private void SkinPreview203(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin203.png";
+        }
+
+        private void SkinPreview204(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin204.png";
+        }
+
+        private void SkinPreview205(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin205.png";
+        }
+
+        private void SkinPreview206(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin206.png";
+        }
+
+        private void SkinPreview207(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin207.png";
+        }
+
+        private void SkinPreview208(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin208.png";
+        }
+
+        private void SkinPreview209(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin209.png";
+        }
+
+        private void SkinPreview210(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin210.png";
+        }
+
+        private void SkinPreview211(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin211.png";
+        }
+
+        private void SkinPreview212(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin212.png";
+        }
+
+        private void SkinPreview213(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin213.png";
+        }
+
+        private void SkinPreview214(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin214.png";
+        }
+
+        private void SkinPreview215(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin215.png";
         }
 
         private void SwitchModelsSize_Click(object sender, RoutedEventArgs e)

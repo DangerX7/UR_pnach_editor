@@ -360,6 +360,16 @@
                    Text="Read the instructions carefully!"
                    Margin="-110,0,-110,60"/>
         <TextBlock Grid.Row="6"
+                   Grid.Column="2"
+                   Grid.ColumnSpan="5"
+                   Name="info2"
+                   FontSize="40"
+                   FontFamily="Palatino Linotype"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="#FF0000"
+                   Text="RESTORE CUSTOM MOVESETS TO ORIGINAL BEFORE YOU APPLY A PATCH OR YOU WILL GET AN ERROR!"
+                   Margin="191,80,174,0" Grid.RowSpan="3"/>
+        <TextBlock Grid.Row="6"
                    Grid.Column="4"
                    Grid.ColumnSpan="2"
                    Name="info"
@@ -369,7 +379,7 @@
                    Foreground="#44FFFF"
                    Text="Music Changed in Multiplayer, Practice and Challenge Modes!"
                    Margin="-360,0,-110,60"/>
-        <TextBlock Grid.Row="8"
+        <TextBlock Grid.Row="9"
                    Grid.Column="4"
                    Grid.ColumnSpan="2"
                    Name="extraInfo"
@@ -486,7 +496,7 @@
                 Grid.Row="2"
                 Grid.RowSpan="8"
                 BorderThickness="6"
-                Margin="178,88,0,34"
+                Margin="178,88,0,0"
                 BorderBrush="Green" HorizontalAlignment="Left" Width="1056">
         </Border>
 

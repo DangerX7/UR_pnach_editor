@@ -260,6 +260,21 @@ namespace UR_pnach_editor.Services
         public static bool CaptainAmeriparkTxt { get; set; } = false;
         public static bool CowboyParkTxt { get; set; } = false;
 
+        public static bool AndersonHitlerTxt { get; set; } = false;
+        public static bool TongYooTxt { get; set; } = false;
+        public static bool BradBlackTxt { get; set; } = false;
+        public static bool GolemPunisherTxt { get; set; } = false;
+        public static bool TongYooMilitarTxt { get; set; } = false;
+        public static bool MiguelBullyTxt { get; set; } = false;
+        public static bool SteveMinecraftAndersonTxt { get; set; } = false;
+        public static bool BradBen10Txt { get; set; } = false;
+        public static bool SteveFoxGraveTxt { get; set; } = false;
+        public static bool LinFongJokerTxt { get; set; } = false;
+        public static bool LawTailungTxt { get; set; } = false;
+        public static bool SeuMadrugaMiguelTxt { get; set; } = false;
+        public static bool AlexNeganTxt { get; set; } = false;
+        public static bool ParkCustomTxt { get; set; } = false;
+
         public static bool WeaponsTxt { get; set; } = false;
         public static bool TitleScreenTxt { get; set; } = false;
         public static bool MultyplayerTxt { get; set; } = false;
@@ -333,6 +348,9 @@ namespace UR_pnach_editor.Services
             bool brademTxt, bool paul2040Txt, bool beachGolemTxt, bool spaceYakuzaTxt, bool almostWhiteMiguelTxt, bool princeBordinTxt,
             bool classyShunYingTxt, bool schoolgirlLilianTxt, bool streetKellyTxt, bool seriousVeraTxt, bool crimsonLinFongTxt, bool easterBunnyLinFongTxt,
             bool blackHawkTxt, bool goldenDragonLinFongTxt, bool gothicShunYingTxt, bool captainAmeriparkTxt, bool cowboyParkTxt,
+            bool andersonHitlerTxt, bool tongYooTxt, bool bradBlackTxt, bool golemPunisherTxt, bool tongYooMilitarTxt,
+            bool miguelBullyTxt, bool steveMinecraftAndersonTxt, bool bradBen10Txt, bool steveFoxGraveTxt, bool linFongJokerTxt,
+            bool lawTailungTxt, bool seuMadrugaMiguelTxt, bool alexNeganTxt, bool parkCustomTxt,
             bool weaponsTxt, bool titleScreenTxt, bool multyplayerTxt,
             bool masterBradMoves, bool golemBrokenShitMoves, bool bordinAllAroundMoves, bool paulAshesMoves, bool sakamotoRyomaMoves,
             bool bradAndOthersParry, bool shinBordinMoves, bool kOGMoves, bool kingJakeMoves, bool mMAGipsiesMoves, bool rikiDensetsuMoves,
@@ -568,6 +586,20 @@ namespace UR_pnach_editor.Services
             GothicShunYingTxt = gothicShunYingTxt;
             CaptainAmeriparkTxt = captainAmeriparkTxt;
             CowboyParkTxt = cowboyParkTxt;
+            AndersonHitlerTxt = andersonHitlerTxt;
+            TongYooTxt = tongYooTxt;
+            BradBlackTxt = bradBlackTxt;
+            GolemPunisherTxt = golemPunisherTxt;
+            TongYooMilitarTxt = tongYooMilitarTxt;
+            MiguelBullyTxt = miguelBullyTxt;
+            SteveMinecraftAndersonTxt = steveMinecraftAndersonTxt;
+            BradBen10Txt = bradBen10Txt;
+            SteveFoxGraveTxt = steveFoxGraveTxt;
+            LinFongJokerTxt = linFongJokerTxt;
+            LawTailungTxt = lawTailungTxt;
+            SeuMadrugaMiguelTxt = seuMadrugaMiguelTxt;
+            AlexNeganTxt = alexNeganTxt;
+            ParkCustomTxt = parkCustomTxt;
 
             WeaponsTxt = weaponsTxt;
             TitleScreenTxt = titleScreenTxt;
@@ -831,6 +863,21 @@ namespace UR_pnach_editor.Services
             public bool GothicShunYingTxt { get; set; } = SettingsClass.GothicShunYingTxt;
             public bool CaptainAmeriparkTxt { get; set; } = SettingsClass.CaptainAmeriparkTxt;
             public bool CowboyParkTxt { get; set; } = SettingsClass.CowboyParkTxt;
+            public bool AndersonHitlerTxt { get; set; } = SettingsClass.AndersonHitlerTxt;
+            public bool TongYooTxt { get; set; } = SettingsClass.TongYooTxt;
+            public bool BradBlackTxt { get; set; } = SettingsClass.BradBlackTxt;
+            public bool GolemPunisherTxt { get; set; } = SettingsClass.GolemPunisherTxt;
+            public bool TongYooMilitarTxt { get; set; } = SettingsClass.TongYooMilitarTxt;
+            public bool MiguelBullyTxt { get; set; } = SettingsClass.MiguelBullyTxt;
+            public bool SteveMinecraftAndersonTxt { get; set; } = SettingsClass.SteveMinecraftAndersonTxt;
+            public bool BradBen10Txt { get; set; } = SettingsClass.BradBen10Txt;
+            public bool SteveFoxGraveTxt { get; set; } = SettingsClass.SteveFoxGraveTxt;
+            public bool LinFongJokerTxt { get; set; } = SettingsClass.LinFongJokerTxt;
+            public bool LawTailungTxt { get; set; } = SettingsClass.LawTailungTxt;
+            public bool SeuMadrugaMiguelTxt { get; set; } = SettingsClass.SeuMadrugaMiguelTxt;
+            public bool AlexNeganTxt { get; set; } = SettingsClass.AlexNeganTxt;
+            public bool ParkCustomTxt { get; set; } = SettingsClass.ParkCustomTxt;
+
 
 
             public bool WeaponsTxt { get; set; } = SettingsClass.WeaponsTxt;
@@ -1096,6 +1143,20 @@ namespace UR_pnach_editor.Services
                 GothicShunYingTxt = Settings.GothicShunYingTxt;
                 CaptainAmeriparkTxt = Settings.CaptainAmeriparkTxt;
                 CowboyParkTxt = Settings.CowboyParkTxt;
+                AndersonHitlerTxt = Settings.AndersonHitlerTxt;
+                TongYooTxt = Settings.TongYooTxt;
+                BradBlackTxt = Settings.BradBlackTxt;
+                GolemPunisherTxt = Settings.GolemPunisherTxt;
+                TongYooMilitarTxt = Settings.TongYooMilitarTxt;
+                MiguelBullyTxt = Settings.MiguelBullyTxt;
+                SteveMinecraftAndersonTxt = Settings.SteveMinecraftAndersonTxt;
+                BradBen10Txt = Settings.BradBen10Txt;
+                SteveFoxGraveTxt = Settings.SteveFoxGraveTxt;
+                LinFongJokerTxt = Settings.LinFongJokerTxt;
+                LawTailungTxt = Settings.LawTailungTxt;
+                SeuMadrugaMiguelTxt = Settings.SeuMadrugaMiguelTxt;
+                AlexNeganTxt = Settings.AlexNeganTxt;
+                ParkCustomTxt = Settings.ParkCustomTxt;
 
                 WeaponsTxt = Settings.WeaponsTxt;
                 TitleScreenTxt = Settings.TitleScreenTxt;
@@ -1386,6 +1447,20 @@ namespace UR_pnach_editor.Services
             Settings.GothicShunYingTxt = GothicShunYingTxt;
             Settings.CaptainAmeriparkTxt = CaptainAmeriparkTxt;
             Settings.CowboyParkTxt = CowboyParkTxt;
+            Settings.AndersonHitlerTxt = AndersonHitlerTxt;
+            Settings.TongYooTxt = TongYooTxt;
+            Settings.BradBlackTxt = BradBlackTxt;
+            Settings.GolemPunisherTxt = GolemPunisherTxt;
+            Settings.TongYooMilitarTxt = TongYooMilitarTxt;
+            Settings.MiguelBullyTxt = MiguelBullyTxt;
+            Settings.SteveMinecraftAndersonTxt = SteveMinecraftAndersonTxt;
+            Settings.BradBen10Txt = BradBen10Txt;
+            Settings.SteveFoxGraveTxt = SteveFoxGraveTxt;
+            Settings.LinFongJokerTxt = LinFongJokerTxt;
+            Settings.LawTailungTxt = LawTailungTxt;
+            Settings.SeuMadrugaMiguelTxt = SeuMadrugaMiguelTxt;
+            Settings.AlexNeganTxt = AlexNeganTxt;
+            Settings.ParkCustomTxt = ParkCustomTxt;
 
             Settings.StatsChanged = StatsChanged;
             Settings.PageEnterSFX = PageEnterSFX;
