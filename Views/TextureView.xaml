@@ -4542,7 +4542,7 @@
                    FontSize="32"
                    TextWrapping="WrapWithOverflow"
                    Foreground="Gold"
-                   Text="Steve Fox"
+                   Text="Steve Fox (Grave Digga')"
                    Margin="0,0,0,0"
                    MouseEnter="SkinPreview210"/>
 
@@ -4620,7 +4620,7 @@
                    FontSize="32"
                    TextWrapping="WrapWithOverflow"
                    Foreground="Gold"
-                   Text="Seu Madruga (Miguel)"
+                   Text="Seu Madruga (Ramon)"
                    Margin="0,0,0,0"
                    MouseEnter="SkinPreview213"/>
 

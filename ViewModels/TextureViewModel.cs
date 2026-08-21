@@ -6949,7 +6949,7 @@ namespace UR_pnach_editor.ViewModels
                     ReplaceTextures(@"\_steve fox grave\", "", "",
                         "5d9dab9b4da19b58-bb1042078bd02a19-r64x64-00002a93", "6a57ea379978e090-dc44ef25ac37ebf6-r64x128-00002a93",
                         "41c464d85a0f616f-6efe8135d2d1d98d-r128x128-00002a93", "128fc47272dbafac-326729d4dff109eb-r256x256-00002a93",
-                        "8778633eb34cad7e-9f406c9beab8482c-r256x256-00002a93", "ab8482c-r256x256-00002a93",
+                        "", "",
                         "b962788607137dc5-976602852e5db24c-r64x128-00002a93", "",
                         "", "",
                         "", "",
@@ -8266,7 +8266,7 @@ namespace UR_pnach_editor.ViewModels
                         "854d32a17ad71bd5-503b62eaff159fa9-r128x128-00002a93", "647238311528bdd8-69257ba70cb1b598-r128x128-00002a93",
                         "b33cfcfbb6c2eed-bf42ce9e6478c707-r256x256-00002a93", "c651823a32cbe911-495b1d4e7f137e3f-r64x64-00002a93",
                         "cb1b8f54b36f5f35-c76526accdb5253-r64x16-00002a93", "",
-                        "", "",
+                        "2da2203d39a74446-3511f0037a4ef3d6-r64x64-00002a93", "ecf59619d0b8b35-4303fe8f71a49215-r128x128-00002a93",
                         "", "",
                         "", "",
                         "", "");
