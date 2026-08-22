@@ -4807,7 +4807,7 @@
                 FontSize="38"
                 FontStyle="Italic"
                 FontWeight="Bold"
-                Margin="70,0,60,0"
+                Margin="120,0,10,0"
                 Click="ActivateAllTextures_Click">
             <Button.Content>
                 <TextBlock TextWrapping="Wrap" Text="Activate All (Set 1)" TextAlignment="Center"  />
@@ -4829,7 +4829,7 @@
                 FontSize="38"
                 FontStyle="Italic"
                 FontWeight="Bold"
-                Margin="70,0,60,0"
+                Margin="120,0,10,0"
                 Click="ActivateAllTextures2_Click">
             <Button.Content>
                 <TextBlock TextWrapping="Wrap" Text="Activate All (Set 2)" TextAlignment="Center"  />
@@ -4851,7 +4851,7 @@
                 FontSize="30"
                 FontStyle="Italic"
                 FontWeight="Bold"
-                Margin="70,0,60,0"
+                Margin="120,0,10,0"
                 Click="ActivateAllRandomTextures_Click">
             <Button.Content>
                 <TextBlock TextWrapping="Wrap" Text="Random Activate All (All Sets)" TextAlignment="Center"  />
@@ -4897,7 +4897,7 @@
                 FontSize="30"
                 FontStyle="Italic"
                 FontWeight="Bold"
-                Margin="74,0,60,0"
+                Margin="120,0,10,0"
                 Click="RemoveAllTextures_Click">
             <Button.Content>
                 <TextBlock TextWrapping="Wrap" Text="Restore Originals" TextAlignment="Center"  />
@@ -4944,7 +4944,7 @@
                 FontSize="32"
                 FontStyle="Italic"
                 FontWeight="Bold"
-                Margin="100,10,10,10"
+                Margin="100,10,5,10"
                 Click="GoToMainPage_Click">
             <Button.Content>
                 <TextBlock TextWrapping="Wrap" Text="Back to Main Menu" TextAlignment="Center"  />
@@ -4987,7 +4987,7 @@
                Grid.ColumnSpan="3"
                Width="500"
                Height="500"
-               Margin="70,-270,100,0"/>
+               Margin="100,-270,100,0"/>
 
 
 
