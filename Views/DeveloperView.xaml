@@ -402,8 +402,8 @@
                    Foreground="White"
                    Text="Developers"
                    TextAlignment="Center"
-                   Margin="0,60,0,0"/>
-        <TextBlock Grid.Row="4"
+                   Margin="0,10,0,0"/>
+        <TextBlock Grid.Row="3"
                    Grid.Column="5"
                    FontFamily="Palatino Linotype"
                    Name="dev1"
@@ -412,7 +412,7 @@
                    Foreground="Gold"
                    Text="Danger X"
                    TextAlignment="Center"
-                   Margin="0,10,0,0"/>
+                   Margin="0,60,0,0"/>
         <TextBlock Grid.Row="4"
                    Grid.Column="5"
                    FontFamily="Palatino Linotype"
@@ -422,8 +422,8 @@
                    Foreground="Gold"
                    Text="So007"
                    TextAlignment="Center"
-                   Margin="0,60,0,0"/>
-        <TextBlock Grid.Row="5"
+                   Margin="0,10,0,0"/>
+        <TextBlock Grid.Row="4"
                    Grid.Column="5"
                    FontFamily="Palatino Linotype"
                    Name="dev3"
@@ -432,7 +432,7 @@
                    Foreground="LightGreen"
                    Text="Kyle Shinji"
                    TextAlignment="Center"
-                   Margin="0,10,0,0"/>
+                   Margin="0,60,0,0"/>
         <TextBlock Grid.Row="5"
                    Grid.Column="5"
                    FontFamily="Palatino Linotype"
@@ -442,8 +442,8 @@
                    Foreground="LightGreen"
                    Text="Extra Stellar"
                    TextAlignment="Center"
-                   Margin="0,60,0,0"/>
-        <TextBlock Grid.Row="6"
+                   Margin="0,10,0,0"/>
+        <TextBlock Grid.Row="5"
                    Grid.Column="5"
                    FontFamily="Palatino Linotype"
                    Name="dev5"
@@ -452,7 +452,7 @@
                    Foreground="LightGreen"
                    Text="Infinity Ninja"
                    TextAlignment="Center"
-                   Margin="0,10,0,0"/>
+                   Margin="0,60,0,0"/>
         <TextBlock Grid.Row="6"
                    Grid.Column="5"
                    FontFamily="Palatino Linotype"
@@ -462,8 +462,8 @@
                    Foreground="LightGreen"
                    Text="Haru"
                    TextAlignment="Center"
-                   Margin="0,60,0,0"/>
-        <TextBlock Grid.Row="7"
+                   Margin="0,10,0,0"/>
+        <TextBlock Grid.Row="6"
                    Grid.Column="5"
                    FontFamily="Palatino Linotype"
                    Name="dev7"
@@ -472,7 +472,7 @@
                    Foreground="LightGreen"
                    Text="Flowchart Ken"
                    TextAlignment="Center"
-                   Margin="0,10,0,-60"/>
+                   Margin="0,60,0,-60"/>
         <TextBlock Grid.Row="7"
                    Grid.Column="5"
                    FontFamily="Palatino Linotype"
@@ -482,8 +482,8 @@
                    Foreground="LightGreen"
                    Text="Ganesh"
                    TextAlignment="Center"
-                   Margin="0,60,0,-60"/>
-        <TextBlock Grid.Row="8"
+                   Margin="0,10,0,-60"/>
+        <TextBlock Grid.Row="7"
                    Grid.Column="5"
                    FontFamily="Palatino Linotype"
                    Name="dev9"
@@ -493,7 +493,7 @@
                    Text="Steve Craft"
                    TextAlignment="Center"
                    Margin="0,60,0,-60"/>
-        <TextBlock Grid.Row="9"
+        <TextBlock Grid.Row="8"
                    Grid.Column="5"
                    FontFamily="Palatino Linotype"
                    Name="dev10"
@@ -503,7 +503,7 @@
                    Text="FallenR"
                    TextAlignment="Center"
                    Margin="0,60,0,-60"/>
-        <TextBlock Grid.Row="9"
+        <TextBlock Grid.Row="8"
                    Grid.Column="5"
                    FontFamily="Palatino Linotype"
                    Name="dev11"
@@ -512,7 +512,7 @@
                    Foreground="LightGreen"
                    Text="Majid"
                    TextAlignment="Center"
-                   Margin="0,112,0,-100"/>
+                   Margin="0,110,0,-100"/>
         <TextBlock Grid.Row="10"
                    Grid.Column="5"
                    FontFamily="Palatino Linotype"
@@ -522,13 +522,23 @@
                    Foreground="LightGreen"
                    Text="leonidas BR"
                    TextAlignment="Center"
-                   Margin="0,112,0,-100"/>
+                   Margin="0,60,0,-100"/>
+        <TextBlock Grid.Row="10"
+                   Grid.Column="5"
+                   FontFamily="Palatino Linotype"
+                   Name="dev13"
+                   FontSize="30"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="LightGreen"
+                   Text="Mad Candy"
+                   TextAlignment="Center"
+                   Margin="0,110,0,-100"/>
 
         <Border Grid.Column="5"
                 Grid.Row="3"
                 Grid.RowSpan="9"
                 BorderThickness="6"
-                Margin="0,32,5,1"
+                Margin="0,10,5,1"
                 BorderBrush="Red"/>
 
 
