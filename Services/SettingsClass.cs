@@ -278,6 +278,8 @@ namespace UR_pnach_editor.Services
         public static bool WeaponsTxt { get; set; } = false;
         public static bool TitleScreenTxt { get; set; } = false;
         public static bool MultyplayerTxt { get; set; } = false;
+        public static bool MultyplayerInGameTxt { get; set; } = false;
+        
 
         public static bool MasterBradMoves { get; set; } = false;
         public static bool GolemBrokenShitMoves { get; set; } = false;
@@ -351,7 +353,7 @@ namespace UR_pnach_editor.Services
             bool andersonHitlerTxt, bool tongYooTxt, bool bradBlackTxt, bool golemPunisherTxt, bool tongYooMilitarTxt,
             bool miguelBullyTxt, bool steveMinecraftAndersonTxt, bool bradBen10Txt, bool steveFoxGraveTxt, bool linFongJokerTxt,
             bool lawTailungTxt, bool seuMadrugaMiguelTxt, bool alexNeganTxt, bool parkCustomTxt,
-            bool weaponsTxt, bool titleScreenTxt, bool multyplayerTxt,
+            bool weaponsTxt, bool titleScreenTxt, bool multyplayerTxt, bool multyplayerInGameTxt,
             bool masterBradMoves, bool golemBrokenShitMoves, bool bordinAllAroundMoves, bool paulAshesMoves, bool sakamotoRyomaMoves,
             bool bradAndOthersParry, bool shinBordinMoves, bool kOGMoves, bool kingJakeMoves, bool mMAGipsiesMoves, bool rikiDensetsuMoves,
             bool phoenixStanceShunYingMoves, bool brokenDwayneMoves, bool monsterVeraMoves, bool thugKellyMoves, bool swordmasterShunYingAndLilianMoves,
@@ -604,6 +606,7 @@ namespace UR_pnach_editor.Services
             WeaponsTxt = weaponsTxt;
             TitleScreenTxt = titleScreenTxt;
             MultyplayerTxt = multyplayerTxt;
+            MultyplayerInGameTxt = multyplayerInGameTxt;
 
             MasterBradMoves = masterBradMoves;
             GolemBrokenShitMoves = golemBrokenShitMoves;
@@ -883,7 +886,8 @@ namespace UR_pnach_editor.Services
             public bool WeaponsTxt { get; set; } = SettingsClass.WeaponsTxt;
             public bool TitleScreenTxt { get; set; } = SettingsClass.TitleScreenTxt;
             public bool MultyplayerTxt { get; set; } = SettingsClass.MultyplayerTxt;
-            
+            public bool MultyplayerInGameTxt { get; set; } = SettingsClass.MultyplayerInGameTxt;
+
             public bool MasterBradMoves { get; set;} = SettingsClass.MasterBradMoves;
             public bool GolemBrokenShitMoves { get; set; } = SettingsClass.GolemBrokenShitMoves;
             public bool BordinAllAroundMoves { get; set; } = SettingsClass.BordinAllAroundMoves;
@@ -1161,6 +1165,7 @@ namespace UR_pnach_editor.Services
                 WeaponsTxt = Settings.WeaponsTxt;
                 TitleScreenTxt = Settings.TitleScreenTxt;
                 MultyplayerTxt = Settings.MultyplayerTxt;
+                MultyplayerInGameTxt = Settings.MultyplayerInGameTxt;
 
                 codeFilePath = codeFolderPath + PnachName;
 
@@ -1415,6 +1420,7 @@ namespace UR_pnach_editor.Services
             Settings.WeaponsTxt = WeaponsTxt;
             Settings.TitleScreenTxt = TitleScreenTxt;
             Settings.MultyplayerTxt = MultyplayerTxt;
+            Settings.MultyplayerInGameTxt = MultyplayerInGameTxt;
 
             Settings.MasterBradMoves = MasterBradMoves;
             Settings.GolemBrokenShitMoves = GolemBrokenShitMoves;

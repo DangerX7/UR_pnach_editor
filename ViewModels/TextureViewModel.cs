@@ -217,6 +217,7 @@ namespace UR_pnach_editor.ViewModels
             WarehouseTxt = SettingsClass.WarehouseTxt;
             WeaponsTxt = SettingsClass.WeaponsTxt;
             MultyplayerTxt = SettingsClass.MultyplayerTxt;
+            MultyplayerInGameTxt = SettingsClass.MultyplayerInGameTxt;
         }
         #endregion
 
@@ -5292,11 +5293,38 @@ namespace UR_pnach_editor.ViewModels
                     _multyplayerTxt = value;
                     SettingsClass.MultyplayerTxt = _multyplayerTxt;
                     RaisePropertyChanged("MultyplayerTxt");
+                    if (_multyplayerTxt)
+                    {
+                        _multyplayerInGameTxt = false;
+                        RaisePropertyChanged("MultyplayerInGameTxt");
+                        SettingsClass.MultyplayerInGameTxt = false;
+                    }
                 }
             }
         }
 
-        
+        private bool _multyplayerInGameTxt;
+
+        public bool MultyplayerInGameTxt
+        {
+            get { return _multyplayerInGameTxt; }
+            set
+            {
+                if (_multyplayerInGameTxt != value)
+                {
+                    _multyplayerInGameTxt = value;
+                    SettingsClass.MultyplayerInGameTxt = _multyplayerInGameTxt;
+                    RaisePropertyChanged("MultyplayerInGameTxt");
+                    if (_multyplayerInGameTxt)
+                    {
+                        _multyplayerTxt = false;
+                        RaisePropertyChanged("MultyplayerTxt");
+                        SettingsClass.MultyplayerTxt = false;
+                    }
+                }
+            }
+        }
+
         #endregion
 
 
@@ -10017,7 +10045,7 @@ namespace UR_pnach_editor.ViewModels
                     notFound += "KGBeat_upTxt" + Environment.NewLine + "";
                 }
             }
-            if (KG_WhatsAppTxt)
+            else if (KG_WhatsAppTxt)
             {
                 try
                 {
@@ -10070,10 +10098,11 @@ namespace UR_pnach_editor.ViewModels
             RemoveTextures("8e3e7d8db0a0b992-119e5b4437dd16aa-r1c0000002800000-00006693", "19b6813ddde93b77-cbb39c65bc432525-r2c000000f00000-00005a2c",
                         "d428245b8da8e1ae-82561dc49edb0b6c-r2d000000000000-0000596c", "7f1846a7ebd4b144-506a4f20359fc377-r2c000000f00000-00005a2c",
                         "", "",
-                        "", "",
-                        "", "",
-                        "", "",
-                        "", "",
+
+                        "7f1846a7ebd4b144-506a4f20359fc377-r240x44-00001a2c", "15f5a9db0237e970-1eec8df1a7e7753-00001ddb",
+                        "19b6813ddde93b77-cbb39c65bc432525-r240x44-00001a2c", "b7fdec10ae1ba0f4-2c8a99561c16406f-00001e2c",
+                        "ba3f078156414f8c-1a4ca2c0172033e2-00001e2c", "c51f75bd10ec988c-5045c7f3fcccff82-r48x48-000019ac",
+                        "cb11189ce2265cb4-e5d2baee3e8aa83b-00002224", "",
                         "", "",
                         "", "",
                         "", "");
@@ -10097,6 +10126,27 @@ namespace UR_pnach_editor.ViewModels
                 {
                     TitleScreenTxt = false;
                     notFound += "TitleScreenTxt" + Environment.NewLine + "";
+                }
+            }
+            else if (MultyplayerInGameTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\Multiplayer In Game UI\", "", "",
+                        "7f1846a7ebd4b144-506a4f20359fc377-r240x44-00001a2c", "15f5a9db0237e970-1eec8df1a7e7753-00001ddb",
+                        "19b6813ddde93b77-cbb39c65bc432525-r240x44-00001a2c", "b7fdec10ae1ba0f4-2c8a99561c16406f-00001e2c",
+                        "ba3f078156414f8c-1a4ca2c0172033e2-00001e2c", "c51f75bd10ec988c-5045c7f3fcccff82-r48x48-000019ac",
+                        "cb11189ce2265cb4-e5d2baee3e8aa83b-00002224", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    MultyplayerInGameTxt = false;
+                    notFound += "MultyplayerInGameTxt" + Environment.NewLine + "";
                 }
             }
 
@@ -10315,7 +10365,7 @@ namespace UR_pnach_editor.ViewModels
             }
 
             #endregion
-            
+
 
             if (notFound != "")
             {
@@ -10690,6 +10740,7 @@ namespace UR_pnach_editor.ViewModels
             WarehouseTxt = true;
             WeaponsTxt = true;
             MultyplayerTxt = true;
+            MultyplayerInGameTxt = false;
 
             SwapTextures();
         }
@@ -10880,6 +10931,7 @@ namespace UR_pnach_editor.ViewModels
             WarehouseTxt = true;
             WeaponsTxt = true;
             MultyplayerTxt = true;
+            MultyplayerInGameTxt = false;
 
             SwapTextures();
         }
@@ -11068,6 +11120,7 @@ namespace UR_pnach_editor.ViewModels
             WarehouseTxt = false;
             WeaponsTxt = false;
             MultyplayerTxt = false;
+            MultyplayerInGameTxt = false;
 
             SwapTextures();
         }

@@ -4771,6 +4771,29 @@
                    Foreground="Cyan"
                    Text="Multiplayer Textures"
                    Margin="0,0,0,0"/>
+        <!--Multyplayer Textures ++-->
+        <Border Grid.Row="16"
+                Grid.Column="4"
+                Name="MultyplayerTextures2"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding MultyplayerInGameTxt}"
+                          Width="20"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="16"
+                   Grid.Column="5"
+                   Name="MultyplayerTexturesBlock2"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Cyan"
+                   Text="HUD OG remaster"
+                   Margin="0,0,0,0"/>
 
         
         <!--Change Textures-->
@@ -4944,7 +4967,7 @@
                 FontSize="32"
                 FontStyle="Italic"
                 FontWeight="Bold"
-                Margin="100,10,5,10"
+                Margin="150,10,5,10"
                 Click="GoToMainPage_Click">
             <Button.Content>
                 <TextBlock TextWrapping="Wrap" Text="Back to Main Menu" TextAlignment="Center"  />
@@ -4987,7 +5010,7 @@
                Grid.ColumnSpan="3"
                Width="500"
                Height="500"
-               Margin="100,-270,100,0"/>
+               Margin="120,-270,100,0"/>
 
 
 
@@ -5092,7 +5115,7 @@
                 FontFamily="Times New Roman"
                 FontSize="26"
                 FontWeight="Bold"
-                Margin="280,5,70,55"
+                Margin="330,5,20,55"
                 Click="ActivateAllTextures_Info">
             <Button.Content>
                 <TextBlock TextWrapping="Wrap" Text="i" />
@@ -5112,7 +5135,7 @@
                 FontFamily="Times New Roman"
                 FontSize="26"
                 FontWeight="Bold"
-                Margin="280,5,70,55"
+                Margin="330,5,20,55"
                 Click="ActivateAllTextures2_Info">
             <Button.Content>
                 <TextBlock TextWrapping="Wrap" Text="i" />
@@ -5132,7 +5155,7 @@
                 FontFamily="Times New Roman"
                 FontSize="26"
                 FontWeight="Bold"
-                Margin="280,85,70,-25"
+                Margin="330,85,20,-25"
                 Click="ActivateAllRandomTextures_Info">
             <Button.Content>
                 <TextBlock TextWrapping="Wrap" Text="i" />
@@ -5152,7 +5175,7 @@
                 FontFamily="Times New Roman"
                 FontSize="26"
                 FontWeight="Bold"
-                Margin="280,0,70,10"
+                Margin="330,60,20,-45"
                 Click="RemoveAllTextures_Info" RenderTransformOrigin="0.373,0.057">
             <Button.Content>
                 <TextBlock TextWrapping="Wrap" Text="i" />
