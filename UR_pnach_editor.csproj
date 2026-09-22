@@ -274,6 +274,9 @@
     <None Remove="Resources\PreviewSkin240.png" />
     <None Remove="Resources\PreviewSkin241.png" />
     <None Remove="Resources\PreviewSkin242.png" />
+    <None Remove="Resources\PreviewSkin243.png" />
+    <None Remove="Resources\PreviewSkin244.png" />
+    <None Remove="Resources\PreviewSkin245.png" />
     <None Remove="Resources\PreviewSkin25.png" />
     <None Remove="Resources\PreviewSkin26.png" />
     <None Remove="Resources\PreviewSkin27.png" />
@@ -1116,6 +1119,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\PreviewSkin242.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin243.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin244.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PreviewSkin245.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\PreviewSkin25.png">

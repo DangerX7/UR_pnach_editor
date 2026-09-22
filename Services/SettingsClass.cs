@@ -271,9 +271,40 @@ namespace UR_pnach_editor.Services
         public static bool SteveFoxGraveTxt { get; set; } = false;
         public static bool LinFongJokerTxt { get; set; } = false;
         public static bool LawTailungTxt { get; set; } = false;
-        public static bool SeuMadrugaMiguelTxt { get; set; } = false;
+        public static bool SeuMadrugaRamonTxt { get; set; } = false;
         public static bool AlexNeganTxt { get; set; } = false;
         public static bool ParkCustomTxt { get; set; } = false;
+        public static bool BradWhiteSnakeTxt { get; set; } = false;
+        public static bool CasualGrimGreenTxt { get; set; } = false;
+        public static bool CasualGrimGreyTxt { get; set; } = false;
+
+        public static bool BoxerWannabeBkTxt { get; set; } = false;
+        public static bool WingedSkullRamonTxt { get; set; } = false;
+        public static bool HoodGuyRamonTxt { get; set; } = false;
+        public static bool Persona3TongYoon1Txt { get; set; } = false;
+        public static bool Persona3TongYoon2Txt { get; set; } = false;
+        public static bool Persona3TongYoon3Txt { get; set; } = false;
+        public static bool LolaYingTxt { get; set; } = false;
+        public static bool StellarBladeShunYingGreenTxt { get; set; } = false;
+        public static bool StellarBladeShunYingRedTxt { get; set; } = false;
+        public static bool ViperStreetAlexTxt { get; set; } = false;
+        public static bool BasketballFanEmceeTxt { get; set; } = false;
+        public static bool YakuzaShaYingTxt { get; set; } = false;
+        public static bool ToonShadedGD05Txt { get; set; } = false;
+        public static bool BorsalinoMasaTxt { get; set; } = false;
+        public static bool CopGolemTxt { get; set; } = false;
+        public static bool PrinceTongYooTxt { get; set; } = false;
+        public static bool AlexHawkTxt { get; set; } = false;
+        public static bool ZachBlackKimonoTxt { get; set; } = false;
+        public static bool KazumaKiryuBradUpdatedTxt { get; set; } = false;
+        public static bool BlueDenimBradTxt { get; set; } = false;
+        public static bool McKinzieWhiteCamoTxt { get; set; } = false;
+        public static bool SatinInfernalJakeTxt { get; set; } = false;
+        public static bool TribalBradTxt { get; set; } = false;
+        public static bool StylishColinTxt { get; set; } = false;
+        public static bool ViceMiguelTxt { get; set; } = false;
+        public static bool LanceVanceHiroTxt { get; set; } = false;
+        public static bool LanceVanceLinfongTxt { get; set; } = false;
 
         public static bool WeaponsTxt { get; set; } = false;
         public static bool TitleScreenTxt { get; set; } = false;
@@ -352,7 +383,14 @@ namespace UR_pnach_editor.Services
             bool blackHawkTxt, bool goldenDragonLinFongTxt, bool gothicShunYingTxt, bool captainAmeriparkTxt, bool cowboyParkTxt,
             bool andersonHitlerTxt, bool tongYooTxt, bool bradBlackTxt, bool golemPunisherTxt, bool tongYooMilitarTxt,
             bool miguelBullyTxt, bool steveMinecraftAndersonTxt, bool bradBen10Txt, bool steveFoxGraveTxt, bool linFongJokerTxt,
-            bool lawTailungTxt, bool seuMadrugaMiguelTxt, bool alexNeganTxt, bool parkCustomTxt,
+            bool lawTailungTxt, bool seuMadrugaRamonTxt, bool alexNeganTxt, bool parkCustomTxt,
+            bool bradWhiteSnakeTxt, bool casualGrimGreenTxt, bool casualGrimGreyTxt,
+            bool boxerWannabeBkTxt, bool wingedSkullRamonTxt, bool hoodGuyRamonTxt, bool persona3TongYoon1Txt, bool persona3TongYoon2Txt,
+            bool persona3TongYoon3Txt, bool lolaYingTxt, bool stellarBladeShunYingGreenTxt, bool stellarBladeShunYingRedTxt, bool viperStreetAlexTxt,
+            bool basketballFanEmceeTxt, bool yakuzaShaYingTxt, bool toonShadedGD05Txt, bool borsalinoMasaTxt, bool copGolemTxt,
+            bool princeTongYooTxt, bool alexHawkTxt, bool zachBlackKimonoTxt, bool kazumaKiryuBradUpdatedTxt, bool blueDenimBradTxt,
+            bool mcKinzieWhiteCamoTxt, bool satinInfernalJakeTxt, bool tribalBradTxt, bool stylishColinTxt,
+            bool viceMiguelTxt, bool lanceVanceHiroTxt, bool lanceVanceLinfongTxt,
             bool weaponsTxt, bool titleScreenTxt, bool multyplayerTxt, bool multyplayerInGameTxt,
             bool masterBradMoves, bool golemBrokenShitMoves, bool bordinAllAroundMoves, bool paulAshesMoves, bool sakamotoRyomaMoves,
             bool bradAndOthersParry, bool shinBordinMoves, bool kOGMoves, bool kingJakeMoves, bool mMAGipsiesMoves, bool rikiDensetsuMoves,
@@ -599,9 +637,39 @@ namespace UR_pnach_editor.Services
             SteveFoxGraveTxt = steveFoxGraveTxt;
             LinFongJokerTxt = linFongJokerTxt;
             LawTailungTxt = lawTailungTxt;
-            SeuMadrugaMiguelTxt = seuMadrugaMiguelTxt;
+            SeuMadrugaRamonTxt = seuMadrugaRamonTxt;
             AlexNeganTxt = alexNeganTxt;
             ParkCustomTxt = parkCustomTxt;
+            BradWhiteSnakeTxt = bradWhiteSnakeTxt;
+            CasualGrimGreenTxt = casualGrimGreenTxt;
+            CasualGrimGreyTxt = casualGrimGreyTxt;
+            BoxerWannabeBkTxt = boxerWannabeBkTxt;
+            WingedSkullRamonTxt = wingedSkullRamonTxt;
+            HoodGuyRamonTxt = hoodGuyRamonTxt;
+            Persona3TongYoon1Txt = persona3TongYoon1Txt;
+            Persona3TongYoon2Txt = persona3TongYoon2Txt;
+            Persona3TongYoon3Txt = persona3TongYoon3Txt;
+            LolaYingTxt = lolaYingTxt;
+            StellarBladeShunYingGreenTxt = stellarBladeShunYingGreenTxt;
+            StellarBladeShunYingRedTxt = stellarBladeShunYingRedTxt;
+            ViperStreetAlexTxt = viperStreetAlexTxt;
+            BasketballFanEmceeTxt = basketballFanEmceeTxt;
+            YakuzaShaYingTxt = yakuzaShaYingTxt;
+            ToonShadedGD05Txt = toonShadedGD05Txt;
+            BorsalinoMasaTxt = borsalinoMasaTxt;
+            CopGolemTxt = copGolemTxt;
+            PrinceTongYooTxt = princeTongYooTxt;
+            AlexHawkTxt = alexHawkTxt;
+            ZachBlackKimonoTxt = zachBlackKimonoTxt;
+            KazumaKiryuBradUpdatedTxt = kazumaKiryuBradUpdatedTxt;
+            BlueDenimBradTxt = blueDenimBradTxt;
+            McKinzieWhiteCamoTxt = mcKinzieWhiteCamoTxt;
+            SatinInfernalJakeTxt = satinInfernalJakeTxt;
+            TribalBradTxt = tribalBradTxt;
+            StylishColinTxt = stylishColinTxt;
+            ViceMiguelTxt = viceMiguelTxt;
+            LanceVanceHiroTxt = lanceVanceHiroTxt;
+            LanceVanceLinfongTxt = lanceVanceLinfongTxt;
 
             WeaponsTxt = weaponsTxt;
             TitleScreenTxt = titleScreenTxt;
@@ -877,10 +945,40 @@ namespace UR_pnach_editor.Services
             public bool SteveFoxGraveTxt { get; set; } = SettingsClass.SteveFoxGraveTxt;
             public bool LinFongJokerTxt { get; set; } = SettingsClass.LinFongJokerTxt;
             public bool LawTailungTxt { get; set; } = SettingsClass.LawTailungTxt;
-            public bool SeuMadrugaMiguelTxt { get; set; } = SettingsClass.SeuMadrugaMiguelTxt;
+            public bool SeuMadrugaRamonTxt { get; set; } = SettingsClass.SeuMadrugaRamonTxt;
             public bool AlexNeganTxt { get; set; } = SettingsClass.AlexNeganTxt;
             public bool ParkCustomTxt { get; set; } = SettingsClass.ParkCustomTxt;
+            public bool BradWhiteSnakeTxt { get; set; } = SettingsClass.BradWhiteSnakeTxt;
+            public bool CasualGrimGreenTxt { get; set; } = SettingsClass.CasualGrimGreenTxt;
+            public bool CasualGrimGreyTxt { get; set; } = SettingsClass.CasualGrimGreyTxt;
 
+            public bool BoxerWannabeBkTxt { get; set; } = SettingsClass.BoxerWannabeBkTxt;
+            public bool WingedSkullRamonTxt { get; set; } = SettingsClass.WingedSkullRamonTxt;
+            public bool HoodGuyRamonTxt { get; set; } = SettingsClass.HoodGuyRamonTxt;
+            public bool Persona3TongYoon1Txt { get; set; } = SettingsClass.Persona3TongYoon1Txt;
+            public bool Persona3TongYoon2Txt { get; set; } = SettingsClass.Persona3TongYoon2Txt;
+            public bool Persona3TongYoon3Txt { get; set; } = SettingsClass.Persona3TongYoon3Txt;
+            public bool LolaYingTxt { get; set; } = SettingsClass.LolaYingTxt;
+            public bool StellarBladeShunYingGreenTxt { get; set; } = SettingsClass.StellarBladeShunYingGreenTxt;
+            public bool StellarBladeShunYingRedTxt { get; set; } = SettingsClass.StellarBladeShunYingRedTxt;
+            public bool ViperStreetAlexTxt { get; set; } = SettingsClass.ViperStreetAlexTxt;
+            public bool BasketballFanEmceeTxt { get; set; } = SettingsClass.BasketballFanEmceeTxt;
+            public bool YakuzaShaYingTxt { get; set; } = SettingsClass.YakuzaShaYingTxt;
+            public bool ToonShadedGD05Txt { get; set; } = SettingsClass.ToonShadedGD05Txt;
+            public bool BorsalinoMasaTxt { get; set; } = SettingsClass.BorsalinoMasaTxt;
+            public bool CopGolemTxt { get; set; } = SettingsClass.CopGolemTxt;
+            public bool PrinceTongYooTxt { get; set; } = SettingsClass.PrinceTongYooTxt;
+            public bool AlexHawkTxt { get; set; } = SettingsClass.AlexHawkTxt;
+            public bool ZachBlackKimonoTxt { get; set; } = SettingsClass.ZachBlackKimonoTxt;
+            public bool KazumaKiryuBradUpdatedTxt { get; set; } = SettingsClass.KazumaKiryuBradUpdatedTxt;
+            public bool BlueDenimBradTxt { get; set; } = SettingsClass.BlueDenimBradTxt;
+            public bool McKinzieWhiteCamoTxt { get; set; } = SettingsClass.McKinzieWhiteCamoTxt;
+            public bool SatinInfernalJakeTxt { get; set; } = SettingsClass.SatinInfernalJakeTxt;
+            public bool TribalBradTxt { get; set; } = SettingsClass.TribalBradTxt;
+            public bool StylishColinTxt { get; set; } = SettingsClass.StylishColinTxt;
+            public bool ViceMiguelTxt { get; set; } = SettingsClass.ViceMiguelTxt;
+            public bool LanceVanceHiroTxt { get; set; } = SettingsClass.LanceVanceHiroTxt;
+            public bool LanceVanceLinfongTxt { get; set; } = SettingsClass.LanceVanceLinfongTxt;
 
 
             public bool WeaponsTxt { get; set; } = SettingsClass.WeaponsTxt;
@@ -1158,9 +1256,41 @@ namespace UR_pnach_editor.Services
                 SteveFoxGraveTxt = Settings.SteveFoxGraveTxt;
                 LinFongJokerTxt = Settings.LinFongJokerTxt;
                 LawTailungTxt = Settings.LawTailungTxt;
-                SeuMadrugaMiguelTxt = Settings.SeuMadrugaMiguelTxt;
+                SeuMadrugaRamonTxt = Settings.SeuMadrugaRamonTxt;
                 AlexNeganTxt = Settings.AlexNeganTxt;
                 ParkCustomTxt = Settings.ParkCustomTxt;
+                BradWhiteSnakeTxt = Settings.BradWhiteSnakeTxt;
+                CasualGrimGreenTxt = Settings.CasualGrimGreenTxt;
+                CasualGrimGreyTxt = Settings.CasualGrimGreyTxt;
+
+                BoxerWannabeBkTxt = Settings.BoxerWannabeBkTxt;
+                WingedSkullRamonTxt = Settings.WingedSkullRamonTxt;
+                HoodGuyRamonTxt = Settings.HoodGuyRamonTxt;
+                Persona3TongYoon1Txt = Settings.Persona3TongYoon1Txt;
+                Persona3TongYoon2Txt = Settings.Persona3TongYoon2Txt;
+                Persona3TongYoon3Txt = Settings.Persona3TongYoon3Txt;
+                LolaYingTxt = Settings.LolaYingTxt;
+                StellarBladeShunYingGreenTxt = Settings.StellarBladeShunYingGreenTxt;
+                StellarBladeShunYingRedTxt = Settings.StellarBladeShunYingRedTxt;
+                ViperStreetAlexTxt = Settings.ViperStreetAlexTxt;
+                BasketballFanEmceeTxt = Settings.BasketballFanEmceeTxt;
+                YakuzaShaYingTxt = Settings.YakuzaShaYingTxt;
+                ToonShadedGD05Txt = Settings.ToonShadedGD05Txt;
+                BorsalinoMasaTxt = Settings.BorsalinoMasaTxt;
+                CopGolemTxt = Settings.CopGolemTxt;
+                PrinceTongYooTxt = Settings.PrinceTongYooTxt;
+                AlexHawkTxt = Settings.AlexHawkTxt;
+                ZachBlackKimonoTxt = Settings.ZachBlackKimonoTxt;
+                KazumaKiryuBradUpdatedTxt = Settings.KazumaKiryuBradUpdatedTxt;
+                BlueDenimBradTxt = Settings.BlueDenimBradTxt;
+                McKinzieWhiteCamoTxt = Settings.McKinzieWhiteCamoTxt;
+                SatinInfernalJakeTxt = Settings.SatinInfernalJakeTxt;
+                TribalBradTxt = Settings.TribalBradTxt;
+                StylishColinTxt = Settings.StylishColinTxt;
+                ViceMiguelTxt = Settings.ViceMiguelTxt;
+                LanceVanceHiroTxt = Settings.LanceVanceHiroTxt;
+                LanceVanceLinfongTxt = Settings.LanceVanceLinfongTxt;
+
 
                 WeaponsTxt = Settings.WeaponsTxt;
                 TitleScreenTxt = Settings.TitleScreenTxt;
@@ -1464,9 +1594,40 @@ namespace UR_pnach_editor.Services
             Settings.SteveFoxGraveTxt = SteveFoxGraveTxt;
             Settings.LinFongJokerTxt = LinFongJokerTxt;
             Settings.LawTailungTxt = LawTailungTxt;
-            Settings.SeuMadrugaMiguelTxt = SeuMadrugaMiguelTxt;
+            Settings.SeuMadrugaRamonTxt = SeuMadrugaRamonTxt;
             Settings.AlexNeganTxt = AlexNeganTxt;
             Settings.ParkCustomTxt = ParkCustomTxt;
+            Settings.BradWhiteSnakeTxt = BradWhiteSnakeTxt;
+            Settings.CasualGrimGreenTxt = CasualGrimGreenTxt;
+            Settings.CasualGrimGreyTxt = CasualGrimGreyTxt;
+
+            Settings.BoxerWannabeBkTxt = BoxerWannabeBkTxt;
+            Settings.WingedSkullRamonTxt = WingedSkullRamonTxt;
+            Settings.HoodGuyRamonTxt = HoodGuyRamonTxt;
+            Settings.Persona3TongYoon1Txt = Persona3TongYoon1Txt;
+            Settings.Persona3TongYoon2Txt = Persona3TongYoon2Txt;
+            Settings.Persona3TongYoon3Txt = Persona3TongYoon3Txt;
+            Settings.LolaYingTxt = LolaYingTxt;
+            Settings.StellarBladeShunYingGreenTxt = StellarBladeShunYingGreenTxt;
+            Settings.StellarBladeShunYingRedTxt = StellarBladeShunYingRedTxt;
+            Settings.ViperStreetAlexTxt = ViperStreetAlexTxt;
+            Settings.BasketballFanEmceeTxt = BasketballFanEmceeTxt;
+            Settings.YakuzaShaYingTxt = YakuzaShaYingTxt;
+            Settings.ToonShadedGD05Txt = ToonShadedGD05Txt;
+            Settings.BorsalinoMasaTxt = BorsalinoMasaTxt;
+            Settings.CopGolemTxt = CopGolemTxt;
+            Settings.PrinceTongYooTxt = PrinceTongYooTxt;
+            Settings.AlexHawkTxt = AlexHawkTxt;
+            Settings.ZachBlackKimonoTxt = ZachBlackKimonoTxt;
+            Settings.KazumaKiryuBradUpdatedTxt = KazumaKiryuBradUpdatedTxt;
+            Settings.BlueDenimBradTxt = BlueDenimBradTxt;
+            Settings.McKinzieWhiteCamoTxt = McKinzieWhiteCamoTxt;
+            Settings.SatinInfernalJakeTxt = SatinInfernalJakeTxt;
+            Settings.TribalBradTxt = TribalBradTxt;
+            Settings.StylishColinTxt = StylishColinTxt;
+            Settings.ViceMiguelTxt = ViceMiguelTxt;
+            Settings.LanceVanceHiroTxt = LanceVanceHiroTxt;
+            Settings.LanceVanceLinfongTxt = LanceVanceLinfongTxt;
 
             Settings.StatsChanged = StatsChanged;
             Settings.PageEnterSFX = PageEnterSFX;

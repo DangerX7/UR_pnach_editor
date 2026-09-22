@@ -1,14 +1,15 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using System.Collections.ObjectModel;
-using System.IO;
 using System.Windows;
+using System.Windows.Media.TextFormatting;
 using UR_pnach_editor.Services;
-using System.Drawing;
 
 namespace UR_pnach_editor.ViewModels
 {
@@ -209,9 +210,40 @@ namespace UR_pnach_editor.ViewModels
             SteveFoxGraveTxt = SettingsClass.SteveFoxGraveTxt;
             LinFongJokerTxt = SettingsClass.LinFongJokerTxt;
             LawTailungTxt = SettingsClass.LawTailungTxt;
-            SeuMadrugaMiguelTxt = SettingsClass.SeuMadrugaMiguelTxt;
+            SeuMadrugaRamonTxt = SettingsClass.SeuMadrugaRamonTxt;
             AlexNeganTxt = SettingsClass.AlexNeganTxt;
             ParkCustomTxt = SettingsClass.ParkCustomTxt;
+            BradWhiteSnakeTxt = SettingsClass.BradWhiteSnakeTxt;
+            CasualGrimGreenTxt = SettingsClass.CasualGrimGreenTxt;
+            CasualGrimGreyTxt = SettingsClass.CasualGrimGreyTxt;
+
+            BoxerWannabeBkTxt = SettingsClass.BoxerWannabeBkTxt;
+            WingedSkullRamonTxt = SettingsClass.WingedSkullRamonTxt;
+            HoodGuyRamonTxt = SettingsClass.HoodGuyRamonTxt;
+            Persona3TongYoon1Txt = SettingsClass.Persona3TongYoon1Txt;
+            Persona3TongYoon2Txt = SettingsClass.Persona3TongYoon2Txt;
+            Persona3TongYoon3Txt = SettingsClass.Persona3TongYoon3Txt;
+            LolaYingTxt = SettingsClass.LolaYingTxt;
+            StellarBladeShunYingGreenTxt = SettingsClass.StellarBladeShunYingGreenTxt;
+            StellarBladeShunYingRedTxt = SettingsClass.StellarBladeShunYingRedTxt;
+            ViperStreetAlexTxt = SettingsClass.ViperStreetAlexTxt;
+            BasketballFanEmceeTxt = SettingsClass.BasketballFanEmceeTxt;
+            YakuzaShaYingTxt = SettingsClass.YakuzaShaYingTxt;
+            ToonShadedGD05Txt = SettingsClass.ToonShadedGD05Txt;
+            BorsalinoMasaTxt = SettingsClass.BorsalinoMasaTxt;
+            CopGolemTxt = SettingsClass.CopGolemTxt;
+            PrinceTongYooTxt = SettingsClass.PrinceTongYooTxt;
+            AlexHawkTxt = SettingsClass.AlexHawkTxt;
+            ZachBlackKimonoTxt = SettingsClass.ZachBlackKimonoTxt;
+            KazumaKiryuBradUpdatedTxt = SettingsClass.KazumaKiryuBradUpdatedTxt;
+            BlueDenimBradTxt = SettingsClass.BlueDenimBradTxt;
+            McKinzieWhiteCamoTxt = SettingsClass.McKinzieWhiteCamoTxt;
+            SatinInfernalJakeTxt = SettingsClass.SatinInfernalJakeTxt;
+            TribalBradTxt = SettingsClass.TribalBradTxt;
+            StylishColinTxt = SettingsClass.StylishColinTxt;
+            ViceMiguelTxt = SettingsClass.ViceMiguelTxt;
+            LanceVanceHiroTxt = SettingsClass.LanceVanceHiroTxt;
+            LanceVanceLinfongTxt = SettingsClass.LanceVanceLinfongTxt;
 
             TitleScreenTxt = SettingsClass.TitleScreenTxt;
             WarehouseTxt = SettingsClass.WarehouseTxt;
@@ -323,15 +355,23 @@ namespace UR_pnach_editor.ViewModels
                         _blackHawkTxt = false;
                         _bradBlackTxt = false;
                         _bradBen10Txt = false;
+                        _bradWhiteSnakeTxt = false;
+                        _kazumaKiryuBradUpdatedTxt = false;
+                        _blueDenimBradTxt = false;
+                        _tribalBradTxt = false;
                         RaisePropertyChanged("SH2JamesTxt");
                         RaisePropertyChanged("MaskedDemonBradTxt");
                         RaisePropertyChanged("KazumaKiryuBradTxt");
                         RaisePropertyChanged("BradfromGymTxt");
                         RaisePropertyChanged("SpecialAgentBradHawkTxt");
-                        RaisePropertyChanged("GovernmentAgentBradHawkTxt"); 
+                        RaisePropertyChanged("GovernmentAgentBradHawkTxt");
                         RaisePropertyChanged("BlackHawkTxt");
                         RaisePropertyChanged("BradBlackTxt");
                         RaisePropertyChanged("BradBen10Txt");
+                        RaisePropertyChanged("BradWhiteSnakeTxt");
+                        RaisePropertyChanged("KazumaKiryuBradUpdatedTxt");
+                        RaisePropertyChanged("BlueDenimBradTxt");
+                        RaisePropertyChanged("TribalBradTxt");
                         SettingsClass.SH2JamesTxt = false;
                         SettingsClass.MaskedDemonBradTxt = false;
                         SettingsClass.KazumaKiryuBradTxt = false;
@@ -341,6 +381,10 @@ namespace UR_pnach_editor.ViewModels
                         SettingsClass.BlackHawkTxt = false;
                         SettingsClass.BradBlackTxt = false;
                         SettingsClass.BradBen10Txt = false;
+                        SettingsClass.BradWhiteSnakeTxt = false;
+                        SettingsClass.KazumaKiryuBradUpdatedTxt = false;
+                        SettingsClass.BlueDenimBradTxt = false;
+                        SettingsClass.TribalBradTxt = false;
                     }
                 }
             }
@@ -369,6 +413,10 @@ namespace UR_pnach_editor.ViewModels
                         _blackHawkTxt = false;
                         _bradBlackTxt = false;
                         _bradBen10Txt = false;
+                        _bradWhiteSnakeTxt = false;
+                        _kazumaKiryuBradUpdatedTxt = false;
+                        _blueDenimBradTxt = false;
+                        _tribalBradTxt = false;
                         RaisePropertyChanged("CollegeBoyBradTxt");
                         RaisePropertyChanged("MaskedDemonBradTxt");
                         RaisePropertyChanged("KazumaKiryuBradTxt");
@@ -378,6 +426,10 @@ namespace UR_pnach_editor.ViewModels
                         RaisePropertyChanged("BlackHawkTxt");
                         RaisePropertyChanged("BradBlackTxt");
                         RaisePropertyChanged("BradBen10Txt");
+                        RaisePropertyChanged("BradWhiteSnakeTxt");
+                        RaisePropertyChanged("KazumaKiryuBradUpdatedTxt");
+                        RaisePropertyChanged("BlueDenimBradTxt");
+                        RaisePropertyChanged("TribalBradTxt");
                         SettingsClass.CollegeBoyBradTxt = false;
                         SettingsClass.MaskedDemonBradTxt = false;
                         SettingsClass.KazumaKiryuBradTxt = false;
@@ -387,6 +439,10 @@ namespace UR_pnach_editor.ViewModels
                         SettingsClass.BlackHawkTxt = false;
                         SettingsClass.BradBlackTxt = false;
                         SettingsClass.BradBen10Txt = false;
+                        SettingsClass.BradWhiteSnakeTxt = false;
+                        SettingsClass.KazumaKiryuBradUpdatedTxt = false;
+                        SettingsClass.BlueDenimBradTxt = false;
+                        SettingsClass.TribalBradTxt = false;
                     }
                 }
             }
@@ -415,6 +471,10 @@ namespace UR_pnach_editor.ViewModels
                         _blackHawkTxt = false;
                         _bradBlackTxt = false;
                         _bradBen10Txt = false;
+                        _bradWhiteSnakeTxt = false;
+                        _kazumaKiryuBradUpdatedTxt = false;
+                        _blueDenimBradTxt = false;
+                        _tribalBradTxt = false;
                         RaisePropertyChanged("CollegeBoyBradTxt");
                         RaisePropertyChanged("SH2JamesTxt");
                         RaisePropertyChanged("KazumaKiryuBradTxt");
@@ -424,6 +484,10 @@ namespace UR_pnach_editor.ViewModels
                         RaisePropertyChanged("BlackHawkTxt");
                         RaisePropertyChanged("BradBlackTxt");
                         RaisePropertyChanged("BradBen10Txt");
+                        RaisePropertyChanged("BradWhiteSnakeTxt");
+                        RaisePropertyChanged("KazumaKiryuBradUpdatedTxt");
+                        RaisePropertyChanged("BlueDenimBradTxt");
+                        RaisePropertyChanged("TribalBradTxt");
                         SettingsClass.CollegeBoyBradTxt = false;
                         SettingsClass.SH2JamesTxt = false;
                         SettingsClass.KazumaKiryuBradTxt = false;
@@ -433,6 +497,10 @@ namespace UR_pnach_editor.ViewModels
                         SettingsClass.BlackHawkTxt = false;
                         SettingsClass.BradBlackTxt = false;
                         SettingsClass.BradBen10Txt = false;
+                        SettingsClass.BradWhiteSnakeTxt = false;
+                        SettingsClass.KazumaKiryuBradUpdatedTxt = false;
+                        SettingsClass.BlueDenimBradTxt = false;
+                        SettingsClass.TribalBradTxt = false;
                     }
                 }
             }
@@ -461,6 +529,10 @@ namespace UR_pnach_editor.ViewModels
                         _blackHawkTxt = false;
                         _bradBlackTxt = false;
                         _bradBen10Txt = false;
+                        _bradWhiteSnakeTxt = false;
+                        _kazumaKiryuBradUpdatedTxt = false;
+                        _blueDenimBradTxt = false;
+                        _tribalBradTxt = false;
                         RaisePropertyChanged("CollegeBoyBradTxt");
                         RaisePropertyChanged("SH2JamesTxt");
                         RaisePropertyChanged("MaskedDemonBradTxt");
@@ -470,6 +542,10 @@ namespace UR_pnach_editor.ViewModels
                         RaisePropertyChanged("BlackHawkTxt");
                         RaisePropertyChanged("BradBlackTxt");
                         RaisePropertyChanged("BradBen10Txt");
+                        RaisePropertyChanged("BradWhiteSnakeTxt");
+                        RaisePropertyChanged("KazumaKiryuBradUpdatedTxt");
+                        RaisePropertyChanged("BlueDenimBradTxt");
+                        RaisePropertyChanged("TribalBradTxt");
                         SettingsClass.CollegeBoyBradTxt = false;
                         SettingsClass.SH2JamesTxt = false;
                         SettingsClass.MaskedDemonBradTxt = false;
@@ -479,6 +555,10 @@ namespace UR_pnach_editor.ViewModels
                         SettingsClass.BlackHawkTxt = false;
                         SettingsClass.BradBlackTxt = false;
                         SettingsClass.BradBen10Txt = false;
+                        SettingsClass.BradWhiteSnakeTxt = false;
+                        SettingsClass.KazumaKiryuBradUpdatedTxt = false;
+                        SettingsClass.BlueDenimBradTxt = false;
+                        SettingsClass.TribalBradTxt = false;
                     }
                 }
             }
@@ -507,6 +587,10 @@ namespace UR_pnach_editor.ViewModels
                         _blackHawkTxt = false;
                         _bradBlackTxt = false;
                         _bradBen10Txt = false;
+                        _bradWhiteSnakeTxt = false;
+                        _kazumaKiryuBradUpdatedTxt = false;
+                        _blueDenimBradTxt = false;
+                        _tribalBradTxt = false;
                         RaisePropertyChanged("CollegeBoyBradTxt");
                         RaisePropertyChanged("SH2JamesTxt");
                         RaisePropertyChanged("MaskedDemonBradTxt");
@@ -516,6 +600,10 @@ namespace UR_pnach_editor.ViewModels
                         RaisePropertyChanged("BlackHawkTxt");
                         RaisePropertyChanged("BradBlackTxt");
                         RaisePropertyChanged("BradBen10Txt");
+                        RaisePropertyChanged("BradWhiteSnakeTxt");
+                        RaisePropertyChanged("KazumaKiryuBradUpdatedTxt");
+                        RaisePropertyChanged("BlueDenimBradTxt");
+                        RaisePropertyChanged("TribalBradTxt");
                         SettingsClass.CollegeBoyBradTxt = false;
                         SettingsClass.SH2JamesTxt = false;
                         SettingsClass.MaskedDemonBradTxt = false;
@@ -525,6 +613,10 @@ namespace UR_pnach_editor.ViewModels
                         SettingsClass.BlackHawkTxt = false;
                         SettingsClass.BradBlackTxt = false;
                         SettingsClass.BradBen10Txt = false;
+                        SettingsClass.BradWhiteSnakeTxt = false;
+                        SettingsClass.KazumaKiryuBradUpdatedTxt = false;
+                        SettingsClass.BlueDenimBradTxt = false;
+                        SettingsClass.TribalBradTxt = false;
                     }
                 }
             }
@@ -553,6 +645,10 @@ namespace UR_pnach_editor.ViewModels
                         _blackHawkTxt = false;
                         _bradBlackTxt = false;
                         _bradBen10Txt = false;
+                        _bradWhiteSnakeTxt = false;
+                        _kazumaKiryuBradUpdatedTxt = false;
+                        _blueDenimBradTxt = false;
+                        _tribalBradTxt = false;
                         RaisePropertyChanged("CollegeBoyBradTxt");
                         RaisePropertyChanged("SH2JamesTxt");
                         RaisePropertyChanged("MaskedDemonBradTxt");
@@ -562,6 +658,10 @@ namespace UR_pnach_editor.ViewModels
                         RaisePropertyChanged("BlackHawkTxt");
                         RaisePropertyChanged("BradBlackTxt");
                         RaisePropertyChanged("BradBen10Txt");
+                        RaisePropertyChanged("BradWhiteSnakeTxt");
+                        RaisePropertyChanged("KazumaKiryuBradUpdatedTxt");
+                        RaisePropertyChanged("BlueDenimBradTxt");
+                        RaisePropertyChanged("TribalBradTxt");
                         SettingsClass.CollegeBoyBradTxt = false;
                         SettingsClass.SH2JamesTxt = false;
                         SettingsClass.MaskedDemonBradTxt = false;
@@ -571,6 +671,10 @@ namespace UR_pnach_editor.ViewModels
                         SettingsClass.BlackHawkTxt = false;
                         SettingsClass.BradBlackTxt = false;
                         SettingsClass.BradBen10Txt = false;
+                        SettingsClass.BradWhiteSnakeTxt = false;
+                        SettingsClass.KazumaKiryuBradUpdatedTxt = false;
+                        SettingsClass.BlueDenimBradTxt = false;
+                        SettingsClass.TribalBradTxt = false;
                     }
                 }
             }
@@ -599,6 +703,10 @@ namespace UR_pnach_editor.ViewModels
                         _blackHawkTxt = false;
                         _bradBlackTxt = false;
                         _bradBen10Txt = false;
+                        _bradWhiteSnakeTxt = false;
+                        _kazumaKiryuBradUpdatedTxt = false;
+                        _blueDenimBradTxt = false;
+                        _tribalBradTxt = false;
                         RaisePropertyChanged("CollegeBoyBradTxt");
                         RaisePropertyChanged("SH2JamesTxt");
                         RaisePropertyChanged("MaskedDemonBradTxt");
@@ -608,6 +716,10 @@ namespace UR_pnach_editor.ViewModels
                         RaisePropertyChanged("BlackHawkTxt");
                         RaisePropertyChanged("BradBlackTxt");
                         RaisePropertyChanged("BradBen10Txt");
+                        RaisePropertyChanged("BradWhiteSnakeTxt");
+                        RaisePropertyChanged("KazumaKiryuBradUpdatedTxt");
+                        RaisePropertyChanged("BlueDenimBradTxt");
+                        RaisePropertyChanged("TribalBradTxt");
                         SettingsClass.CollegeBoyBradTxt = false;
                         SettingsClass.SH2JamesTxt = false;
                         SettingsClass.MaskedDemonBradTxt = false;
@@ -617,6 +729,10 @@ namespace UR_pnach_editor.ViewModels
                         SettingsClass.BlackHawkTxt = false;
                         SettingsClass.BradBlackTxt = false;
                         SettingsClass.BradBen10Txt = false;
+                        SettingsClass.BradWhiteSnakeTxt = false;
+                        SettingsClass.KazumaKiryuBradUpdatedTxt = false;
+                        SettingsClass.BlueDenimBradTxt = false;
+                        SettingsClass.TribalBradTxt = false;
                     }
                 }
             }
@@ -645,6 +761,10 @@ namespace UR_pnach_editor.ViewModels
                         _governmentAgentBradHawkTxt = false;
                         _bradBlackTxt = false;
                         _bradBen10Txt = false;
+                        _bradWhiteSnakeTxt = false;
+                        _kazumaKiryuBradUpdatedTxt = false;
+                        _blueDenimBradTxt = false;
+                        _tribalBradTxt = false;
                         RaisePropertyChanged("CollegeBoyBradTxt");
                         RaisePropertyChanged("SH2JamesTxt");
                         RaisePropertyChanged("MaskedDemonBradTxt");
@@ -654,6 +774,10 @@ namespace UR_pnach_editor.ViewModels
                         RaisePropertyChanged("GovernmentAgentBradHawkTxt");
                         RaisePropertyChanged("BradBlackTxt");
                         RaisePropertyChanged("BradBen10Txt");
+                        RaisePropertyChanged("BradWhiteSnakeTxt");
+                        RaisePropertyChanged("KazumaKiryuBradUpdatedTxt");
+                        RaisePropertyChanged("BlueDenimBradTxt");
+                        RaisePropertyChanged("TribalBradTxt");
                         SettingsClass.CollegeBoyBradTxt = false;
                         SettingsClass.SH2JamesTxt = false;
                         SettingsClass.MaskedDemonBradTxt = false;
@@ -663,6 +787,10 @@ namespace UR_pnach_editor.ViewModels
                         SettingsClass.GovernmentAgentBradHawkTxt = false;
                         SettingsClass.BradBlackTxt = false;
                         SettingsClass.BradBen10Txt = false;
+                        SettingsClass.BradWhiteSnakeTxt = false;
+                        SettingsClass.KazumaKiryuBradUpdatedTxt = false;
+                        SettingsClass.BlueDenimBradTxt = false;
+                        SettingsClass.TribalBradTxt = false;
                     }
                 }
             }
@@ -691,6 +819,10 @@ namespace UR_pnach_editor.ViewModels
                         _governmentAgentBradHawkTxt = false;
                         _blackHawkTxt = false;
                         _bradBen10Txt = false;
+                        _bradWhiteSnakeTxt = false;
+                        _kazumaKiryuBradUpdatedTxt = false;
+                        _blueDenimBradTxt = false;
+                        _tribalBradTxt = false;
                         RaisePropertyChanged("CollegeBoyBradTxt");
                         RaisePropertyChanged("SH2JamesTxt");
                         RaisePropertyChanged("MaskedDemonBradTxt");
@@ -700,6 +832,10 @@ namespace UR_pnach_editor.ViewModels
                         RaisePropertyChanged("GovernmentAgentBradHawkTxt");
                         RaisePropertyChanged("BlackHawkTxt");
                         RaisePropertyChanged("BradBen10Txt");
+                        RaisePropertyChanged("BradWhiteSnakeTxt");
+                        RaisePropertyChanged("KazumaKiryuBradUpdatedTxt");
+                        RaisePropertyChanged("BlueDenimBradTxt");
+                        RaisePropertyChanged("TribalBradTxt");
                         SettingsClass.CollegeBoyBradTxt = false;
                         SettingsClass.SH2JamesTxt = false;
                         SettingsClass.MaskedDemonBradTxt = false;
@@ -709,6 +845,10 @@ namespace UR_pnach_editor.ViewModels
                         SettingsClass.GovernmentAgentBradHawkTxt = false;
                         SettingsClass.BlackHawkTxt = false;
                         SettingsClass.BradBen10Txt = false;
+                        SettingsClass.BradWhiteSnakeTxt = false;
+                        SettingsClass.KazumaKiryuBradUpdatedTxt = false;
+                        SettingsClass.BlueDenimBradTxt = false;
+                        SettingsClass.TribalBradTxt = false;
                     }
                 }
             }
@@ -737,6 +877,10 @@ namespace UR_pnach_editor.ViewModels
                         _governmentAgentBradHawkTxt = false;
                         _blackHawkTxt = false;
                         _bradBlackTxt = false;
+                        _bradWhiteSnakeTxt = false;
+                        _kazumaKiryuBradUpdatedTxt = false;
+                        _blueDenimBradTxt = false;
+                        _tribalBradTxt = false;
                         RaisePropertyChanged("CollegeBoyBradTxt");
                         RaisePropertyChanged("SH2JamesTxt");
                         RaisePropertyChanged("MaskedDemonBradTxt");
@@ -746,6 +890,10 @@ namespace UR_pnach_editor.ViewModels
                         RaisePropertyChanged("GovernmentAgentBradHawkTxt");
                         RaisePropertyChanged("BlackHawkTxt");
                         RaisePropertyChanged("BradBlackTxt");
+                        RaisePropertyChanged("BradWhiteSnakeTxt");
+                        RaisePropertyChanged("KazumaKiryuBradUpdatedTxt");
+                        RaisePropertyChanged("BlueDenimBradTxt");
+                        RaisePropertyChanged("TribalBradTxt");
                         SettingsClass.CollegeBoyBradTxt = false;
                         SettingsClass.SH2JamesTxt = false;
                         SettingsClass.MaskedDemonBradTxt = false;
@@ -755,10 +903,247 @@ namespace UR_pnach_editor.ViewModels
                         SettingsClass.GovernmentAgentBradHawkTxt = false;
                         SettingsClass.BlackHawkTxt = false;
                         SettingsClass.BradBlackTxt = false;
+                        SettingsClass.BradWhiteSnakeTxt = false;
+                        SettingsClass.KazumaKiryuBradUpdatedTxt = false;
+                        SettingsClass.BlueDenimBradTxt = false;
+                        SettingsClass.TribalBradTxt = false;
                     }
                 }
             }
         }
+
+        private bool _bradWhiteSnakeTxt;
+
+        public bool BradWhiteSnakeTxt
+        {
+            get { return _bradWhiteSnakeTxt; }
+            set
+            {
+                if (_bradWhiteSnakeTxt != value)
+                {
+                    _bradWhiteSnakeTxt = value;
+                    SettingsClass.BradWhiteSnakeTxt = _bradWhiteSnakeTxt;
+                    RaisePropertyChanged("BradWhiteSnakeTxt");
+                    if (_bradWhiteSnakeTxt)
+                    {
+                        _collegeBoyBradTxt = false;
+                        _sH2JamesTxt = false;
+                        _maskedDemonBradTxt = false;
+                        _kazumaKiryuBradTxt = false;
+                        _bradfromGymTxt = false;
+                        _specialAgentBradHawkTxt = false;
+                        _governmentAgentBradHawkTxt = false;
+                        _blackHawkTxt = false;
+                        _bradBlackTxt = false;
+                        _bradBen10Txt = false;
+                        _kazumaKiryuBradUpdatedTxt = false;
+                        _blueDenimBradTxt = false;
+                        _tribalBradTxt = false;
+                        RaisePropertyChanged("CollegeBoyBradTxt");
+                        RaisePropertyChanged("SH2JamesTxt");
+                        RaisePropertyChanged("MaskedDemonBradTxt");
+                        RaisePropertyChanged("KazumaKiryuBradTxt");
+                        RaisePropertyChanged("BradfromGymTxt");
+                        RaisePropertyChanged("SpecialAgentBradHawkTxt");
+                        RaisePropertyChanged("GovernmentAgentBradHawkTxt");
+                        RaisePropertyChanged("BlackHawkTxt");
+                        RaisePropertyChanged("BradBlackTxt");
+                        RaisePropertyChanged("BradBen10Txt");
+                        RaisePropertyChanged("KazumaKiryuBradUpdatedTxt");
+                        RaisePropertyChanged("BlueDenimBradTxt");
+                        RaisePropertyChanged("TribalBradTxt");
+                        SettingsClass.CollegeBoyBradTxt = false;
+                        SettingsClass.SH2JamesTxt = false;
+                        SettingsClass.MaskedDemonBradTxt = false;
+                        SettingsClass.KazumaKiryuBradTxt = false;
+                        SettingsClass.BradfromGymTxt = false;
+                        SettingsClass.SpecialAgentBradHawkTxt = false;
+                        SettingsClass.GovernmentAgentBradHawkTxt = false;
+                        SettingsClass.BlackHawkTxt = false;
+                        SettingsClass.BradBlackTxt = false;
+                        SettingsClass.BradBen10Txt = false;
+                        SettingsClass.KazumaKiryuBradUpdatedTxt = false;
+                        SettingsClass.BlueDenimBradTxt = false;
+                        SettingsClass.TribalBradTxt = false;
+                    }
+                }
+            }
+        }
+
+        private bool _kazumaKiryuBradUpdatedTxt;
+
+        public bool KazumaKiryuBradUpdatedTxt
+        {
+            get { return _kazumaKiryuBradUpdatedTxt; }
+            set
+            {
+                if (_kazumaKiryuBradUpdatedTxt != value)
+                {
+                    _kazumaKiryuBradUpdatedTxt = value;
+                    SettingsClass.KazumaKiryuBradUpdatedTxt = _kazumaKiryuBradUpdatedTxt;
+                    RaisePropertyChanged("KazumaKiryuBradUpdatedTxt");
+                    if (_kazumaKiryuBradUpdatedTxt)
+                    {
+                        _collegeBoyBradTxt = false;
+                        _sH2JamesTxt = false;
+                        _maskedDemonBradTxt = false;
+                        _kazumaKiryuBradTxt = false;
+                        _bradfromGymTxt = false;
+                        _specialAgentBradHawkTxt = false;
+                        _governmentAgentBradHawkTxt = false;
+                        _blackHawkTxt = false;
+                        _bradBlackTxt = false;
+                        _bradBen10Txt = false;
+                        _bradWhiteSnakeTxt = false;
+                        _blueDenimBradTxt = false;
+                        _tribalBradTxt = false;
+                        RaisePropertyChanged("CollegeBoyBradTxt");
+                        RaisePropertyChanged("SH2JamesTxt");
+                        RaisePropertyChanged("MaskedDemonBradTxt");
+                        RaisePropertyChanged("KazumaKiryuBradTxt");
+                        RaisePropertyChanged("BradfromGymTxt");
+                        RaisePropertyChanged("SpecialAgentBradHawkTxt");
+                        RaisePropertyChanged("GovernmentAgentBradHawkTxt");
+                        RaisePropertyChanged("BlackHawkTxt");
+                        RaisePropertyChanged("BradBlackTxt");
+                        RaisePropertyChanged("BradBen10Txt");
+                        RaisePropertyChanged("BradWhiteSnakeTxt");
+                        RaisePropertyChanged("BlueDenimBradTxt");
+                        RaisePropertyChanged("TribalBradTxt");
+                        SettingsClass.CollegeBoyBradTxt = false;
+                        SettingsClass.SH2JamesTxt = false;
+                        SettingsClass.MaskedDemonBradTxt = false;
+                        SettingsClass.KazumaKiryuBradTxt = false;
+                        SettingsClass.BradfromGymTxt = false;
+                        SettingsClass.SpecialAgentBradHawkTxt = false;
+                        SettingsClass.GovernmentAgentBradHawkTxt = false;
+                        SettingsClass.BlackHawkTxt = false;
+                        SettingsClass.BradBlackTxt = false;
+                        SettingsClass.BradBen10Txt = false;
+                        SettingsClass.BradWhiteSnakeTxt = false;
+                        SettingsClass.BlueDenimBradTxt = false;
+                        SettingsClass.TribalBradTxt = false;
+                    }
+                }
+            }
+        }
+
+        private bool _blueDenimBradTxt;
+
+        public bool BlueDenimBradTxt
+        {
+            get { return _blueDenimBradTxt; }
+            set
+            {
+                if (_blueDenimBradTxt != value)
+                {
+                    _blueDenimBradTxt = value;
+                    SettingsClass.BlueDenimBradTxt = _blueDenimBradTxt;
+                    RaisePropertyChanged("BlueDenimBradTxt");
+                    if (_blueDenimBradTxt)
+                    {
+                        _collegeBoyBradTxt = false;
+                        _sH2JamesTxt = false;
+                        _maskedDemonBradTxt = false;
+                        _kazumaKiryuBradTxt = false;
+                        _bradfromGymTxt = false;
+                        _specialAgentBradHawkTxt = false;
+                        _governmentAgentBradHawkTxt = false;
+                        _blackHawkTxt = false;
+                        _bradBlackTxt = false;
+                        _bradBen10Txt = false;
+                        _bradWhiteSnakeTxt = false;
+                        _kazumaKiryuBradUpdatedTxt = false;
+                        _tribalBradTxt = false;
+                        RaisePropertyChanged("CollegeBoyBradTxt");
+                        RaisePropertyChanged("SH2JamesTxt");
+                        RaisePropertyChanged("MaskedDemonBradTxt");
+                        RaisePropertyChanged("KazumaKiryuBradTxt");
+                        RaisePropertyChanged("BradfromGymTxt");
+                        RaisePropertyChanged("SpecialAgentBradHawkTxt");
+                        RaisePropertyChanged("GovernmentAgentBradHawkTxt");
+                        RaisePropertyChanged("BlackHawkTxt");
+                        RaisePropertyChanged("BradBlackTxt");
+                        RaisePropertyChanged("BradBen10Txt");
+                        RaisePropertyChanged("BradWhiteSnakeTxt");
+                        RaisePropertyChanged("KazumaKiryuBradUpdatedTxt");
+                        RaisePropertyChanged("TribalBradTxt");
+                        SettingsClass.CollegeBoyBradTxt = false;
+                        SettingsClass.SH2JamesTxt = false;
+                        SettingsClass.MaskedDemonBradTxt = false;
+                        SettingsClass.KazumaKiryuBradTxt = false;
+                        SettingsClass.BradfromGymTxt = false;
+                        SettingsClass.SpecialAgentBradHawkTxt = false;
+                        SettingsClass.GovernmentAgentBradHawkTxt = false;
+                        SettingsClass.BlackHawkTxt = false;
+                        SettingsClass.BradBlackTxt = false;
+                        SettingsClass.BradBen10Txt = false;
+                        SettingsClass.BradWhiteSnakeTxt = false;
+                        SettingsClass.KazumaKiryuBradUpdatedTxt = false;
+                        SettingsClass.TribalBradTxt = false;
+                    }
+                }
+            }
+        }
+
+        private bool _tribalBradTxt;
+
+        public bool TribalBradTxt
+        {
+            get { return _tribalBradTxt; }
+            set
+            {
+                if (_tribalBradTxt != value)
+                {
+                    _tribalBradTxt = value;
+                    SettingsClass.TribalBradTxt = _tribalBradTxt;
+                    RaisePropertyChanged("TribalBradTxt");
+                    if (_tribalBradTxt)
+                    {
+                        _collegeBoyBradTxt = false;
+                        _sH2JamesTxt = false;
+                        _maskedDemonBradTxt = false;
+                        _kazumaKiryuBradTxt = false;
+                        _bradfromGymTxt = false;
+                        _specialAgentBradHawkTxt = false;
+                        _governmentAgentBradHawkTxt = false;
+                        _blackHawkTxt = false;
+                        _bradBlackTxt = false;
+                        _bradBen10Txt = false;
+                        _bradWhiteSnakeTxt = false;
+                        _kazumaKiryuBradUpdatedTxt = false;
+                        _blueDenimBradTxt = false;
+                        RaisePropertyChanged("CollegeBoyBradTxt");
+                        RaisePropertyChanged("SH2JamesTxt");
+                        RaisePropertyChanged("MaskedDemonBradTxt");
+                        RaisePropertyChanged("KazumaKiryuBradTxt");
+                        RaisePropertyChanged("BradfromGymTxt");
+                        RaisePropertyChanged("SpecialAgentBradHawkTxt");
+                        RaisePropertyChanged("GovernmentAgentBradHawkTxt");
+                        RaisePropertyChanged("BlackHawkTxt");
+                        RaisePropertyChanged("BradBlackTxt");
+                        RaisePropertyChanged("BradBen10Txt");
+                        RaisePropertyChanged("BradWhiteSnakeTxt");
+                        RaisePropertyChanged("KazumaKiryuBradUpdatedTxt");
+                        RaisePropertyChanged("BlueDenimBradTxt");
+                        SettingsClass.CollegeBoyBradTxt = false;
+                        SettingsClass.SH2JamesTxt = false;
+                        SettingsClass.MaskedDemonBradTxt = false;
+                        SettingsClass.KazumaKiryuBradTxt = false;
+                        SettingsClass.BradfromGymTxt = false;
+                        SettingsClass.SpecialAgentBradHawkTxt = false;
+                        SettingsClass.GovernmentAgentBradHawkTxt = false;
+                        SettingsClass.BlackHawkTxt = false;
+                        SettingsClass.BradBlackTxt = false;
+                        SettingsClass.BradBen10Txt = false;
+                        SettingsClass.BradWhiteSnakeTxt = false;
+                        SettingsClass.KazumaKiryuBradUpdatedTxt = false;
+                        SettingsClass.BlueDenimBradTxt = false;
+                    }
+                }
+            }
+        }
+
         //03 - Glen*********************************************************
 
         private bool _glenSkin;
@@ -1001,8 +1386,11 @@ namespace UR_pnach_editor.ViewModels
                     if (_emCeeSkin)
                     {
                         _emCeeSkin2 = false;
+                        _basketballFanEmceeTxt = false;
                         RaisePropertyChanged("EmCeeSkin2");
+                        RaisePropertyChanged("BasketballFanEmceeTxt");
                         SettingsClass.EmCeeSkin2 = false;
+                        SettingsClass.BasketballFanEmceeTxt = false;
                     }
                 }
             }
@@ -1023,8 +1411,36 @@ namespace UR_pnach_editor.ViewModels
                     if (_emCeeSkin2)
                     {
                         _emCeeSkin = false;
+                        _basketballFanEmceeTxt = false;
                         RaisePropertyChanged("EmCeeSkin");
+                        RaisePropertyChanged("BasketballFanEmceeTxt");
                         SettingsClass.EmCeeSkin = false;
+                        SettingsClass.BasketballFanEmceeTxt = false;
+                    }
+                }
+            }
+        }
+
+        private bool _basketballFanEmceeTxt;
+
+        public bool BasketballFanEmceeTxt
+        {
+            get { return _basketballFanEmceeTxt; }
+            set
+            {
+                if (_basketballFanEmceeTxt != value)
+                {
+                    _basketballFanEmceeTxt = value;
+                    SettingsClass.BasketballFanEmceeTxt = _basketballFanEmceeTxt;
+                    RaisePropertyChanged("BasketballFanEmceeTxt");
+                    if (_basketballFanEmceeTxt)
+                    {
+                        _emCeeSkin = false;
+                        _emCeeSkin2 = false;
+                        RaisePropertyChanged("EmCeeSkin");
+                        RaisePropertyChanged("EmCeeSkin2");
+                        SettingsClass.EmCeeSkin = false;
+                        SettingsClass.EmCeeSkin2 = false;
                     }
                 }
             }
@@ -1151,7 +1567,6 @@ namespace UR_pnach_editor.ViewModels
             }
         }
         //0B - Miguel*******************************************************
-
         private bool _flamingMiguelTxt;
 
         public bool FlamingMiguelTxt
@@ -1169,15 +1584,15 @@ namespace UR_pnach_editor.ViewModels
                         _x2000PopMiguelTxt = false;
                         _almostWhiteMiguelTxt = false;
                         _miguelBullyTxt = false;
-                        _seuMadrugaMiguelTxt = false;
+                        _viceMiguelTxt = false;
                         RaisePropertyChanged("X2000PopMiguelTxt");
                         RaisePropertyChanged("AlmostWhiteMiguelTxt");
                         RaisePropertyChanged("MiguelBullyTxt");
-                        RaisePropertyChanged("SeuMadrugaMiguelTxt");
+                        RaisePropertyChanged("ViceMiguelTxt");
                         SettingsClass.X2000PopMiguelTxt = false;
                         SettingsClass.AlmostWhiteMiguelTxt = false;
                         SettingsClass.MiguelBullyTxt = false;
-                        SettingsClass.SeuMadrugaMiguelTxt = false;
+                        SettingsClass.ViceMiguelTxt = false;
                     }
                 }
             }
@@ -1200,15 +1615,15 @@ namespace UR_pnach_editor.ViewModels
                         _flamingMiguelTxt = false;
                         _almostWhiteMiguelTxt = false;
                         _miguelBullyTxt = false;
-                        _seuMadrugaMiguelTxt = false;
+                        _viceMiguelTxt = false;
                         RaisePropertyChanged("FlamingMiguelTxt");
                         RaisePropertyChanged("AlmostWhiteMiguelTxt");
                         RaisePropertyChanged("MiguelBullyTxt");
-                        RaisePropertyChanged("SeuMadrugaMiguelTxt");
+                        RaisePropertyChanged("ViceMiguelTxt");
                         SettingsClass.FlamingMiguelTxt = false;
                         SettingsClass.AlmostWhiteMiguelTxt = false;
                         SettingsClass.MiguelBullyTxt = false;
-                        SettingsClass.SeuMadrugaMiguelTxt = false;
+                        SettingsClass.ViceMiguelTxt = false;
                     }
                 }
             }
@@ -1231,15 +1646,15 @@ namespace UR_pnach_editor.ViewModels
                         _flamingMiguelTxt = false;
                         _x2000PopMiguelTxt = false;
                         _miguelBullyTxt = false;
-                        _seuMadrugaMiguelTxt = false;
+                        _viceMiguelTxt = false;
                         RaisePropertyChanged("FlamingMiguelTxt");
                         RaisePropertyChanged("X2000PopMiguelTxt");
                         RaisePropertyChanged("MiguelBullyTxt");
-                        RaisePropertyChanged("SeuMadrugaMiguelTxt");
+                        RaisePropertyChanged("ViceMiguelTxt");
                         SettingsClass.FlamingMiguelTxt = false;
                         SettingsClass.X2000PopMiguelTxt = false;
                         SettingsClass.MiguelBullyTxt = false;
-                        SettingsClass.SeuMadrugaMiguelTxt = false;
+                        SettingsClass.ViceMiguelTxt = false;
                     }
                 }
             }
@@ -1262,33 +1677,33 @@ namespace UR_pnach_editor.ViewModels
                         _flamingMiguelTxt = false;
                         _x2000PopMiguelTxt = false;
                         _almostWhiteMiguelTxt = false;
-                        _seuMadrugaMiguelTxt = false;
+                        _viceMiguelTxt = false;
                         RaisePropertyChanged("FlamingMiguelTxt");
                         RaisePropertyChanged("X2000PopMiguelTxt");
                         RaisePropertyChanged("AlmostWhiteMiguelTxt");
-                        RaisePropertyChanged("SeuMadrugaMiguelTxt");
+                        RaisePropertyChanged("ViceMiguelTxt");
                         SettingsClass.FlamingMiguelTxt = false;
                         SettingsClass.X2000PopMiguelTxt = false;
                         SettingsClass.AlmostWhiteMiguelTxt = false;
-                        SettingsClass.SeuMadrugaMiguelTxt = false;
+                        SettingsClass.ViceMiguelTxt = false;
                     }
                 }
             }
         }
 
-        private bool _seuMadrugaMiguelTxt;
+        private bool _viceMiguelTxt;
 
-        public bool SeuMadrugaMiguelTxt
+        public bool ViceMiguelTxt
         {
-            get { return _seuMadrugaMiguelTxt; }
+            get { return _viceMiguelTxt; }
             set
             {
-                if (_seuMadrugaMiguelTxt != value)
+                if (_viceMiguelTxt != value)
                 {
-                    _seuMadrugaMiguelTxt = value;
-                    SettingsClass.SeuMadrugaMiguelTxt = _seuMadrugaMiguelTxt;
-                    RaisePropertyChanged("SeuMadrugaMiguelTxt");
-                    if (_seuMadrugaMiguelTxt)
+                    _viceMiguelTxt = value;
+                    SettingsClass.ViceMiguelTxt = _viceMiguelTxt;
+                    RaisePropertyChanged("ViceMiguelTxt");
+                    if (_viceMiguelTxt)
                     {
                         _flamingMiguelTxt = false;
                         _x2000PopMiguelTxt = false;
@@ -1307,7 +1722,6 @@ namespace UR_pnach_editor.ViewModels
             }
         }
         //0C - Ramon********************************************************
-
         private bool _koolRamonTxt;
 
         public bool KoolRamonTxt
@@ -1323,8 +1737,17 @@ namespace UR_pnach_editor.ViewModels
                     if (_koolRamonTxt)
                     {
                         _ramonSkin2 = false;
+                        _seuMadrugaRamonTxt = false;
+                        _wingedSkullRamonTxt = false;
+                        _hoodGuyRamonTxt = false;
                         RaisePropertyChanged("RamonSkin2");
+                        RaisePropertyChanged("SeuMadrugaRamonTxt");
+                        RaisePropertyChanged("WingedSkullRamonTxt");
+                        RaisePropertyChanged("HoodGuyRamonTxt");
                         SettingsClass.RamonSkin2 = false;
+                        SettingsClass.SeuMadrugaRamonTxt = false;
+                        SettingsClass.WingedSkullRamonTxt = false;
+                        SettingsClass.HoodGuyRamonTxt = false;
                     }
                 }
             }
@@ -1345,8 +1768,110 @@ namespace UR_pnach_editor.ViewModels
                     if (_ramonSkin2)
                     {
                         _koolRamonTxt = false;
+                        _seuMadrugaRamonTxt = false;
+                        _wingedSkullRamonTxt = false;
+                        _hoodGuyRamonTxt = false;
                         RaisePropertyChanged("KoolRamonTxt");
+                        RaisePropertyChanged("SeuMadrugaRamonTxt");
+                        RaisePropertyChanged("WingedSkullRamonTxt");
+                        RaisePropertyChanged("HoodGuyRamonTxt");
                         SettingsClass.KoolRamonTxt = false;
+                        SettingsClass.SeuMadrugaRamonTxt = false;
+                        SettingsClass.WingedSkullRamonTxt = false;
+                        SettingsClass.HoodGuyRamonTxt = false;
+                    }
+                }
+            }
+        }
+
+        private bool _seuMadrugaRamonTxt;
+
+        public bool SeuMadrugaRamonTxt
+        {
+            get { return _seuMadrugaRamonTxt; }
+            set
+            {
+                if (_seuMadrugaRamonTxt != value)
+                {
+                    _seuMadrugaRamonTxt = value;
+                    SettingsClass.SeuMadrugaRamonTxt = _seuMadrugaRamonTxt;
+                    RaisePropertyChanged("SeuMadrugaRamonTxt");
+                    if (_seuMadrugaRamonTxt)
+                    {
+                        _koolRamonTxt = false;
+                        _ramonSkin2 = false;
+                        _wingedSkullRamonTxt = false;
+                        _hoodGuyRamonTxt = false;
+                        RaisePropertyChanged("KoolRamonTxt");
+                        RaisePropertyChanged("RamonSkin2");
+                        RaisePropertyChanged("WingedSkullRamonTxt");
+                        RaisePropertyChanged("HoodGuyRamonTxt");
+                        SettingsClass.KoolRamonTxt = false;
+                        SettingsClass.RamonSkin2 = false;
+                        SettingsClass.WingedSkullRamonTxt = false;
+                        SettingsClass.HoodGuyRamonTxt = false;
+                    }
+                }
+            }
+        }
+
+        private bool _wingedSkullRamonTxt;
+
+        public bool WingedSkullRamonTxt
+        {
+            get { return _wingedSkullRamonTxt; }
+            set
+            {
+                if (_wingedSkullRamonTxt != value)
+                {
+                    _wingedSkullRamonTxt = value;
+                    SettingsClass.WingedSkullRamonTxt = _wingedSkullRamonTxt;
+                    RaisePropertyChanged("WingedSkullRamonTxt");
+                    if (_wingedSkullRamonTxt)
+                    {
+                        _koolRamonTxt = false;
+                        _ramonSkin2 = false;
+                        _seuMadrugaRamonTxt = false;
+                        _hoodGuyRamonTxt = false;
+                        RaisePropertyChanged("KoolRamonTxt");
+                        RaisePropertyChanged("RamonSkin2");
+                        RaisePropertyChanged("SeuMadrugaRamonTxt");
+                        RaisePropertyChanged("HoodGuyRamonTxt");
+                        SettingsClass.KoolRamonTxt = false;
+                        SettingsClass.RamonSkin2 = false;
+                        SettingsClass.SeuMadrugaRamonTxt = false;
+                        SettingsClass.HoodGuyRamonTxt = false;
+                    }
+                }
+            }
+        }
+
+        private bool _hoodGuyRamonTxt;
+
+        public bool HoodGuyRamonTxt
+        {
+            get { return _hoodGuyRamonTxt; }
+            set
+            {
+                if (_hoodGuyRamonTxt != value)
+                {
+                    _hoodGuyRamonTxt = value;
+                    SettingsClass.HoodGuyRamonTxt = _hoodGuyRamonTxt;
+                    RaisePropertyChanged("HoodGuyRamonTxt");
+                    if (_hoodGuyRamonTxt)
+                    {
+                        _koolRamonTxt = false;
+                        _ramonSkin2 = false;
+                        _seuMadrugaRamonTxt = false;
+                        _wingedSkullRamonTxt = false;
+                        RaisePropertyChanged("KoolRamonTxt");
+                        RaisePropertyChanged("RamonSkin2");
+                        RaisePropertyChanged("SeuMadrugaRamonTxt");
+                        RaisePropertyChanged("WingedSkullRamonTxt");
+                        SettingsClass.KoolRamonTxt = false;
+                        SettingsClass.RamonSkin2 = false;
+                        SettingsClass.SeuMadrugaRamonTxt = false;
+                        SettingsClass.WingedSkullRamonTxt = false;
                     }
                 }
             }
@@ -1531,7 +2056,6 @@ namespace UR_pnach_editor.ViewModels
             }
         }
         //11 - Zack*********************************************************
-
         private bool _zackSkin;
 
         public bool ZackSkin
@@ -1547,12 +2071,16 @@ namespace UR_pnach_editor.ViewModels
                     if (_zackSkin)
                     {
                         _zackSkin2 = false;
+                        _zachBlackKimonoTxt = false;
                         RaisePropertyChanged("ZackSkin2");
+                        RaisePropertyChanged("ZachBlackKimonoTxt");
                         SettingsClass.ZackSkin2 = false;
+                        SettingsClass.ZachBlackKimonoTxt = false;
                     }
                 }
             }
         }
+
         private bool _zackSkin2;
 
         public bool ZackSkin2
@@ -1568,14 +2096,41 @@ namespace UR_pnach_editor.ViewModels
                     if (_zackSkin2)
                     {
                         _zackSkin = false;
+                        _zachBlackKimonoTxt = false;
                         RaisePropertyChanged("ZackSkin");
+                        RaisePropertyChanged("ZachBlackKimonoTxt");
                         SettingsClass.ZackSkin = false;
+                        SettingsClass.ZachBlackKimonoTxt = false;
+                    }
+                }
+            }
+        }
+
+        private bool _zachBlackKimonoTxt;
+
+        public bool ZachBlackKimonoTxt
+        {
+            get { return _zachBlackKimonoTxt; }
+            set
+            {
+                if (_zachBlackKimonoTxt != value)
+                {
+                    _zachBlackKimonoTxt = value;
+                    SettingsClass.ZachBlackKimonoTxt = _zachBlackKimonoTxt;
+                    RaisePropertyChanged("ZachBlackKimonoTxt");
+                    if (_zachBlackKimonoTxt)
+                    {
+                        _zackSkin = false;
+                        _zackSkin2 = false;
+                        RaisePropertyChanged("ZackSkin");
+                        RaisePropertyChanged("ZackSkin2");
+                        SettingsClass.ZackSkin = false;
+                        SettingsClass.ZackSkin2 = false;
                     }
                 }
             }
         }
         //12 - Colin********************************************************
-
         private bool _colinSkin;
 
         public bool ColinSkin
@@ -1591,8 +2146,11 @@ namespace UR_pnach_editor.ViewModels
                     if (_colinSkin)
                     {
                         _collinHermitSchoolTxt = false;
+                        _stylishColinTxt = false;
                         RaisePropertyChanged("CollinHermitSchoolTxt");
+                        RaisePropertyChanged("StylishColinTxt");
                         SettingsClass.CollinHermitSchoolTxt = false;
+                        SettingsClass.StylishColinTxt = false;
                     }
                 }
             }
@@ -1613,14 +2171,41 @@ namespace UR_pnach_editor.ViewModels
                     if (_collinHermitSchoolTxt)
                     {
                         _colinSkin = false;
+                        _stylishColinTxt = false;
                         RaisePropertyChanged("ColinSkin");
+                        RaisePropertyChanged("StylishColinTxt");
                         SettingsClass.ColinSkin = false;
+                        SettingsClass.StylishColinTxt = false;
+                    }
+                }
+            }
+        }
+
+        private bool _stylishColinTxt;
+
+        public bool StylishColinTxt
+        {
+            get { return _stylishColinTxt; }
+            set
+            {
+                if (_stylishColinTxt != value)
+                {
+                    _stylishColinTxt = value;
+                    SettingsClass.StylishColinTxt = _stylishColinTxt;
+                    RaisePropertyChanged("StylishColinTxt");
+                    if (_stylishColinTxt)
+                    {
+                        _colinSkin = false;
+                        _collinHermitSchoolTxt = false;
+                        RaisePropertyChanged("ColinSkin");
+                        RaisePropertyChanged("CollinHermitSchoolTxt");
+                        SettingsClass.ColinSkin = false;
+                        SettingsClass.CollinHermitSchoolTxt = false;
                     }
                 }
             }
         }
         //13 - Jake*********************************************************
-
         private bool _jakeSkin;
 
         public bool JakeSkin
@@ -1637,10 +2222,13 @@ namespace UR_pnach_editor.ViewModels
                     {
                         _kOFJakeTxt = false;
                         _mayorJakeHudsonTxt = false;
+                        _satinInfernalJakeTxt = false;
                         RaisePropertyChanged("KOFJakeTxt");
                         RaisePropertyChanged("MayorJakeHudsonTxt");
+                        RaisePropertyChanged("SatinInfernalJakeTxt");
                         SettingsClass.KOFJakeTxt = false;
                         SettingsClass.MayorJakeHudsonTxt = false;
+                        SettingsClass.SatinInfernalJakeTxt = false;
                     }
                 }
             }
@@ -1662,10 +2250,13 @@ namespace UR_pnach_editor.ViewModels
                     {
                         _jakeSkin = false;
                         _mayorJakeHudsonTxt = false;
+                        _satinInfernalJakeTxt = false;
                         RaisePropertyChanged("JakeSkin");
                         RaisePropertyChanged("MayorJakeHudsonTxt");
+                        RaisePropertyChanged("SatinInfernalJakeTxt");
                         SettingsClass.JakeSkin = false;
                         SettingsClass.MayorJakeHudsonTxt = false;
+                        SettingsClass.SatinInfernalJakeTxt = false;
                     }
                 }
             }
@@ -1687,17 +2278,46 @@ namespace UR_pnach_editor.ViewModels
                     {
                         _jakeSkin = false;
                         _kOFJakeTxt = false;
+                        _satinInfernalJakeTxt = false;
                         RaisePropertyChanged("JakeSkin");
                         RaisePropertyChanged("KOFJakeTxt");
+                        RaisePropertyChanged("SatinInfernalJakeTxt");
                         SettingsClass.JakeSkin = false;
                         SettingsClass.KOFJakeTxt = false;
+                        SettingsClass.SatinInfernalJakeTxt = false;
                     }
                 }
             }
         }
-        
-        //14 - Tong Yoon****************************************************
 
+        private bool _satinInfernalJakeTxt;
+
+        public bool SatinInfernalJakeTxt
+        {
+            get { return _satinInfernalJakeTxt; }
+            set
+            {
+                if (_satinInfernalJakeTxt != value)
+                {
+                    _satinInfernalJakeTxt = value;
+                    SettingsClass.SatinInfernalJakeTxt = _satinInfernalJakeTxt;
+                    RaisePropertyChanged("SatinInfernalJakeTxt");
+                    if (_satinInfernalJakeTxt)
+                    {
+                        _jakeSkin = false;
+                        _kOFJakeTxt = false;
+                        _mayorJakeHudsonTxt = false;
+                        RaisePropertyChanged("JakeSkin");
+                        RaisePropertyChanged("KOFJakeTxt");
+                        RaisePropertyChanged("MayorJakeHudsonTxt");
+                        SettingsClass.JakeSkin = false;
+                        SettingsClass.KOFJakeTxt = false;
+                        SettingsClass.MayorJakeHudsonTxt = false;
+                    }
+                }
+            }
+        }
+        //14 - Tong Yoon****************************************************
         private bool _tongYoonSkin;
 
         public bool TongYoonSkin
@@ -1715,12 +2335,26 @@ namespace UR_pnach_editor.ViewModels
                         _negativeToonYoonTxt = false;
                         _tongYooTxt = false;
                         _tongYooMilitarTxt = false;
+                        _persona3TongYoon1Txt = false;
+                        _persona3TongYoon2Txt = false;
+                        _persona3TongYoon3Txt = false;
+                        _princeTongYooTxt = false;
+
                         RaisePropertyChanged("NegativeToonYoonTxt");
                         RaisePropertyChanged("TongYooTxt");
                         RaisePropertyChanged("TongYooMilitarTxt");
+                        RaisePropertyChanged("Persona3TongYoon1Txt");
+                        RaisePropertyChanged("Persona3TongYoon2Txt");
+                        RaisePropertyChanged("Persona3TongYoon3Txt");
+                        RaisePropertyChanged("PrinceTongYooTxt");
+
                         SettingsClass.NegativeToonYoonTxt = false;
                         SettingsClass.TongYooTxt = false;
                         SettingsClass.TongYooMilitarTxt = false;
+                        SettingsClass.Persona3TongYoon1Txt = false;
+                        SettingsClass.Persona3TongYoon2Txt = false;
+                        SettingsClass.Persona3TongYoon3Txt = false;
+                        SettingsClass.PrinceTongYooTxt = false;
                     }
                 }
             }
@@ -1743,12 +2377,26 @@ namespace UR_pnach_editor.ViewModels
                         _tongYoonSkin = false;
                         _tongYooTxt = false;
                         _tongYooMilitarTxt = false;
+                        _persona3TongYoon1Txt = false;
+                        _persona3TongYoon2Txt = false;
+                        _persona3TongYoon3Txt = false;
+                        _princeTongYooTxt = false;
+
                         RaisePropertyChanged("TongYoonSkin");
                         RaisePropertyChanged("TongYooTxt");
                         RaisePropertyChanged("TongYooMilitarTxt");
+                        RaisePropertyChanged("Persona3TongYoon1Txt");
+                        RaisePropertyChanged("Persona3TongYoon2Txt");
+                        RaisePropertyChanged("Persona3TongYoon3Txt");
+                        RaisePropertyChanged("PrinceTongYooTxt");
+
                         SettingsClass.TongYoonSkin = false;
                         SettingsClass.TongYooTxt = false;
                         SettingsClass.TongYooMilitarTxt = false;
+                        SettingsClass.Persona3TongYoon1Txt = false;
+                        SettingsClass.Persona3TongYoon2Txt = false;
+                        SettingsClass.Persona3TongYoon3Txt = false;
+                        SettingsClass.PrinceTongYooTxt = false;
                     }
                 }
             }
@@ -1771,12 +2419,26 @@ namespace UR_pnach_editor.ViewModels
                         _tongYoonSkin = false;
                         _negativeToonYoonTxt = false;
                         _tongYooMilitarTxt = false;
+                        _persona3TongYoon1Txt = false;
+                        _persona3TongYoon2Txt = false;
+                        _persona3TongYoon3Txt = false;
+                        _princeTongYooTxt = false;
+
                         RaisePropertyChanged("TongYoonSkin");
                         RaisePropertyChanged("NegativeToonYoonTxt");
                         RaisePropertyChanged("TongYooMilitarTxt");
+                        RaisePropertyChanged("Persona3TongYoon1Txt");
+                        RaisePropertyChanged("Persona3TongYoon2Txt");
+                        RaisePropertyChanged("Persona3TongYoon3Txt");
+                        RaisePropertyChanged("PrinceTongYooTxt");
+
                         SettingsClass.TongYoonSkin = false;
                         SettingsClass.NegativeToonYoonTxt = false;
                         SettingsClass.TongYooMilitarTxt = false;
+                        SettingsClass.Persona3TongYoon1Txt = false;
+                        SettingsClass.Persona3TongYoon2Txt = false;
+                        SettingsClass.Persona3TongYoon3Txt = false;
+                        SettingsClass.PrinceTongYooTxt = false;
                     }
                 }
             }
@@ -1799,18 +2461,200 @@ namespace UR_pnach_editor.ViewModels
                         _tongYoonSkin = false;
                         _negativeToonYoonTxt = false;
                         _tongYooTxt = false;
+                        _persona3TongYoon1Txt = false;
+                        _persona3TongYoon2Txt = false;
+                        _persona3TongYoon3Txt = false;
+                        _princeTongYooTxt = false;
+
                         RaisePropertyChanged("TongYoonSkin");
                         RaisePropertyChanged("NegativeToonYoonTxt");
                         RaisePropertyChanged("TongYooTxt");
+                        RaisePropertyChanged("Persona3TongYoon1Txt");
+                        RaisePropertyChanged("Persona3TongYoon2Txt");
+                        RaisePropertyChanged("Persona3TongYoon3Txt");
+                        RaisePropertyChanged("PrinceTongYooTxt");
+
                         SettingsClass.TongYoonSkin = false;
                         SettingsClass.NegativeToonYoonTxt = false;
                         SettingsClass.TongYooTxt = false;
+                        SettingsClass.Persona3TongYoon1Txt = false;
+                        SettingsClass.Persona3TongYoon2Txt = false;
+                        SettingsClass.Persona3TongYoon3Txt = false;
+                        SettingsClass.PrinceTongYooTxt = false;
                     }
                 }
             }
         }
-        //15 - Grimm********************************************************
 
+        private bool _persona3TongYoon1Txt;
+
+        public bool Persona3TongYoon1Txt
+        {
+            get { return _persona3TongYoon1Txt; }
+            set
+            {
+                if (_persona3TongYoon1Txt != value)
+                {
+                    _persona3TongYoon1Txt = value;
+                    SettingsClass.Persona3TongYoon1Txt = _persona3TongYoon1Txt;
+                    RaisePropertyChanged("Persona3TongYoon1Txt");
+                    if (_persona3TongYoon1Txt)
+                    {
+                        _tongYoonSkin = false;
+                        _negativeToonYoonTxt = false;
+                        _tongYooTxt = false;
+                        _tongYooMilitarTxt = false;
+                        _persona3TongYoon2Txt = false;
+                        _persona3TongYoon3Txt = false;
+                        _princeTongYooTxt = false;
+
+                        RaisePropertyChanged("TongYoonSkin");
+                        RaisePropertyChanged("NegativeToonYoonTxt");
+                        RaisePropertyChanged("TongYooTxt");
+                        RaisePropertyChanged("TongYooMilitarTxt");
+                        RaisePropertyChanged("Persona3TongYoon2Txt");
+                        RaisePropertyChanged("Persona3TongYoon3Txt");
+                        RaisePropertyChanged("PrinceTongYooTxt");
+
+                        SettingsClass.TongYoonSkin = false;
+                        SettingsClass.NegativeToonYoonTxt = false;
+                        SettingsClass.TongYooTxt = false;
+                        SettingsClass.TongYooMilitarTxt = false;
+                        SettingsClass.Persona3TongYoon2Txt = false;
+                        SettingsClass.Persona3TongYoon3Txt = false;
+                        SettingsClass.PrinceTongYooTxt = false;
+                    }
+                }
+            }
+        }
+
+        private bool _persona3TongYoon2Txt;
+
+        public bool Persona3TongYoon2Txt
+        {
+            get { return _persona3TongYoon2Txt; }
+            set
+            {
+                if (_persona3TongYoon2Txt != value)
+                {
+                    _persona3TongYoon2Txt = value;
+                    SettingsClass.Persona3TongYoon2Txt = _persona3TongYoon2Txt;
+                    RaisePropertyChanged("Persona3TongYoon2Txt");
+                    if (_persona3TongYoon2Txt)
+                    {
+                        _tongYoonSkin = false;
+                        _negativeToonYoonTxt = false;
+                        _tongYooTxt = false;
+                        _tongYooMilitarTxt = false;
+                        _persona3TongYoon1Txt = false;
+                        _persona3TongYoon3Txt = false;
+                        _princeTongYooTxt = false;
+
+                        RaisePropertyChanged("TongYoonSkin");
+                        RaisePropertyChanged("NegativeToonYoonTxt");
+                        RaisePropertyChanged("TongYooTxt");
+                        RaisePropertyChanged("TongYooMilitarTxt");
+                        RaisePropertyChanged("Persona3TongYoon1Txt");
+                        RaisePropertyChanged("Persona3TongYoon3Txt");
+                        RaisePropertyChanged("PrinceTongYooTxt");
+
+                        SettingsClass.TongYoonSkin = false;
+                        SettingsClass.NegativeToonYoonTxt = false;
+                        SettingsClass.TongYooTxt = false;
+                        SettingsClass.TongYooMilitarTxt = false;
+                        SettingsClass.Persona3TongYoon1Txt = false;
+                        SettingsClass.Persona3TongYoon3Txt = false;
+                        SettingsClass.PrinceTongYooTxt = false;
+                    }
+                }
+            }
+        }
+
+        private bool _persona3TongYoon3Txt;
+
+        public bool Persona3TongYoon3Txt
+        {
+            get { return _persona3TongYoon3Txt; }
+            set
+            {
+                if (_persona3TongYoon3Txt != value)
+                {
+                    _persona3TongYoon3Txt = value;
+                    SettingsClass.Persona3TongYoon3Txt = _persona3TongYoon3Txt;
+                    RaisePropertyChanged("Persona3TongYoon3Txt");
+                    if (_persona3TongYoon3Txt)
+                    {
+                        _tongYoonSkin = false;
+                        _negativeToonYoonTxt = false;
+                        _tongYooTxt = false;
+                        _tongYooMilitarTxt = false;
+                        _persona3TongYoon1Txt = false;
+                        _persona3TongYoon2Txt = false;
+                        _princeTongYooTxt = false;
+
+                        RaisePropertyChanged("TongYoonSkin");
+                        RaisePropertyChanged("NegativeToonYoonTxt");
+                        RaisePropertyChanged("TongYooTxt");
+                        RaisePropertyChanged("TongYooMilitarTxt");
+                        RaisePropertyChanged("Persona3TongYoon1Txt");
+                        RaisePropertyChanged("Persona3TongYoon2Txt");
+                        RaisePropertyChanged("PrinceTongYooTxt");
+
+                        SettingsClass.TongYoonSkin = false;
+                        SettingsClass.NegativeToonYoonTxt = false;
+                        SettingsClass.TongYooTxt = false;
+                        SettingsClass.TongYooMilitarTxt = false;
+                        SettingsClass.Persona3TongYoon1Txt = false;
+                        SettingsClass.Persona3TongYoon2Txt = false;
+                        SettingsClass.PrinceTongYooTxt = false;
+                    }
+                }
+            }
+        }
+
+        private bool _princeTongYooTxt;
+
+        public bool PrinceTongYooTxt
+        {
+            get { return _princeTongYooTxt; }
+            set
+            {
+                if (_princeTongYooTxt != value)
+                {
+                    _princeTongYooTxt = value;
+                    SettingsClass.PrinceTongYooTxt = _princeTongYooTxt;
+                    RaisePropertyChanged("PrinceTongYooTxt");
+                    if (_princeTongYooTxt)
+                    {
+                        _tongYoonSkin = false;
+                        _negativeToonYoonTxt = false;
+                        _tongYooTxt = false;
+                        _tongYooMilitarTxt = false;
+                        _persona3TongYoon1Txt = false;
+                        _persona3TongYoon2Txt = false;
+                        _persona3TongYoon3Txt = false;
+
+                        RaisePropertyChanged("TongYoonSkin");
+                        RaisePropertyChanged("NegativeToonYoonTxt");
+                        RaisePropertyChanged("TongYooTxt");
+                        RaisePropertyChanged("TongYooMilitarTxt");
+                        RaisePropertyChanged("Persona3TongYoon1Txt");
+                        RaisePropertyChanged("Persona3TongYoon2Txt");
+                        RaisePropertyChanged("Persona3TongYoon3Txt");
+
+                        SettingsClass.TongYoonSkin = false;
+                        SettingsClass.NegativeToonYoonTxt = false;
+                        SettingsClass.TongYooTxt = false;
+                        SettingsClass.TongYooMilitarTxt = false;
+                        SettingsClass.Persona3TongYoon1Txt = false;
+                        SettingsClass.Persona3TongYoon2Txt = false;
+                        SettingsClass.Persona3TongYoon3Txt = false;
+                    }
+                }
+            }
+        }
+
+        //15 - Grimm********************************************************
         private bool _mountainGrimTxt;
 
         public bool MountainGrimTxt
@@ -1827,10 +2671,18 @@ namespace UR_pnach_editor.ViewModels
                     {
                         _customGrimmTxt = false;
                         _cyberpunkGrimmTxt = false;
+                        _casualGrimGreenTxt = false;
+                        _casualGrimGreyTxt = false;
+
                         RaisePropertyChanged("CyberpunkGrimmTxt");
                         RaisePropertyChanged("CustomGrimmTxt");
+                        RaisePropertyChanged("CasualGrimGreenTxt");
+                        RaisePropertyChanged("CasualGrimGreyTxt");
+
                         SettingsClass.CyberpunkGrimmTxt = false;
                         SettingsClass.CustomGrimmTxt = false;
+                        SettingsClass.CasualGrimGreenTxt = false;
+                        SettingsClass.CasualGrimGreyTxt = false;
                     }
                 }
             }
@@ -1852,10 +2704,18 @@ namespace UR_pnach_editor.ViewModels
                     {
                         _mountainGrimTxt = false;
                         _customGrimmTxt = false;
+                        _casualGrimGreenTxt = false;
+                        _casualGrimGreyTxt = false;
+
                         RaisePropertyChanged("MountainGrimTxt");
                         RaisePropertyChanged("CustomGrimmTxt");
+                        RaisePropertyChanged("CasualGrimGreenTxt");
+                        RaisePropertyChanged("CasualGrimGreyTxt");
+
                         SettingsClass.MountainGrimTxt = false;
                         SettingsClass.CustomGrimmTxt = false;
+                        SettingsClass.CasualGrimGreenTxt = false;
+                        SettingsClass.CasualGrimGreyTxt = false;
                     }
                 }
             }
@@ -1877,17 +2737,90 @@ namespace UR_pnach_editor.ViewModels
                     {
                         _mountainGrimTxt = false;
                         _cyberpunkGrimmTxt = false;
+                        _casualGrimGreenTxt = false;
+                        _casualGrimGreyTxt = false;
+
                         RaisePropertyChanged("MountainGrimTxt");
                         RaisePropertyChanged("CyberpunkGrimmTxt");
+                        RaisePropertyChanged("CasualGrimGreenTxt");
+                        RaisePropertyChanged("CasualGrimGreyTxt");
+
                         SettingsClass.MountainGrimTxt = false;
                         SettingsClass.CyberpunkGrimmTxt = false;
+                        SettingsClass.CasualGrimGreenTxt = false;
+                        SettingsClass.CasualGrimGreyTxt = false;
                     }
                 }
             }
         }
-        
-        //16 - BK***********************************************************
 
+        private bool _casualGrimGreenTxt;
+
+        public bool CasualGrimGreenTxt
+        {
+            get { return _casualGrimGreenTxt; }
+            set
+            {
+                if (_casualGrimGreenTxt != value)
+                {
+                    _casualGrimGreenTxt = value;
+                    SettingsClass.CasualGrimGreenTxt = _casualGrimGreenTxt;
+                    RaisePropertyChanged("CasualGrimGreenTxt");
+                    if (_casualGrimGreenTxt)
+                    {
+                        _mountainGrimTxt = false;
+                        _cyberpunkGrimmTxt = false;
+                        _customGrimmTxt = false;
+                        _casualGrimGreyTxt = false;
+
+                        RaisePropertyChanged("MountainGrimTxt");
+                        RaisePropertyChanged("CyberpunkGrimmTxt");
+                        RaisePropertyChanged("CustomGrimmTxt");
+                        RaisePropertyChanged("CasualGrimGreyTxt");
+
+                        SettingsClass.MountainGrimTxt = false;
+                        SettingsClass.CyberpunkGrimmTxt = false;
+                        SettingsClass.CustomGrimmTxt = false;
+                        SettingsClass.CasualGrimGreyTxt = false;
+                    }
+                }
+            }
+        }
+
+        private bool _casualGrimGreyTxt;
+
+        public bool CasualGrimGreyTxt
+        {
+            get { return _casualGrimGreyTxt; }
+            set
+            {
+                if (_casualGrimGreyTxt != value)
+                {
+                    _casualGrimGreyTxt = value;
+                    SettingsClass.CasualGrimGreyTxt = _casualGrimGreyTxt;
+                    RaisePropertyChanged("CasualGrimGreyTxt");
+                    if (_casualGrimGreyTxt)
+                    {
+                        _mountainGrimTxt = false;
+                        _cyberpunkGrimmTxt = false;
+                        _customGrimmTxt = false;
+                        _casualGrimGreenTxt = false;
+
+                        RaisePropertyChanged("MountainGrimTxt");
+                        RaisePropertyChanged("CyberpunkGrimmTxt");
+                        RaisePropertyChanged("CustomGrimmTxt");
+                        RaisePropertyChanged("CasualGrimGreenTxt");
+
+                        SettingsClass.MountainGrimTxt = false;
+                        SettingsClass.CyberpunkGrimmTxt = false;
+                        SettingsClass.CustomGrimmTxt = false;
+                        SettingsClass.CasualGrimGreenTxt = false;
+                    }
+                }
+            }
+        }
+
+        //16 - BK***********************************************************
         private bool _bKSkin;
 
         public bool BKSkin
@@ -1903,8 +2836,13 @@ namespace UR_pnach_editor.ViewModels
                     if (_bKSkin)
                     {
                         _bKCJTxt = false;
+                        _boxerWannabeBkTxt = false;
+
                         RaisePropertyChanged("BKCJTxt");
+                        RaisePropertyChanged("BoxerWannabeBkTxt");
+
                         SettingsClass.BKCJTxt = false;
+                        SettingsClass.BoxerWannabeBkTxt = false;
                     }
                 }
             }
@@ -1925,8 +2863,40 @@ namespace UR_pnach_editor.ViewModels
                     if (_bKCJTxt)
                     {
                         _bKSkin = false;
+                        _boxerWannabeBkTxt = false;
+
                         RaisePropertyChanged("BKSkin");
+                        RaisePropertyChanged("BoxerWannabeBkTxt");
+
                         SettingsClass.BKSkin = false;
+                        SettingsClass.BoxerWannabeBkTxt = false;
+                    }
+                }
+            }
+        }
+
+        private bool _boxerWannabeBkTxt;
+
+        public bool BoxerWannabeBkTxt
+        {
+            get { return _boxerWannabeBkTxt; }
+            set
+            {
+                if (_boxerWannabeBkTxt != value)
+                {
+                    _boxerWannabeBkTxt = value;
+                    SettingsClass.BoxerWannabeBkTxt = _boxerWannabeBkTxt;
+                    RaisePropertyChanged("BoxerWannabeBkTxt");
+                    if (_boxerWannabeBkTxt)
+                    {
+                        _bKSkin = false;
+                        _bKCJTxt = false;
+
+                        RaisePropertyChanged("BKSkin");
+                        RaisePropertyChanged("BKCJTxt");
+
+                        SettingsClass.BKSkin = false;
+                        SettingsClass.BKCJTxt = false;
                     }
                 }
             }
@@ -2304,7 +3274,6 @@ namespace UR_pnach_editor.ViewModels
             }
         }
         //1F - Shun Ying Lee************************************************
-
         private bool _fashionShunYingTxt;
 
         public bool FashionShunYingTxt
@@ -2324,16 +3293,27 @@ namespace UR_pnach_editor.ViewModels
                         _evilShunYingTxt = false;
                         _classyShunYingTxt = false;
                         _gothicShunYingTxt = false;
+                        _lolaYingTxt = false;
+                        _stellarBladeShunYingGreenTxt = false;
+                        _stellarBladeShunYingRedTxt = false;
+
                         RaisePropertyChanged("AyaneShunYingTxt");
                         RaisePropertyChanged("ShunYingV2Txt");
                         RaisePropertyChanged("EvilShunYingTxt");
-                        RaisePropertyChanged("ClassyShunYingTxt"); 
+                        RaisePropertyChanged("ClassyShunYingTxt");
                         RaisePropertyChanged("GothicShunYingTxt");
+                        RaisePropertyChanged("LolaYingTxt");
+                        RaisePropertyChanged("StellarBladeShunYingGreenTxt");
+                        RaisePropertyChanged("StellarBladeShunYingRedTxt");
+
                         SettingsClass.AyaneShunYingTxt = false;
                         SettingsClass.ShunYingV2Txt = false;
                         SettingsClass.EvilShunYingTxt = false;
                         SettingsClass.ClassyShunYingTxt = false;
                         SettingsClass.GothicShunYingTxt = false;
+                        SettingsClass.LolaYingTxt = false;
+                        SettingsClass.StellarBladeShunYingGreenTxt = false;
+                        SettingsClass.StellarBladeShunYingRedTxt = false;
                     }
                 }
             }
@@ -2358,16 +3338,27 @@ namespace UR_pnach_editor.ViewModels
                         _evilShunYingTxt = false;
                         _classyShunYingTxt = false;
                         _gothicShunYingTxt = false;
+                        _lolaYingTxt = false;
+                        _stellarBladeShunYingGreenTxt = false;
+                        _stellarBladeShunYingRedTxt = false;
+
                         RaisePropertyChanged("FashionShunYingTxt");
                         RaisePropertyChanged("ShunYingV2Txt");
                         RaisePropertyChanged("EvilShunYingTxt");
                         RaisePropertyChanged("ClassyShunYingTxt");
                         RaisePropertyChanged("GothicShunYingTxt");
+                        RaisePropertyChanged("LolaYingTxt");
+                        RaisePropertyChanged("StellarBladeShunYingGreenTxt");
+                        RaisePropertyChanged("StellarBladeShunYingRedTxt");
+
                         SettingsClass.FashionShunYingTxt = false;
                         SettingsClass.ShunYingV2Txt = false;
                         SettingsClass.EvilShunYingTxt = false;
                         SettingsClass.ClassyShunYingTxt = false;
                         SettingsClass.GothicShunYingTxt = false;
+                        SettingsClass.LolaYingTxt = false;
+                        SettingsClass.StellarBladeShunYingGreenTxt = false;
+                        SettingsClass.StellarBladeShunYingRedTxt = false;
                     }
                 }
             }
@@ -2392,16 +3383,27 @@ namespace UR_pnach_editor.ViewModels
                         _evilShunYingTxt = false;
                         _classyShunYingTxt = false;
                         _gothicShunYingTxt = false;
+                        _lolaYingTxt = false;
+                        _stellarBladeShunYingGreenTxt = false;
+                        _stellarBladeShunYingRedTxt = false;
+
                         RaisePropertyChanged("FashionShunYingTxt");
                         RaisePropertyChanged("AyaneShunYingTxt");
                         RaisePropertyChanged("EvilShunYingTxt");
                         RaisePropertyChanged("ClassyShunYingTxt");
                         RaisePropertyChanged("GothicShunYingTxt");
+                        RaisePropertyChanged("LolaYingTxt");
+                        RaisePropertyChanged("StellarBladeShunYingGreenTxt");
+                        RaisePropertyChanged("StellarBladeShunYingRedTxt");
+
                         SettingsClass.FashionShunYingTxt = false;
                         SettingsClass.AyaneShunYingTxt = false;
                         SettingsClass.EvilShunYingTxt = false;
                         SettingsClass.ClassyShunYingTxt = false;
                         SettingsClass.GothicShunYingTxt = false;
+                        SettingsClass.LolaYingTxt = false;
+                        SettingsClass.StellarBladeShunYingGreenTxt = false;
+                        SettingsClass.StellarBladeShunYingRedTxt = false;
                     }
                 }
             }
@@ -2426,16 +3428,27 @@ namespace UR_pnach_editor.ViewModels
                         _shunYingV2Txt = false;
                         _classyShunYingTxt = false;
                         _gothicShunYingTxt = false;
+                        _lolaYingTxt = false;
+                        _stellarBladeShunYingGreenTxt = false;
+                        _stellarBladeShunYingRedTxt = false;
+
                         RaisePropertyChanged("FashionShunYingTxt");
                         RaisePropertyChanged("AyaneShunYingTxt");
                         RaisePropertyChanged("ShunYingV2Txt");
                         RaisePropertyChanged("ClassyShunYingTxt");
                         RaisePropertyChanged("GothicShunYingTxt");
+                        RaisePropertyChanged("LolaYingTxt");
+                        RaisePropertyChanged("StellarBladeShunYingGreenTxt");
+                        RaisePropertyChanged("StellarBladeShunYingRedTxt");
+
                         SettingsClass.FashionShunYingTxt = false;
                         SettingsClass.AyaneShunYingTxt = false;
                         SettingsClass.ShunYingV2Txt = false;
                         SettingsClass.ClassyShunYingTxt = false;
                         SettingsClass.GothicShunYingTxt = false;
+                        SettingsClass.LolaYingTxt = false;
+                        SettingsClass.StellarBladeShunYingGreenTxt = false;
+                        SettingsClass.StellarBladeShunYingRedTxt = false;
                     }
                 }
             }
@@ -2460,16 +3473,27 @@ namespace UR_pnach_editor.ViewModels
                         _shunYingV2Txt = false;
                         _evilShunYingTxt = false;
                         _gothicShunYingTxt = false;
+                        _lolaYingTxt = false;
+                        _stellarBladeShunYingGreenTxt = false;
+                        _stellarBladeShunYingRedTxt = false;
+
                         RaisePropertyChanged("FashionShunYingTxt");
                         RaisePropertyChanged("AyaneShunYingTxt");
                         RaisePropertyChanged("ShunYingV2Txt");
                         RaisePropertyChanged("EvilShunYingTxt");
                         RaisePropertyChanged("GothicShunYingTxt");
+                        RaisePropertyChanged("LolaYingTxt");
+                        RaisePropertyChanged("StellarBladeShunYingGreenTxt");
+                        RaisePropertyChanged("StellarBladeShunYingRedTxt");
+
                         SettingsClass.FashionShunYingTxt = false;
                         SettingsClass.AyaneShunYingTxt = false;
                         SettingsClass.ShunYingV2Txt = false;
                         SettingsClass.EvilShunYingTxt = false;
                         SettingsClass.GothicShunYingTxt = false;
+                        SettingsClass.LolaYingTxt = false;
+                        SettingsClass.StellarBladeShunYingGreenTxt = false;
+                        SettingsClass.StellarBladeShunYingRedTxt = false;
                     }
                 }
             }
@@ -2494,22 +3518,168 @@ namespace UR_pnach_editor.ViewModels
                         _shunYingV2Txt = false;
                         _evilShunYingTxt = false;
                         _classyShunYingTxt = false;
+                        _lolaYingTxt = false;
+                        _stellarBladeShunYingGreenTxt = false;
+                        _stellarBladeShunYingRedTxt = false;
+
                         RaisePropertyChanged("FashionShunYingTxt");
                         RaisePropertyChanged("AyaneShunYingTxt");
                         RaisePropertyChanged("ShunYingV2Txt");
                         RaisePropertyChanged("EvilShunYingTxt");
                         RaisePropertyChanged("ClassyShunYingTxt");
+                        RaisePropertyChanged("LolaYingTxt");
+                        RaisePropertyChanged("StellarBladeShunYingGreenTxt");
+                        RaisePropertyChanged("StellarBladeShunYingRedTxt");
+
                         SettingsClass.FashionShunYingTxt = false;
                         SettingsClass.AyaneShunYingTxt = false;
                         SettingsClass.ShunYingV2Txt = false;
                         SettingsClass.EvilShunYingTxt = false;
                         SettingsClass.ClassyShunYingTxt = false;
+                        SettingsClass.LolaYingTxt = false;
+                        SettingsClass.StellarBladeShunYingGreenTxt = false;
+                        SettingsClass.StellarBladeShunYingRedTxt = false;
                     }
                 }
             }
         }
-        //20 - GD 05********************************************************
 
+        private bool _lolaYingTxt;
+
+        public bool LolaYingTxt
+        {
+            get { return _lolaYingTxt; }
+            set
+            {
+                if (_lolaYingTxt != value)
+                {
+                    _lolaYingTxt = value;
+                    SettingsClass.LolaYingTxt = _lolaYingTxt;
+                    RaisePropertyChanged("LolaYingTxt");
+                    if (_lolaYingTxt)
+                    {
+                        _fashionShunYingTxt = false;
+                        _ayaneShunYingTxt = false;
+                        _shunYingV2Txt = false;
+                        _evilShunYingTxt = false;
+                        _classyShunYingTxt = false;
+                        _gothicShunYingTxt = false;
+                        _stellarBladeShunYingGreenTxt = false;
+                        _stellarBladeShunYingRedTxt = false;
+
+                        RaisePropertyChanged("FashionShunYingTxt");
+                        RaisePropertyChanged("AyaneShunYingTxt");
+                        RaisePropertyChanged("ShunYingV2Txt");
+                        RaisePropertyChanged("EvilShunYingTxt");
+                        RaisePropertyChanged("ClassyShunYingTxt");
+                        RaisePropertyChanged("GothicShunYingTxt");
+                        RaisePropertyChanged("StellarBladeShunYingGreenTxt");
+                        RaisePropertyChanged("StellarBladeShunYingRedTxt");
+
+                        SettingsClass.FashionShunYingTxt = false;
+                        SettingsClass.AyaneShunYingTxt = false;
+                        SettingsClass.ShunYingV2Txt = false;
+                        SettingsClass.EvilShunYingTxt = false;
+                        SettingsClass.ClassyShunYingTxt = false;
+                        SettingsClass.GothicShunYingTxt = false;
+                        SettingsClass.StellarBladeShunYingGreenTxt = false;
+                        SettingsClass.StellarBladeShunYingRedTxt = false;
+                    }
+                }
+            }
+        }
+
+        private bool _stellarBladeShunYingGreenTxt;
+
+        public bool StellarBladeShunYingGreenTxt
+        {
+            get { return _stellarBladeShunYingGreenTxt; }
+            set
+            {
+                if (_stellarBladeShunYingGreenTxt != value)
+                {
+                    _stellarBladeShunYingGreenTxt = value;
+                    SettingsClass.StellarBladeShunYingGreenTxt = _stellarBladeShunYingGreenTxt;
+                    RaisePropertyChanged("StellarBladeShunYingGreenTxt");
+                    if (_stellarBladeShunYingGreenTxt)
+                    {
+                        _fashionShunYingTxt = false;
+                        _ayaneShunYingTxt = false;
+                        _shunYingV2Txt = false;
+                        _evilShunYingTxt = false;
+                        _classyShunYingTxt = false;
+                        _gothicShunYingTxt = false;
+                        _lolaYingTxt = false;
+                        _stellarBladeShunYingRedTxt = false;
+
+                        RaisePropertyChanged("FashionShunYingTxt");
+                        RaisePropertyChanged("AyaneShunYingTxt");
+                        RaisePropertyChanged("ShunYingV2Txt");
+                        RaisePropertyChanged("EvilShunYingTxt");
+                        RaisePropertyChanged("ClassyShunYingTxt");
+                        RaisePropertyChanged("GothicShunYingTxt");
+                        RaisePropertyChanged("LolaYingTxt");
+                        RaisePropertyChanged("StellarBladeShunYingRedTxt");
+
+                        SettingsClass.FashionShunYingTxt = false;
+                        SettingsClass.AyaneShunYingTxt = false;
+                        SettingsClass.ShunYingV2Txt = false;
+                        SettingsClass.EvilShunYingTxt = false;
+                        SettingsClass.ClassyShunYingTxt = false;
+                        SettingsClass.GothicShunYingTxt = false;
+                        SettingsClass.LolaYingTxt = false;
+                        SettingsClass.StellarBladeShunYingRedTxt = false;
+                    }
+                }
+            }
+        }
+
+        private bool _stellarBladeShunYingRedTxt;
+
+        public bool StellarBladeShunYingRedTxt
+        {
+            get { return _stellarBladeShunYingRedTxt; }
+            set
+            {
+                if (_stellarBladeShunYingRedTxt != value)
+                {
+                    _stellarBladeShunYingRedTxt = value;
+                    SettingsClass.StellarBladeShunYingRedTxt = _stellarBladeShunYingRedTxt;
+                    RaisePropertyChanged("StellarBladeShunYingRedTxt");
+                    if (_stellarBladeShunYingRedTxt)
+                    {
+                        _fashionShunYingTxt = false;
+                        _ayaneShunYingTxt = false;
+                        _shunYingV2Txt = false;
+                        _evilShunYingTxt = false;
+                        _classyShunYingTxt = false;
+                        _gothicShunYingTxt = false;
+                        _lolaYingTxt = false;
+                        _stellarBladeShunYingGreenTxt = false;
+
+                        RaisePropertyChanged("FashionShunYingTxt");
+                        RaisePropertyChanged("AyaneShunYingTxt");
+                        RaisePropertyChanged("ShunYingV2Txt");
+                        RaisePropertyChanged("EvilShunYingTxt");
+                        RaisePropertyChanged("ClassyShunYingTxt");
+                        RaisePropertyChanged("GothicShunYingTxt");
+                        RaisePropertyChanged("LolaYingTxt");
+                        RaisePropertyChanged("StellarBladeShunYingGreenTxt");
+
+                        SettingsClass.FashionShunYingTxt = false;
+                        SettingsClass.AyaneShunYingTxt = false;
+                        SettingsClass.ShunYingV2Txt = false;
+                        SettingsClass.EvilShunYingTxt = false;
+                        SettingsClass.ClassyShunYingTxt = false;
+                        SettingsClass.GothicShunYingTxt = false;
+                        SettingsClass.LolaYingTxt = false;
+                        SettingsClass.StellarBladeShunYingGreenTxt = false;
+                    }
+                }
+            }
+        }
+
+        //20 - GD 05********************************************************
         private bool _gD_04Txt;
 
         public bool GD_04Txt
@@ -2527,6 +3697,10 @@ namespace UR_pnach_editor.ViewModels
                         _gD_05Skin = false;
                         RaisePropertyChanged("GD_05Skin");
                         SettingsClass.GD_05Skin = false;
+
+                        _toonShadedGD05Txt = false;
+                        RaisePropertyChanged("ToonShadedGD05Txt");
+                        SettingsClass.ToonShadedGD05Txt = false;
                     }
                 }
             }
@@ -2549,10 +3723,41 @@ namespace UR_pnach_editor.ViewModels
                         _gD_04Txt = false;
                         RaisePropertyChanged("GD_04Txt");
                         SettingsClass.GD_04Txt = false;
+
+                        _toonShadedGD05Txt = false;
+                        RaisePropertyChanged("ToonShadedGD05Txt");
+                        SettingsClass.ToonShadedGD05Txt = false;
                     }
                 }
             }
         }
+
+        private bool _toonShadedGD05Txt;
+
+        public bool ToonShadedGD05Txt
+        {
+            get { return _toonShadedGD05Txt; }
+            set
+            {
+                if (_toonShadedGD05Txt != value)
+                {
+                    _toonShadedGD05Txt = value;
+                    SettingsClass.ToonShadedGD05Txt = _toonShadedGD05Txt;
+                    RaisePropertyChanged("ToonShadedGD05Txt");
+                    if (_toonShadedGD05Txt)
+                    {
+                        _gD_04Txt = false;
+                        RaisePropertyChanged("GD_04Txt");
+                        SettingsClass.GD_04Txt = false;
+
+                        _gD_05Skin = false;
+                        RaisePropertyChanged("GD_05Skin");
+                        SettingsClass.GD_05Skin = false;
+                    }
+                }
+            }
+        }
+
         //21 - DR 88********************************************************
 
         private bool _dR88Skin;
@@ -3281,7 +4486,6 @@ namespace UR_pnach_editor.ViewModels
         }
 
         //2A - Alex*********************************************************
-
         private bool _alexSkin;
 
         public bool AlexSkin
@@ -3299,16 +4503,25 @@ namespace UR_pnach_editor.ViewModels
                         _gangsterAlexTxt = false;
                         _vergilAlexTxt = false;
                         _alexNeganTxt = false;
+                        _viperStreetAlexTxt = false;
+                        _alexHawkTxt = false;
+
                         RaisePropertyChanged("GangsterAlexTxt");
                         RaisePropertyChanged("VergilAlexTxt");
                         RaisePropertyChanged("AlexNeganTxt");
+                        RaisePropertyChanged("ViperStreetAlexTxt");
+                        RaisePropertyChanged("AlexHawkTxt");
+
                         SettingsClass.GangsterAlexTxt = false;
                         SettingsClass.VergilAlexTxt = false;
                         SettingsClass.AlexNeganTxt = false;
+                        SettingsClass.ViperStreetAlexTxt = false;
+                        SettingsClass.AlexHawkTxt = false;
                     }
                 }
             }
         }
+
         private bool _gangsterAlexTxt;
 
         public bool GangsterAlexTxt
@@ -3326,16 +4539,25 @@ namespace UR_pnach_editor.ViewModels
                         _alexSkin = false;
                         _vergilAlexTxt = false;
                         _alexNeganTxt = false;
+                        _viperStreetAlexTxt = false;
+                        _alexHawkTxt = false;
+
                         RaisePropertyChanged("AlexSkin");
                         RaisePropertyChanged("VergilAlexTxt");
                         RaisePropertyChanged("AlexNeganTxt");
+                        RaisePropertyChanged("ViperStreetAlexTxt");
+                        RaisePropertyChanged("AlexHawkTxt");
+
                         SettingsClass.AlexSkin = false;
                         SettingsClass.VergilAlexTxt = false;
                         SettingsClass.AlexNeganTxt = false;
+                        SettingsClass.ViperStreetAlexTxt = false;
+                        SettingsClass.AlexHawkTxt = false;
                     }
                 }
             }
         }
+
         private bool _vergilAlexTxt;
 
         public bool VergilAlexTxt
@@ -3353,16 +4575,25 @@ namespace UR_pnach_editor.ViewModels
                         _alexSkin = false;
                         _gangsterAlexTxt = false;
                         _alexNeganTxt = false;
+                        _viperStreetAlexTxt = false;
+                        _alexHawkTxt = false;
+
                         RaisePropertyChanged("AlexSkin");
                         RaisePropertyChanged("GangsterAlexTxt");
                         RaisePropertyChanged("AlexNeganTxt");
+                        RaisePropertyChanged("ViperStreetAlexTxt");
+                        RaisePropertyChanged("AlexHawkTxt");
+
                         SettingsClass.AlexSkin = false;
                         SettingsClass.GangsterAlexTxt = false;
                         SettingsClass.AlexNeganTxt = false;
+                        SettingsClass.ViperStreetAlexTxt = false;
+                        SettingsClass.AlexHawkTxt = false;
                     }
                 }
             }
         }
+
         private bool _alexNeganTxt;
 
         public bool AlexNeganTxt
@@ -3380,19 +4611,97 @@ namespace UR_pnach_editor.ViewModels
                         _alexSkin = false;
                         _gangsterAlexTxt = false;
                         _vergilAlexTxt = false;
+                        _viperStreetAlexTxt = false;
+                        _alexHawkTxt = false;
+
                         RaisePropertyChanged("AlexSkin");
                         RaisePropertyChanged("GangsterAlexTxt");
                         RaisePropertyChanged("VergilAlexTxt");
+                        RaisePropertyChanged("ViperStreetAlexTxt");
+                        RaisePropertyChanged("AlexHawkTxt");
+
                         SettingsClass.AlexSkin = false;
                         SettingsClass.GangsterAlexTxt = false;
                         SettingsClass.VergilAlexTxt = false;
+                        SettingsClass.ViperStreetAlexTxt = false;
+                        SettingsClass.AlexHawkTxt = false;
                     }
                 }
             }
         }
 
-        //2B - McKinzie*****************************************************
+        private bool _viperStreetAlexTxt;
 
+        public bool ViperStreetAlexTxt
+        {
+            get { return _viperStreetAlexTxt; }
+            set
+            {
+                if (_viperStreetAlexTxt != value)
+                {
+                    _viperStreetAlexTxt = value;
+                    SettingsClass.ViperStreetAlexTxt = _viperStreetAlexTxt;
+                    RaisePropertyChanged("ViperStreetAlexTxt");
+                    if (_viperStreetAlexTxt)
+                    {
+                        _alexSkin = false;
+                        _gangsterAlexTxt = false;
+                        _vergilAlexTxt = false;
+                        _alexNeganTxt = false;
+                        _alexHawkTxt = false;
+
+                        RaisePropertyChanged("AlexSkin");
+                        RaisePropertyChanged("GangsterAlexTxt");
+                        RaisePropertyChanged("VergilAlexTxt");
+                        RaisePropertyChanged("AlexNeganTxt");
+                        RaisePropertyChanged("AlexHawkTxt");
+
+                        SettingsClass.AlexSkin = false;
+                        SettingsClass.GangsterAlexTxt = false;
+                        SettingsClass.VergilAlexTxt = false;
+                        SettingsClass.AlexNeganTxt = false;
+                        SettingsClass.AlexHawkTxt = false;
+                    }
+                }
+            }
+        }
+
+        private bool _alexHawkTxt;
+
+        public bool AlexHawkTxt
+        {
+            get { return _alexHawkTxt; }
+            set
+            {
+                if (_alexHawkTxt != value)
+                {
+                    _alexHawkTxt = value;
+                    SettingsClass.AlexHawkTxt = _alexHawkTxt;
+                    RaisePropertyChanged("AlexHawkTxt");
+                    if (_alexHawkTxt)
+                    {
+                        _alexSkin = false;
+                        _gangsterAlexTxt = false;
+                        _vergilAlexTxt = false;
+                        _alexNeganTxt = false;
+                        _viperStreetAlexTxt = false;
+
+                        RaisePropertyChanged("AlexSkin");
+                        RaisePropertyChanged("GangsterAlexTxt");
+                        RaisePropertyChanged("VergilAlexTxt");
+                        RaisePropertyChanged("AlexNeganTxt");
+                        RaisePropertyChanged("ViperStreetAlexTxt");
+
+                        SettingsClass.AlexSkin = false;
+                        SettingsClass.GangsterAlexTxt = false;
+                        SettingsClass.VergilAlexTxt = false;
+                        SettingsClass.AlexNeganTxt = false;
+                        SettingsClass.ViperStreetAlexTxt = false;
+                    }
+                }
+            }
+        }
+        //2B - McKinzie*****************************************************
         private bool _mcKinzieSkin;
 
         public bool McKinzieSkin
@@ -3409,10 +4718,13 @@ namespace UR_pnach_editor.ViewModels
                     {
                         _terminatorMckinzieTxt = false;
                         _mcPunisherTxt = false;
+                        _mcKinzieWhiteCamoTxt = false;
                         RaisePropertyChanged("TerminatorMckinzieTxt");
                         RaisePropertyChanged("McPunisherTxt");
+                        RaisePropertyChanged("McKinzieWhiteCamoTxt");
                         SettingsClass.TerminatorMckinzieTxt = false;
                         SettingsClass.McPunisherTxt = false;
+                        SettingsClass.McKinzieWhiteCamoTxt = false;
                     }
                 }
             }
@@ -3434,10 +4746,13 @@ namespace UR_pnach_editor.ViewModels
                     {
                         _mcKinzieSkin = false;
                         _mcPunisherTxt = false;
+                        _mcKinzieWhiteCamoTxt = false;
                         RaisePropertyChanged("McKinzieSkin");
                         RaisePropertyChanged("McPunisherTxt");
+                        RaisePropertyChanged("McKinzieWhiteCamoTxt");
                         SettingsClass.McKinzieSkin = false;
                         SettingsClass.McPunisherTxt = false;
+                        SettingsClass.McKinzieWhiteCamoTxt = false;
                     }
                 }
             }
@@ -3459,10 +4774,41 @@ namespace UR_pnach_editor.ViewModels
                     {
                         _mcKinzieSkin = false;
                         _terminatorMckinzieTxt = false;
+                        _mcKinzieWhiteCamoTxt = false;
                         RaisePropertyChanged("McKinzieSkin");
                         RaisePropertyChanged("TerminatorMckinzieTxt");
+                        RaisePropertyChanged("McKinzieWhiteCamoTxt");
                         SettingsClass.McKinzieSkin = false;
                         SettingsClass.TerminatorMckinzieTxt = false;
+                        SettingsClass.McKinzieWhiteCamoTxt = false;
+                    }
+                }
+            }
+        }
+
+        private bool _mcKinzieWhiteCamoTxt;
+
+        public bool McKinzieWhiteCamoTxt
+        {
+            get { return _mcKinzieWhiteCamoTxt; }
+            set
+            {
+                if (_mcKinzieWhiteCamoTxt != value)
+                {
+                    _mcKinzieWhiteCamoTxt = value;
+                    SettingsClass.McKinzieWhiteCamoTxt = _mcKinzieWhiteCamoTxt;
+                    RaisePropertyChanged("McKinzieWhiteCamoTxt");
+                    if (_mcKinzieWhiteCamoTxt)
+                    {
+                        _mcKinzieSkin = false;
+                        _terminatorMckinzieTxt = false;
+                        _mcPunisherTxt = false;
+                        RaisePropertyChanged("McKinzieSkin");
+                        RaisePropertyChanged("TerminatorMckinzieTxt");
+                        RaisePropertyChanged("McPunisherTxt");
+                        SettingsClass.McKinzieSkin = false;
+                        SettingsClass.TerminatorMckinzieTxt = false;
+                        SettingsClass.McPunisherTxt = false;
                     }
                 }
             }
@@ -3569,6 +4915,7 @@ namespace UR_pnach_editor.ViewModels
                         _brademTxt = false;
                         _beachGolemTxt = false;
                         _golemPunisherTxt = false;
+                        _copGolemTxt = false;
                         RaisePropertyChanged("GolemShirtlessTxt");
                         RaisePropertyChanged("NightmareTxt");
                         RaisePropertyChanged("GrolemTxt");
@@ -3579,6 +4926,7 @@ namespace UR_pnach_editor.ViewModels
                         RaisePropertyChanged("BrademTxt");
                         RaisePropertyChanged("BeachGolemTxt");
                         RaisePropertyChanged("GolemPunisherTxt");
+                        RaisePropertyChanged("CopGolemTxt");
                         SettingsClass.GolemShirtlessTxt = false;
                         SettingsClass.NightmareTxt = false;
                         SettingsClass.GrolemTxt = false;
@@ -3589,6 +4937,7 @@ namespace UR_pnach_editor.ViewModels
                         SettingsClass.BrademTxt = false;
                         SettingsClass.BeachGolemTxt = false;
                         SettingsClass.GolemPunisherTxt = false;
+                        SettingsClass.CopGolemTxt = false;
                     }
                 }
             }
@@ -3618,6 +4967,7 @@ namespace UR_pnach_editor.ViewModels
                         _brademTxt = false;
                         _beachGolemTxt = false;
                         _golemPunisherTxt = false;
+                        _copGolemTxt = false;
                         RaisePropertyChanged("GolemTuxedoTxt");
                         RaisePropertyChanged("NightmareTxt");
                         RaisePropertyChanged("GrolemTxt");
@@ -3628,6 +4978,7 @@ namespace UR_pnach_editor.ViewModels
                         RaisePropertyChanged("BrademTxt");
                         RaisePropertyChanged("BeachGolemTxt");
                         RaisePropertyChanged("GolemPunisherTxt");
+                        RaisePropertyChanged("CopGolemTxt");
                         SettingsClass.GolemTuxedoTxt = false;
                         SettingsClass.NightmareTxt = false;
                         SettingsClass.GrolemTxt = false;
@@ -3638,6 +4989,7 @@ namespace UR_pnach_editor.ViewModels
                         SettingsClass.BrademTxt = false;
                         SettingsClass.BeachGolemTxt = false;
                         SettingsClass.GolemPunisherTxt = false;
+                        SettingsClass.CopGolemTxt = false;
                     }
                 }
             }
@@ -3667,6 +5019,7 @@ namespace UR_pnach_editor.ViewModels
                         _brademTxt = false;
                         _beachGolemTxt = false;
                         _golemPunisherTxt = false;
+                        _copGolemTxt = false;
                         RaisePropertyChanged("GolemTuxedoTxt");
                         RaisePropertyChanged("GolemShirtlessTxt");
                         RaisePropertyChanged("GrolemTxt");
@@ -3677,6 +5030,7 @@ namespace UR_pnach_editor.ViewModels
                         RaisePropertyChanged("BrademTxt");
                         RaisePropertyChanged("BeachGolemTxt");
                         RaisePropertyChanged("GolemPunisherTxt");
+                        RaisePropertyChanged("CopGolemTxt");
                         SettingsClass.GolemTuxedoTxt = false;
                         SettingsClass.GolemShirtlessTxt = false;
                         SettingsClass.GrolemTxt = false;
@@ -3687,6 +5041,7 @@ namespace UR_pnach_editor.ViewModels
                         SettingsClass.BrademTxt = false;
                         SettingsClass.BeachGolemTxt = false;
                         SettingsClass.GolemPunisherTxt = false;
+                        SettingsClass.CopGolemTxt = false;
                     }
                 }
             }
@@ -3716,6 +5071,7 @@ namespace UR_pnach_editor.ViewModels
                         _brademTxt = false;
                         _beachGolemTxt = false;
                         _golemPunisherTxt = false;
+                        _copGolemTxt = false;
                         RaisePropertyChanged("GolemTuxedoTxt");
                         RaisePropertyChanged("GolemShirtlessTxt");
                         RaisePropertyChanged("NightmareTxt");
@@ -3726,6 +5082,7 @@ namespace UR_pnach_editor.ViewModels
                         RaisePropertyChanged("BrademTxt");
                         RaisePropertyChanged("BeachGolemTxt");
                         RaisePropertyChanged("GolemPunisherTxt");
+                        RaisePropertyChanged("CopGolemTxt");
                         SettingsClass.GolemTuxedoTxt = false;
                         SettingsClass.GolemShirtlessTxt = false;
                         SettingsClass.NightmareTxt = false;
@@ -3736,6 +5093,7 @@ namespace UR_pnach_editor.ViewModels
                         SettingsClass.BrademTxt = false;
                         SettingsClass.BeachGolemTxt = false;
                         SettingsClass.GolemPunisherTxt = false;
+                        SettingsClass.CopGolemTxt = false;
                     }
                 }
             }
@@ -3765,6 +5123,7 @@ namespace UR_pnach_editor.ViewModels
                         _brademTxt = false;
                         _beachGolemTxt = false;
                         _golemPunisherTxt = false;
+                        _copGolemTxt = false;
                         RaisePropertyChanged("GolemTuxedoTxt");
                         RaisePropertyChanged("GolemShirtlessTxt");
                         RaisePropertyChanged("NightmareTxt");
@@ -3775,6 +5134,7 @@ namespace UR_pnach_editor.ViewModels
                         RaisePropertyChanged("BrademTxt");
                         RaisePropertyChanged("BeachGolemTxt");
                         RaisePropertyChanged("GolemPunisherTxt");
+                        RaisePropertyChanged("CopGolemTxt");
                         SettingsClass.GolemTuxedoTxt = false;
                         SettingsClass.GolemShirtlessTxt = false;
                         SettingsClass.NightmareTxt = false;
@@ -3785,6 +5145,7 @@ namespace UR_pnach_editor.ViewModels
                         SettingsClass.BrademTxt = false;
                         SettingsClass.BeachGolemTxt = false;
                         SettingsClass.GolemPunisherTxt = false;
+                        SettingsClass.CopGolemTxt = false;
                     }
                 }
             }
@@ -3815,6 +5176,7 @@ namespace UR_pnach_editor.ViewModels
                         _brademTxt = false;
                         _beachGolemTxt = false;
                         _golemPunisherTxt = false;
+                        _copGolemTxt = false;
                         RaisePropertyChanged("GolemTuxedoTxt");
                         RaisePropertyChanged("GolemShirtlessTxt");
                         RaisePropertyChanged("NightmareTxt");
@@ -3825,6 +5187,7 @@ namespace UR_pnach_editor.ViewModels
                         RaisePropertyChanged("BrademTxt");
                         RaisePropertyChanged("BeachGolemTxt");
                         RaisePropertyChanged("GolemPunisherTxt");
+                        RaisePropertyChanged("CopGolemTxt");
                         SettingsClass.GolemTuxedoTxt = false;
                         SettingsClass.GolemShirtlessTxt = false;
                         SettingsClass.NightmareTxt = false;
@@ -3835,6 +5198,7 @@ namespace UR_pnach_editor.ViewModels
                         SettingsClass.BrademTxt = false;
                         SettingsClass.BeachGolemTxt = false;
                         SettingsClass.GolemPunisherTxt = false;
+                        SettingsClass.CopGolemTxt = false;
                     }
                 }
             }
@@ -3864,6 +5228,7 @@ namespace UR_pnach_editor.ViewModels
                         _brademTxt = false;
                         _beachGolemTxt = false;
                         _golemPunisherTxt = false;
+                        _copGolemTxt = false;
                         RaisePropertyChanged("GolemTuxedoTxt");
                         RaisePropertyChanged("GolemShirtlessTxt");
                         RaisePropertyChanged("NightmareTxt");
@@ -3874,6 +5239,7 @@ namespace UR_pnach_editor.ViewModels
                         RaisePropertyChanged("BrademTxt");
                         RaisePropertyChanged("BeachGolemTxt");
                         RaisePropertyChanged("GolemPunisherTxt");
+                        RaisePropertyChanged("CopGolemTxt");
                         SettingsClass.GolemTuxedoTxt = false;
                         SettingsClass.GolemShirtlessTxt = false;
                         SettingsClass.NightmareTxt = false;
@@ -3884,6 +5250,7 @@ namespace UR_pnach_editor.ViewModels
                         SettingsClass.BrademTxt = false;
                         SettingsClass.BeachGolemTxt = false;
                         SettingsClass.GolemPunisherTxt = false;
+                        SettingsClass.CopGolemTxt = false;
                     }
                 }
             }
@@ -3913,6 +5280,7 @@ namespace UR_pnach_editor.ViewModels
                         _brademTxt = false;
                         _beachGolemTxt = false;
                         _golemPunisherTxt = false;
+                        _copGolemTxt = false;
                         RaisePropertyChanged("GolemTuxedoTxt");
                         RaisePropertyChanged("GolemShirtlessTxt");
                         RaisePropertyChanged("NightmareTxt");
@@ -3923,6 +5291,7 @@ namespace UR_pnach_editor.ViewModels
                         RaisePropertyChanged("BrademTxt");
                         RaisePropertyChanged("BeachGolemTxt");
                         RaisePropertyChanged("GolemPunisherTxt");
+                        RaisePropertyChanged("CopGolemTxt");
                         SettingsClass.GolemTuxedoTxt = false;
                         SettingsClass.GolemShirtlessTxt = false;
                         SettingsClass.NightmareTxt = false;
@@ -3933,6 +5302,7 @@ namespace UR_pnach_editor.ViewModels
                         SettingsClass.BrademTxt = false;
                         SettingsClass.BeachGolemTxt = false;
                         SettingsClass.GolemPunisherTxt = false;
+                        SettingsClass.CopGolemTxt = false;
                     }
                 }
             }
@@ -3962,6 +5332,7 @@ namespace UR_pnach_editor.ViewModels
                         _golemusTxt = false;
                         _beachGolemTxt = false;
                         _golemPunisherTxt = false;
+                        _copGolemTxt = false;
                         RaisePropertyChanged("GolemTuxedoTxt");
                         RaisePropertyChanged("GolemShirtlessTxt");
                         RaisePropertyChanged("NightmareTxt");
@@ -3972,6 +5343,7 @@ namespace UR_pnach_editor.ViewModels
                         RaisePropertyChanged("GolemusTxt");
                         RaisePropertyChanged("BeachGolemTxt");
                         RaisePropertyChanged("GolemPunisherTxt");
+                        RaisePropertyChanged("CopGolemTxt");
                         SettingsClass.GolemTuxedoTxt = false;
                         SettingsClass.GolemShirtlessTxt = false;
                         SettingsClass.NightmareTxt = false;
@@ -3982,6 +5354,7 @@ namespace UR_pnach_editor.ViewModels
                         SettingsClass.GolemusTxt = false;
                         SettingsClass.BeachGolemTxt = false;
                         SettingsClass.GolemPunisherTxt = false;
+                        SettingsClass.CopGolemTxt = false;
                     }
                 }
             }
@@ -4011,6 +5384,7 @@ namespace UR_pnach_editor.ViewModels
                         _golemusTxt = false;
                         _brademTxt = false;
                         _golemPunisherTxt = false;
+                        _copGolemTxt = false;
                         RaisePropertyChanged("GolemTuxedoTxt");
                         RaisePropertyChanged("GolemShirtlessTxt");
                         RaisePropertyChanged("NightmareTxt");
@@ -4021,6 +5395,7 @@ namespace UR_pnach_editor.ViewModels
                         RaisePropertyChanged("GolemusTxt");
                         RaisePropertyChanged("BrademTxt");
                         RaisePropertyChanged("GolemPunisherTxt");
+                        RaisePropertyChanged("CopGolemTxt");
                         SettingsClass.GolemTuxedoTxt = false;
                         SettingsClass.GolemShirtlessTxt = false;
                         SettingsClass.NightmareTxt = false;
@@ -4031,6 +5406,7 @@ namespace UR_pnach_editor.ViewModels
                         SettingsClass.GolemusTxt = false;
                         SettingsClass.BrademTxt = false;
                         SettingsClass.GolemPunisherTxt = false;
+                        SettingsClass.CopGolemTxt = false;
                     }
                 }
             }
@@ -4048,6 +5424,7 @@ namespace UR_pnach_editor.ViewModels
                     _golemPunisherTxt = value;
                     SettingsClass.GolemPunisherTxt = _golemPunisherTxt;
                     RaisePropertyChanged("GolemPunisherTxt");
+                    RaisePropertyChanged("CopGolemTxt");
                     if (_golemPunisherTxt)
                     {
                         _golemTuxedoTxt = false;
@@ -4060,6 +5437,7 @@ namespace UR_pnach_editor.ViewModels
                         _golemusTxt = false;
                         _brademTxt = false;
                         _beachGolemTxt = false;
+                        _copGolemTxt = false;
                         RaisePropertyChanged("GolemTuxedoTxt");
                         RaisePropertyChanged("GolemShirtlessTxt");
                         RaisePropertyChanged("NightmareTxt");
@@ -4080,6 +5458,57 @@ namespace UR_pnach_editor.ViewModels
                         SettingsClass.GolemusTxt = false;
                         SettingsClass.BrademTxt = false;
                         SettingsClass.BeachGolemTxt = false;
+                    }
+                }
+            }
+        }
+        private bool _copGolemTxt;
+
+        public bool CopGolemTxt
+        {
+            get { return _copGolemTxt; }
+            set
+            {
+                if (_copGolemTxt != value)
+                {
+                    _copGolemTxt = value;
+                    SettingsClass.CopGolemTxt = _copGolemTxt;
+                    RaisePropertyChanged("CopGolemTxt");
+                    if (_copGolemTxt)
+                    {
+                        _golemTuxedoTxt = false;
+                        _golemShirtlessTxt = false;
+                        _nightmareTxt = false;
+                        _grolemTxt = false;
+                        _golemKratosTxt = false;
+                        _subzeroGolemTxt = false;
+                        _monsterEnergyGolemTxt = false;
+                        _golemusTxt = false;
+                        _brademTxt = false;
+                        _beachGolemTxt = false;
+                        _golemPunisherTxt = false;
+                        RaisePropertyChanged("GolemTuxedoTxt");
+                        RaisePropertyChanged("GolemShirtlessTxt");
+                        RaisePropertyChanged("NightmareTxt");
+                        RaisePropertyChanged("GrolemTxt");
+                        RaisePropertyChanged("GolemKratosTxt");
+                        RaisePropertyChanged("SubzeroGolemTxt");
+                        RaisePropertyChanged("MonsterEnergyGolemTxt");
+                        RaisePropertyChanged("GolemusTxt");
+                        RaisePropertyChanged("BrademTxt");
+                        RaisePropertyChanged("BeachGolemTxt");
+                        RaisePropertyChanged("GolemPunisherTxt");
+                        SettingsClass.GolemTuxedoTxt = false;
+                        SettingsClass.GolemShirtlessTxt = false;
+                        SettingsClass.NightmareTxt = false;
+                        SettingsClass.GrolemTxt = false;
+                        SettingsClass.GolemKratosTxt = false;
+                        SettingsClass.SubzeroGolemTxt = false;
+                        SettingsClass.MonsterEnergyGolemTxt = false;
+                        SettingsClass.GolemusTxt = false;
+                        SettingsClass.BrademTxt = false;
+                        SettingsClass.BeachGolemTxt = false;
+                        SettingsClass.GolemPunisherTxt = false;
                     }
                 }
             }
@@ -4130,7 +5559,6 @@ namespace UR_pnach_editor.ViewModels
             }
         }
         //2F - Masa*********************************************************
-
         private bool _masaSkin;
 
         public bool MasaSkin
@@ -4146,12 +5574,16 @@ namespace UR_pnach_editor.ViewModels
                     if (_masaSkin)
                     {
                         _endangeredMasaTxt = false;
+                        _borsalinoMasaTxt = false;
                         RaisePropertyChanged("EndangeredMasaTxt");
+                        RaisePropertyChanged("BorsalinoMasaTxt");
                         SettingsClass.EndangeredMasaTxt = false;
+                        SettingsClass.BorsalinoMasaTxt = false;
                     }
                 }
             }
         }
+
         private bool _endangeredMasaTxt;
 
         public bool EndangeredMasaTxt
@@ -4167,14 +5599,41 @@ namespace UR_pnach_editor.ViewModels
                     if (_endangeredMasaTxt)
                     {
                         _masaSkin = false;
+                        _borsalinoMasaTxt = false;
                         RaisePropertyChanged("MasaSkin");
+                        RaisePropertyChanged("BorsalinoMasaTxt");
                         SettingsClass.MasaSkin = false;
+                        SettingsClass.BorsalinoMasaTxt = false;
+                    }
+                }
+            }
+        }
+
+        private bool _borsalinoMasaTxt;
+
+        public bool BorsalinoMasaTxt
+        {
+            get { return _borsalinoMasaTxt; }
+            set
+            {
+                if (_borsalinoMasaTxt != value)
+                {
+                    _borsalinoMasaTxt = value;
+                    SettingsClass.BorsalinoMasaTxt = _borsalinoMasaTxt;
+                    RaisePropertyChanged("BorsalinoMasaTxt");
+                    if (_borsalinoMasaTxt)
+                    {
+                        _masaSkin = false;
+                        _endangeredMasaTxt = false;
+                        RaisePropertyChanged("MasaSkin");
+                        RaisePropertyChanged("EndangeredMasaTxt");
+                        SettingsClass.MasaSkin = false;
+                        SettingsClass.EndangeredMasaTxt = false;
                     }
                 }
             }
         }
         //30 - Hiro*********************************************************
-
         private bool _hiroSkin;
 
         public bool HiroSkin
@@ -4190,8 +5649,11 @@ namespace UR_pnach_editor.ViewModels
                     if (_hiroSkin)
                     {
                         _hiroGATTxt = false;
+                        _lanceVanceHiroTxt = false;
                         RaisePropertyChanged("HiroGATTxt");
+                        RaisePropertyChanged("LanceVanceHiroTxt");
                         SettingsClass.HiroGATTxt = false;
+                        SettingsClass.LanceVanceHiroTxt = false;
                     }
                 }
             }
@@ -4212,8 +5674,36 @@ namespace UR_pnach_editor.ViewModels
                     if (_hiroGATTxt)
                     {
                         _hiroSkin = false;
+                        _lanceVanceHiroTxt = false;
                         RaisePropertyChanged("HiroSkin");
+                        RaisePropertyChanged("LanceVanceHiroTxt");
                         SettingsClass.HiroSkin = false;
+                        SettingsClass.LanceVanceHiroTxt = false;
+                    }
+                }
+            }
+        }
+
+        private bool _lanceVanceHiroTxt;
+
+        public bool LanceVanceHiroTxt
+        {
+            get { return _lanceVanceHiroTxt; }
+            set
+            {
+                if (_lanceVanceHiroTxt != value)
+                {
+                    _lanceVanceHiroTxt = value;
+                    SettingsClass.LanceVanceHiroTxt = _lanceVanceHiroTxt;
+                    RaisePropertyChanged("LanceVanceHiroTxt");
+                    if (_lanceVanceHiroTxt)
+                    {
+                        _hiroSkin = false;
+                        _hiroGATTxt = false;
+                        RaisePropertyChanged("HiroSkin");
+                        RaisePropertyChanged("HiroGATTxt");
+                        SettingsClass.HiroSkin = false;
+                        SettingsClass.HiroGATTxt = false;
                     }
                 }
             }
@@ -4307,7 +5797,6 @@ namespace UR_pnach_editor.ViewModels
             }
         }
         //33 - Sha Ying*****************************************************
-
         private bool _shaYingSkin;
 
         public bool ShaYingSkin
@@ -4323,12 +5812,16 @@ namespace UR_pnach_editor.ViewModels
                     if (_shaYingSkin)
                     {
                         _shaYingSkin2 = false;
+                        _yakuzaShaYingTxt = false;
                         RaisePropertyChanged("ShaYingSkin2");
+                        RaisePropertyChanged("YakuzaShaYingTxt");
                         SettingsClass.ShaYingSkin2 = false;
+                        SettingsClass.YakuzaShaYingTxt = false;
                     }
                 }
             }
         }
+
         private bool _shaYingSkin2;
 
         public bool ShaYingSkin2
@@ -4344,8 +5837,36 @@ namespace UR_pnach_editor.ViewModels
                     if (_shaYingSkin2)
                     {
                         _shaYingSkin = false;
+                        _yakuzaShaYingTxt = false;
                         RaisePropertyChanged("ShaYingSkin");
+                        RaisePropertyChanged("YakuzaShaYingTxt");
                         SettingsClass.ShaYingSkin = false;
+                        SettingsClass.YakuzaShaYingTxt = false;
+                    }
+                }
+            }
+        }
+
+        private bool _yakuzaShaYingTxt;
+
+        public bool YakuzaShaYingTxt
+        {
+            get { return _yakuzaShaYingTxt; }
+            set
+            {
+                if (_yakuzaShaYingTxt != value)
+                {
+                    _yakuzaShaYingTxt = value;
+                    SettingsClass.YakuzaShaYingTxt = _yakuzaShaYingTxt;
+                    RaisePropertyChanged("YakuzaShaYingTxt");
+                    if (_yakuzaShaYingTxt)
+                    {
+                        _shaYingSkin = false;
+                        _shaYingSkin2 = false;
+                        RaisePropertyChanged("ShaYingSkin");
+                        RaisePropertyChanged("ShaYingSkin2");
+                        SettingsClass.ShaYingSkin = false;
+                        SettingsClass.ShaYingSkin2 = false;
                     }
                 }
             }
@@ -4488,22 +6009,25 @@ namespace UR_pnach_editor.ViewModels
                     {
                         _tuxLinTxt = false;
                         _cEOLinFongTxt = false;
-                        _crimsonLinFongTxt = false; 
+                        _crimsonLinFongTxt = false;
                         _easterBunnyLinFongTxt = false;
                         _goldenDragonLinFongTxt = false;
                         _linFongJokerTxt = false;
+                        _lanceVanceLinfongTxt = false;
                         RaisePropertyChanged("TuxLinTxt");
                         RaisePropertyChanged("CEOLinFongTxt");
                         RaisePropertyChanged("CrimsonLinFongTxt");
                         RaisePropertyChanged("EasterBunnyLinFongTxt");
                         RaisePropertyChanged("GoldenDragonLinFongTxt");
                         RaisePropertyChanged("LinFongJokerTxt");
+                        RaisePropertyChanged("LanceVanceLinfongTxt");
                         SettingsClass.TuxLinTxt = false;
                         SettingsClass.CEOLinFongTxt = false;
                         SettingsClass.CrimsonLinFongTxt = false;
                         SettingsClass.EasterBunnyLinFongTxt = false;
                         SettingsClass.GoldenDragonLinFongTxt = false;
                         SettingsClass.LinFongJokerTxt = false;
+                        SettingsClass.LanceVanceLinfongTxt = false;
                     }
                 }
             }
@@ -4529,18 +6053,21 @@ namespace UR_pnach_editor.ViewModels
                         _easterBunnyLinFongTxt = false;
                         _goldenDragonLinFongTxt = false;
                         _linFongJokerTxt = false;
+                        _lanceVanceLinfongTxt = false;
                         RaisePropertyChanged("LinFongLeeSkin");
                         RaisePropertyChanged("CEOLinFongTxt");
                         RaisePropertyChanged("CrimsonLinFongTxt");
                         RaisePropertyChanged("EasterBunnyLinFongTxt");
                         RaisePropertyChanged("GoldenDragonLinFongTxt");
                         RaisePropertyChanged("LinFongJokerTxt");
+                        RaisePropertyChanged("LanceVanceLinfongTxt");
                         SettingsClass.LinFongLeeSkin = false;
                         SettingsClass.CEOLinFongTxt = false;
                         SettingsClass.CrimsonLinFongTxt = false;
                         SettingsClass.EasterBunnyLinFongTxt = false;
                         SettingsClass.GoldenDragonLinFongTxt = false;
                         SettingsClass.LinFongJokerTxt = false;
+                        SettingsClass.LanceVanceLinfongTxt = false;
                     }
                 }
             }
@@ -4566,18 +6093,21 @@ namespace UR_pnach_editor.ViewModels
                         _easterBunnyLinFongTxt = false;
                         _goldenDragonLinFongTxt = false;
                         _linFongJokerTxt = false;
+                        _lanceVanceLinfongTxt = false;
                         RaisePropertyChanged("LinFongLeeSkin");
                         RaisePropertyChanged("TuxLinTxt");
                         RaisePropertyChanged("CrimsonLinFongTxt");
                         RaisePropertyChanged("EasterBunnyLinFongTxt");
                         RaisePropertyChanged("GoldenDragonLinFongTxt");
                         RaisePropertyChanged("LinFongJokerTxt");
+                        RaisePropertyChanged("LanceVanceLinfongTxt");
                         SettingsClass.LinFongLeeSkin = false;
                         SettingsClass.TuxLinTxt = false;
                         SettingsClass.CrimsonLinFongTxt = false;
                         SettingsClass.EasterBunnyLinFongTxt = false;
                         SettingsClass.GoldenDragonLinFongTxt = false;
                         SettingsClass.LinFongJokerTxt = false;
+                        SettingsClass.LanceVanceLinfongTxt = false;
                     }
                 }
             }
@@ -4603,18 +6133,21 @@ namespace UR_pnach_editor.ViewModels
                         _easterBunnyLinFongTxt = false;
                         _goldenDragonLinFongTxt = false;
                         _linFongJokerTxt = false;
+                        _lanceVanceLinfongTxt = false;
                         RaisePropertyChanged("LinFongLeeSkin");
                         RaisePropertyChanged("TuxLinTxt");
                         RaisePropertyChanged("CEOLinFongTxt");
                         RaisePropertyChanged("EasterBunnyLinFongTxt");
                         RaisePropertyChanged("GoldenDragonLinFongTxt");
                         RaisePropertyChanged("LinFongJokerTxt");
+                        RaisePropertyChanged("LanceVanceLinfongTxt");
                         SettingsClass.LinFongLeeSkin = false;
                         SettingsClass.TuxLinTxt = false;
                         SettingsClass.CEOLinFongTxt = false;
                         SettingsClass.EasterBunnyLinFongTxt = false;
                         SettingsClass.GoldenDragonLinFongTxt = false;
                         SettingsClass.LinFongJokerTxt = false;
+                        SettingsClass.LanceVanceLinfongTxt = false;
                     }
                 }
             }
@@ -4640,18 +6173,21 @@ namespace UR_pnach_editor.ViewModels
                         _crimsonLinFongTxt = false;
                         _goldenDragonLinFongTxt = false;
                         _linFongJokerTxt = false;
+                        _lanceVanceLinfongTxt = false;
                         RaisePropertyChanged("LinFongLeeSkin");
                         RaisePropertyChanged("TuxLinTxt");
                         RaisePropertyChanged("CEOLinFongTxt");
                         RaisePropertyChanged("CrimsonLinFongTxt");
                         RaisePropertyChanged("GoldenDragonLinFongTxt");
                         RaisePropertyChanged("LinFongJokerTxt");
+                        RaisePropertyChanged("LanceVanceLinfongTxt");
                         SettingsClass.LinFongLeeSkin = false;
                         SettingsClass.TuxLinTxt = false;
                         SettingsClass.CEOLinFongTxt = false;
                         SettingsClass.CrimsonLinFongTxt = false;
                         SettingsClass.GoldenDragonLinFongTxt = false;
                         SettingsClass.LinFongJokerTxt = false;
+                        SettingsClass.LanceVanceLinfongTxt = false;
                     }
                 }
             }
@@ -4677,18 +6213,21 @@ namespace UR_pnach_editor.ViewModels
                         _crimsonLinFongTxt = false;
                         _easterBunnyLinFongTxt = false;
                         _linFongJokerTxt = false;
+                        _lanceVanceLinfongTxt = false;
                         RaisePropertyChanged("LinFongLeeSkin");
                         RaisePropertyChanged("TuxLinTxt");
                         RaisePropertyChanged("CEOLinFongTxt");
                         RaisePropertyChanged("CrimsonLinFongTxt");
                         RaisePropertyChanged("EasterBunnyLinFongTxt");
                         RaisePropertyChanged("LinFongJokerTxt");
+                        RaisePropertyChanged("LanceVanceLinfongTxt");
                         SettingsClass.LinFongLeeSkin = false;
                         SettingsClass.TuxLinTxt = false;
                         SettingsClass.CEOLinFongTxt = false;
                         SettingsClass.CrimsonLinFongTxt = false;
                         SettingsClass.EasterBunnyLinFongTxt = false;
                         SettingsClass.LinFongJokerTxt = false;
+                        SettingsClass.LanceVanceLinfongTxt = false;
                     }
                 }
             }
@@ -4706,6 +6245,7 @@ namespace UR_pnach_editor.ViewModels
                     _linFongJokerTxt = value;
                     SettingsClass.LinFongJokerTxt = _linFongJokerTxt;
                     RaisePropertyChanged("LinFongJokerTxt");
+                    RaisePropertyChanged("LanceVanceLinfongTxt");
                     if (_linFongJokerTxt)
                     {
                         _linFongLeeSkin = false;
@@ -4730,6 +6270,46 @@ namespace UR_pnach_editor.ViewModels
                 }
             }
         }
+        private bool _lanceVanceLinfongTxt;
+
+        public bool LanceVanceLinfongTxt
+        {
+            get { return _lanceVanceLinfongTxt; }
+            set
+            {
+                if (_lanceVanceLinfongTxt != value)
+                {
+                    _lanceVanceLinfongTxt = value;
+                    SettingsClass.LanceVanceLinfongTxt = _lanceVanceLinfongTxt;
+                    RaisePropertyChanged("LanceVanceLinfongTxt");
+                    if (_lanceVanceLinfongTxt)
+                    {
+                        _linFongLeeSkin = false;
+                        _tuxLinTxt = false;
+                        _cEOLinFongTxt = false;
+                        _crimsonLinFongTxt = false;
+                        _easterBunnyLinFongTxt = false;
+                        _goldenDragonLinFongTxt = false;
+                        _linFongJokerTxt = false;
+                        RaisePropertyChanged("LinFongLeeSkin");
+                        RaisePropertyChanged("TuxLinTxt");
+                        RaisePropertyChanged("CEOLinFongTxt");
+                        RaisePropertyChanged("CrimsonLinFongTxt");
+                        RaisePropertyChanged("EasterBunnyLinFongTxt");
+                        RaisePropertyChanged("GoldenDragonLinFongTxt");
+                        RaisePropertyChanged("LinFongJokerTxt");
+                        SettingsClass.LinFongLeeSkin = false;
+                        SettingsClass.TuxLinTxt = false;
+                        SettingsClass.CEOLinFongTxt = false;
+                        SettingsClass.CrimsonLinFongTxt = false;
+                        SettingsClass.EasterBunnyLinFongTxt = false;
+                        SettingsClass.GoldenDragonLinFongTxt = false;
+                        SettingsClass.LinFongJokerTxt = false;
+                    }
+                }
+            }
+        }
+
         //37 - Bordin*******************************************************
 
         private bool _hellsLegionBordinTxt;
@@ -5556,6 +7136,90 @@ namespace UR_pnach_editor.ViewModels
                     notFound += "BradBen10Txt" + Environment.NewLine + "";
                 }
             }
+            else if (BradWhiteSnakeTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Brad White Snake Skin\", "", "",
+                        "9038b2fc83b0c2d6-6b7683df08f19e63-r100000000800000-00006a94", "fa336ac29847481d-c4c9d57a996ac45a-r80000000800000-00006a94",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    BradWhiteSnakeTxt = false;
+                    notFound += "BradWhiteSnakeTxt" + Environment.NewLine + "";
+                }
+            }
+            else if (KazumaKiryuBradUpdatedTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Kazuma Kiryu Brad Updated\", "", "",
+                        "2d9db83d6fbb722e-acb50fd49fba53b8-r64x256-00002a94", "92ca3fa117cf9044-32916e808b94fcbe-r100000000800000-00006a94",
+                        "9038b2fc83b0c2d6-6b7683df08f19e63-r100000000800000-00006a94", "fa336ac29847481d-c4c9d57a996ac45a-r80000000800000-00006a94",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    KazumaKiryuBradUpdatedTxt = false;
+                    notFound += "KazumaKiryuBradUpdatedTxt" + Environment.NewLine + "";
+                }
+            }
+            else if (BlueDenimBradTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Blue Denim Brad\", "", "",
+                        "92ca3fa117cf9044-32916e808b94fcbe-r100000000800000-00006a94", "9038b2fc83b0c2d6-6b7683df08f19e63-r100000000800000-00006a94",
+                        "fa336ac29847481d-c4c9d57a996ac45a-r80000000800000-00006a94", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    BlueDenimBradTxt = false;
+                    notFound += "BlueDenimBradTxt" + Environment.NewLine + "";
+                }
+            }
+            else if (TribalBradTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Tribal Brad\", "", "",
+                        "92ca3fa117cf9044-32916e808b94fcbe-r100000000800000-00006a94", "9038b2fc83b0c2d6-6b7683df08f19e63-r100000000800000-00006a94",
+                        "fa336ac29847481d-c4c9d57a996ac45a-r80000000800000-00006a94", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    TribalBradTxt = false;
+                    notFound += "TribalBradTxt" + Environment.NewLine + "";
+                }
+            }
 
 
             #endregion
@@ -5882,7 +7546,7 @@ namespace UR_pnach_editor.ViewModels
                     "9cba0554e0001ed1-b5ff98e4a89de848-00005dd3", "20cfc6abe0b9d978-83903ff6a4338c94-00005dd4",
                     "34ed810091ea2a5b-f895ad7844eec0ea-00005dd3", "90e1be372ec7ad94-6f22edca0bed91a6-00005d93",
                     "43372d948166bad9-ed940040202e297-000059d3", "f4744a97827090e5-5b43b4ca6fa4301d-00005dd3",
-                    "", "",
+                    "43372d948166bad9-ed940040202e297-000019d3", "",
                     "", "",
                     "", "",
                     "", "",
@@ -5929,6 +7593,27 @@ namespace UR_pnach_editor.ViewModels
                 {
                     EmCeeSkin2 = false;
                     notFound += "Gaming_Gipsy" + Environment.NewLine + "";
+                }
+            }
+            else if (BasketballFanEmceeTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Basket ball Fan Em-cee\", "", "",
+                        "5d4ed9fe1f41e76-2f92919a2d8cac7-000061d3", "20cfc6abe0b9d978-83903ff6a4338c94-00005dd4",
+                        "90e1be372ec7ad94-6f22edca0bed91a6-00005d93", "43372d948166bad9-ed940040202e297-000019d3",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    BasketballFanEmceeTxt = false;
+                    notFound += "BasketballFanEmceeTxt" + Environment.NewLine + "";
                 }
             }
 
@@ -6079,9 +7764,9 @@ namespace UR_pnach_editor.ViewModels
                     "6009cfcffeb2741f-c5ba6a7789a8fc6-r128x128-00002a93", "d3e74f5641e8d418-34c1b676f21ffa35-r128x128-00002a93",
                     "9cf17f90a784a68d-aa6f9a990c990b78-r128x128-00002a93", "87fd17a0e9ce5383-8c12c10d3114ae46-r256x256-00002a93",
                     "e40ce99e693ba6fa-5099b06b21a57886-r128x128-00002a93", "e5008ef7986be03-eddd5bff14c9f3bd-r64x64-00002a93",
-                    "9abf34f81757c523-59f50570766114a7-r128x128-00002a93", "77c17e9b85ad6e66-ec7b3f56ba4d72b1-r128x128-00002a94",
-                    "86cc48af2b03d35a-b6b0d73f83bc9369-r128x128-00002a94", "924f874ad79131e4-69f5c573a6d81b84-r128x128-00002a94",
-                    "a55b9b52a2cf192-331f68e6382b7091-r256x256-00002a93", "a4468214ec8b66b3-6e307f1df097456f-r80000000800000-00006a94",
+                    "", "",
+                    "", "",
+                    "", "",
                     "", "",
                     "", "");
 
@@ -6169,14 +7854,14 @@ namespace UR_pnach_editor.ViewModels
                     notFound += "MiguelBullyTxt" + Environment.NewLine + "";
                 }
             }
-            else if (SeuMadrugaMiguelTxt)
+            else if (ViceMiguelTxt)
             {
                 try
                 {
-                    ReplaceTextures(@"\_seu madruga miguel\", "", "",
-                        "9abf34f81757c523-59f50570766114a7-r128x128-00002a93", "77c17e9b85ad6e66-ec7b3f56ba4d72b1-r128x128-00002a94",
-                        "86cc48af2b03d35a-b6b0d73f83bc9369-r128x128-00002a94", "924f874ad79131e4-69f5c573a6d81b84-r128x128-00002a94",
-                        "a55b9b52a2cf192-331f68e6382b7091-r256x256-00002a93", "a4468214ec8b66b3-6e307f1df097456f-r80000000800000-00006a94",
+                    ReplaceTextures(@"\_Vice Miguel\", "", "",
+                        "9cf17f90a784a68d-aa6f9a990c990b78-r128x128-00002a93", "e40ce99e693ba6fa-5099b06b21a57886-r80000000800000-00006a93",
+                        "", "",
+                        "", "",
                         "", "",
                         "", "",
                         "", "",
@@ -6186,8 +7871,8 @@ namespace UR_pnach_editor.ViewModels
                 }
                 catch
                 {
-                    SeuMadrugaMiguelTxt = false;
-                    notFound += "SeuMadrugaMiguelTxt" + Environment.NewLine + "";
+                    ViceMiguelTxt = false;
+                    notFound += "ViceMiguelTxt" + Environment.NewLine + "";
                 }
             }
 
@@ -6200,9 +7885,9 @@ namespace UR_pnach_editor.ViewModels
                     "a55b9b52a2cf192-331f68e6382b7091-r100000001000000-00006a93", "d1acb648d3708dca-77c6c28634183961-r80000000400000-00006a93",
                     "ec0b227cf0dfa058-ac55f79a98843fe7-r80000000800000-00006a93", "",
                     "", "",
-                    "", "",
-                    "", "",
-                    "", "",
+                    "9abf34f81757c523-59f50570766114a7-r128x128-00002a93", "77c17e9b85ad6e66-ec7b3f56ba4d72b1-r128x128-00002a94",
+                    "86cc48af2b03d35a-b6b0d73f83bc9369-r128x128-00002a94", "924f874ad79131e4-69f5c573a6d81b84-r128x128-00002a94",
+                    "a55b9b52a2cf192-331f68e6382b7091-r256x256-00002a93", "a4468214ec8b66b3-6e307f1df097456f-r80000000800000-00006a94",
                     "", "",
                     "", "");
 
@@ -6246,6 +7931,69 @@ namespace UR_pnach_editor.ViewModels
                 {
                     RamonSkin2 = false;
                     notFound += "Tengu from the Hood" + Environment.NewLine + "";
+                }
+            }
+            else if (SeuMadrugaRamonTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_seu madruga ramon\", "", "",
+                        "9abf34f81757c523-59f50570766114a7-r128x128-00002a93", "77c17e9b85ad6e66-ec7b3f56ba4d72b1-r128x128-00002a94",
+                        "86cc48af2b03d35a-b6b0d73f83bc9369-r128x128-00002a94", "924f874ad79131e4-69f5c573a6d81b84-r128x128-00002a94",
+                        "a55b9b52a2cf192-331f68e6382b7091-r256x256-00002a93", "a4468214ec8b66b3-6e307f1df097456f-r80000000800000-00006a94",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    SeuMadrugaRamonTxt = false;
+                    notFound += "SeuMadrugaRamonTxt" + Environment.NewLine + "";
+                }
+            }
+            else if (WingedSkullRamonTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Winged Skull Ramon\", "", "",
+                        "77c17e9b85ad6e66-ec7b3f56ba4d72b1-r80000000800000-00006a94", "86cc48af2b03d35a-b6b0d73f83bc9369-r80000000800000-00006a94",
+                        "924f874ad79131e4-69f5c573a6d81b84-r80000000800000-00006a94", "a55b9b52a2cf192-331f68e6382b7091-r256x256-00002a93",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    WingedSkullRamonTxt = false;
+                    notFound += "WingedSkullRamonTxt" + Environment.NewLine + "";
+                }
+            }
+            else if (HoodGuyRamonTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Hood Guy Ramon\", "", "",
+                        "77c17e9b85ad6e66-ec7b3f56ba4d72b1-r80000000800000-00006a94", "86cc48af2b03d35a-b6b0d73f83bc9369-r80000000800000-00006a94",
+                        "924f874ad79131e4-69f5c573a6d81b84-r80000000800000-00006a94", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    HoodGuyRamonTxt = false;
+                    notFound += "HoodGuyRamonTxt" + Environment.NewLine + "";
                 }
             }
 
@@ -6489,9 +8237,9 @@ namespace UR_pnach_editor.ViewModels
                     "780558d2582e5d35-b85a3efd4c52df4e-r100000000800000-00006a93", "ab67ca85e8daf87c-505a60e8a7719fd3-r40000000800000-00006a93",
                     "bbd6f28c652c54f7-2fa346e7cd1ed41b-r80000001000000-00006a93", "2ddd360082d75ec2-68d5659199a64f80-r100000000800000-00006a93",
                     "b01e17c6114503b5-59e7bbf08f2d720a-r40000000400000-00006a9", "fa2c3994fdeba83a-1f4a4e8943630745-r10000000200000-00006a93",
-                    "b01e17c6114503b5-59e7bbf08f2d720a-r40000000400000-00006a93", "",
-                    "", "",
-                    "", "",
+                    "b01e17c6114503b5-59e7bbf08f2d720a-r40000000400000-00006a93", "44a36fa552e41ec2-a22c38edb77a21e-r128x64-00002a93",
+                    "83fb2913f8f3b3fa-25e41c5576544e1e-r64x64-00002a93", "780558d2582e5d35-b85a3efd4c52df4e-r128x256-00002a93",
+                    "b01e17c6114503b5-59e7bbf08f2d720a-r64x64-00002a93", "bbd6f28c652c54f7-2fa346e7cd1ed41b-r256x128-00002a93",
                     "", "",
                     "", "",
                     "", "");
@@ -6538,6 +8286,27 @@ namespace UR_pnach_editor.ViewModels
                     notFound += "Einstein Disciple" + Environment.NewLine + "";
                 }
             }
+            else if (ZachBlackKimonoTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Zach black kimono\", "", "",
+                        "44a36fa552e41ec2-a22c38edb77a21e-r128x64-00002a93", "83fb2913f8f3b3fa-25e41c5576544e1e-r64x64-00002a93",
+                        "780558d2582e5d35-b85a3efd4c52df4e-r128x256-00002a93", "b01e17c6114503b5-59e7bbf08f2d720a-r64x64-00002a93",
+                        "bbd6f28c652c54f7-2fa346e7cd1ed41b-r256x128-00002a93", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    ZachBlackKimonoTxt = false;
+                    notFound += "ZachBlackKimonoTxt" + Environment.NewLine + "";
+                }
+            }
 
             #endregion
 
@@ -6547,9 +8316,9 @@ namespace UR_pnach_editor.ViewModels
                     "5406d320e9e2736e-a25ffe14036adb1e-r40000000400000-00006a93", "9611d9e478039a10-30d26e3e2ce6f12f-r40000000800000-00006a93",
                     "c097c1f902fa4740-c2b4f52288c6d2b-r100000000800000-00006a93", "e7a28047e16cfc94-48f7b635ebb975e4-r40000000400000-00006a93",
                     "f280a5906da608c6-1af687d427343d2a-r100000000800000-00006a93", "f33bc65676f74e11-c2b0264dae7260d6-r80000000800000-00006a93",
-                    "", "",
-                    "", "",
-                    "", "",
+                    "10c69d9b91e88b0e-6614694c39a75b7e-r256x128-00002a93", "82d4437b8872133a-5bcbd24cd6509694-r64x64-00002a93",
+                    "9611d9e478039a10-30d26e3e2ce6f12f-r128x64-00002a93", "e7a28047e16cfc94-48f7b635ebb975e4-r64x64-00002a93",
+                    "f280a5906da608c6-1af687d427343d2a-r128x256-00002a93", "",
                     "", "",
                     "", "",
                     "", "");
@@ -6596,7 +8365,28 @@ namespace UR_pnach_editor.ViewModels
                     notFound += "CollinHermitSchoolTxt" + Environment.NewLine + "";
                 }
             }
-            
+            else if (StylishColinTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Stylish Colin\", "", "",
+                        "10c69d9b91e88b0e-6614694c39a75b7e-r256x128-00002a93", "82d4437b8872133a-5bcbd24cd6509694-r64x64-00002a93",
+                        "9611d9e478039a10-30d26e3e2ce6f12f-r128x64-00002a93", "e7a28047e16cfc94-48f7b635ebb975e4-r64x64-00002a93",
+                        "f280a5906da608c6-1af687d427343d2a-r128x256-00002a93", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    StylishColinTxt = false;
+                    notFound += "StylishColinTxt" + Environment.NewLine + "";
+                }
+            }
+
             #endregion
 
             #region Jake [13]
@@ -6605,8 +8395,8 @@ namespace UR_pnach_editor.ViewModels
                     "43cbfc9c2140ab48-8f9d143e95a8bb03-00005dd3", "237cc772a6c51fc-490ad29112fb4a3c-00005993",
                     "a107b0fe2e6a4190-a1e91efad4299065-00006213", "cb5871994808b252-2cb9f235d5176aed-r80000000800000-00006a93",
                     "e5912efc74d38b41-b6d68bf2a86cc95-00005553", "49cb428b8cf0424c-1c9b0158bb306568-000059d3",
-                    "112ad25bcf6bc8bc-dd16516b75d16e0e-r40000000400000-00006a93", "",
-                    "", "",
+                    "112ad25bcf6bc8bc-dd16516b75d16e0e-r40000000400000-00006a93", "3a43aec82b03426b-3dacf49a92071570-000021d3",
+                    "43cbfc9c2140ab48-8f9d143e95a8bb03-00001dd3", "cb5871994808b252-2cb9f235d5176aed-r128x128-00002a93",
                     "", "",
                     "", "",
                     "", "",
@@ -6675,6 +8465,27 @@ namespace UR_pnach_editor.ViewModels
                     notFound += "MayorJakeHudsonTxt" + Environment.NewLine + "";
                 }
             }
+            else if (SatinInfernalJakeTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Satin Infernal Jake\", "", "",
+                        "3a43aec82b03426b-3dacf49a92071570-000021d3", "43cbfc9c2140ab48-8f9d143e95a8bb03-00001dd3",
+                        "cb5871994808b252-2cb9f235d5176aed-r128x128-00002a93", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    SatinInfernalJakeTxt = false;
+                    notFound += "SatinInfernalJakeTxt" + Environment.NewLine + "";
+                }
+            }
 
             #endregion
 
@@ -6684,11 +8495,11 @@ namespace UR_pnach_editor.ViewModels
                     "4d40931a3607d9ad-694930780a096089-r40000000800000-00006a93", "56a1dae641fffcda-98ff04d93979ed2-r40000000800000-00006a93",
                     "37931afa92c48994-be5814f40a204074-r40000000400000-00006a94", "c2b717e375aefdfe-a74cde18b1e4a3f4-r100000001000000-00006a93",
                     "e1363c8a40b91dd8-3daaef0674401934-r80000001000000-00006a93", "fdeac323ba8eb01a-ed3f0f833e5c243e-r40000000800000-00006a93",
-                    "5322b9dc07ac94ab-82f4cb4f5b473030-r80000000800000-00006a93", "",
-                    "", "",
-                    "", "",
-                    "", "",
-                    "", "",
+                    "5322b9dc07ac94ab-82f4cb4f5b473030-r80000000800000-00006a93", "2e9f7a4ce3f6342b-6521dc1a82e4ad6b-r256x128-00002a93",
+                    "e1363c8a40b91dd8-3daaef0674401934-r256x128-00002a93", "fdeac323ba8eb01a-ed3f0f833e5c243e-r128x64-00002a93",
+                    "4d40931a3607d9ad-694930780a096089-r128x64-00002a93", "56a1dae641fffcda-98ff04d93979ed2-r128x64-00002a93",
+                    "5322b9dc07ac94ab-82f4cb4f5b473030-r128x128-00002a93", "37931afa92c48994-be5814f40a204074-r64x64-00002a94",
+                    "c2b717e375aefdfe-a74cde18b1e4a3f4-r256x256-00002a93", "",
                     "", "");
 
             if (TongYoonSkin)
@@ -6775,6 +8586,90 @@ namespace UR_pnach_editor.ViewModels
                     notFound += "TongYooMilitarTxt" + Environment.NewLine + "";
                 }
             }
+            else if (Persona3TongYoon1Txt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Persona 3 Tong Yoon 1\", "", "",
+                        "2e9f7a4ce3f6342b-6521dc1a82e4ad6b-r256x128-00002a93", "e1363c8a40b91dd8-3daaef0674401934-r256x128-00002a93",
+                        "fdeac323ba8eb01a-ed3f0f833e5c243e-r128x64-00002a93", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    Persona3TongYoon1Txt = false;
+                    notFound += "Persona3TongYoon1Txt" + Environment.NewLine + "";
+                }
+            }
+            else if (Persona3TongYoon2Txt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Persona 3 Tong Yoon 2\", "", "",
+                        "2e9f7a4ce3f6342b-6521dc1a82e4ad6b-r256x128-00002a93", "e1363c8a40b91dd8-3daaef0674401934-r256x128-00002a93",
+                        "fdeac323ba8eb01a-ed3f0f833e5c243e-r128x64-00002a93", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    Persona3TongYoon2Txt = false;
+                    notFound += "Persona3TongYoon2Txt" + Environment.NewLine + "";
+                }
+            }
+            else if (Persona3TongYoon3Txt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Persona 3 Tong Yoon 3\", "", "",
+                        "e1363c8a40b91dd8-3daaef0674401934-r256x128-00002a93", "fdeac323ba8eb01a-ed3f0f833e5c243e-r128x64-00002a93",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    Persona3TongYoon3Txt = false;
+                    notFound += "Persona3TongYoon3Txt" + Environment.NewLine + "";
+                }
+            }
+            else if (PrinceTongYooTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Prince Tong Yoo\", "", "",
+                        "2e9f7a4ce3f6342b-6521dc1a82e4ad6b-r256x128-00002a93", "4d40931a3607d9ad-694930780a096089-r128x64-00002a93",
+                        "56a1dae641fffcda-98ff04d93979ed2-r128x64-00002a93", "5322b9dc07ac94ab-82f4cb4f5b473030-r128x128-00002a93",
+                        "37931afa92c48994-be5814f40a204074-r64x64-00002a94", "c2b717e375aefdfe-a74cde18b1e4a3f4-r256x256-00002a93",
+                        "e1363c8a40b91dd8-3daaef0674401934-r256x128-00002a93", "fdeac323ba8eb01a-ed3f0f833e5c243e-r128x64-00002a93",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    PrinceTongYooTxt = false;
+                    notFound += "PrinceTongYooTxt" + Environment.NewLine + "";
+                }
+            }
 
             #endregion
 
@@ -6785,7 +8680,7 @@ namespace UR_pnach_editor.ViewModels
                     "9477fa0ac43a3405-7969e77b2386987b-r100000001000000-00006a93", "9846d7b7840e931e-c0f6d449044cbc12-r80000000800000-00006a93",
                     "900293d5d1ae499a-a954ea92a71026f7-r100000001000000-00006a93", "9457770a5eb20ea2-b97771d85337ba01-r40000000400000-00006a93",
                     "a444ce4feffde8f2-67f645664440c523-r80000000800000-00006a93", "f3c6b9278cebfe78-6c59028ea47ac00e-r40000000400000-00006a94",
-                    "", "",
+                    "2a971a5fe14f0dce-d3968ea08761486f-r256x128-00002a93", "9477fa0ac43a3405-7969e77b2386987b-r256x256-00002a93",
                     "", "",
                     "", "",
                     "", "",
@@ -6854,6 +8749,48 @@ namespace UR_pnach_editor.ViewModels
                     notFound += "CustomGrimmTxt" + Environment.NewLine + "";
                 }
             }
+            else if (CasualGrimGreenTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Casual Grim Green\", "", "",
+                        "2a971a5fe14f0dce-d3968ea08761486f-r256x128-00002a93", "9477fa0ac43a3405-7969e77b2386987b-r256x256-00002a93",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    CasualGrimGreenTxt = false;
+                    notFound += "CasualGrimGreenTxt" + Environment.NewLine + "";
+                }
+            }
+            else if (CasualGrimGreyTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Casual Grim Grey\", "", "",
+                        "2a971a5fe14f0dce-d3968ea08761486f-r256x128-00002a93", "9477fa0ac43a3405-7969e77b2386987b-r256x256-00002a93",
+                        "a444ce4feffde8f2-67f645664440c523-r80000000800000-00006a93", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    CasualGrimGreyTxt = false;
+                    notFound += "CasualGrimGreyTxt" + Environment.NewLine + "";
+                }
+            }
 
             #endregion
 
@@ -6863,7 +8800,7 @@ namespace UR_pnach_editor.ViewModels
                     "5d6b91d5792b8c2a-441ff50f375b4569-r80000000800000-00006a93", "6b7834025aab7b2c-1576f454233a907e-r80000001000000-00006a93",
                     "7a1403d64c30bab5-27cc9fdce3ff391f-r80000000800000-00006a93", "9d111f4ddba0a9a7-1f5d4d8b74c62ea4-r40000000400000-00006a94",
                     "9dd9010a85b85336-d5d8f9aade72bcef-r40000000400000-00006a93", "741ccf63d03a2ba6-36ae10213cd4efa8-r100000000800000-00006a93",
-                    "", "",
+                    "1d267e8fe083d53-2fb85e5b79fd7c34-r128x128-00002a93", "",
                     "", "",
                     "", "",
                     "", "",
@@ -6910,6 +8847,27 @@ namespace UR_pnach_editor.ViewModels
                 {
                     BKCJTxt = false;
                     notFound += "BK_CJ_Txt" + Environment.NewLine + "";
+                }
+            }
+            else if (BoxerWannabeBkTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Boxer Wannabe Bk\", "", "",
+                        "1d267e8fe083d53-2fb85e5b79fd7c34-r128x128-00002a93", "6b7834025aab7b2c-1576f454233a907e-r80000001000000-00006a93",
+                        "9d111f4ddba0a9a7-1f5d4d8b74c62ea4-r40000000400000-00006a94", "9dd9010a85b85336-d5d8f9aade72bcef-r40000000400000-00006a93",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    BoxerWannabeBkTxt = false;
+                    notFound += "BoxerWannabeBkTxt" + Environment.NewLine + "";
                 }
             }
 
@@ -6978,7 +8936,7 @@ namespace UR_pnach_editor.ViewModels
                         "5d9dab9b4da19b58-bb1042078bd02a19-r64x64-00002a93", "6a57ea379978e090-dc44ef25ac37ebf6-r64x128-00002a93",
                         "41c464d85a0f616f-6efe8135d2d1d98d-r128x128-00002a93", "128fc47272dbafac-326729d4dff109eb-r256x256-00002a93",
                         "", "",
-                        "b962788607137dc5-976602852e5db24c-r64x128-00002a93", "",
+                        "b962788607137dc5-976602852e5db24c-r64x128-00002a93", "8778633eb34cad7e-9f406c9beab8482c-r100000001000000-00006a93",
                         "", "",
                         "", "",
                         "", "",
@@ -7515,6 +9473,69 @@ namespace UR_pnach_editor.ViewModels
                     notFound += "GothicShunYingTxt" + Environment.NewLine + "";
                 }
             }
+            else if (LolaYingTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Lola Ying\", "", "",
+                        "7be573c39a639f2d-f203483984226051-r128x128-00002a93", "3919a728279eef97-7812d0059070757b-r64x64-00002a93",
+                        "d29989c8cc266151-6ec5664a4c0f9333-r128x128-00002a93", "fee80ccd11d53cb1-461c9cde32a609af-r64x32-00002a93",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    LolaYingTxt = false;
+                    notFound += "LolaYingTxt" + Environment.NewLine + "";
+                }
+            }
+            else if (StellarBladeShunYingGreenTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Stellar Blade Eve Green\", "", "",
+                        "7be573c39a639f2d-f203483984226051-r128x128-00002a93", "3919a728279eef97-7812d0059070757b-r64x64-00002a93",
+                        "d29989c8cc266151-6ec5664a4c0f9333-r128x128-00002a93", "fee80ccd11d53cb1-461c9cde32a609af-r64x32-00002a93",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    StellarBladeShunYingGreenTxt = false;
+                    notFound += "StellarBladeShunYingGreenTxt" + Environment.NewLine + "";
+                }
+            }
+            else if (StellarBladeShunYingRedTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Stellar Blade Eve Red\", "", "",
+                        "7be573c39a639f2d-f203483984226051-r128x128-00002a93", "3919a728279eef97-7812d0059070757b-r64x64-00002a93",
+                        "d29989c8cc266151-6ec5664a4c0f9333-r128x128-00002a93", "fee80ccd11d53cb1-461c9cde32a609af-r64x32-00002a93",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    StellarBladeShunYingRedTxt = false;
+                    notFound += "StellarBladeShunYingRedTxt" + Environment.NewLine + "";
+                }
+            }
 
             #endregion
 
@@ -7524,10 +9545,10 @@ namespace UR_pnach_editor.ViewModels
                     "81efe0a7c43be920-af45f0038f28c59d-r80000000800000-00006a94", "444c3ed512a29968-cbfc39219f806bc2-r80000000800000-00006a93",
                     "ae7f87ca3a46eb9c-b0e87ffa1a03781f-r20000000800000-00006a94", "b8936048e4b9947-84744e9812ef4828-r100000000800000-00006a93",
                     "bb1c9cfb42c01f07-898fc451ff6f5bb1-r80000000200000-00006a93", "e6f677b51340684e-4f09c37a68391c32-r80000000800000-00006a93",
-                    "ec7a8a73d7f53905-3135632c24c0ef71-r80000000800000-00006a94", "",
-                    "", "",
-                    "", "",
-                    "", "",
+                    "ec7a8a73d7f53905-3135632c24c0ef71-r80000000800000-00006a94", "6d893db564710ca1-4ff8f0ebd3ec0609-r128x128-00002a93",
+                    "69efda6f44f163a1-91138d7e6dffc63f-r128x128-00002a93", "81efe0a7c43be920-af45f0038f28c59d-r128x128-00002a94",
+                    "444c3ed512a29968-cbfc39219f806bc2-r128x128-00002a93", "b8936048e4b9947-84744e9812ef4828-r128x256-00002a93",
+                    "e6f677b51340684e-4f09c37a68391c32-r128x128-00002a93", "ec7a8a73d7f53905-3135632c24c0ef71-r128x128-00002a94",
                     "", "",
                     "", "");
 
@@ -7571,6 +9592,27 @@ namespace UR_pnach_editor.ViewModels
                 {
                     GD_04Txt = false;
                     notFound += "GD_04Txt" + Environment.NewLine + "";
+                }
+            }
+            else if (ToonShadedGD05Txt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Toon Shaded GD-05\", "", "",
+                        "6d893db564710ca1-4ff8f0ebd3ec0609-r128x128-00002a93", "69efda6f44f163a1-91138d7e6dffc63f-r128x128-00002a93",
+                        "81efe0a7c43be920-af45f0038f28c59d-r128x128-00002a94", "444c3ed512a29968-cbfc39219f806bc2-r128x128-00002a93",
+                        "b8936048e4b9947-84744e9812ef4828-r128x256-00002a93", "e6f677b51340684e-4f09c37a68391c32-r128x128-00002a93",
+                        "ec7a8a73d7f53905-3135632c24c0ef71-r128x128-00002a94", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    ToonShadedGD05Txt = false;
+                    notFound += "ToonShadedGD05Txt" + Environment.NewLine + "";
                 }
             }
 
@@ -8323,7 +10365,7 @@ namespace UR_pnach_editor.ViewModels
 
             RemoveTextures("1165da3ab164ea14-b3c2b223d4a1e056-r128x32-00002a94", "a1fe3cd621e19233-e86cbf456f6c26da-r64x16-00002a93",
                     "afde40deebbdb02e-a58523448f3fbdfc-r64x64-00002a93", "f26bd6dcfe911af3-b7c2949c38c29fa4-r128x128-00002a94",
-                    "", "",
+                    "c48ee1c8772eafc0-bf65de1c0766e8c9-r64x32-00002a94", "",
                     "", "",
                     "", "",
                     "", "",
@@ -8416,6 +10458,48 @@ namespace UR_pnach_editor.ViewModels
                     notFound += "AlexNeganTxt" + Environment.NewLine + "";
                 }
             }
+            else if (ViperStreetAlexTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Viper Street Alex\", "", "",
+                        "9b5ddb83993fe50e-3af576314d692124-r128x128-00002a94", "80bd5541a07168b1-e977c42a53ec449d-r100000001000000-00006a94",
+                        "91cbf0619eea9e71-9b3a64382c6fe144-r80000000800000-00006a94", "f26bd6dcfe911af3-b7c2949c38c29fa4-r128x128-00002a94",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    ViperStreetAlexTxt = false;
+                    notFound += "ViperStreetAlexTxt" + Environment.NewLine + "";
+                }
+            }
+            else if (AlexHawkTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Alex hawk\", "", "",
+                        "2a0aed1463d1068e-90c07696069cf297-r128x128-00002a93", "9b5ddb83993fe50e-3af576314d692124-r128x128-00002a94",
+                        "9de6b00c9cd11c86-dd525e18f3c10433-r128x256-00002a93", "40dea9592d211ec8-d8d18aaf805c2ddc-r64x128-00002a93",
+                        "80bd5541a07168b1-e977c42a53ec449d-r100000001000000-00006a94", "91cbf0619eea9e71-9b3a64382c6fe144-r80000000800000-00006a94",
+                        "a1fe3cd621e19233-e86cbf456f6c26da-r64x16-00002a93", "c48ee1c8772eafc0-bf65de1c0766e8c9-r64x32-00002a94",
+                        "f26bd6dcfe911af3-b7c2949c38c29fa4-r128x128-00002a94", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    AlexHawkTxt = false;
+                    notFound += "AlexHawkTxt" + Environment.NewLine + "";
+                }
+            }
 
             #endregion
 
@@ -8427,8 +10511,8 @@ namespace UR_pnach_editor.ViewModels
                     "612aeacb1708db49-c7f043ffa1e74870-r100000001000000-00006a93", "2667f91194bad293-94416c2a1492e048-r20000000800000-00006a94",
                     "bd9400182f9dcfe3-2c571259cd4eb408-r40000000400000-00006a93", "3a0e9ad614f09aed-f47cf87e5356b468-r40000000400000-00006a93",
                     "62f5fd8545a60254-9d6a007d56cdfdd9-r40000000400000-00006a94", "cc12a4538e59d377-acb9bdf3f900ed47-r40000000400000-00006a93",
-                    "", "",
-                    "", "",
+                    "2b3d53edeb123b09-2e070f8dc64856fd-r128x128-00002a93", "dfca2aa739e8fab1-2b12caba339b65f0-r128x128-00002a93",
+                    "e12be71cde5fb8ec-e6f2cef6831fb415-r256x256-00002a93", "",
                     "", "",
                     "", "");
 
@@ -8493,6 +10577,27 @@ namespace UR_pnach_editor.ViewModels
                 {
                     McPunisherTxt = false;
                     notFound += "McPunisherTxt" + Environment.NewLine + "";
+                }
+            }
+            else if (McKinzieWhiteCamoTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_McKinzie White Camo\", "", "",
+                        "2b3d53edeb123b09-2e070f8dc64856fd-r128x128-00002a93", "dfca2aa739e8fab1-2b12caba339b65f0-r128x128-00002a93",
+                        "e12be71cde5fb8ec-e6f2cef6831fb415-r256x256-00002a93", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    McKinzieWhiteCamoTxt = false;
+                    notFound += "McKinzieWhiteCamoTxt" + Environment.NewLine + "";
                 }
             }
 
@@ -8589,6 +10694,17 @@ namespace UR_pnach_editor.ViewModels
                     "8cfaa2f011fe2964-1a7314e0b306ab48-r64x64-00002a93", "79bc5d739fd2ff17-c6135a01337a1074-r128x128-00002a93",
                     "a4468214ec8b66b3-6e307f1df097456f-r128x128-00002a94", "ccf524dc21e8b737-7fc1804312095485-r128x64-00002a93",
                     "ecf71533b2ff6ced-95bf315ecf6a58fd-r256x128-00002a93", "f0d69992fd364074-3501ac4f934b6879-r256x128-00002a93");
+
+            RemoveTextures("7ec4cbcec09b2b70-406bafaeada7d036-r128x32-00002a94", "",
+                    "", "",
+                    "", "",
+                    "", "",
+                    "", "",
+                    "", "",
+                    "", "",
+                    "", "",
+                    "", "",
+                    "", "");
 
             if (GolemTuxedoTxt)
             {
@@ -8821,6 +10937,27 @@ namespace UR_pnach_editor.ViewModels
                     notFound += "GolemPunisherTxt" + Environment.NewLine + "";
                 }
             }
+            else if (CopGolemTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Cop Golem\", "", "",
+                        "7ec4cbcec09b2b70-406bafaeada7d036-r128x32-00002a94", "79bc5d739fd2ff17-c6135a01337a1074-r128x128-00002a93",
+                        "a4468214ec8b66b3-6e307f1df097456f-r80000000800000-00006a94", "ccf524dc21e8b737-7fc1804312095485-r40000000800000-00006a93",
+                        "ecf71533b2ff6ced-95bf315ecf6a58fd-r256x128-00002a93", "f0d69992fd364074-3501ac4f934b6879-r256x128-00002a93",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    CopGolemTxt = false;
+                    notFound += "CopGolemTxt" + Environment.NewLine + "";
+                }
+            }
 
             #endregion
 
@@ -8937,6 +11074,27 @@ namespace UR_pnach_editor.ViewModels
                     notFound += "EndangeredMasaTxt" + Environment.NewLine + "";
                 }
             }
+            else if (BorsalinoMasaTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Borsalino Masa\", "", "",
+                        "956d3f24e5e5dbe7-b77623cfcf5d634f-00005dd3", "2147a0bddeea3b16-6d245e41c65493c2-00005dd3",
+                        "28369d5eb1971e4-aec9fd4fc5396c6d-00005dd3", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    BorsalinoMasaTxt = false;
+                    notFound += "BorsalinoMasaTxt" + Environment.NewLine + "";
+                }
+            }
 
             #endregion
 
@@ -8993,6 +11151,27 @@ namespace UR_pnach_editor.ViewModels
                 {
                     HiroGATTxt = false;
                     notFound += "HiroGATTxt" + Environment.NewLine + "";
+                }
+            }
+            else if (LanceVanceHiroTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Lance Vance Hiro\", "", "",
+                        "5a97dd25557be64e-d7a1eeb03f9a360e-000061d3", "66b2adab213b809d-c32b584c0ca00cad-00005dd3",
+                        "9952dcfaa5263f09-e2331665e7cc24c4-00005dd3", "91528719986402c8-fb5c65cf9d5a16cb-00005dd3",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    LanceVanceHiroTxt = false;
+                    notFound += "LanceVanceHiroTxt" + Environment.NewLine + "";
                 }
             }
 
@@ -9122,8 +11301,8 @@ namespace UR_pnach_editor.ViewModels
                     "c967e8705bf54685-4b557f72f2d1a4f3-r40000000400000-00006a93", "d8dc45e840fa0a71-2b736c1766053560-r40000000400000-00006a93",
                     "d65e78379d9798e3-8b85828762593023-r10000000200000-00006a93", "e9ba38c669f8ad90-64d362ebb79f7637-r40000000400000-00006a93",
                     "ef96230ed0ac8d00-6aa659076fea2ef5-r80000000800000-00006a93", "c9a563cf643792dc-9c203ce3767f1532-r40000000400000-00006a93",
-                    "", "",
-                    "", "",
+                    "4e94cc5bc949636e-3ed71876cd54e40-r128x128-00002a93", "6e361a23da0341b6-703d20636ca3e857-r256x256-00002a93",
+                    "c967e8705bf54685-4b557f72f2d1a4f3-r64x64-00002a93", "ef96230ed0ac8d00-6aa659076fea2ef5-r128x128-00002a93",
                     "", "",
                     "", "");
 
@@ -9167,6 +11346,27 @@ namespace UR_pnach_editor.ViewModels
                 {
                     ShaYingSkin2 = false;
                     notFound += "Golden_Dragon_Sha_Ying_Lai" + Environment.NewLine + "";
+                }
+            }
+            else if (YakuzaShaYingTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Yakuza Sha ying\", "", "",
+                        "4e94cc5bc949636e-3ed71876cd54e40-r128x128-00002a93", "6e361a23da0341b6-703d20636ca3e857-r256x256-00002a93",
+                        "c967e8705bf54685-4b557f72f2d1a4f3-r64x64-00002a93", "e9ba38c669f8ad90-64d362ebb79f7637-r40000000400000-00006a93",
+                        "ef96230ed0ac8d00-6aa659076fea2ef5-r128x128-00002a93", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    YakuzaShaYingTxt = false;
+                    notFound += "YakuzaShaYingTxt" + Environment.NewLine + "";
                 }
             }
 
@@ -9336,7 +11536,7 @@ namespace UR_pnach_editor.ViewModels
             RemoveTextures("2a2d4ae0ff4eb52f-ff48ddbaa7a22a74-r64x32-00002a93", "8b006a17b68d428f-a1cfcfee40080d42-r64x64-00002a93",
                     "364646c61210a4d0-6a91c578d0a52a6d-r128x128-00002a93", "a7f0d7e7b318fa96-597507f2406c3451-r64x32-00002a93",
                     "a3491050b8a1567f-616fbfc92d84729-r128x128-00002a93", "c5013ac577525dc1-8babad4a37ebde06-r128x128-00002a93",
-                    "fa706effeb29a2d8-d87a6aeba2a6a669-r32x16-00002a93", "",
+                    "fa706effeb29a2d8-d87a6aeba2a6a669-r32x16-00002a93", "4f16e5edad363d2b-5fa3f13b9e8e7735-r32x16-00002a93",
                     "5dbd12bdb591075-906bc43aeeb63b36-r256x64-00002a93", "9b15e07d47ef3388-37f28018f8c6dcff-r32x32-00002a93",
                     "17b0524a29e628d7-73cef847635d5321-r64x32-00002a93", "91945bd3bae8dfeb-88a2de4e10d2a240-r256x256-00002a93",
                     "b155553e65819fd2-71846129b72184ee-r128x128-00002a93", "",
@@ -9488,6 +11688,27 @@ namespace UR_pnach_editor.ViewModels
                 {
                     LinFongJokerTxt = false;
                     notFound += "LinFongJokerTxt" + Environment.NewLine + "";
+                }
+            }
+            else if (LanceVanceLinfongTxt)
+            {
+                try
+                {
+                    ReplaceTextures(@"\_Lance Vance Linfong\", "", "",
+                        "2a2d4ae0ff4eb52f-ff48ddbaa7a22a74-r64x32-00002a93", "4f16e5edad363d2b-5fa3f13b9e8e7735-r32x16-00002a93",
+                        "364646c61210a4d0-6a91c578d0a52a6d-r128x128-00002a93", "a3491050b8a1567f-616fbfc92d84729-r128x128-00002a93",
+                        "c5013ac577525dc1-8babad4a37ebde06-r128x128-00002a93", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "",
+                        "", "");
+                }
+                catch
+                {
+                    LanceVanceLinfongTxt = false;
+                    notFound += "LanceVanceLinfongTxt" + Environment.NewLine + "";
                 }
             }
 
@@ -10732,9 +12953,40 @@ namespace UR_pnach_editor.ViewModels
             SteveFoxGraveTxt = false;
             LinFongJokerTxt = false;
             LawTailungTxt = false;
-            SeuMadrugaMiguelTxt = false;
+            SeuMadrugaRamonTxt = false;
             AlexNeganTxt = false;
             ParkCustomTxt = false;
+            BradWhiteSnakeTxt = false;
+            CasualGrimGreenTxt = false;
+            CasualGrimGreyTxt = false;
+
+            BoxerWannabeBkTxt = false;
+            WingedSkullRamonTxt = false;
+            HoodGuyRamonTxt = false;
+            Persona3TongYoon1Txt = false;
+            Persona3TongYoon2Txt = false;
+            Persona3TongYoon3Txt = false;
+            LolaYingTxt = false;
+            StellarBladeShunYingGreenTxt = false;
+            StellarBladeShunYingRedTxt = false;
+            ViperStreetAlexTxt = false;
+            BasketballFanEmceeTxt = false;
+            YakuzaShaYingTxt = false;
+            ToonShadedGD05Txt = false;
+            BorsalinoMasaTxt = false;
+            CopGolemTxt = false;
+            PrinceTongYooTxt = false;
+            AlexHawkTxt = false;
+            ZachBlackKimonoTxt = false;
+            KazumaKiryuBradUpdatedTxt = false;
+            BlueDenimBradTxt = false;
+            McKinzieWhiteCamoTxt = false;
+            SatinInfernalJakeTxt = false;
+            TribalBradTxt = false;
+            StylishColinTxt = false;
+            ViceMiguelTxt = false;
+            LanceVanceHiroTxt = false;
+            LanceVanceLinfongTxt = false;
 
             TitleScreenTxt = true;
             WarehouseTxt = true;
@@ -10923,9 +13175,40 @@ namespace UR_pnach_editor.ViewModels
             SteveFoxGraveTxt = false;
             LinFongJokerTxt = false;
             LawTailungTxt = false;
-            SeuMadrugaMiguelTxt = false;
+            SeuMadrugaRamonTxt = false;
             AlexNeganTxt = false;
             ParkCustomTxt = false;
+            BradWhiteSnakeTxt = false;
+            CasualGrimGreenTxt = false;
+            CasualGrimGreyTxt = false;
+
+            BoxerWannabeBkTxt = false;
+            WingedSkullRamonTxt = false;
+            HoodGuyRamonTxt = false;
+            Persona3TongYoon1Txt = false;
+            Persona3TongYoon2Txt = false;
+            Persona3TongYoon3Txt = false;
+            LolaYingTxt = false;
+            StellarBladeShunYingGreenTxt = false;
+            StellarBladeShunYingRedTxt = false;
+            ViperStreetAlexTxt = false;
+            BasketballFanEmceeTxt = false;
+            YakuzaShaYingTxt = false;
+            ToonShadedGD05Txt = false;
+            BorsalinoMasaTxt = false;
+            CopGolemTxt = false;
+            PrinceTongYooTxt = false;
+            AlexHawkTxt = false;
+            ZachBlackKimonoTxt = false;
+            KazumaKiryuBradUpdatedTxt = false;
+            BlueDenimBradTxt = false;
+            McKinzieWhiteCamoTxt = false;
+            SatinInfernalJakeTxt = false;
+            TribalBradTxt = false;
+            StylishColinTxt = false;
+            ViceMiguelTxt = false;
+            LanceVanceHiroTxt = false;
+            LanceVanceLinfongTxt = false;
 
             TitleScreenTxt = true;
             WarehouseTxt = true;
@@ -11112,9 +13395,40 @@ namespace UR_pnach_editor.ViewModels
             SteveFoxGraveTxt = false;
             LinFongJokerTxt = false;
             LawTailungTxt = false;
-            SeuMadrugaMiguelTxt = false;
+            SeuMadrugaRamonTxt = false;
             AlexNeganTxt = false;
             ParkCustomTxt = false;
+            BradWhiteSnakeTxt = false;
+            CasualGrimGreenTxt = false;
+            CasualGrimGreyTxt = false;
+
+            BoxerWannabeBkTxt = false;
+            WingedSkullRamonTxt = false;
+            HoodGuyRamonTxt = false;
+            Persona3TongYoon1Txt = false;
+            Persona3TongYoon2Txt = false;
+            Persona3TongYoon3Txt = false;
+            LolaYingTxt = false;
+            StellarBladeShunYingGreenTxt = false;
+            StellarBladeShunYingRedTxt = false;
+            ViperStreetAlexTxt = false;
+            BasketballFanEmceeTxt = false;
+            YakuzaShaYingTxt = false;
+            ToonShadedGD05Txt = false;
+            BorsalinoMasaTxt = false;
+            CopGolemTxt = false;
+            PrinceTongYooTxt = false;
+            AlexHawkTxt = false;
+            ZachBlackKimonoTxt = false;
+            KazumaKiryuBradUpdatedTxt = false;
+            BlueDenimBradTxt = false;
+            McKinzieWhiteCamoTxt = false;
+            SatinInfernalJakeTxt = false;
+            TribalBradTxt = false;
+            StylishColinTxt = false;
+            ViceMiguelTxt = false;
+            LanceVanceHiroTxt = false;
+            LanceVanceLinfongTxt = false;
 
             TitleScreenTxt = false;
             WarehouseTxt = false;
@@ -11129,7 +13443,7 @@ namespace UR_pnach_editor.ViewModels
         {
             int random = 0;
 
-            random = new Random().Next(1, 10 + 1);//Brad Hawk
+            random = new Random().Next(1, 14 + 1);//Brad Hawk
             switch (random)
             {
                 case 1:
@@ -11161,6 +13475,18 @@ namespace UR_pnach_editor.ViewModels
                     break;
                 case 10:
                     BradBen10Txt = true;
+                    break;
+                case 11:
+                    BradWhiteSnakeTxt = true;
+                    break;
+                case 12:
+                    KazumaKiryuBradUpdatedTxt = true;
+                    break;
+                case 13:
+                    BlueDenimBradTxt = true;
+                    break;
+                case 14:
+                    TribalBradTxt = true;
                     break;
             }
 
@@ -11219,7 +13545,7 @@ namespace UR_pnach_editor.ViewModels
                     break;
             }
 
-            random = new Random().Next(1, 2 + 1);//EmCee
+            random = new Random().Next(1, 3 + 1);//EmCee
             switch (random)
             {
                 case 1:
@@ -11227,6 +13553,9 @@ namespace UR_pnach_editor.ViewModels
                     break;
                 case 2:
                     EmCeeSkin2 = true;
+                    break;
+                case 3:
+                    BasketballFanEmceeTxt = true;
                     break;
             }
 
@@ -11271,11 +13600,11 @@ namespace UR_pnach_editor.ViewModels
                     MiguelBullyTxt = true;
                     break;
                 case 5:
-                    SeuMadrugaMiguelTxt = true;
+                    ViceMiguelTxt = true;
                     break;
             }
 
-            random = new Random().Next(1, 2 + 1);//Ramon
+            random = new Random().Next(1, 5 + 1);//Ramon
             switch (random)
             {
                 case 1:
@@ -11283,6 +13612,15 @@ namespace UR_pnach_editor.ViewModels
                     break;
                 case 2:
                     RamonSkin2 = true;
+                    break;
+                case 3:
+                    SeuMadrugaRamonTxt = true;
+                    break;
+                case 4:
+                    WingedSkullRamonTxt = true;
+                    break;
+                case 5:
+                    HoodGuyRamonTxt = true;
                     break;
             }
 
@@ -11330,7 +13668,7 @@ namespace UR_pnach_editor.ViewModels
                     break;
             }
 
-            random = new Random().Next(1, 2 + 1);//Zack
+            random = new Random().Next(1, 3 + 1);//Zack
             switch (random)
             {
                 case 1:
@@ -11339,9 +13677,12 @@ namespace UR_pnach_editor.ViewModels
                 case 2:
                     ZackSkin2 = true;
                     break;
+                case 3:
+                    ZachBlackKimonoTxt = true;
+                    break;
             }
 
-            random = new Random().Next(1, 2 + 1);//Colin
+            random = new Random().Next(1, 3 + 1);//Colin
             switch (random)
             {
                 case 1:
@@ -11350,9 +13691,12 @@ namespace UR_pnach_editor.ViewModels
                 case 2:
                     CollinHermitSchoolTxt = true;
                     break;
+                case 3:
+                    StylishColinTxt = true;
+                    break;
             }
 
-            random = new Random().Next(1, 3 + 1);//Jake
+            random = new Random().Next(1, 4 + 1);//Jake
             switch (random)
             {
                 case 1:
@@ -11364,9 +13708,12 @@ namespace UR_pnach_editor.ViewModels
                 case 3:
                     MayorJakeHudsonTxt = true;
                     break;
+                case 4:
+                    SatinInfernalJakeTxt = true;
+                    break;
             }
 
-            random = new Random().Next(1, 4 + 1);//Tong Yoon
+            random = new Random().Next(1, 8 + 1);//Tong Yoon
             switch (random)
             {
                 case 1:
@@ -11381,9 +13728,21 @@ namespace UR_pnach_editor.ViewModels
                 case 4:
                     TongYooMilitarTxt = true;
                     break;
+                case 5:
+                    Persona3TongYoon1Txt = true;
+                    break;
+                case 6:
+                    Persona3TongYoon2Txt = true;
+                    break;
+                case 7:
+                    Persona3TongYoon3Txt = true;
+                    break;
+                case 8:
+                    PrinceTongYooTxt = true;
+                    break;
             }
 
-            random = new Random().Next(1, 3 + 1);//Grim
+            random = new Random().Next(1, 5 + 1);//Grim
             switch (random)
             {
                 case 1:
@@ -11395,9 +13754,15 @@ namespace UR_pnach_editor.ViewModels
                 case 3:
                     CustomGrimmTxt = true;
                     break;
+                case 4:
+                    CasualGrimGreenTxt = true;
+                    break;
+                case 5:
+                    CasualGrimGreyTxt = true;
+                    break;
             }
 
-            random = new Random().Next(1, 2 + 1);//BK
+            random = new Random().Next(1, 3 + 1);//BK
             switch (random)
             {
                 case 1:
@@ -11405,6 +13770,9 @@ namespace UR_pnach_editor.ViewModels
                     break;
                 case 2:
                     BKCJTxt = true;
+                    break;
+                case 3:
+                    BoxerWannabeBkTxt = true;
                     break;
             }
 
@@ -11491,7 +13859,7 @@ namespace UR_pnach_editor.ViewModels
                     break;
             }
 
-            random = new Random().Next(1, 6 + 1);//Shun Ying Lee
+            random = new Random().Next(1, 9 + 1);//Shun Ying Lee
             switch (random)
             {
                 case 1:
@@ -11512,9 +13880,18 @@ namespace UR_pnach_editor.ViewModels
                 case 6:
                     GothicShunYingTxt = true;
                     break;
+                case 7:
+                    LolaYingTxt = true;
+                    break;
+                case 8:
+                    StellarBladeShunYingGreenTxt = true;
+                    break;
+                case 9:
+                    StellarBladeShunYingRedTxt = true;
+                    break;
             }
 
-            random = new Random().Next(1, 2 + 1);//GD 05
+            random = new Random().Next(1, 3 + 1);//GD 05
             switch (random)
             {
                 case 1:
@@ -11522,6 +13899,9 @@ namespace UR_pnach_editor.ViewModels
                     break;
                 case 2:
                     GD_04Txt = true;
+                    break;
+                case 3:
+                    ToonShadedGD05Txt = true;
                     break;
             }
 
@@ -11651,7 +14031,7 @@ namespace UR_pnach_editor.ViewModels
                     break;
             }
 
-            random = new Random().Next(1, 4 + 1);//Alex
+            random = new Random().Next(1, 6 + 1);//Alex
             switch (random)
             {
                 case 1:
@@ -11666,9 +14046,15 @@ namespace UR_pnach_editor.ViewModels
                 case 4:
                     AlexNeganTxt = true;
                     break;
+                case 5:
+                    ViperStreetAlexTxt = true;
+                    break;
+                case 6:
+                    AlexHawkTxt = true;
+                    break;
             }
 
-            random = new Random().Next(1, 3 + 1);//McKinzie
+            random = new Random().Next(1, 4 + 1);//McKinzie
             switch (random)
             {
                 case 1:
@@ -11679,6 +14065,9 @@ namespace UR_pnach_editor.ViewModels
                     break;
                 case 3:
                     McPunisherTxt = true;
+                    break;
+                case 4:
+                    McKinzieWhiteCamoTxt = true;
                     break;
             }
 
@@ -11696,7 +14085,7 @@ namespace UR_pnach_editor.ViewModels
                     break;
             }
 
-            random = new Random().Next(1, 11 + 1);//Golem
+            random = new Random().Next(1, 12 + 1);//Golem
             switch (random)
             {
                 case 1:
@@ -11732,6 +14121,9 @@ namespace UR_pnach_editor.ViewModels
                 case 11:
                     GolemPunisherTxt = true;
                     break;
+                case 12:
+                    CopGolemTxt = true;
+                    break;
             }
 
             random = new Random().Next(1, 2 + 1);//Riki
@@ -11745,7 +14137,7 @@ namespace UR_pnach_editor.ViewModels
                     break;
             }
 
-            random = new Random().Next(1, 2 + 1);//Masa
+            random = new Random().Next(1, 3 + 1);//Masa
             switch (random)
             {
                 case 1:
@@ -11754,9 +14146,12 @@ namespace UR_pnach_editor.ViewModels
                 case 2:
                     EndangeredMasaTxt = true;
                     break;
+                case 3:
+                    BorsalinoMasaTxt = true;
+                    break;
             }
 
-            random = new Random().Next(1, 2 + 1);//Hiro
+            random = new Random().Next(1, 3 + 1);//Hiro
             switch (random)
             {
                 case 1:
@@ -11764,6 +14159,9 @@ namespace UR_pnach_editor.ViewModels
                     break;
                 case 2:
                     HiroGATTxt = true;
+                    break;
+                case 3:
+                    LanceVanceHiroTxt = true;
                     break;
             }
 
@@ -11789,7 +14187,7 @@ namespace UR_pnach_editor.ViewModels
                     break;
             }
 
-            random = new Random().Next(1, 2 + 1);//Sha Ying
+            random = new Random().Next(1, 3 + 1);//Sha Ying
             switch (random)
             {
                 case 1:
@@ -11797,6 +14195,9 @@ namespace UR_pnach_editor.ViewModels
                     break;
                 case 2:
                     ShaYingSkin2 = true;
+                    break;
+                case 3:
+                    YakuzaShaYingTxt = true;
                     break;
             }
 
@@ -11825,7 +14226,7 @@ namespace UR_pnach_editor.ViewModels
                     break;
             }
 
-            random = new Random().Next(1, 7 + 1);//Lin Fong Lee
+            random = new Random().Next(1, 8 + 1);//Lin Fong Lee
             switch (random)
             {
                 case 1:
@@ -11844,10 +14245,13 @@ namespace UR_pnach_editor.ViewModels
                     EasterBunnyLinFongTxt = true;
                     break;
                 case 6:
-                    GoldenDragonLinFongTxt = true;
+                    GoldenDragonLinFongTxt = true; 
                     break;
                 case 7:
                     LinFongJokerTxt = true;
+                    break;
+                case 8:
+                    LanceVanceLinfongTxt = true;
                     break;
             }
 

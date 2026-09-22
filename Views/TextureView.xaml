@@ -1784,6 +1784,8 @@
                    Text="Game of Death Law"
                    Margin="0,0,0,0"
                    MouseEnter="SkinPreview58"/>
+        
+        <!--//set 2 and 3-->
 
         <!--SH2 James (Brad)-->
         <Border Grid.Row="0"
@@ -4490,7 +4492,7 @@
                    FontSize="32"
                    TextWrapping="WrapWithOverflow"
                    Foreground="Gold"
-                   Text="Steve Minecraft"
+                   Text="Steve Minecraft (Anderson)"
                    Margin="0,0,0,0"
                    MouseEnter="SkinPreview208"/>
 
@@ -4598,7 +4600,7 @@
                    Margin="0,0,0,0"
                    MouseEnter="SkinPreview212"/>
 
-        <!--Seu Madruga Miguel-->
+        <!--Seu Madruga Ramon-->
         <Border Grid.Row="5"
                 Grid.Column="4"
                 Name="check213"
@@ -4609,7 +4611,7 @@
             <Viewbox  ToolTip="">
                 <CheckBox Content="Automat"
                           Foreground="Black"
-                          IsChecked="{Binding SeuMadrugaMiguelTxt}"
+                          IsChecked="{Binding SeuMadrugaRamonTxt}"
                           Width="20"
                    MouseEnter="SkinPreview213"/>
             </Viewbox>
@@ -4676,7 +4678,787 @@
                    Margin="0,0,0,0"
                    MouseEnter="SkinPreview215"/>
 
-        
+        <!--Brad White Snake Skin-->
+        <Border Grid.Row="8"
+                Grid.Column="4"
+                Name="check216"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding BradWhiteSnakeTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview216"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="8"
+                   Grid.Column="5"
+                   Name="skin216"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Gold"
+                   Text="Brad White Snake Skin"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview216"/>
+
+        <!--Casual Grim Green-->
+        <Border Grid.Row="9"
+                Grid.Column="4"
+                Name="check217"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding CasualGrimGreenTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview217"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="9"
+                   Grid.Column="5"
+                   Name="skin217"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Gold"
+                   Text="Casual Grim Green"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview217"/>
+
+        <!--Casual Grim Grey-->
+        <Border Grid.Row="10"
+                Grid.Column="4"
+                Name="check218"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding CasualGrimGreyTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview218"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="10"
+                   Grid.Column="5"
+                   Name="skin218"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Gold"
+                   Text="Casual Grim Grey"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview218"/>
+
+        <!--//set 4-->
+
+        <!--Boxer Wannabe Bk-->
+        <Border Grid.Row="0"
+                Grid.Column="0"
+                Name="check219"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding BoxerWannabeBkTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview219"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="0"
+                   Grid.Column="1"
+                   Name="skin219"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Boxer Wannabe Bk"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview219"/>
+
+        <!--Winged Skull Ramon-->
+        <Border Grid.Row="1"
+                Grid.Column="0"
+                Name="check220"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding WingedSkullRamonTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview220"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="1"
+                   Name="skin220"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Winged Skull Ramon"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview220"/>
+
+        <!--Hood Guy Ramon-->
+        <Border Grid.Row="2"
+                Grid.Column="0"
+                Name="check221"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding HoodGuyRamonTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview221"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="2"
+                   Grid.Column="1"
+                   Name="skin221"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Hood Guy Ramon"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview221"/>
+
+        <!--Persona 3 Tong Yoon 1-->
+        <Border Grid.Row="3"
+                Grid.Column="0"
+                Name="check222"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding Persona3TongYoon1Txt}"
+                          Width="20"
+                   MouseEnter="SkinPreview222"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="3"
+                   Grid.Column="1"
+                   Name="skin222"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Persona 3 Tong Yoon 1"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview222"/>
+
+        <!--Persona 3 Tong Yoon 2-->
+        <Border Grid.Row="4"
+                Grid.Column="0"
+                Name="check223"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding Persona3TongYoon2Txt}"
+                          Width="20"
+                   MouseEnter="SkinPreview223"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="4"
+                   Grid.Column="1"
+                   Name="skin223"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Persona 3 Tong Yoon 2"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview223"/>
+
+        <!--Persona 3 Tong Yoon 3-->
+        <Border Grid.Row="5"
+                Grid.Column="0"
+                Name="check224"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding Persona3TongYoon3Txt}"
+                          Width="20"
+                   MouseEnter="SkinPreview224"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="5"
+                   Grid.Column="1"
+                   Name="skin224"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Persona 3 Tong Yoon 3"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview224"/>
+
+        <!--Lola Ying Txt-->
+        <Border Grid.Row="6"
+                Grid.Column="0"
+                Name="check225"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding LolaYingTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview225"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="6"
+                   Grid.Column="1"
+                   Name="skin225"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Lola Ying Txt"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview225"/>
+
+        <!--Stellar Blade Shun Ying Green-->
+        <Border Grid.Row="7"
+                Grid.Column="0"
+                Name="check226"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding StellarBladeShunYingGreenTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview226"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="7"
+                   Grid.Column="1"
+                   Name="skin226"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Stellar Blade Shun Ying Green"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview226"/>
+
+        <!--Stellar Blade Shun Ying Red-->
+        <Border Grid.Row="8"
+                Grid.Column="0"
+                Name="check227"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding StellarBladeShunYingRedTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview227"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="8"
+                   Grid.Column="1"
+                   Name="skin227"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Stellar Blade Shun Ying Red"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview227"/>
+
+        <!--Viper Street Alex-->
+        <Border Grid.Row="9"
+                Grid.Column="0"
+                Name="check228"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding ViperStreetAlexTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview228"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="9"
+                   Grid.Column="1"
+                   Name="skin228"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Viper Street Alex"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview228"/>
+
+        <!--Basket ball Fan Em-cee-->
+        <Border Grid.Row="10"
+                Grid.Column="0"
+                Name="check229"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding BasketballFanEmceeTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview229"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="10"
+                   Grid.Column="1"
+                   Name="skin229"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Basket ball Fan Em-cee"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview229"/>
+
+        <!--Yakuza Sha Ying-->
+        <Border Grid.Row="11"
+                Grid.Column="0"
+                Name="check230"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding YakuzaShaYingTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview230"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="11"
+                   Grid.Column="1"
+                   Name="skin230"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Yakuza Sha Ying"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview230"/>
+
+        <!--Toon Shaded GD-05-->
+        <Border Grid.Row="12"
+                Grid.Column="0"
+                Name="check231"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding ToonShadedGD05Txt}"
+                          Width="20"
+                   MouseEnter="SkinPreview231"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="12"
+                   Grid.Column="1"
+                   Name="skin231"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Toon Shaded GD-05"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview231"/>
+
+        <!--Borsalino Masa-->
+        <Border Grid.Row="13"
+                Grid.Column="0"
+                Name="check232"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding BorsalinoMasaTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview232"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="13"
+                   Grid.Column="1"
+                   Name="skin232"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Borsalino Masa"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview232"/>
+
+        <!--Cop Golem-->
+        <Border Grid.Row="14"
+                Grid.Column="0"
+                Name="check233"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding CopGolemTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview233"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="14"
+                   Grid.Column="1"
+                   Name="skin233"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Cop Golem"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview233"/>
+
+        <!--Prince Tong Yoo-->
+        <Border Grid.Row="15"
+                Grid.Column="0"
+                Name="check234"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding PrinceTongYooTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview234"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="15"
+                   Grid.Column="1"
+                   Name="skin234"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Prince Tong Yoo"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview234"/>
+
+        <!--Alex Hawk-->
+        <Border Grid.Row="16"
+                Grid.Column="0"
+                Name="check235"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding AlexHawkTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview235"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="16"
+                   Grid.Column="1"
+                   Name="skin235"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Alex Hawk"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview235"/>
+
+        <!--Zach Black Kimono-->
+        <Border Grid.Row="17"
+                Grid.Column="0"
+                Name="check236"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding ZachBlackKimonoTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview236"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="17"
+                   Grid.Column="1"
+                   Name="skin236"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Zach Black Kimono"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview236"/>
+
+        <!--Kazuma Kiryu Brad Updated-->
+        <Border Grid.Row="18"
+                Grid.Column="0"
+                Name="check237"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding KazumaKiryuBradUpdatedTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview237"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="18"
+                   Grid.Column="1"
+                   Name="skin237"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Kazuma Kiryu Brad Updated"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview237"/>
+
+        <!--Blue Denim Brad-->
+        <Border Grid.Row="19"
+                Grid.Column="0"
+                Name="check238"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding BlueDenimBradTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview238"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="19"
+                   Grid.Column="1"
+                   Name="skin238"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Blue Denim Brad"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview238"/>
+
+        <!--McKinzie White Camo-->
+        <Border Grid.Row="20"
+                Grid.Column="0"
+                Name="check239"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding McKinzieWhiteCamoTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview239"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="20"
+                   Grid.Column="1"
+                   Name="skin239"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="McKinzie White Camo"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview239"/>
+
+        <!--Satin Infernal Jake-->
+        <Border Grid.Row="21"
+                Grid.Column="0"
+                Name="check240"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding SatinInfernalJakeTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview240"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="21"
+                   Grid.Column="1"
+                   Name="skin240"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Satin Infernal Jake"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview240"/>
+
+        <!--Tribal Brad-->
+        <Border Grid.Row="22"
+                Grid.Column="0"
+                Name="check241"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding TribalBradTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview241"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="22"
+                   Grid.Column="1"
+                   Name="skin241"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Tribal Brad"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview241"/>
+
+        <!--Stylish Colin-->
+        <Border Grid.Row="23"
+                Grid.Column="0"
+                Name="check242"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding StylishColinTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview242"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="23"
+                   Grid.Column="1"
+                   Name="skin242"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Stylish Colin"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview242"/>
+
+        <!--Vice Miguel-->
+        <Border Grid.Row="0"
+                Grid.Column="2"
+                Name="check243"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding ViceMiguelTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview243"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="0"
+                   Grid.Column="3"
+                   Name="skin243"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Vice Miguel"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview243"/>
+
+        <!--Lance Vance Hiro-->
+        <Border Grid.Row="1"
+                Grid.Column="2"
+                Name="check244"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding LanceVanceHiroTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview244"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="1"
+                   Grid.Column="3"
+                   Name="skin244"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Lance Vance Hiro"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview244"/>
+
+        <!--Lance Vance Linfong-->
+        <Border Grid.Row="2"
+                Grid.Column="2"
+                Name="check245"
+                BorderBrush="Blue"
+                BorderThickness="0"
+                Margin="0,0,0,0">
+
+            <Viewbox  ToolTip="">
+                <CheckBox Content="Automat"
+                          Foreground="Black"
+                          IsChecked="{Binding LanceVanceLinfongTxt}"
+                          Width="20"
+                   MouseEnter="SkinPreview245"/>
+            </Viewbox>
+        </Border>
+        <TextBlock Grid.Row="2"
+                   Grid.Column="3"
+                   Name="skin245"
+                   FontSize="32"
+                   TextWrapping="WrapWithOverflow"
+                   Foreground="Orange"
+                   Text="Lance Vance Linfong"
+                   Margin="0,0,0,0"
+                   MouseEnter="SkinPreview245"/>
 
 
         <!--Title Screen-->

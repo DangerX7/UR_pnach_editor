@@ -157,7 +157,7 @@ namespace UR_pnach_editor.Views
 
         private void SwitchTexturesPages_Click(object sender, RoutedEventArgs e)
         {
-            if (viewModel.PageNumber == 3)
+            if (viewModel.PageNumber == 4)
             {
                 viewModel.PageNumber = 1;
             }
@@ -176,6 +176,9 @@ namespace UR_pnach_editor.Views
                     break;
                 case 3:
                     SwitchToExtraSet();
+                    break;
+                case 4:
+                    SwitchToSecondExtraSet();
                     break;
             }
 
@@ -534,6 +537,67 @@ namespace UR_pnach_editor.Views
             check214.Visibility = Visibility.Collapsed;
             skin215.Visibility = Visibility.Collapsed;
             check215.Visibility = Visibility.Collapsed;
+            skin216.Visibility = Visibility.Collapsed;
+            check216.Visibility = Visibility.Collapsed;
+            skin217.Visibility = Visibility.Collapsed;
+            check217.Visibility = Visibility.Collapsed;
+            skin218.Visibility = Visibility.Collapsed;
+            check218.Visibility = Visibility.Collapsed;
+
+            skin219.Visibility = Visibility.Collapsed;
+            check219.Visibility = Visibility.Collapsed;
+            skin220.Visibility = Visibility.Collapsed;
+            check220.Visibility = Visibility.Collapsed;
+            skin221.Visibility = Visibility.Collapsed;
+            check221.Visibility = Visibility.Collapsed;
+            skin222.Visibility = Visibility.Collapsed;
+            check222.Visibility = Visibility.Collapsed;
+            skin223.Visibility = Visibility.Collapsed;
+            check223.Visibility = Visibility.Collapsed;
+            skin224.Visibility = Visibility.Collapsed;
+            check224.Visibility = Visibility.Collapsed;
+            skin225.Visibility = Visibility.Collapsed;
+            check225.Visibility = Visibility.Collapsed;
+            skin226.Visibility = Visibility.Collapsed;
+            check226.Visibility = Visibility.Collapsed;
+            skin227.Visibility = Visibility.Collapsed;
+            check227.Visibility = Visibility.Collapsed;
+            skin228.Visibility = Visibility.Collapsed;
+            check228.Visibility = Visibility.Collapsed;
+            skin229.Visibility = Visibility.Collapsed;
+            check229.Visibility = Visibility.Collapsed;
+            skin230.Visibility = Visibility.Collapsed;
+            check230.Visibility = Visibility.Collapsed;
+            skin231.Visibility = Visibility.Collapsed;
+            check231.Visibility = Visibility.Collapsed;
+            skin232.Visibility = Visibility.Collapsed;
+            check232.Visibility = Visibility.Collapsed;
+            skin233.Visibility = Visibility.Collapsed;
+            check233.Visibility = Visibility.Collapsed;
+            skin234.Visibility = Visibility.Collapsed;
+            check234.Visibility = Visibility.Collapsed;
+            skin235.Visibility = Visibility.Collapsed;
+            check235.Visibility = Visibility.Collapsed;
+            skin236.Visibility = Visibility.Collapsed;
+            check236.Visibility = Visibility.Collapsed;
+            skin237.Visibility = Visibility.Collapsed;
+            check237.Visibility = Visibility.Collapsed;
+            skin238.Visibility = Visibility.Collapsed;
+            check238.Visibility = Visibility.Collapsed;
+            skin239.Visibility = Visibility.Collapsed;
+            check239.Visibility = Visibility.Collapsed;
+            skin240.Visibility = Visibility.Collapsed;
+            check240.Visibility = Visibility.Collapsed;
+            skin241.Visibility = Visibility.Collapsed;
+            check241.Visibility = Visibility.Collapsed;
+            skin242.Visibility = Visibility.Collapsed;
+            check242.Visibility = Visibility.Collapsed;
+            skin243.Visibility = Visibility.Collapsed;
+            check243.Visibility = Visibility.Collapsed;
+            skin244.Visibility = Visibility.Collapsed;
+            check244.Visibility = Visibility.Collapsed;
+            skin245.Visibility = Visibility.Collapsed;
+            check245.Visibility = Visibility.Collapsed;
 
             //checkTS.Visibility = Visibility.Visible;
             //Title_Screen.Visibility = Visibility.Visible;
@@ -897,6 +961,67 @@ namespace UR_pnach_editor.Views
             check214.Visibility = Visibility.Collapsed;
             skin215.Visibility = Visibility.Collapsed;
             check215.Visibility = Visibility.Collapsed;
+            skin216.Visibility = Visibility.Collapsed;
+            check216.Visibility = Visibility.Collapsed;
+            skin217.Visibility = Visibility.Collapsed;
+            check217.Visibility = Visibility.Collapsed;
+            skin218.Visibility = Visibility.Collapsed;
+            check218.Visibility = Visibility.Collapsed;
+
+            skin219.Visibility = Visibility.Collapsed;
+            check219.Visibility = Visibility.Collapsed;
+            skin220.Visibility = Visibility.Collapsed;
+            check220.Visibility = Visibility.Collapsed;
+            skin221.Visibility = Visibility.Collapsed;
+            check221.Visibility = Visibility.Collapsed;
+            skin222.Visibility = Visibility.Collapsed;
+            check222.Visibility = Visibility.Collapsed;
+            skin223.Visibility = Visibility.Collapsed;
+            check223.Visibility = Visibility.Collapsed;
+            skin224.Visibility = Visibility.Collapsed;
+            check224.Visibility = Visibility.Collapsed;
+            skin225.Visibility = Visibility.Collapsed;
+            check225.Visibility = Visibility.Collapsed;
+            skin226.Visibility = Visibility.Collapsed;
+            check226.Visibility = Visibility.Collapsed;
+            skin227.Visibility = Visibility.Collapsed;
+            check227.Visibility = Visibility.Collapsed;
+            skin228.Visibility = Visibility.Collapsed;
+            check228.Visibility = Visibility.Collapsed;
+            skin229.Visibility = Visibility.Collapsed;
+            check229.Visibility = Visibility.Collapsed;
+            skin230.Visibility = Visibility.Collapsed;
+            check230.Visibility = Visibility.Collapsed;
+            skin231.Visibility = Visibility.Collapsed;
+            check231.Visibility = Visibility.Collapsed;
+            skin232.Visibility = Visibility.Collapsed;
+            check232.Visibility = Visibility.Collapsed;
+            skin233.Visibility = Visibility.Collapsed;
+            check233.Visibility = Visibility.Collapsed;
+            skin234.Visibility = Visibility.Collapsed;
+            check234.Visibility = Visibility.Collapsed;
+            skin235.Visibility = Visibility.Collapsed;
+            check235.Visibility = Visibility.Collapsed;
+            skin236.Visibility = Visibility.Collapsed;
+            check236.Visibility = Visibility.Collapsed;
+            skin237.Visibility = Visibility.Collapsed;
+            check237.Visibility = Visibility.Collapsed;
+            skin238.Visibility = Visibility.Collapsed;
+            check238.Visibility = Visibility.Collapsed;
+            skin239.Visibility = Visibility.Collapsed;
+            check239.Visibility = Visibility.Collapsed;
+            skin240.Visibility = Visibility.Collapsed;
+            check240.Visibility = Visibility.Collapsed;
+            skin241.Visibility = Visibility.Collapsed;
+            check241.Visibility = Visibility.Collapsed;
+            skin242.Visibility = Visibility.Collapsed;
+            check242.Visibility = Visibility.Collapsed;
+            skin243.Visibility = Visibility.Collapsed;
+            check243.Visibility = Visibility.Collapsed;
+            skin244.Visibility = Visibility.Collapsed;
+            check244.Visibility = Visibility.Collapsed;
+            skin245.Visibility = Visibility.Collapsed;
+            check245.Visibility = Visibility.Collapsed;
 
             //checkTS.Visibility = Visibility.Collapsed;
             //Title_Screen.Visibility = Visibility.Collapsed;
@@ -1260,6 +1385,491 @@ namespace UR_pnach_editor.Views
             check214.Visibility = Visibility.Visible;
             skin215.Visibility = Visibility.Visible;
             check215.Visibility = Visibility.Visible;
+            skin216.Visibility = Visibility.Visible;
+            check216.Visibility = Visibility.Visible;
+            skin217.Visibility = Visibility.Visible;
+            check217.Visibility = Visibility.Visible;
+            skin218.Visibility = Visibility.Visible;
+            check218.Visibility = Visibility.Visible;
+
+            skin219.Visibility = Visibility.Collapsed;
+            check219.Visibility = Visibility.Collapsed;
+            skin220.Visibility = Visibility.Collapsed;
+            check220.Visibility = Visibility.Collapsed;
+            skin221.Visibility = Visibility.Collapsed;
+            check221.Visibility = Visibility.Collapsed;
+            skin222.Visibility = Visibility.Collapsed;
+            check222.Visibility = Visibility.Collapsed;
+            skin223.Visibility = Visibility.Collapsed;
+            check223.Visibility = Visibility.Collapsed;
+            skin224.Visibility = Visibility.Collapsed;
+            check224.Visibility = Visibility.Collapsed;
+            skin225.Visibility = Visibility.Collapsed;
+            check225.Visibility = Visibility.Collapsed;
+            skin226.Visibility = Visibility.Collapsed;
+            check226.Visibility = Visibility.Collapsed;
+            skin227.Visibility = Visibility.Collapsed;
+            check227.Visibility = Visibility.Collapsed;
+            skin228.Visibility = Visibility.Collapsed;
+            check228.Visibility = Visibility.Collapsed;
+            skin229.Visibility = Visibility.Collapsed;
+            check229.Visibility = Visibility.Collapsed;
+            skin230.Visibility = Visibility.Collapsed;
+            check230.Visibility = Visibility.Collapsed;
+            skin231.Visibility = Visibility.Collapsed;
+            check231.Visibility = Visibility.Collapsed;
+            skin232.Visibility = Visibility.Collapsed;
+            check232.Visibility = Visibility.Collapsed;
+            skin233.Visibility = Visibility.Collapsed;
+            check233.Visibility = Visibility.Collapsed;
+            skin234.Visibility = Visibility.Collapsed;
+            check234.Visibility = Visibility.Collapsed;
+            skin235.Visibility = Visibility.Collapsed;
+            check235.Visibility = Visibility.Collapsed;
+            skin236.Visibility = Visibility.Collapsed;
+            check236.Visibility = Visibility.Collapsed;
+            skin237.Visibility = Visibility.Collapsed;
+            check237.Visibility = Visibility.Collapsed;
+            skin238.Visibility = Visibility.Collapsed;
+            check238.Visibility = Visibility.Collapsed;
+            skin239.Visibility = Visibility.Collapsed;
+            check239.Visibility = Visibility.Collapsed;
+            skin240.Visibility = Visibility.Collapsed;
+            check240.Visibility = Visibility.Collapsed;
+            skin241.Visibility = Visibility.Collapsed;
+            check241.Visibility = Visibility.Collapsed;
+            skin242.Visibility = Visibility.Collapsed;
+            check242.Visibility = Visibility.Collapsed;
+            skin243.Visibility = Visibility.Collapsed;
+            check243.Visibility = Visibility.Collapsed;
+            skin244.Visibility = Visibility.Collapsed;
+            check244.Visibility = Visibility.Collapsed;
+            skin245.Visibility = Visibility.Collapsed;
+            check245.Visibility = Visibility.Collapsed;
+
+            //checkTS.Visibility = Visibility.Collapsed;
+            //Title_Screen.Visibility = Visibility.Collapsed;
+            //stageWarehouse.Visibility = Visibility.Collapsed;
+            //Warehouse_Level.Visibility = Visibility.Collapsed;
+            //WeaponsTextures.Visibility = Visibility.Collapsed;
+            //WeaponsTexturesBlock.Visibility = Visibility.Collapsed;
+            //MultyplayerTextures.Visibility = Visibility.Collapsed;
+            //MultyplayerTexturesBlock.Visibility = Visibility.Collapsed;
+        }
+
+        private void SwitchToSecondExtraSet()
+        {
+            skin1.Visibility = Visibility.Collapsed;
+            check1.Visibility = Visibility.Collapsed;
+            skin2.Visibility = Visibility.Collapsed;
+            check2.Visibility = Visibility.Collapsed;
+            skin3.Visibility = Visibility.Collapsed;
+            check3.Visibility = Visibility.Collapsed;
+            skin4.Visibility = Visibility.Collapsed;
+            check4.Visibility = Visibility.Collapsed;
+            skin5.Visibility = Visibility.Collapsed;
+            check5.Visibility = Visibility.Collapsed;
+            skin6.Visibility = Visibility.Collapsed;
+            check6.Visibility = Visibility.Collapsed;
+            skin7.Visibility = Visibility.Collapsed;
+            check7.Visibility = Visibility.Collapsed;
+            skin8.Visibility = Visibility.Collapsed;
+            check8.Visibility = Visibility.Collapsed;
+            skin9.Visibility = Visibility.Collapsed;
+            check9.Visibility = Visibility.Collapsed;
+            skin10.Visibility = Visibility.Collapsed;
+            check10.Visibility = Visibility.Collapsed;
+            skin11.Visibility = Visibility.Collapsed;
+            check11.Visibility = Visibility.Collapsed;
+            skin12.Visibility = Visibility.Collapsed;
+            check12.Visibility = Visibility.Collapsed;
+            skin13.Visibility = Visibility.Collapsed;
+            check13.Visibility = Visibility.Collapsed;
+            skin14.Visibility = Visibility.Collapsed;
+            check14.Visibility = Visibility.Collapsed;
+            skin15.Visibility = Visibility.Collapsed;
+            check15.Visibility = Visibility.Collapsed;
+            skin16.Visibility = Visibility.Collapsed;
+            check16.Visibility = Visibility.Collapsed;
+            skin17.Visibility = Visibility.Collapsed;
+            check17.Visibility = Visibility.Collapsed;
+            skin18.Visibility = Visibility.Collapsed;
+            check18.Visibility = Visibility.Collapsed;
+            skin19.Visibility = Visibility.Collapsed;
+            check19.Visibility = Visibility.Collapsed;
+            skin20.Visibility = Visibility.Collapsed;
+            check20.Visibility = Visibility.Collapsed;
+            skin21.Visibility = Visibility.Collapsed;
+            check21.Visibility = Visibility.Collapsed;
+            skin22.Visibility = Visibility.Collapsed;
+            check22.Visibility = Visibility.Collapsed;
+            skin23.Visibility = Visibility.Collapsed;
+            check23.Visibility = Visibility.Collapsed;
+            skin24.Visibility = Visibility.Collapsed;
+            check24.Visibility = Visibility.Collapsed;
+            skin25.Visibility = Visibility.Collapsed;
+            check25.Visibility = Visibility.Collapsed;
+            skin26.Visibility = Visibility.Collapsed;
+            check26.Visibility = Visibility.Collapsed;
+            skin27.Visibility = Visibility.Collapsed;
+            check27.Visibility = Visibility.Collapsed;
+            skin28.Visibility = Visibility.Collapsed;
+            check28.Visibility = Visibility.Collapsed;
+            skin29.Visibility = Visibility.Collapsed;
+            check29.Visibility = Visibility.Collapsed;
+            skin30.Visibility = Visibility.Collapsed;
+            check30.Visibility = Visibility.Collapsed;
+            skin31.Visibility = Visibility.Collapsed;
+            check31.Visibility = Visibility.Collapsed;
+            skin32.Visibility = Visibility.Collapsed;
+            check32.Visibility = Visibility.Collapsed;
+            skin33.Visibility = Visibility.Collapsed;
+            check33.Visibility = Visibility.Collapsed;
+            skin34.Visibility = Visibility.Collapsed;
+            check34.Visibility = Visibility.Collapsed;
+            skin35.Visibility = Visibility.Collapsed;
+            check35.Visibility = Visibility.Collapsed;
+            skin36.Visibility = Visibility.Collapsed;
+            check36.Visibility = Visibility.Collapsed;
+            skin37.Visibility = Visibility.Collapsed;
+            check37.Visibility = Visibility.Collapsed;
+            skin38.Visibility = Visibility.Collapsed;
+            check38.Visibility = Visibility.Collapsed;
+            skin39.Visibility = Visibility.Collapsed;
+            check39.Visibility = Visibility.Collapsed;
+            skin40.Visibility = Visibility.Collapsed;
+            check40.Visibility = Visibility.Collapsed;
+            skin41.Visibility = Visibility.Collapsed;
+            check41.Visibility = Visibility.Collapsed;
+            skin42.Visibility = Visibility.Collapsed;
+            check42.Visibility = Visibility.Collapsed;
+            skin43.Visibility = Visibility.Collapsed;
+            check43.Visibility = Visibility.Collapsed;
+            skin44.Visibility = Visibility.Collapsed;
+            check44.Visibility = Visibility.Collapsed;
+            skin45.Visibility = Visibility.Collapsed;
+            check45.Visibility = Visibility.Collapsed;
+            skin46.Visibility = Visibility.Collapsed;
+            check46.Visibility = Visibility.Collapsed;
+            skin47.Visibility = Visibility.Collapsed;
+            check47.Visibility = Visibility.Collapsed;
+            skin48.Visibility = Visibility.Collapsed;
+            check48.Visibility = Visibility.Collapsed;
+            skin49.Visibility = Visibility.Collapsed;
+            check49.Visibility = Visibility.Collapsed;
+            skin50.Visibility = Visibility.Collapsed;
+            check50.Visibility = Visibility.Collapsed;
+            skin51.Visibility = Visibility.Collapsed;
+            check51.Visibility = Visibility.Collapsed;
+            skin52.Visibility = Visibility.Collapsed;
+            check52.Visibility = Visibility.Collapsed;
+            skin53.Visibility = Visibility.Collapsed;
+            check53.Visibility = Visibility.Collapsed;
+            skin54.Visibility = Visibility.Collapsed;
+            check54.Visibility = Visibility.Collapsed;
+            skin55.Visibility = Visibility.Collapsed;
+            check55.Visibility = Visibility.Collapsed;
+            skin56.Visibility = Visibility.Collapsed;
+            check56.Visibility = Visibility.Collapsed;
+            skin57.Visibility = Visibility.Collapsed;
+            check57.Visibility = Visibility.Collapsed;
+            skin58.Visibility = Visibility.Collapsed;
+            check58.Visibility = Visibility.Collapsed;
+            skin59.Visibility = Visibility.Collapsed;
+            check59.Visibility = Visibility.Collapsed;
+
+            skin101.Visibility = Visibility.Collapsed;
+            check101.Visibility = Visibility.Collapsed;
+            skin103.Visibility = Visibility.Collapsed;
+            check103.Visibility = Visibility.Collapsed;
+            skin105.Visibility = Visibility.Collapsed;
+            check105.Visibility = Visibility.Collapsed;
+            skin106.Visibility = Visibility.Collapsed;
+            check106.Visibility = Visibility.Collapsed;
+            skin107.Visibility = Visibility.Collapsed;
+            check107.Visibility = Visibility.Collapsed;
+            skin108.Visibility = Visibility.Collapsed;
+            check108.Visibility = Visibility.Collapsed;
+            skin111.Visibility = Visibility.Collapsed;
+            check111.Visibility = Visibility.Collapsed;
+            skin112.Visibility = Visibility.Collapsed;
+            check112.Visibility = Visibility.Collapsed;
+            skin113.Visibility = Visibility.Collapsed;
+            check113.Visibility = Visibility.Collapsed;
+            skin114.Visibility = Visibility.Collapsed;
+            check114.Visibility = Visibility.Collapsed;
+            skin115.Visibility = Visibility.Collapsed;
+            check115.Visibility = Visibility.Collapsed;
+            skin116.Visibility = Visibility.Collapsed;
+            check116.Visibility = Visibility.Collapsed;
+            skin118.Visibility = Visibility.Collapsed;
+            check118.Visibility = Visibility.Collapsed;
+            skin119.Visibility = Visibility.Collapsed;
+            check119.Visibility = Visibility.Collapsed;
+            skin120.Visibility = Visibility.Collapsed;
+            check120.Visibility = Visibility.Collapsed;
+            skin122.Visibility = Visibility.Collapsed;
+            check122.Visibility = Visibility.Collapsed;
+            skin124.Visibility = Visibility.Collapsed;
+            check124.Visibility = Visibility.Collapsed;
+            skin125.Visibility = Visibility.Collapsed;
+            check125.Visibility = Visibility.Collapsed;
+            skin126.Visibility = Visibility.Collapsed;
+            check126.Visibility = Visibility.Collapsed;
+            skin127.Visibility = Visibility.Collapsed;
+            check127.Visibility = Visibility.Collapsed;
+            skin128.Visibility = Visibility.Collapsed;
+            check128.Visibility = Visibility.Collapsed;
+            skin129.Visibility = Visibility.Collapsed;
+            check129.Visibility = Visibility.Collapsed;
+            skin130.Visibility = Visibility.Collapsed;
+            check130.Visibility = Visibility.Collapsed;
+            skin132.Visibility = Visibility.Collapsed;
+            check132.Visibility = Visibility.Collapsed;
+            skin133.Visibility = Visibility.Collapsed;
+            check133.Visibility = Visibility.Collapsed;
+            skin135.Visibility = Visibility.Collapsed;
+            check135.Visibility = Visibility.Collapsed;
+            skin136.Visibility = Visibility.Collapsed;
+            check136.Visibility = Visibility.Collapsed;
+            skin138.Visibility = Visibility.Collapsed;
+            check138.Visibility = Visibility.Collapsed;
+            skin144.Visibility = Visibility.Collapsed;
+            check144.Visibility = Visibility.Collapsed;
+            skin146.Visibility = Visibility.Collapsed;
+            check146.Visibility = Visibility.Collapsed;
+            skin151.Visibility = Visibility.Collapsed;
+            check151.Visibility = Visibility.Collapsed;
+            skin152.Visibility = Visibility.Collapsed;
+            check152.Visibility = Visibility.Collapsed;
+            skin154.Visibility = Visibility.Collapsed;
+            check154.Visibility = Visibility.Collapsed;
+            skin156.Visibility = Visibility.Collapsed;
+            check156.Visibility = Visibility.Collapsed;
+            skin157.Visibility = Visibility.Collapsed;
+            check157.Visibility = Visibility.Collapsed;
+            skin158.Visibility = Visibility.Collapsed;
+            check158.Visibility = Visibility.Collapsed;
+            skin159.Visibility = Visibility.Collapsed;
+            check159.Visibility = Visibility.Collapsed;
+            skin161.Visibility = Visibility.Collapsed;
+            check161.Visibility = Visibility.Collapsed;
+            skin162.Visibility = Visibility.Collapsed;
+            check162.Visibility = Visibility.Collapsed;
+            skin163.Visibility = Visibility.Collapsed;
+            check163.Visibility = Visibility.Collapsed;
+            skin164.Visibility = Visibility.Collapsed;
+            check164.Visibility = Visibility.Collapsed;
+            skin165.Visibility = Visibility.Collapsed;
+            check165.Visibility = Visibility.Collapsed;
+            skin166.Visibility = Visibility.Collapsed;
+            check166.Visibility = Visibility.Collapsed;
+            skin167.Visibility = Visibility.Collapsed;
+            check167.Visibility = Visibility.Collapsed;
+            skin168.Visibility = Visibility.Collapsed;
+            check168.Visibility = Visibility.Collapsed;
+            skin169.Visibility = Visibility.Collapsed;
+            check169.Visibility = Visibility.Collapsed;
+            skin170.Visibility = Visibility.Collapsed;
+            check170.Visibility = Visibility.Collapsed;
+            skin171.Visibility = Visibility.Collapsed;
+            check171.Visibility = Visibility.Collapsed;
+            skin172.Visibility = Visibility.Collapsed;
+            check172.Visibility = Visibility.Collapsed;
+            skin173.Visibility = Visibility.Collapsed;
+            check173.Visibility = Visibility.Collapsed;
+            skin174.Visibility = Visibility.Collapsed;
+            check174.Visibility = Visibility.Collapsed;
+            skin175.Visibility = Visibility.Collapsed;
+            check175.Visibility = Visibility.Collapsed;
+            skin176.Visibility = Visibility.Collapsed;
+            check176.Visibility = Visibility.Collapsed;
+            skin177.Visibility = Visibility.Collapsed;
+            check177.Visibility = Visibility.Collapsed;
+            skin178.Visibility = Visibility.Collapsed;
+            check178.Visibility = Visibility.Collapsed;
+            skin179.Visibility = Visibility.Collapsed;
+            check179.Visibility = Visibility.Collapsed;
+            skin180.Visibility = Visibility.Collapsed;
+            check180.Visibility = Visibility.Collapsed;
+            skin181.Visibility = Visibility.Collapsed;
+            check181.Visibility = Visibility.Collapsed;
+            skin182.Visibility = Visibility.Collapsed;
+            check182.Visibility = Visibility.Collapsed;
+
+            skin102.Visibility = Visibility.Collapsed;
+            check102.Visibility = Visibility.Collapsed;
+            skin104.Visibility = Visibility.Collapsed;
+            check104.Visibility = Visibility.Collapsed;
+            skin109.Visibility = Visibility.Collapsed;
+            check109.Visibility = Visibility.Collapsed;
+            skin110.Visibility = Visibility.Collapsed;
+            check110.Visibility = Visibility.Collapsed;
+            skin117.Visibility = Visibility.Collapsed;
+            check117.Visibility = Visibility.Collapsed;
+            skin121.Visibility = Visibility.Collapsed;
+            check121.Visibility = Visibility.Collapsed;
+            skin123.Visibility = Visibility.Collapsed;
+            check123.Visibility = Visibility.Collapsed;
+            skin131.Visibility = Visibility.Collapsed;
+            check131.Visibility = Visibility.Collapsed;
+            skin134.Visibility = Visibility.Collapsed;
+            check134.Visibility = Visibility.Collapsed;
+            skin137.Visibility = Visibility.Collapsed;
+            check137.Visibility = Visibility.Collapsed;
+            skin139.Visibility = Visibility.Collapsed;
+            check139.Visibility = Visibility.Collapsed;
+            skin140.Visibility = Visibility.Collapsed;
+            check140.Visibility = Visibility.Collapsed;
+            skin141.Visibility = Visibility.Collapsed;
+            check141.Visibility = Visibility.Collapsed;
+            skin142.Visibility = Visibility.Collapsed;
+            check142.Visibility = Visibility.Collapsed;
+            skin143.Visibility = Visibility.Collapsed;
+            check143.Visibility = Visibility.Collapsed;
+            skin145.Visibility = Visibility.Collapsed;
+            check145.Visibility = Visibility.Collapsed;
+            skin147.Visibility = Visibility.Collapsed;
+            check147.Visibility = Visibility.Collapsed;
+            skin148.Visibility = Visibility.Collapsed;
+            check148.Visibility = Visibility.Collapsed;
+            skin149.Visibility = Visibility.Collapsed;
+            check149.Visibility = Visibility.Collapsed;
+            skin150.Visibility = Visibility.Collapsed;
+            check150.Visibility = Visibility.Collapsed;
+            skin153.Visibility = Visibility.Collapsed;
+            check153.Visibility = Visibility.Collapsed;
+            skin155.Visibility = Visibility.Collapsed;
+            check155.Visibility = Visibility.Collapsed;
+            skin160.Visibility = Visibility.Collapsed;
+            check160.Visibility = Visibility.Collapsed;
+            skin183.Visibility = Visibility.Collapsed;
+            check183.Visibility = Visibility.Collapsed;
+            skin184.Visibility = Visibility.Collapsed;
+            check184.Visibility = Visibility.Collapsed;
+            skin185.Visibility = Visibility.Collapsed;
+            check185.Visibility = Visibility.Collapsed;
+            skin186.Visibility = Visibility.Collapsed;
+            check186.Visibility = Visibility.Collapsed;
+            skin187.Visibility = Visibility.Collapsed;
+            check187.Visibility = Visibility.Collapsed;
+            skin188.Visibility = Visibility.Collapsed;
+            check188.Visibility = Visibility.Collapsed;
+            skin189.Visibility = Visibility.Collapsed;
+            check189.Visibility = Visibility.Collapsed;
+            skin190.Visibility = Visibility.Collapsed;
+            check190.Visibility = Visibility.Collapsed;
+            skin191.Visibility = Visibility.Collapsed;
+            check191.Visibility = Visibility.Collapsed;
+            skin192.Visibility = Visibility.Collapsed;
+            check192.Visibility = Visibility.Collapsed;
+            skin193.Visibility = Visibility.Collapsed;
+            check193.Visibility = Visibility.Collapsed;
+            skin194.Visibility = Visibility.Collapsed;
+            check194.Visibility = Visibility.Collapsed;
+            skin195.Visibility = Visibility.Collapsed;
+            check195.Visibility = Visibility.Collapsed;
+            skin196.Visibility = Visibility.Collapsed;
+            check196.Visibility = Visibility.Collapsed;
+            skin197.Visibility = Visibility.Collapsed;
+            check197.Visibility = Visibility.Collapsed;
+            skin198.Visibility = Visibility.Collapsed;
+            check198.Visibility = Visibility.Collapsed;
+            skin199.Visibility = Visibility.Collapsed;
+            check199.Visibility = Visibility.Collapsed;
+            skin200.Visibility = Visibility.Collapsed;
+            check200.Visibility = Visibility.Collapsed;
+            skin201.Visibility = Visibility.Collapsed;
+            check201.Visibility = Visibility.Collapsed;
+            skin202.Visibility = Visibility.Collapsed;
+            check202.Visibility = Visibility.Collapsed;
+            skin203.Visibility = Visibility.Collapsed;
+            check203.Visibility = Visibility.Collapsed;
+            skin204.Visibility = Visibility.Collapsed;
+            check204.Visibility = Visibility.Collapsed;
+            skin205.Visibility = Visibility.Collapsed;
+            check205.Visibility = Visibility.Collapsed;
+            skin206.Visibility = Visibility.Collapsed;
+            check206.Visibility = Visibility.Collapsed;
+            skin207.Visibility = Visibility.Collapsed;
+            check207.Visibility = Visibility.Collapsed;
+            skin208.Visibility = Visibility.Collapsed;
+            check208.Visibility = Visibility.Collapsed;
+            skin209.Visibility = Visibility.Collapsed;
+            check209.Visibility = Visibility.Collapsed;
+            skin210.Visibility = Visibility.Collapsed;
+            check210.Visibility = Visibility.Collapsed;
+            skin211.Visibility = Visibility.Collapsed;
+            check211.Visibility = Visibility.Collapsed;
+            skin212.Visibility = Visibility.Collapsed;
+            check212.Visibility = Visibility.Collapsed;
+            skin213.Visibility = Visibility.Collapsed;
+            check213.Visibility = Visibility.Collapsed;
+            skin214.Visibility = Visibility.Collapsed;
+            check214.Visibility = Visibility.Collapsed;
+            skin215.Visibility = Visibility.Collapsed;
+            check215.Visibility = Visibility.Collapsed;
+            skin216.Visibility = Visibility.Collapsed;
+            check216.Visibility = Visibility.Collapsed;
+            skin217.Visibility = Visibility.Collapsed;
+            check217.Visibility = Visibility.Collapsed;
+            skin218.Visibility = Visibility.Collapsed;
+            check218.Visibility = Visibility.Collapsed;
+
+            skin219.Visibility = Visibility.Visible;
+            check219.Visibility = Visibility.Visible;
+            skin220.Visibility = Visibility.Visible;
+            check220.Visibility = Visibility.Visible;
+            skin221.Visibility = Visibility.Visible;
+            check221.Visibility = Visibility.Visible;
+            skin222.Visibility = Visibility.Visible;
+            check222.Visibility = Visibility.Visible;
+            skin223.Visibility = Visibility.Visible;
+            check223.Visibility = Visibility.Visible;
+            skin224.Visibility = Visibility.Visible;
+            check224.Visibility = Visibility.Visible;
+            skin225.Visibility = Visibility.Visible;
+            check225.Visibility = Visibility.Visible;
+            skin226.Visibility = Visibility.Visible;
+            check226.Visibility = Visibility.Visible;
+            skin227.Visibility = Visibility.Visible;
+            check227.Visibility = Visibility.Visible;
+            skin228.Visibility = Visibility.Visible;
+            check228.Visibility = Visibility.Visible;
+            skin229.Visibility = Visibility.Visible;
+            check229.Visibility = Visibility.Visible;
+            skin230.Visibility = Visibility.Visible;
+            check230.Visibility = Visibility.Visible;
+            skin231.Visibility = Visibility.Visible;
+            check231.Visibility = Visibility.Visible;
+            skin232.Visibility = Visibility.Visible;
+            check232.Visibility = Visibility.Visible;
+            skin233.Visibility = Visibility.Visible;
+            check233.Visibility = Visibility.Visible;
+            skin234.Visibility = Visibility.Visible;
+            check234.Visibility = Visibility.Visible;
+            skin235.Visibility = Visibility.Visible;
+            check235.Visibility = Visibility.Visible;
+            skin236.Visibility = Visibility.Visible;
+            check236.Visibility = Visibility.Visible;
+            skin237.Visibility = Visibility.Visible;
+            check237.Visibility = Visibility.Visible;
+            skin238.Visibility = Visibility.Visible;
+            check238.Visibility = Visibility.Visible;
+            skin239.Visibility = Visibility.Visible;
+            check239.Visibility = Visibility.Visible;
+            skin240.Visibility = Visibility.Visible;
+            check240.Visibility = Visibility.Visible;
+            skin241.Visibility = Visibility.Visible;
+            check241.Visibility = Visibility.Visible;
+            skin242.Visibility = Visibility.Visible;
+            check242.Visibility = Visibility.Visible;
+            skin243.Visibility = Visibility.Visible;
+            check243.Visibility = Visibility.Visible;
+            skin244.Visibility = Visibility.Visible;
+            check244.Visibility = Visibility.Visible;
+            skin245.Visibility = Visibility.Visible;
+            check245.Visibility = Visibility.Visible;
 
             //checkTS.Visibility = Visibility.Collapsed;
             //Title_Screen.Visibility = Visibility.Collapsed;
@@ -2034,6 +2644,156 @@ namespace UR_pnach_editor.Views
         private void SkinPreview215(object sender, MouseEventArgs e)
         {
             viewModel.SkinPreview = "/Resources/PreviewSkin215.png";
+        }
+
+        private void SkinPreview216(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin216.png";
+        }
+
+        private void SkinPreview217(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin217.png";
+        }
+
+        private void SkinPreview218(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin218.png";
+        }
+
+        private void SkinPreview219(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin219.png";
+        }
+
+        private void SkinPreview220(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin220.png";
+        }
+
+        private void SkinPreview221(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin221.png";
+        }
+
+        private void SkinPreview222(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin222.png";
+        }
+
+        private void SkinPreview223(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin223.png";
+        }
+
+        private void SkinPreview224(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin224.png";
+        }
+
+        private void SkinPreview225(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin225.png";
+        }
+
+        private void SkinPreview226(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin226.png";
+        }
+
+        private void SkinPreview227(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin227.png";
+        }
+
+        private void SkinPreview228(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin228.png";
+        }
+
+        private void SkinPreview229(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin229.png";
+        }
+
+        private void SkinPreview230(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin230.png";
+        }
+
+        private void SkinPreview231(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin231.png";
+        }
+
+        private void SkinPreview232(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin232.png";
+        }
+
+        private void SkinPreview233(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin233.png";
+        }
+
+        private void SkinPreview234(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin234.png";
+        }
+
+        private void SkinPreview235(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin235.png";
+        }
+
+        private void SkinPreview236(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin236.png";
+        }
+
+        private void SkinPreview237(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin237.png";
+        }
+
+        private void SkinPreview238(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin238.png";
+        }
+
+        private void SkinPreview239(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin239.png";
+        }
+
+        private void SkinPreview240(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin240.png";
+        }
+
+        private void SkinPreview241(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin241.png";
+        }
+
+        private void SkinPreview242(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin242.png";
+        }
+
+        private void SkinPreview243(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin243.png";
+        }
+
+        private void SkinPreview244(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin244.png";
+        }
+
+        private void SkinPreview245(object sender, MouseEventArgs e)
+        {
+            viewModel.SkinPreview = "/Resources/PreviewSkin245.png";
         }
 
         private void SwitchModelsSize_Click(object sender, RoutedEventArgs e)
